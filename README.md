@@ -1,4 +1,5 @@
 crimson-legacy.Altis
 ====================
 
-Crimson Legacy mission files for ArmA3
+Crimson Legacy mission files for ArmA3.
+
