@@ -1,0 +1,1 @@
+player removeAction ACTION_FREE_PILOT;
