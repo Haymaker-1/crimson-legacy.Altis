@@ -1,0 +1,112 @@
+
+author = "Haymaker-1";
+OnloadName = "CRIMSON LEGACY";
+//OnLoadMission = "Do stuff. Really."
+OnLoadIntroTime = True;
+OnLoadMissionTime = True;
+
+class CfgSounds
+{
+	sounds[] = {};
+	class fuelrateAlarm
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "fuelrateAlarm";
+		// filename, volume, pitch
+		sound[] = {"sounds\fuelrate-alarm.ogg", 0.1, 1};
+		// subtitle delay in seconds, subtitle text 
+		titles[] = {};
+	};
+};
+
+
+class CfgDebriefing
+{  
+	class Win1
+	{
+		title = "MISSION COMPLETED";
+		subtitle = "You were epic.";
+		description = "";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.6,0.1,0.0,1};
+	};
+	class End1
+	{
+		title = "MISSION FAILED";
+		subtitle = "A crucial member of your team has died.";
+		description = "";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.6,0.1,0.0,1};
+	};
+	class End2
+	{
+		title = "MISSION FAILED";
+		subtitle = "The helicopter was critically damaged.";
+		description = "";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.6,0.1,0.0,1};
+	};
+	class End3
+	{
+		title = "MISSION FAILED";
+		subtitle = "You ran out of fuel.";
+		description = "";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.3,0.3,0.3,1};
+	};
+    class End4
+	{
+		title = "MISSION FAILED";
+		subtitle = "The pilot has died.";
+		description = "";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.3,0.3,0.3,1};
+	};
+    class End5
+	{
+		title = "MISSION FAILED";
+		subtitle = "You did not make it to the rebel camp.";
+		description = "";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.3,0.3,0.3,1};
+	};
+    
+};
+
+
+
+
+class CfgFunctions
+{
+	class HAYMAKER
+	{
+		class myCategory
+		{
+			class calcDirection {file = "functions\calcDirection.sqf";};
+            class calcDirectionWindrose {file = "functions\calcDirectionWindrose.sqf";};
+            class calcMeanPos {file = "functions\calcMeanPos.sqf";};
+            class constructPerimeter {file = "functions\constructPerimeter.sqf";};
+            class calcWindingNumber {file = "functions\calcWindingNumber.sqf";};
+            class calcBoundingBox {file = "functions\calcBoundingBox.sqf";};
+            class generateRandomPositionInPolygon {file = "functions\generateRandomPositionInPolygon.sqf";};
+            class bubbleSort {file = "functions\bubbleSort.sqf";};
+            class randomSelectionFromArray {file = "functions\randomSelectionFromArray.sqf";};
+            class strcmpn {file = "functions\strcmpn.sqf";};
+            class getAddRatingValueExplosives {file = "functions\getAddRatingValueExplosives.sqf";};
+            class getHitPointReport {file = "functions\getHitPointReport.sqf";};
+		};
+	};
+};
+
+
+
+
+
+doneKeys[] = {"missionCompletedKey"};
+
