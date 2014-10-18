@@ -29,7 +29,7 @@ kostas sideChat "One more thing. We have intel that an anti-material gun is pres
 sleep 15 + random 4;
 
 TASK_CLEAR_AGIOS_KONSTANTINOS = player createSimpleTask ["TASKID_CLEAR_AGIOS_KONSTANTINOS"];
-TASK_CLEAR_AGIOS_KONSTANTINOS setSimpleTaskDescription ["Search and destroy the area around <marker name='MARKER_AGIOS_KONSTANTINOS'>Agios Konstantinos</marker>.","Clear Agios Konstantinos","Clear Agios Konstantinos"];
+TASK_CLEAR_AGIOS_KONSTANTINOS setSimpleTaskDescription ["Clear the area around <marker name='MARKER_AGIOS_KONSTANTINOS'>Agios Konstantinos</marker> of all enemies.","Clear Agios Konstantinos","Clear Agios Konstantinos"];
 //TASK_CLEAR_AGIOS_KONSTANTINOS setSimpleTaskDestination (getMarkerPos "MARKER_EGRESS_ALPHA");
 player setCurrentTask TASK_CLEAR_AGIOS_KONSTANTINOS;
 TASK_CLEAR_AGIOS_KONSTANTINOS setTaskState "Assigned";
@@ -39,7 +39,7 @@ TASK_CLEAR_AGIOS_KONSTANTINOS_HAS_BEEN_ASSIGNED = true;
 sleep 6 + random 5;
 
 TASK_CLEAR_NEGADES = player createSimpleTask ["TASKID_CLEAR_NEGADES"];
-TASK_CLEAR_NEGADES setSimpleTaskDescription ["Search and destroy the area around <marker name='MARKER_NEGADES'>Negades</marker>.","Clear Negades","Clear Negades"];
+TASK_CLEAR_NEGADES setSimpleTaskDescription ["Clear the area around <marker name='MARKER_NEGADES'>Negades</marker> of all enemies.","Clear Negades","Clear Negades"];
 //TASK_CLEAR_NEGADES setSimpleTaskDestination (getMarkerPos "MARKER_EGRESS_ALPHA");
 //player setCurrentTask TASK_CLEAR_NEGADES;
 TASK_CLEAR_NEGADES setTaskState "Created";
