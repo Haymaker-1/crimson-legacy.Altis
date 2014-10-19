@@ -9,7 +9,6 @@ _weaponsCrate = createVehicle ["Land_CratesWooden_F",_posWeaponsCrate,[], 0, "CA
 _weaponsCrate setDir random 360;
 _weaponsCrate allowDamage false;
 
-
 _posMagazinesCrate = getMarkerPos "MARKER_WAREHOUSE_AGIOS_MAGAZINES_CRATE";
 _magazinesHolder = createVehicle ["GroundWeaponHolder",[0,0,0],[], 0, "CAN_COLLIDE"];
 _magazinesHolder addItemCargo ["FirstAidKit",1];
@@ -89,10 +88,10 @@ _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
                 _itemsHolder addItemCargo [_x, 1];
             } forEach _arr;            
            
-            //_backpack = backpack _man;
-            //clearAllItemsFromBackpack _man;
-            //removeBackpack _man;
-            //_itemsHolder addBackpackCargo [_backpack,1];
+            _backpackType = backpack _man;
+            // clearAllItemsFromBackpack _man;
+            removeBackpack _man;
+            _itemsHolder addBackpackCargo [_backpackType,1];
                         
             _vest = vest _man;
             removeVest _man;
@@ -108,6 +107,13 @@ _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
            
         };
     } forEach _men;
+    
+    // remove the contents of the backpacks in the _itemsHolder
+    {
+        clearMagazineCargo _x;
+        clearWeaponCargo _x;
+        clearItemCargo _x;
+    } forEach everyBackpack _itemsHolder;
 
     _stuffOnTheGround = nearestObjects [_pos,["GroundWeaponHolder","WeaponHolderSimulated"], _radius];
     {
