@@ -17,7 +17,7 @@ while {alive _theUnit} do {
                     if (_forEachIndex >= count MORTAR_TARGETS) then {
                         MORTAR_TARGETS resize (_forEachIndex + 1);
                     };
-                    MORTAR_TARGETS set [_forEachIndex,[time,_target select 0]];
+                    MORTAR_TARGETS set [_forEachIndex,[daytime,_target select 0]];
                 };
             } forEach (units group player);
         };

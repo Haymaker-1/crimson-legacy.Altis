@@ -8,14 +8,14 @@ private "_nShells";
 private "_spread";
 private "_pos";
 
-_targetAgeMax = 5*60; // seconds
+_targetAgeMax = 5/60; // hours
 
 while {true} do {
 
     _nShells = 3 + floor (random 2);
     
     {
-        _targetAge = time - (_x select 0);
+        _targetAge = daytime - (_x select 0);
         
         if (_targetAge < _targetAgeMax) {
             _spread = (_targetAge/_targetAgeMax) * 200;
