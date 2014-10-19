@@ -9,14 +9,14 @@ private "_spread";
 private "_pos";
 private "_iShell";
 
-_targetAgeMax = 5*60; // seconds
+_targetAgeMax = 5/60; // hours
 
 while {true} do {
 
     {
         if (!isNil "_x") then {
         
-            _targetAge = time - (_x select 0);
+            _targetAge = daytime - (_x select 0);
             
             if (_targetAge < _targetAgeMax) then {
                 _spread = 50 + (_targetAge/_targetAgeMax) * 200;
@@ -32,5 +32,5 @@ while {true} do {
             };
         };
     } forEach MORTAR_TARGETS;
-    sleep 30 + random 30;
+    sleep (10 + random 20);
 };
