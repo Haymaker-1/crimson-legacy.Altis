@@ -1,5 +1,5 @@
 
-sleep 180 + random 120;
+sleep 180;
 
 AGIOS_KONSTANTINOS_IS_CLEAR = true;
 TASK_CLEAR_AGIOS_KONSTANTINOS setTaskState "Succeeded";

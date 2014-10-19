@@ -7,7 +7,7 @@ if (_windingNumber != 0) then {
     TASK_STEAL_KAVALA_FUEL_TRUCK setTaskState "Failed";
     ["TaskFailed", ["","Steal fuel truck"]] call BIS_fnc_showNotification;
     
-    sleep 10 + random 4;
+    sleep 10;
     
     TASK_LEAVE_KAVALA = player createSimpleTask ["TASKID_LEAVE_KAVALA"];
     TASK_LEAVE_KAVALA setSimpleTaskDescription ["The fuel truck was immobilized. Escape Kavala on foot.","Escape Kavala","Escape Kavala"];
@@ -22,7 +22,7 @@ else {
     ["TaskSucceeded", ["","Steal fuel truck"]] call BIS_fnc_showNotification;
 };
 
-sleep 10 + random 10;
+sleep 10;
 
 waitUntil{
     sleep 5; 
@@ -102,34 +102,34 @@ sleep 10;
 
 player sideChat "Hey Kostas, you there?";
 
-sleep 5 + random 4;
+sleep 5;
 
 kostas sideChat "This is Kostas. What's on your mind, Lieutenant?";
 
-sleep 5 + random 4;
+sleep 5;
 
 player sideChat "Well sir, I have an idea how we can stack the odds in our favor tomorrow.";
 
-sleep 7 + random 4;
+sleep 7;
 
 kostas sideChat "Is that right? Well, tell me!";
 
-sleep 4 + random 3;
+sleep 4;
 
 player sideChat "OK, here's the thing. We are assaulting Kavala tomorrow, but we have only light vehicles and infantry, right?";
 
-sleep 8 + random 4;
+sleep 8;
 
 kostas sideChat "Yes, it's unfortunate, but I don't see how we can change that. It's all I got.";
 
-sleep 9 + random 4;
+sleep 9;
 
 _vehName1 = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "displayName");
 _vehName2 = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_gmg_F" >> "displayName");
 
 player sideChat format ["What if I could get my hands on a %1 and a %2?",_vehName1, _vehName2];
 
-sleep 7 + random 4;
+sleep 7;
 
 if (MOTOR_POOL_SCORE == 0) then {
     kostas sideChat "That would help, seeing as we're up against mechanized infantry.";
@@ -138,79 +138,79 @@ else {
     kostas sideChat "That would go a long way, seeing as the enemy will be mostly infantry after your little excursion tonight.";
 };
 
-sleep 9 + random 4;
+sleep 9;
 
 player sideChat "I remember seeing a bunch of vehicles at the airfield in Krya Nera. Might be worth checking out if we can use them. Shall I call my CO and find out?";
 
-sleep 12 + random 4;
+sleep 12;
 
 kostas sideChat "That'd be great!";
 
-sleep 5 + random 3;
+sleep 5;
 
 player sideChat "Roger. Delta One, out.";
 
-sleep 25 + random 4;
+sleep 25;
 
 player sideChat "Delta Actual, this is Delta One, come in, over.";
 
-sleep 10 + random 5;
+sleep 10;
 
 THE_CO sideChat "This is Actual. Go ahead, One.";
 
-sleep 6 + random 4;
+sleep 6;
 
 _vehTypeName = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "textPlural");
 
 player sideChat format ["Hello sir. I'm helping Kostas prepare the assault on Kavala tomorrow. We could really use the %1 parked at the heliport.",_vehTypeName];
 
-sleep 15 + random 5;
+sleep 15;
 
 THE_CO sideChat "I'm sorry, son, you're out of luck. Those vehicles don't have a drop of fuel in them, so they are pretty much useless at the moment.";
 
-sleep 14 + random 3;
+sleep 14;
 
 player sideChat "Dammit, I can't catch a break tonight. Allright, thanks Captain. Delta One, out.";
 
-sleep 10 + random 3;
+sleep 10;
 
 sleep 5;
 
 player sideChat "Kostas, come in please.";
 
-sleep 5 + random 3;
+sleep 5;
 
 kostas sideChat "Kostas here. What did your CO say?";
 
-sleep 5 + random 3;
+sleep 5;
 
 player sideChat "I'm afraid it's a no-go. Sorry sir.";
 
-sleep 5 + random 3;
+sleep 5;
 
 player sideChat "So what's the plan for tomorrow?";
 
-sleep 5 + random 3; 
+sleep 5; 
 
 kostas sideChat "We will attack Kavala from the east and south at the break of dawn.";
 
-sleep 8 + random 4;
+sleep 8;
 
 player sideChat "Sun behind us, huh? Smart.";
 
-sleep 7 + random 4;
+sleep 7;
 
 kostas sideChat "I have a couple of rifle squads standing by at the old quarry. You must meet up with them before we start the main assault.";
 
-sleep 15 + random 3;
+sleep 15;
 
 player sideChat "Willco.";
 
-sleep 4 + random 3;
+sleep 4;
 
 kostas sideChat "I'll give you some more details once you are at the staging area. Kostas out.";
 
-sleep 5 + random 4;
+sleep 5;
 
 
 TASK_MEET_AT_QUARRY = player createSimpleTask ["TASKID_MEET_AT_QUARRY"];
@@ -383,23 +383,23 @@ player allowDamage true;
 
 kostas sideChat "Lieutenant? I have a SITREP for you with the latest intel.";
 
-sleep 6 + random 4;
+sleep 6;
 
 player sideChat "Roger. Anything interesting happened just now?";
 
-sleep 7 + random 4;
+sleep 7;
 
 kostas sideChat "As a matter of fact, yes. CSAT have fortified the northern access roads into the city. I advise you to give that area a wide berth.";
 
-sleep 12 + random 3;
+sleep 12;
 
 player sideChat "Will do. Thanks for the update.";
 
-sleep 5 + random 3;
+sleep 5;
 
 player sideChat "One, Out.";
 
-sleep 2 + random 3;
+sleep 2;
 
 
 

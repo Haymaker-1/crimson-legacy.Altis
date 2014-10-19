@@ -90,7 +90,7 @@ TASK_CLEAR_STRAGGLERS_KAVALA setTaskState "Succeeded";
 
 ["TaskSucceeded", ["","Clear stragglers"]] call BIS_fnc_showNotification;
 
-sleep 10 + random 4;
+sleep 10;
 
 
 _powGroup = createGroup EAST;

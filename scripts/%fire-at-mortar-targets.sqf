@@ -1,5 +1,7 @@
 
 
+// file no longer used ? kavala-mortar-group-standby-for-firemission instead
+
 MORTAR_TARGETS = [];
 
 private "_targetAge";
@@ -32,7 +34,7 @@ while {true} do {
                     };
                 } forEach (_pos nearObjects ["Man", 1000]);
             };
-            sleep 30 + random 15;
+            sleep (30 + random 15);
         };
         
     } forEach MORTAR_TARGETS;

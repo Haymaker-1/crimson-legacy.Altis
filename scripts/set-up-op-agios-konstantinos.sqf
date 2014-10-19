@@ -1,29 +1,29 @@
 
-sleep 20 + random 30;
+sleep 20;
 
 player sideChat "Kostas, this is Delta One, come in please.";
-sleep 5+random 5;
+sleep 5;
 
 kostas sideChat "Hello, Lieutenant, Kostas here.";
-sleep 3+random 3;
+sleep 3;
 
 player sideChat "Agios Konstantinos and Negades are now under our control, sir.";
-sleep 6 + random 3;
+sleep 6;
 
 kostas sideChat "That is good news! I'll send some men to hold the area.";
-sleep 9 + random 3;
+sleep 9;
 
 player sideChat "What's next, sir?";
-sleep 4 + random 2;
+sleep 4;
 
 kostas sideChat "I want you to set up a CP overlooking the Agios area. In the meantime, I'll have my men collect some of the stuff left behind in your wake, so to speak. I'll check in with you in a couple of hours, OK?";
-sleep 10 + random 3;
+sleep 10;
 
 player sideChat "Sounds good to me, sir."; 
-sleep 4 + random 3;
+sleep 4;
 
 kostas sideChat "OK then. Kostas out.";
-sleep 3 + random 2;
+sleep 3;
 
 
 

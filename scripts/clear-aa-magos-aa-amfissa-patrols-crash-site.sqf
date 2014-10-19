@@ -35,10 +35,10 @@ player allowDamage true;
 
 sleep 5;
 kostas sideChat "Hello, lieutenant?";
-sleep 4+random 3;
+sleep 4;
 
 player sideChat "Hello, sir.";
-sleep 3+ random 3;
+sleep 3;
 
 
 _sites = [CRASH_SITE_IS_CLEAR,AA_MAGOS_IS_CLEAR,AA_AMFISSA_IS_CLEAR];
@@ -53,7 +53,7 @@ _n = 0;
 if (_n >1) then
 {
     kostas sideChat "There are a couple of things I want you to do.";
-    sleep 5 + random 3;
+    sleep 5;
 };
 
 _words = ["First, ","Second, ", "Third, "];
@@ -69,11 +69,11 @@ if (!CRASH_SITE_IS_CLEAR) then
     {
         kostas sideChat (_words select _wordsIndex)+"I have reports of enemy footmobiles in the woods near the crash site. Locate and eliminate them.";
     };
-    sleep 7 + random 3;
+    sleep 7;
     _wordsIndex = _wordsIndex + 1;
     
     player sideChat "OK, I'm on it.";
-    sleep 3+ random 2;
+    sleep 3;
 
 };
 
@@ -87,12 +87,12 @@ if (!AA_MAGOS_IS_CLEAR) then
     {
         kostas sideChat (_words select _wordsIndex)+"the Anti-Air unit overlooking Kavala needs to go.";
     };
-    sleep 5 + random 3;
+    sleep 5;
     _wordsIndex = _wordsIndex + 1;
     _needAT = true;
     
     player sideChat "Can do, sir.";
-    sleep 2+ random 2;
+    sleep 2;
     
 };
 
@@ -106,12 +106,12 @@ if (!AA_AMFISSA_IS_CLEAR) then
     {
         kostas sideChat (_words select _wordsIndex)+"the Anti-Air unit near Amfissa must be eliminated.";
     };
-    sleep 5 + random 3;
+    sleep 5;
     _wordsIndex = _wordsIndex + 1;
     _needAT = true;
     
     player sideChat "Eliminate the AA, roger that, sir.";
-    sleep 5+random 2;
+    sleep 5;
     
 };
 
@@ -119,17 +119,17 @@ if (!AA_AMFISSA_IS_CLEAR) then
 "MARKER_SHED_AGIOS" setMarkerColor "ColorBLACK";
 "MARKER_SHED_AGIOS" setMarkerType "mil_dot";
 kostas sideChat "The spoils of war are being collected at a barn in Agios. I've updated your map with the location.";
-sleep 5 + random 3;
+sleep 5;
 
 if (_needAT) then 
 {
     kostas sideChat "You may want to check it out before engaging the AA.";
-    sleep 3 + random 3;
+    sleep 3;
 };
 
 
 kostas sideChat "Good luck. Kostas out.";
-sleep 5 + random 3;
+sleep 5;
 
 
 
@@ -143,7 +143,7 @@ if (!CRASH_SITE_IS_CLEAR) then
     ["TaskCreated", ["","Clear crash site"]] call BIS_fnc_showNotification;
     TASK_CLEAR_CRASH_SITE_HAS_BEEN_ASSIGNED = true;
     
-    sleep 6 + random 4;
+    sleep 6;
     
     null = [] spawn {
         
@@ -164,7 +164,7 @@ if (!AA_MAGOS_IS_CLEAR) then
     ["TaskCreated", ["","Neutralize AA Magos"]] call BIS_fnc_showNotification;
     TASK_CLEAR_AA_MAGOS_HAS_BEEN_ASSIGNED = true;
     
-    sleep 6 + random 4;
+    sleep 6;
     
     null = [] spawn {
         
@@ -185,7 +185,7 @@ if (!AA_AMFISSA_IS_CLEAR) then
     ["TaskCreated", ["","Neutralize AA Amfissa"]] call BIS_fnc_showNotification;
     TASK_CLEAR_AA_AMFISSA_HAS_BEEN_ASSIGNED = true;
     
-    sleep 6 + random 4;
+    sleep 6;
     
     null = [] spawn {
         
@@ -204,23 +204,23 @@ waitUntil{sleep 5;AA_MAGOS_IS_CLEAR};
 waitUntil{sleep 5;AA_AMFISSA_IS_CLEAR};
 
 
-sleep 10+ random 10;
+sleep 10;
 
 player sideChat "Hey Kostas, you there?";
 
-sleep 6 + random 3;
+sleep 6;
 
 kostas sideChat "Yes, I'm listening.";
 
-sleep 5 +random 2;
+sleep 5;
 
 player sideChat "We are mission complete. Any chance of some R & R? It's been a long day, you know.";
 
-sleep 9 + random 3;
+sleep 9;
 
 kostas sideChat "Good work! You have earned a few hours respite. Get back to the CP and rest up. I've got something special planned for later.";
 
-sleep 12+ random 3;
+sleep 12;
 
 
 
@@ -258,31 +258,31 @@ player allowDamage true;
 
 
 
-sleep 10+ random 4;
+sleep 10;
 
 kostas sideChat "Delta One, this is Kostas, come in please.";
 
-sleep 5 + random 2;
+sleep 5;
 
 player sideChat "This is One. What's up, Kostas?";
 
-sleep 4 + random 3;
+sleep 4;
 
 kostas sideChat "I hope you've enjoyed a couple of hours rest. Tonight, you're on a sabotage mission in preparation for the main assault on Kavala later.";
 
-sleep 7 + random 4;
+sleep 7;
 
 player sideChat "Does it involve blowing stuff up?";
 
-sleep 6 + random 4;
+sleep 6;
 
 kostas sideChat "You bet!";
 
-sleep 4+ random 3;
+sleep 4;
 
 player sideChat "Allright then, what's the plan?";
 
-sleep 4+ random 2;
+sleep 4;
 
 kostas sideChat "Tonight's objective is to blow up any vehicles present in the motor pool in the center of Kavala. Be advised that the objective is heavily guarded though.";
 null = [] execVM "scripts\populate-motor-pool-kavala.sqf";
@@ -290,47 +290,47 @@ null = [] execVM "scripts\spawn-fireteams-kavala.sqf";
 null = [] execVM "scripts\spawn-kavala-marids.sqf";
 null = [] execVM "scripts\spawn-kavala-mortar-group.sqf";
 
-sleep 11 + random 4;
+sleep 11;
 
 kostas sideChat "We know there are at least two APCs, many footmobiles, as well as static machine guns. I've updated your map with what little intel we got on them.";
 null = [] execVM "scripts\spawn-kavala-static-defenses.sqf";
-sleep 16 + random 4;
+sleep 16;
 
 kostas sideChat "I planned a diversion to deal with the APCs, but watch out for those machine guns, allright?";
-sleep 10 + random 4;
+sleep 10;
 
 player sideChat "Amen to that, nobody likes close encounters of the .50 kind. So, what's the diversion?";
-sleep 8 + random 4;
+sleep 8;
 
 kostas sideChat "We will first attack the power station just north of Kavala. It should be lightly guarded.";
 null = [] execVM "scripts\spawn-fireteam-power-plant.sqf";
 null = [] execVM "scripts\spawn-transformer-kavala.sqf";
 
-sleep 10 + random 4;
+sleep 10;
 
 kostas sideChat "Once the power station is under our control, you blow up the transformer, causing a blackout in Kavala.";
 
-sleep 10 + random 4;
+sleep 10;
 
 kostas sideChat "While you rig the transformer, I'll have a guy place IEDs on the access routes to the power station.";
 
-sleep 8 + random 4;
+sleep 8;
 
 kostas sideChat "I'm hoping the blackout will lure the two APCs from Kavala.";
 
-sleep 10 + random 4;
+sleep 10;
 
 kostas sideChat "With the APCs engaged, you are free to infiltrate Kavala, find the motor pool and rig whatever vehicles are present. There's a crate in the barn with the other stuff, just take whatever you need to cause as much mayhem as possible.";
 
-sleep 20 + random 5;
+sleep 20;
 
 kostas sideChat "So, take over the power station, rig the transformer, then use the cover of darkness to infiltrate Kavala.";
 
-sleep 10 + random 4;
+sleep 10;
 
 player sideChat "And blow up some more stuff. Works for me!";
 
-sleep 8 + random 2;
+sleep 8;
 
 kostas sideChat "Good luck, soldier! You're gonna need it. Kostas out.";
 

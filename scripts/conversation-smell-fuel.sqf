@@ -91,11 +91,11 @@ sleep 4;
 
 player groupChat "O shit, we're losing fuel!";
 
-sleep 4 + random 3;
+sleep 4;
 
 sf_teamleader groupChat "We can make it to the rebel camp!";
 
-sleep 5 + random 3;
+sleep 5;
 
 sf_teamleader groupChat "Just make sure to stay close to the ground to avoid the AA locking on to us.";
 

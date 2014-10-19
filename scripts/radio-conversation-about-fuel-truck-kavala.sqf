@@ -1,23 +1,23 @@
 
 player sideChat "Wow, a fuel truck!";
 
-sleep 5 + random 3;
+sleep 5;
 
 player sideChat "Delta One for Kostas, come in.";
 
-sleep 4 + random 4;
+sleep 4;
 
 kostas sideChat "Go ahead, One.";
 
-sleep 4 + random 4;
+sleep 4;
 
 player sideChat "There's a fuel truck in the motor pool. I say again, I've located a fuel truck in the motor pool!";
 
-sleep 12 + random 4;
+sleep 12;
 
 kostas sideChat "That's huge! But does it have any fuel in it?";
 
-sleep 4 + random 3;
+sleep 4;
 
 kavalaFuelTruck lock false;
 
@@ -29,7 +29,7 @@ null = [kavalaFuelTruck] execVM "scripts\monitor-kavala-fuel-truck-status.sqf";
 
 player sideChat "It is full! I'm gonna try sneak this baby out of here.";
 
-sleep 5 + random 4;
+sleep 5;
 
 kostas sideChat "OK, we can hide the truck at Christos' house in Kore. I'll notify him immediately.";
 

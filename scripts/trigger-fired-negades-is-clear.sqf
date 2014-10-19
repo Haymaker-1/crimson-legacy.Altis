@@ -1,4 +1,4 @@
-sleep 180 + random 120;
+sleep 180;
 
 NEGADES_IS_CLEAR = true;
 TASK_CLEAR_NEGADES setTaskState "Succeeded";

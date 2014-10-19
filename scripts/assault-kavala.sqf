@@ -7,20 +7,20 @@ TASK_MEET_AT_QUARRY setTaskState "Succeeded";
 
 player sideChat "Delta One for Kostas, we are in position at the quarry.";
 
-sleep 7 + random 3;
+sleep 7;
 
 kostas sideChat "Allright, this is it then. There are four squads, Alpha through Delta. Each has its own sector to secure.";
 
-sleep 12 + random 4;
+sleep 12;
 
 
 if (_attackOnFoot) then {
     kostas sideChat "Use your radio to control when each squad moves into position.";
-    sleep 7 + random 4;
+    sleep 7;
 }
 else {
     kostas sideChat "Use your radio to control when each squad moves into position. I suggest you use the Striders' optics and range advantage to provide fire support, but it is your call.";
-    sleep 14 + random 4;
+    sleep 14;
 };
 
 

@@ -7,36 +7,36 @@
 
 
 player sideChat "Delta Actual, this is Delta One, come in please.";
-sleep 6 + random 4;
+sleep 6;
 
 THE_CO sideChat "Go ahead, One.";
-sleep 3+random 2;
+sleep 3;
 
 player sideChat "Good news, Captain! We managed to liberate the pilot! He's with me now.";
-sleep 6 + random 3;
+sleep 6;
 
 THE_CO sideChat "Outstanding, One!";
-sleep 4 + random 2;
+sleep 4;
 
 player sideChat "What do you want me to do with him, sir? Is there some kind of egress plan?";
-sleep 8 + random 3;
+sleep 8;
 
 THE_CO sideChat "Absolutely! While you got to run around and shoot guns, I've been busy arranging transport.";
-sleep 10 + random 3;
+sleep 10;
 
 THE_CO sideChat "One of our boats is standing by off of the coast of Agios Konstantinos. Their callsign is Noah Three."; 
-sleep 9 + random 2;
+sleep 9;
 
 "MARKER_EGRESS_ALPHA" setMarkerType "mil_dot";
 
 THE_CO sideChat "Your task is to escort the pilot to the boat. I've updated your map with the arranged pickup location.";
-sleep 9 + random 3;
+sleep 9;
 
 THE_CO sideChat "Be careful though! The western coast has a strong CSAT presence.";
-sleep 5 + random 3;
+sleep 5;
 
 THE_CO sideChat "Delta Actual, out.";
-sleep 5 + random 3;
+sleep 5;
 
 
 // add task

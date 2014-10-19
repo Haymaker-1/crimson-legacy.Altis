@@ -19,15 +19,15 @@ waitUntil{sleep 5; "DemoCharge_Remote_Ammo" in [typeOf ((attachedObjects transfo
 
 player sideChat "I just placed the explosives, sir.";
 
-sleep 5 + random 2; 
+sleep 5; 
 
 kostas sideChat "Just remember these babies have 5-minute fuses, allright? Kostas out.";
 
-sleep 6 + random 4;
+sleep 6;
 
 
 
-sleep 10 + random 20;
+sleep 10;
 
 TASK_DESTROY_VEHICLES_KAVALA = player createSimpleTask ["TASKID_DESTROY_VEHICLES_KAVALA"];
 TASK_DESTROY_VEHICLES_KAVALA setSimpleTaskDescription ["Use the cover of darkness to infiltrate Kavala. Rig the vehicles in the <marker name='MARKER_MOTOR_POOL'>motorpool</marker> with explosives. Use your judgement to prioritize targets if there are too many vehicles to destroy them all.","Destroy vehicles","Destroy vehicles"];
