@@ -76,6 +76,15 @@ class CfgDebriefing
 		picture = "";
 		pictureColor[] = {0.3,0.3,0.3,1};
 	};
+    class End6
+	{
+		title = "MISSION FAILED";
+		subtitle = "You died.";
+		description = "Your enemies are dancing in the streets";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.3,0.3,0.3,1};
+	};
     
 };
 

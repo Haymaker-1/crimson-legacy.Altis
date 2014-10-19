@@ -82,7 +82,7 @@ null = [] execVM "scripts\endmission-pilot-died.sqf";
 null = [] execVM "scripts\endmission-helicopter-damaged.sqf";
 null = [] execVM "scripts\endmission-helicopter-out-of-fuel.sqf";
 null = [] execVM "scripts\endmission-helicopter-rebelcamp.sqf";
-//null = [] execVM "scripts\endmission-epic-win.sqf";
+null = [] execVM "scripts\endmission-player-died.sqf";
 
 null = [] execVM "scripts\spawn-helicopter.sqf";
 
