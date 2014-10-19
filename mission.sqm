@@ -2565,13 +2565,13 @@ class Mission
 		};
 		class Item116
 		{
-			position[]={4167.9023,32.96986,17660.285};
+			position[]={4214.1689,39.78484,17687.756};
 			name="MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS_3";
 			type="Empty";
 		};
 		class Item117
 		{
-			position[]={4212.688,61.648781,17348.104};
+			position[]={4334.9272,70.625313,17411.736};
 			name="MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS_4";
 			type="Empty";
 		};
