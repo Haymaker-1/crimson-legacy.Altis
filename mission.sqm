@@ -38,7 +38,8 @@ class Mission
 		"a3_characters_f",
 		"a3_soft_f_bootcamp_quadbike",
 		"A3_Soft_F_MRAP_03",
-		"A3_Boat_F_Boat_Armed_01"
+		"A3_Boat_F_Boat_Armed_01",
+		"a3_soft_f_offroad_01"
 	};
 	addOnsAuto[]=
 	{
@@ -51,6 +52,7 @@ class Mission
 		"A3_Soft_F_MRAP_02",
 		"A3_Armor_F_T100K",
 		"A3_Soft_F_Gamma_Offroad",
+		"a3_soft_f_offroad_01",
 		"A3_Characters_F_Gamma",
 		"A3_Characters_F_Civil",
 		"A3_Boat_F_Boat_Armed_01",
@@ -65,8 +67,7 @@ class Mission
 		"A3_Structures_F_EPB_Civ_Camping",
 		"A3_Structures_F_EPB_Civ_Accessories",
 		"A3_Soft_F_Gamma_Quadbike",
-		"a3_soft_f_bootcamp_quadbike",
-		"A3_Soft_F_Quadbike",
+		"a3_soft_f_quadbike",
 		"A3_Structures_F_Mil_Shelters",
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Structures_F_EPA_Civ_Camping",
