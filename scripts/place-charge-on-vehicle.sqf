@@ -36,8 +36,11 @@ while {_ticking} do {
 
     if (_nMinutes>=_nMinutesBoom) then 
     {   
-        sleep _addSeconds;
-        _ticking = false;
+        _secondsHand = (daytime * 3600) % 60; 
+        if (_secondsHand>=_addSeconds) then 
+        {   
+            _ticking = false;
+        };
     };
 };
 
