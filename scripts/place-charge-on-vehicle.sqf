@@ -32,7 +32,7 @@ while {_ticking} do {
     
     _dateNow = dateToNumber date;
 
-    _nMinutes = (_dateNow - _dateOfPlacement) * 365 * 24 * 60;
+    _nMinutes = (_dateNow - _dateOfPlacement) * 365 * 24 * 60 + 1;
 
     if (_nMinutes>=_nMinutesBoom) then 
     {   
