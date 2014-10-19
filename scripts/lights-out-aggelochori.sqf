@@ -1,9 +1,10 @@
 
 
+_damageValue = _this select 0;
 
 LIGHTS_AGGELOCHORI_SHOULD_BE_OFF = true;
 
-null = [1.00,0.00] execVM "scripts\lightswitch-aggelochori.sqf";
+null = [_damageValue,0.00] execVM "scripts\lightswitch-aggelochori.sqf";
 
 null = [] execVM "scripts\monitor-light-status-kavala.sqf";
 
@@ -13,7 +14,7 @@ null = [] execVM "scripts\monitor-light-status-kavala.sqf";
 } forEach [MARID_KAVALA_1_GROUP, MARID_KAVALA_2_GROUP];
 
 
-sleep 4*60 + random 60;
+sleep (4*60 + random 60);
 
 MARID_KAVALA_1_GROUP addWaypoint [getMarkerPos "MARKER_MARID_KAVALA_1_WP_1",1];
 [MARID_KAVALA_1_GROUP,1] setWaypointType "MOVE";
