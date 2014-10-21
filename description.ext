@@ -114,7 +114,12 @@ class CfgFunctions
 };
 
 
-
+class myMissionConfig {
+    class mySetup {
+        SHOW_CHAPTER_TITLES = true;
+        GPS_TRACKING_ENABLED = true;
+    };
+};
 
 
 doneKeys[] = {"missionCompletedKey"};

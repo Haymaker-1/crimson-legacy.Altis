@@ -53,7 +53,7 @@ TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED = false;
 EVERYBODY_IS_DONE_TALKING = true;
 TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED = false;
 
-GPS_TRACKING_IS_ON = true;
+GPS_TRACKING_IS_ON = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "GPS_TRACKING_ENABLED") == 1;
 player addAction ["Disable GPS tracking","scripts\toggle-gpstracking.sqf",nil,0,false];
 
 RANDOM_PATROL_GROUP_HAS_ARRIVED = [];
@@ -122,3 +122,4 @@ shedAgios setDir 44.5;
 (getMarkerPos "MARKER_HELIPORT" nearestObject 1240643) setDamage 1;
 
 
+SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
