@@ -57,6 +57,14 @@ TASK_SEIZE_SRIFLE setTaskState "Created";
 ["TaskCreated", ["","Seize rifle"]] call BIS_fnc_showNotification;
 TASK_SEIZE_RIFLE_HAS_BEEN_ASSIGNED = true;
 
+
+sleep 10;
+
+if (SHOW_CHAPTER_TITLES) then {
+    null = ["Street sweepers"] execVM "scripts\show-chapter-title.sqf";
+};
+
+
 waitUntil{sleep 5;AGIOS_KONSTANTINOS_IS_CLEAR AND NEGADES_IS_CLEAR};
 
 null = [] execVM "scripts\spawn-blufor-fireteams-agios-konstantinos.sqf";

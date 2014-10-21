@@ -129,7 +129,13 @@ if (_needAT) then
 
 
 kostas sideChat "Good luck. Kostas out.";
-sleep 5;
+sleep 10;
+
+
+
+if (SHOW_CHAPTER_TITLES) then {
+    null = ["Cleaning house"] execVM "scripts\show-chapter-title.sqf";
+};
 
 
 
@@ -334,6 +340,7 @@ sleep 8;
 
 kostas sideChat "Good luck, soldier! You're gonna need it. Kostas out.";
 
+sleep 10;
 
 _nSeconds = (19.5-daytime)*3600;
 if (_nSeconds>600) then {
@@ -341,3 +348,10 @@ if (_nSeconds>600) then {
     _nSeconds setRain 0;
     _nSeconds setOvercast 0.75;
 };
+
+
+
+if (SHOW_CHAPTER_TITLES) then {
+    null = ["Nightstalker"] execVM "scripts\show-chapter-title.sqf";
+};
+

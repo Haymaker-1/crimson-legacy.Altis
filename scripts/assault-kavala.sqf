@@ -128,3 +128,10 @@ TASK_ASSAULT_KAVALA_HAS_BEEN_ASSIGNED = true;
 null = [] execVM "scripts\count-remaining-units-kavala.sqf";
 
 
+
+if (SHOW_CHAPTER_TITLES) then {
+    null = ["House to house"] execVM "scripts\show-chapter-title.sqf";
+};
+
+
+

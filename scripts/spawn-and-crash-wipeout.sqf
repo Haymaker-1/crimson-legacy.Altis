@@ -76,7 +76,13 @@ player setCurrentTask TASK_WAIT_AT_NABISCO;
 
 waitUntil {sleep 1; (taskState TASK_WAIT_AT_NABISCO) == "Succeeded"};
 
-sleep (30+random 10);
+sleep 10;
+
+if (SHOW_CHAPTER_TITLES) then {
+    null = ["M.I.A"] execVM "scripts\show-chapter-title.sqf";
+};
+
+sleep (20+random 10);
 
 THE_CO sideChat "Delta One, come in, over.";
 sleep (2+random 2); 

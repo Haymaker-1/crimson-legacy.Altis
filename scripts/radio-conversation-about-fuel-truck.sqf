@@ -83,3 +83,11 @@ player setCurrentTask TASK_LOAD_FUEL;
 TASK_LOAD_FUEL setTaskState "Assigned";
 ["TaskAssigned", ["","Refuel"]] call BIS_fnc_showNotification;
 TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED = true;
+
+
+sleep 10;
+
+if (SHOW_CHAPTER_TITLES) then {
+    null = ["Flyboys"] execVM "scripts\show-chapter-title.sqf";
+};
+
