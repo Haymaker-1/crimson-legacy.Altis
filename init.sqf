@@ -123,3 +123,8 @@ shedAgios setDir 44.5;
 
 
 SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
+
+//player createDiarySubject ["myPage","Technical notes"];
+
+
+null = [] execVM "scripts\create-bases.sqf";
