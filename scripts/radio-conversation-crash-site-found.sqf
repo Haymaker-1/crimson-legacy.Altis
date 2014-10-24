@@ -3,8 +3,8 @@ sleep (2+random 2);
 THE_CO sideChat "Go ahead, Delta One.";
 sleep (2+random 2);
 
-TASK_FIND_CRASH_SITE setTaskState "Succeeded";
-["TaskSucceeded", ["","Find crash site"]] call BIS_fnc_showNotification;
+//TASK_FIND_CRASH_SITE setTaskState "Succeeded";
+//["TaskSucceeded", ["","Find crash site"]] call BIS_fnc_showNotification;
 
 player sideChat "Captain, we found the crash site.";
 sleep (3+random 2);

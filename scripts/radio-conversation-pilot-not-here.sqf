@@ -1,4 +1,8 @@
-sleep (5+random 5);
+
+TASK_FIND_CRASH_SITE setTaskState "Succeeded";
+["TaskSucceeded", ["","Find crash site"]] call BIS_fnc_showNotification;
+
+sleep (15+random 5);
 player sideChat "The pilot is not here, sir.";
 sleep (2+random 2);
 THE_CO sideChat "Dammit! Keep looking!";
