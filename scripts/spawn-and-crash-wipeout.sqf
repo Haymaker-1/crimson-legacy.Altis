@@ -76,11 +76,6 @@ player setCurrentTask TASK_WAIT_AT_NABISCO;
 
 waitUntil {sleep 1; (taskState TASK_WAIT_AT_NABISCO) == "Succeeded"};
 
-sleep 10;
-
-if (SHOW_CHAPTER_TITLES) then {
-    null = ["M.I.A"] execVM "scripts\show-chapter-title.sqf";
-};
 
 sleep (20+random 10);
 
@@ -163,5 +158,11 @@ TRIGGER_CRASH_SITE_FOUND triggerAttachVehicle [player];
 TRIGGER_CRASH_SITE_FOUND setTriggerActivation["VEHICLE","PRESENT",false];
 TRIGGER_CRASH_SITE_FOUND setTriggerStatements["this","null = [] execVM 'scripts\radio-conversation-crash-site-found.sqf'",""]; 
 
+
+sleep 15;
+
+if (SHOW_CHAPTER_TITLES) then {
+    null = ["M.I.A"] execVM "scripts\show-chapter-title.sqf";
+};
 
 
