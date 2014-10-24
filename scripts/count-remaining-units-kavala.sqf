@@ -86,6 +86,8 @@ while {!_noVehiclesLeftInKavala} do {
 
 kostas sideChat "Yes! You did it! The remaining troops surrendered!";
 
+sleep 10;
+
 TASK_CLEAR_STRAGGLERS_KAVALA setTaskState "Succeeded";
 
 ["TaskSucceeded", ["","Clear stragglers"]] call BIS_fnc_showNotification;
@@ -164,5 +166,16 @@ deleteMarker "MARKER_DELTA_SECTOR_KAVALA";
 deleteMarker "MARKER_DELTA_SECTOR_KAVALA_TEXT";
 
 
+null = [] spawn {
+    cutText ["Thanks for playing","PLAIN",5,true];
 
+    sleep 10;
+
+    ENDMISSION_REASON_THROWN = true;
+    _endName = "Win1";
+    _isVictory = true;
+    _fadeType = true;
+
+    [_endName,_isVictory,_fadeType] spawn BIS_fnc_endMission;
+};
 
