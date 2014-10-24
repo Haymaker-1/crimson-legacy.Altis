@@ -43,7 +43,7 @@ _data = [
     _veh setVariable ["BIS_enableRandomization", false];
     _veh setDir _dir;
     if (_type isKindOf "Car") then {
-        _veh setFuel (0.1+random 0.3);
+        _veh setFuel (0.01+random 0.05);
     };
 
 } forEach _data;
