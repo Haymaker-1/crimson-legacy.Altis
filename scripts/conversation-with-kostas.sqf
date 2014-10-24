@@ -77,7 +77,7 @@ _posRadioFiddle = suitcase3 modelToWorld [0,-1,0];
 SUITCASES_LOADED = false;
 
 _wp = (group kostas) addWaypoint [_posRadioFiddle,0];
-_wp setWaypointCompletionRadius 0;
+_wp setWaypointCompletionRadius 0.4;
  
 
 sleep 7;
@@ -140,7 +140,6 @@ kostas enableAI "MOVE";
 kostas enableAI "ANIM";
 deleteVehicle christos;
 
-// borrow some of kostas' men
 sleep (2+random 2);
 kostas sideChat "So it looks like the pilot is being held just west of Syrta.";
 sleep (3+random 2);
