@@ -29,7 +29,18 @@ _data = [
             ["Land_Cargo_Patrol_V3_F",[4213.22,17385.7,0.00178528],303.459],
             ["O_HMG_01_high_F",[4200.02,17378.2,0.0019455],295.168],
             ["O_G_Quadbike_01_F",[4229.41,17387.3,0.0014267],2.88236],
-            ["O_G_Quadbike_01_F",[4220.57,17382.6,0.00117493],301.728]
+            ["O_G_Quadbike_01_F",[4220.57,17382.6,0.00117493],301.728],
+            ["Land_HBarrier_5_F", [4215.31,17402.1,-0.20],155.0],
+            ["Land_HBarrier_5_F",[4203.47,17396,-0.22],116.0],
+            ["Land_HBarrier_5_F",[4192.27,17387.3,-0.23],110.0],
+            ["Land_HBarrier_5_F",[4187.89,17373.8,-0.20],90.0],
+            ["Land_HBarrier_5_F",[4223.48,17371.2,-0.22],330.0],
+            ["Land_HBarrier_5_F",[4240.34,17384.3,-0.22],332.0],
+            ["Land_HBarrier_5_F",[4225.64,17395,-0.14],226.769],
+            ["Land_BagBunker_Small_F",[4245.5,17419.9,0.00130463],43.1434],
+            ["Land_HBarrier_Big_F",[4251.31,17425.8,-0.180054],223.09],
+            ["Land_HBarrier_Big_F",[4243.36,17434.4,-0.197601],229.696],
+            ["O_HMG_01_high_F",[4238.92,17407.6,0.00150299],151.125]
 ];
 
 
@@ -41,7 +52,12 @@ _data = [
     
     _veh = _type createVehicle _pos;
     _veh setVariable ["BIS_enableRandomization", false];
+    if (_type != "Land_Cargo_Patrol_V3_F") then {
+        _normal = surfaceNormal _pos;
+        _veh setVectorUp _normal;
+    };
     _veh setDir _dir;
+    _veh setPos _pos;
     if (_type isKindOf "Car") then {
         _veh setFuel (0.01+random 0.05);
     };
