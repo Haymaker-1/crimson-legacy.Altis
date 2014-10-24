@@ -19,6 +19,7 @@ _perimeter = ["MARKER_PERIMETER_ODS_OP_AGIOS"] call HAYMAKER_fnc_constructPerime
     };
 } forEach units group player;
 
+TASK_SEIZE_SRIFLE_DONE = true;
 null = [] execVM "scripts\scavenge-agios-konstantinos.sqf";
 null = [] execVM "scripts\spawn-guer-fireteam-warehouse-agios.sqf";
 
@@ -248,13 +249,16 @@ sleep 5;
 _DateStamp = date;
 setDate [_DateStamp select 0, _DateStamp select 1, _DateStamp select 2, 18, 45];
 
-"FirePlace_burning_F" createVehicle (getMarkerPos "MARKER_FIRE_PLACE_CP_AGIOS");
+//"FirePlace_burning_F" createVehicle (getMarkerPos "MARKER_FIRE_PLACE_CP_AGIOS");
+"Land_Camping_Light_F" createVehicle (getMarkerPos "MARKER_FIRE_PLACE_CP_AGIOS");
+
 
 {
     _x setPos getMarkerPos "MARKER_OP_AGIOS_KONSTANTINOS";
 } forEach units group player;
 
-null = [3] execVM "scripts\spawn-barn-lights-agios-konstantinos.sqf";
+_nLights = 3 + (random 2);
+null = [_nLights] execVM "scripts\spawn-barn-lights-agios-konstantinos.sqf";
 
 sleep 6;
 
