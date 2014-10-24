@@ -1,7 +1,7 @@
 
 author = "Haymaker-1";
 OnloadName = "CRIMSON LEGACY";
-OnLoadMission = "Help the Resistance gain the upper hand"
+OnLoadMission = "<t size='0.75'>Help the Resistance gain the upper hand in their fight against CSAT.</t>"
 loadScreen = "images\mission-wait-08.paa"; // Preview picture
 OnLoadIntroTime = True;
 OnLoadMissionTime = True;
