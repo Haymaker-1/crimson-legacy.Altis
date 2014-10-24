@@ -20,7 +20,7 @@ if (_dist > 100) then
 }
 else
 {
-    player sideChat "We are ready for pickup at EGRESS ALPHA.";
+    player sideChat "We are ready for pickup at egress Alpha.";
 };
 sleep 5;
 
@@ -95,7 +95,7 @@ sleep 4;
 THE_CO sideChat "I want you to fall back to the rebel camp. See if you can be of any assistance to Commander Kostas.";
 sleep 7;
 
-player sideChat "Wilco.";
+player sideChat "Willco.";
 sleep 2;
 
 THE_CO sideChat "Catch you later, One. Delta Actual out.";
