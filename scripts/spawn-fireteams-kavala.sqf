@@ -34,20 +34,21 @@ for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROL
     _iRandomPatrol = _i;
 
     _group = createGroup east;
-    _soldier = "O_Soldier_TL_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"Sergeant"];
-    _soldier = "O_Soldier_GL_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"Sergeant"];
-    _soldier = "O_Soldier_AR_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"Sergeant"];
+    _soldier = "O_Soldier_TL_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"SERGEANT"];
+    _soldier = "O_Soldier_GL_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"PRIVATE"];
+    _soldier = "O_Soldier_AR_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"PRIVATE"];
+    _soldier = "O_Soldier_LAT_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"PRIVATE"];
+    
 
     for "_j" from 0 to 3 do
     {
         _fighterType = ["O_Soldier_lite_F",
                         "O_medic_F",
-                        "O_Soldier_A_F",
-                        "O_Soldier_LAT_F"] call BIS_fnc_selectRandom;
+                        "O_Soldier_A_F"] call BIS_fnc_selectRandom;
 
         if (random 1.0 < 0.25) then
         {
-            _soldier = _fighterType createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"Sergeant"];
+            _soldier = _fighterType createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"PRIVATE"];
         };
     };
     
