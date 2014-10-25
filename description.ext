@@ -6,6 +6,14 @@ loadScreen = "images\mission-wait-08.paa"; // Preview picture
 OnLoadIntroTime = True;
 OnLoadMissionTime = True;
 
+briefing = 1;
+debriefing = 1;
+
+class Header
+{
+	gameType = Unknown; // SP mission type
+};
+
 class CfgSounds
 {
 	sounds[] = {};
@@ -77,16 +85,15 @@ class CfgDebriefing
 		picture = "";
 		pictureColor[] = {0.3,0.3,0.3,1};
 	};
-    class End6
+    class loser
 	{
 		title = "MISSION FAILED";
 		subtitle = "You died.";
-		description = "Your enemies are dancing in the streets";
+       	description = "You were killed in the line of duty. Your enemies are dancing in the streets.";        
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0.3,0.3,0.3,1};
 	};
-    
 };
 
 
@@ -124,4 +131,6 @@ class myMissionConfig {
 
 
 doneKeys[] = {"missionCompletedKey"};
+
+
 
