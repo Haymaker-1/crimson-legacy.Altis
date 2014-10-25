@@ -124,7 +124,10 @@ shedAgios setDir 44.5;
 
 SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
 
-//player createDiarySubject ["myPage","Technical notes"];
+player createDiarySubject ["techNotes","Technical notes"];
+
+player createDiaryRecord ["techNotes",["Version control","Go to https://github.com/Haymaker-1/crimson-legacy.Altis/ for the mission source files."]];
+
 
 
 null = [] execVM "scripts\create-bases.sqf";
