@@ -379,6 +379,16 @@ kavalaRifleSquadDelta = createGroup west;
 
 
 
+_men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
+{
+   if (side _x == EAST) then {
+        null = [_x,300] execVM "scripts\look-out-for-mortar-targets-quarry-groups.sqf";
+   };
+} forEach _men;
+
+
+
+
 5 fadeSound 1;
 cutText ["A few hours later...","BLACK IN",8,false];
 sleep 5;
