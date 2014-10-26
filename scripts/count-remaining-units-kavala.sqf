@@ -167,9 +167,9 @@ deleteMarker "MARKER_DELTA_SECTOR_KAVALA_TEXT";
 
 
 null = [] spawn {
-    cutText ["Thanks for playing","PLAIN",5,true];
+    cutText ["Thanks for playing","PLAIN",10,true];
 
-    sleep 10;
+    sleep 20;
 
     ENDMISSION_REASON_THROWN = true;
     _endName = "Win1";
