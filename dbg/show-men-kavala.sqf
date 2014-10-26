@@ -15,14 +15,16 @@ while {SHOW_MEN_KAVALA} do {
         _markerName setMarkerPos (getPos _x);
         _markerName setMarkerSize [0.5,0.5];
 
-        if (side _x == EAST) then {
-            _markerName setMarkerColor "ColorEAST";
-        };
-        if (side _x == WEST) then {
-            _markerName setMarkerColor "ColorWEST";
-        };
-        if (side _x == CIVILIAN) then {
-            _markerName setMarkerColor "ColorCIV";
+        if (alive _x) then {
+            if (side _x == EAST) then {
+                _markerName setMarkerColor "ColorEAST";
+            };
+            if (side _x == WEST) then {
+                _markerName setMarkerColor "ColorWEST";
+            };
+            if (side _x == CIVILIAN) then {
+                _markerName setMarkerColor "ColorCIV";
+            };
         };
 
     } forEach _men;
