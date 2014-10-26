@@ -26,7 +26,9 @@ while {true} do {
                     _pos = [(_x select 1 select 0) - _spread/2 + random _spread, (_x select 1 select 1) - _spread/2 + random _spread, 20];
                     
                     mortarGunner doArtilleryFire [_pos,"8Rnd_82mm_Mo_Flare_white",1];  
-                    mortar1 addMagazine ["8Rnd_82mm_Mo_Flare_white",1];
+                    if (daytime < 5.75 OR daytime > 20.0) then {
+                        mortar1 addMagazine ["8Rnd_82mm_Mo_Flare_white",1];
+                    };
                     sleep 2;
                 };
             };
