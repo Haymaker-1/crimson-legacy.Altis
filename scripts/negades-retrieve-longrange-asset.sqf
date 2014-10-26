@@ -63,6 +63,8 @@ sleep 10;
 if (SHOW_CHAPTER_TITLES) then {
     null = ["Street sweepers"] execVM "scripts\show-chapter-title.sqf";
 };
+sleep 10;
+saveGame;
 
 
 waitUntil{sleep 5;AGIOS_KONSTANTINOS_IS_CLEAR AND NEGADES_IS_CLEAR};
