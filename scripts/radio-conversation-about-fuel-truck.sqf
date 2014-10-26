@@ -90,4 +90,6 @@ sleep 10;
 if (SHOW_CHAPTER_TITLES) then {
     null = ["Flyboys"] execVM "scripts\show-chapter-title.sqf";
 };
+sleep 10;
+saveGame;
 
