@@ -132,6 +132,7 @@ null = [] execVM "scripts\count-remaining-units-kavala.sqf";
 if (SHOW_CHAPTER_TITLES) then {
     null = ["House to house"] execVM "scripts\show-chapter-title.sqf";
 };
-
+sleep 10;
+saveGame;
 
 
