@@ -52,10 +52,10 @@ _data = [
     
     _veh = _type createVehicle _pos;
     _veh setVariable ["BIS_enableRandomization", false];
-    if (_type != "Land_Cargo_Patrol_V3_F") then {
-        _normal = surfaceNormal _pos;
-        _veh setVectorUp _normal;
-    };
+    //if (_type != "Land_Cargo_Patrol_V3_F") then {
+    //    _normal = surfaceNormal _pos;
+    //    _veh setVectorUp _normal;
+    //};
     _veh setDir _dir;
     _veh setPos _pos;
     if (_type isKindOf "Car") then {
