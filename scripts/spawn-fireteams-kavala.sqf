@@ -37,8 +37,9 @@ for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROL
     _soldier = "O_Soldier_TL_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"SERGEANT"];
     _soldier = "O_Soldier_GL_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"PRIVATE"];
     _soldier = "O_Soldier_AR_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"PRIVATE"];
-    _soldier = "O_Soldier_LAT_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"PRIVATE"];
-    
+    if (random 1.0 < 0.5) then {
+        _soldier = "O_Soldier_LAT_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"PRIVATE"];
+    };
 
     for "_j" from 0 to 3 do
     {
