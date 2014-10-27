@@ -61,6 +61,7 @@ sleep 60;
 null = [] execVM "scripts\spawn-fireteams-negades.sqf";
 sleep 60;
 null = [] execVM "scripts\spawn-sniper-negades.sqf";
+null = [] execVM "scripts\create-bases.sqf";
 
 // spawn boat off the coast
 
