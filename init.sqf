@@ -131,3 +131,4 @@ player createDiaryRecord ["techNotes",["Version control","Go to https://github.c
 
 
 null = [] execVM "scripts\create-bases.sqf";
+null = [] execVM "scripts\savegames.sqf";
