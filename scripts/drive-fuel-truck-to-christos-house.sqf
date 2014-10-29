@@ -387,7 +387,7 @@ _men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
 } forEach _men;
 
 
-
+null = [] execVM "scripts\spawn-fireteams-kavala-bases.sqf";
 
 5 fadeSound 1;
 cutText ["A few hours later...","BLACK IN",8,false];
