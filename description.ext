@@ -117,6 +117,7 @@ class CfgFunctions
             class strcmpn {file = "functions\strcmpn.sqf";};
             class getAddRatingValueExplosives {file = "functions\getAddRatingValueExplosives.sqf";};
             class getHitPointReport {file = "functions\getHitPointReport.sqf";};
+            class findRandomPatrolmansGroup {file = "functions\findRandomPatrolmansGroup.sqf";};
 		};
 	};
 };
