@@ -57,10 +57,17 @@ GPS_TRACKING_IS_ON = getNumber (missionConfigFile >> "myMissionConfig" >> "mySet
 player addAction ["Disable GPS tracking","scripts\toggle-gpstracking.sqf",nil,0,false];
 
 RANDOM_PATROL_GROUP_HAS_ARRIVED = [];
+STOP_RANDOM_PATROL_GROUP = [];
+
 RANDOM_PATROL_GROUP_HAS_ARRIVED resize 100;
+STOP_RANDOM_PATROL_GROUP resize 100;
+
 {
-    RANDOM_PATROL_GROUP_HAS_ARRIVED set [_forEachIndex,false];
+    RANDOM_PATROL_GROUP_HAS_ARRIVED set [_forEachIndex,[grpNull,false]];
+    STOP_RANDOM_PATROL_GROUP set [_forEachIndex,false];
 } forEach RANDOM_PATROL_GROUP_HAS_ARRIVED;
+
+
 
 calcDirection = compile loadFile "functions\calcDirection.sqf";
 calcDirectionWindrose = compile loadFile "functions\calcDirectionWindrose.sqf";

@@ -4,17 +4,19 @@
 _perimeter = _this select 0;
 _group = _this select 1;
 _iGroup = _this select 2;
-_str = format ["RANDOM_PATROL_GROUP_HAS_ARRIVED set [%1,true];",_iGroup];
+
+_str = "_iRandomPatrol = [this] call HAYMAKER_fnc_findRandomPatrolmansGroup; RANDOM_PATROL_GROUP_HAS_ARRIVED set [_iRandomPatrol,[(group _this),true]]; player globalChat format ['%1,%2',(group this),_iRandomPatrol];";
 
 
-RANDOM_PATROL_GROUP_HAS_ARRIVED set [_iGroup,true];
 
-while {true} do 
+RANDOM_PATROL_GROUP_HAS_ARRIVED set [_iGroup,[_group,true]];
+
+while {!(STOP_RANDOM_PATROL_GROUP select _iGroup)} do 
 {
 
-    if (RANDOM_PATROL_GROUP_HAS_ARRIVED select _iGroup) then
+    if ((RANDOM_PATROL_GROUP_HAS_ARRIVED select _iGroup) select 1) then
     {
-        RANDOM_PATROL_GROUP_HAS_ARRIVED set [_iGroup,false];
+        RANDOM_PATROL_GROUP_HAS_ARRIVED set [_iGroup,[_group,false]];
         {
             if (_forEachIndex!=0) then 
             {
@@ -34,3 +36,7 @@ while {true} do
     };
     sleep (random 20);
 };
+
+
+STOP_RANDOM_PATROL_GROUP set [_iGroup,false];
+
