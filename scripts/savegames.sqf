@@ -24,7 +24,8 @@ while {alive player} do {
     
         _timeLastSave = time;
         N_SAVEGAMES_REMAINING = N_SAVEGAMES_REMAINING + 1;
-        hint "save game added";
+        
+        hintSilent parseText format["<t size='1.00' color='#ffffff'>%1</t>", "savegame available"];
         
         TRIGGER_SAVE_GAME setTriggerText format ["Save game (%1 remaining)",N_SAVEGAMES_REMAINING];
     };
