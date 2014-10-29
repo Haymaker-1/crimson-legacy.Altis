@@ -87,12 +87,3 @@ _data = [
 } forEach _data;
 
 
-
-
-_marker = createMarker ["MARKER_OPFOR_BASE_KAVALA_1", [3870.47,13476.1,-0.25] ];
-_marker = createMarker ["MARKER_OPFOR_BASE_KAVALA_2", [3894.33,12692.1,-0.25] ];
-_marker = createMarker ["MARKER_OPFOR_BASE_KAVALA_3", [3500.28,13632.7,-0.25] ];
-_marker = createMarker ["MARKER_OPFOR_BASE_NEGADES", [4927.61,16404.2,-0.25] ];
-_marker = createMarker ["MARKER_OPFOR_BASE_AGIOS", [4213.22,17385.7,-0.25] ];
-
-
