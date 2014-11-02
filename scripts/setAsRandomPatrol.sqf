@@ -5,7 +5,7 @@ _perimeter = _this select 0;
 _group = _this select 1;
 _iGroup = _this select 2;
 
-_str = "_iRandomPatrol = [this] call HAYMAKER_fnc_findRandomPatrolmansGroup; RANDOM_PATROL_GROUP_HAS_ARRIVED set [_iRandomPatrol,[(group _this),true]]; player globalChat format ['%1,%2',(group this),_iRandomPatrol];";
+_str = "_iRandomPatrol = [this] call HAYMAKER_fnc_findRandomPatrolmansGroup; RANDOM_PATROL_GROUP_HAS_ARRIVED set [_iRandomPatrol,[(group this),true]];";
 
 
 
@@ -39,4 +39,5 @@ while {!(STOP_RANDOM_PATROL_GROUP select _iGroup)} do
 
 
 STOP_RANDOM_PATROL_GROUP set [_iGroup,false];
+
 
