@@ -23,6 +23,11 @@ else {
     sleep 14;
 };
 
+null = [] execVM "scripts\spawn-casplane.sqf";
+
+kostas sideChat "Your CO has arranged for a Wipeout. It's currently on standby a short distance away. Radio 0-0-5 to call it in.";
+
+sleep 11;
 
 kostas sideChat "Good luck and Godspeed, Lieutenant! Kostas out.";
 
@@ -133,6 +138,7 @@ if (SHOW_CHAPTER_TITLES) then {
     null = ["House to house"] execVM "scripts\show-chapter-title.sqf";
 };
 sleep 10;
+TIME_LAST_SAVEGAME = time;
 saveGame;
 
 
