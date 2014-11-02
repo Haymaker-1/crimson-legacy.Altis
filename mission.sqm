@@ -40,7 +40,8 @@ class Mission
 		"A3_Soft_F_MRAP_03",
 		"A3_Boat_F_Boat_Armed_01",
 		"a3_soft_f_offroad_01",
-		"A3_Air_F_Beta_Heli_Attack_01"
+		"A3_Air_F_Beta_Heli_Attack_01",
+		"A3_Weapons_F_Bootcamp_Ammoboxes"
 	};
 	addOnsAuto[]=
 	{
@@ -78,6 +79,7 @@ class Mission
 		"A3_Weapons_F",
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Soft_F_MRAP_03",
+		"A3_Weapons_F_Bootcamp_Ammoboxes",
 		"a3_map_altis"
 	};
 	randomSeed=11888084;
@@ -821,7 +823,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=96;
+		items=97;
 		class Item0
 		{
 			position[]={4848.3296,335.12735,21896.699};
@@ -1848,6 +1850,14 @@ class Mission
 			skill=0.74495852;
 			fuel=0;
 			text="krya_nera_strider";
+		};
+		class Item96
+		{
+			position[]={5384.2886,76.782753,17904.021};
+			id=132;
+			side="EMPTY";
+			vehicle="Box_FIA_Wps_F";
+			skill=0.60000002;
 		};
 	};
 	class Markers
