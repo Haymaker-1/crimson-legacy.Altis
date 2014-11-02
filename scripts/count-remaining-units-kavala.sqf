@@ -81,10 +81,12 @@ while {!_noVehiclesLeftInKavala} do {
 
 
 
+{
+    allowDamage false;
+} forEach (units group player);
 
 
-
-kostas sideChat "Yes! You did it! The remaining troops surrendered!";
+kostas sideChat "You did it! The remaining troops surrendered!";
 
 sleep 10;
 
