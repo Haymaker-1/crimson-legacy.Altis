@@ -1,11 +1,17 @@
 
 
 _cont = true;
+_cond1 = nil;
+_cond2 = nil;
+_cond3 = nil;
 
 TASK_SEIZE_SRIFLE_DONE = false;
 
 while {_cont} do
 {
+    
+    sleep 5;
+    
     _hasTheRifle = [];
     _hasTheRifle resize (count units group player);
 
@@ -13,13 +19,15 @@ while {_cont} do
         _hasTheRifle set [_forEachIndex,"srifle_LRR_SOS_F" in weapons _x];
     } forEach units (group player);
     
-    _cont = !TASK_SEIZE_SRIFLE_DONE AND (!(true in _hasTheRifle) OR ("srifle_LRR_SOS_F" in weapons negades_sniper));
+    _cond1 = !TASK_SEIZE_SRIFLE_DONE;
+    _cond2 = !(true in _hasTheRifle);
+    _cond3 = "srifle_LRR_SOS_F" in weapons negades_sniper;
     
-    sleep 5;
+    _cont =  _cond1 AND _cond2 AND _cond3;
 
 };
 
-if (!(true in _hasTheRifle) OR ("srifle_LRR_SOS_F" in weapons negades_sniper)) then {
+if (_cond2 AND _cond3) then {
 
     TASK_SEIZE_SRIFLE setTaskState "Succeeded";
     ["TaskSucceeded", ["","Seize rifle"]] call BIS_fnc_showNotification;
