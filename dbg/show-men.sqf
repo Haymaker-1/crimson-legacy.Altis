@@ -1,5 +1,11 @@
 
-_men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
+
+_pos = _this select 0;
+_range = _this select 1;
+
+
+
+_men = _pos nearEntities ["Man",_range];
 {
     _markerName = format ["MARKER_MAN_KAVALA_%1",_forEachIndex];
     _marker = createMarker[_markerName,getPos _x];
@@ -8,7 +14,7 @@ _men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
 SHOW_MEN_KAVALA = true;
 
 while {SHOW_MEN_KAVALA} do {
-    _men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
+    _men = _pos nearEntities ["Man",_range];
     {
         _markerName = format ["MARKER_MAN_KAVALA_%1",_forEachIndex];
         _markerName setMarkerType "mil_dot";
