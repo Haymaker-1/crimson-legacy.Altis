@@ -217,6 +217,7 @@ krya_nera_strider_gmg addWeaponCargo ["SMG_01_F",1];
 krya_nera_strider_gmg addMagazineCargo ["20Rnd_762x51_Mag",10];
 krya_nera_strider_gmg addMagazineCargo ["30Rnd_45ACP_Mag_SMG_01",15];
 krya_nera_strider_hmg addItemCargo ["muzzle_snds_B",1];
+krya_nera_strider_hmg addItemCargo ["muzzle_snds_acp",1];
 krya_nera_strider_gmg addItemCargo ["FirstAidKit",6];
 
 
@@ -297,9 +298,9 @@ _hmgGroup = createGroup west;
 
 _hmgGroup setBehaviour "SAFE";    
 
-krya_nera_strider setFuel 0.5+random 0.2;
-krya_nera_strider_gmg setFuel 0.5+random 0.2;
-krya_nera_strider_hmg setFuel 0.5+random 0.2;
+krya_nera_strider setFuel 0.05+random 0.1;
+krya_nera_strider_gmg setFuel 0.05+random 0.1;
+krya_nera_strider_hmg setFuel 0.05+random 0.1;
 
 
 { 
