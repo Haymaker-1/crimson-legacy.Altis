@@ -85,7 +85,7 @@ while {alive casplane AND _hasAmmo AND (fuel casplane > _fuelThreshold)} do {
     
         ADD_CASPLANE_ATTACKING_WP = false;    
     
-        null = [] spawn {sleep (1+random 10); (assignedDriver casplane) sideChat "Strafing run initiated.";};
+        null = [] spawn {sleep (1+random 10); (assignedDriver casplane) sideChat "Receiving coordinates...on my way.";};
         
         CAS_START_DAYTIME = daytime;
         null = [] spawn {waitUntil {daytime - CAS_START_DAYTIME > 0.1}; ADD_CASPLANE_HOLDING_WP = true;  (assignedDriver casplane) disableAI "TARGET"; (group (assignedDriver casplane)) setCombatMode "GREEN"; };
@@ -168,7 +168,7 @@ while {alive casplane AND _hasAmmo AND (fuel casplane > _fuelThreshold)} do {
 };
 
 
-player globalChat "DBG: move somewhere out of sight";
+//player globalChat "DBG: move somewhere out of sight";
 
 if (alive casplane AND !_hasAmmo) then {
     (assignedDriver casplane) sideChat "Munitions black, I'm RTB. Good luck!";
