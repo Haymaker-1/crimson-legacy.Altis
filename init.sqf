@@ -58,16 +58,18 @@ player addAction ["Disable GPS tracking","scripts\toggle-gpstracking.sqf",nil,0,
 
 RANDOM_PATROL_GROUP_HAS_ARRIVED = [];
 STOP_RANDOM_PATROL_GROUP = [];
+RANDOM_PATROL_GROUP_LAST_KNOWN_POS = [];
 
 RANDOM_PATROL_GROUP_HAS_ARRIVED resize 100;
 STOP_RANDOM_PATROL_GROUP resize 100;
+RANDOM_PATROL_GROUP_LAST_KNOWN_POS resize 100;
 
 {
     RANDOM_PATROL_GROUP_HAS_ARRIVED set [_forEachIndex,[grpNull,false]];
     STOP_RANDOM_PATROL_GROUP set [_forEachIndex,false];
 } forEach RANDOM_PATROL_GROUP_HAS_ARRIVED;
 
-
+null = [] execVM "scripts\monitor-if-random-patrol-units-are-moving.sqf";
 
 calcDirection = compile loadFile "functions\calcDirection.sqf";
 calcDirectionWindrose = compile loadFile "functions\calcDirectionWindrose.sqf";
@@ -89,7 +91,7 @@ null = [] execVM "scripts\endmission-pilot-died.sqf";
 null = [] execVM "scripts\endmission-helicopter-damaged.sqf";
 null = [] execVM "scripts\endmission-helicopter-out-of-fuel.sqf";
 null = [] execVM "scripts\endmission-helicopter-rebelcamp.sqf";
-null = [] execVM "scripts\endmission-player-died.sqf";
+//null = [] execVM "scripts\endmission-player-died.sqf";
 
 null = [] execVM "scripts\spawn-helicopter.sqf";
 
