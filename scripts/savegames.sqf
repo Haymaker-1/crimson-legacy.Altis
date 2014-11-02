@@ -13,16 +13,16 @@ switch (difficulty) do {
 
 N_SAVEGAMES_REMAINING = 1;
 
-_timeLastSave = time;
+TIME_LAST_SAVEGAME = time;
 
 while {alive player} do {
 
-    _cond1 = (time - _timeLastSave) > (1/SAVEGAME_ADD_RATE);
+    _cond1 = (time - TIME_LAST_SAVEGAME) > (1/SAVEGAME_ADD_RATE);
     _cond2 = N_SAVEGAMES_REMAINING < N_SAVEGAMES_REMAINING_MAX;
     
     if (_cond1 AND _cond2) then {
     
-        _timeLastSave = time;
+        TIME_LAST_SAVEGAME = time;
         N_SAVEGAMES_REMAINING = N_SAVEGAMES_REMAINING + 1;
         
         hintSilent parseText format["<t size='1.00' color='#ffffff'>%1</t>", "savegame available"];
