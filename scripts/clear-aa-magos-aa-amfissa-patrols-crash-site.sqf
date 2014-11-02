@@ -138,6 +138,7 @@ if (SHOW_CHAPTER_TITLES) then {
     null = ["Cleaning house"] execVM "scripts\show-chapter-title.sqf";
 };
 sleep 10;
+TIME_LAST_SAVEGAME = time;
 saveGame;
 
 
@@ -361,5 +362,6 @@ if (SHOW_CHAPTER_TITLES) then {
     null = ["Nightstalker"] execVM "scripts\show-chapter-title.sqf";
 };
 sleep 10;
+TIME_LAST_SAVEGAME = time;
 saveGame;
 

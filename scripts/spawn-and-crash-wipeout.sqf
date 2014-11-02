@@ -165,6 +165,7 @@ if (SHOW_CHAPTER_TITLES) then {
     null = ["M.I.A"] execVM "scripts\show-chapter-title.sqf";
 };
 sleep 10;
+TIME_LAST_SAVEGAME = time;
 saveGame;
 
 
