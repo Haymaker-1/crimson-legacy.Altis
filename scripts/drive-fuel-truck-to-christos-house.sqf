@@ -303,6 +303,15 @@ krya_nera_strider_gmg setFuel 0.05+random 0.1;
 krya_nera_strider_hmg setFuel 0.05+random 0.1;
 
 
+{
+    _x addWeapon "NVGoggles";
+} forEach (crew krya_nera_strider_gmg);
+
+{
+    _x addWeapon "NVGoggles";    
+} forEach (crew krya_nera_strider_hmg);
+
+
 { 
     _barrier = createVehicle ["Land_CncBarrierMedium4_F",_x select 0,[],0,"NONE"];
     _barrier setDir (_x select 1);
