@@ -22,5 +22,9 @@ player setPos getMarkerPos "MARKER_DBG_RESUME_STATE_6";
 
 
 CRASH_SITE_IS_CLEAR = true;
-AA_MAGOS_IS_CLEAR = true;
-AA_AMFISSA_IS_CLEAR = true;
+
+AA_MAGOS setDamage 1;
+//AA_MAGOS_IS_CLEAR = true;
+
+AA_AMFISSA setDamage 1;
+//AA_AMFISSA_IS_CLEAR = true;
