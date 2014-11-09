@@ -312,7 +312,7 @@ sleep 16;
 kostas sideChat "I planned a diversion to deal with the APCs, but watch out for those machine guns, allright?";
 sleep 10;
 
-player sideChat "Amen to that, nobody likes close encounters of the .50 kind. So, what's the diversion?";
+player sideChat "Amen to that, nobody likes close encounters with a fifty. So, what's the diversion?";
 sleep 8;
 
 kostas sideChat "We will first attack the power station just north of Kavala. It should be lightly guarded.";
