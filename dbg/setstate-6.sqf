@@ -24,7 +24,11 @@ player setPos getMarkerPos "MARKER_DBG_RESUME_STATE_6";
 CRASH_SITE_IS_CLEAR = true;
 
 AA_MAGOS setDamage 1;
-//AA_MAGOS_IS_CLEAR = true;
+{
+    _x setDamage 1;
+} forEach ((getMarkerPos "MARKER_OPFOR_AA_MAGOS") nearEntities ["Man",350]);
 
 AA_AMFISSA setDamage 1;
-//AA_AMFISSA_IS_CLEAR = true;
+{
+    _x setDamage 1;
+} forEach ((getMarkerPos "MARKER_OPFOR_AA_AMFISSA") nearEntities ["Man",350]);
