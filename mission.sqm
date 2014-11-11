@@ -86,7 +86,9 @@ class Mission
 	class Intel
 	{
 		startWeather=0.099999994;
-		startWind=0;
+		startWind=0.17999999;
+		startWindDir=35;
+		startGust=0.19999999;
 		forecastWeather=0.099999994;
 		forecastWind=0;
 		forecastWaves=0;
@@ -1770,6 +1772,7 @@ class Mission
 			skill=0.74495852;
 			fuel=0;
 			text="krya_nera_strider_gmg";
+			init="this allowDamage false";
 		};
 		class Item91
 		{
@@ -1782,6 +1785,7 @@ class Mission
 			skill=0.74495852;
 			fuel=0;
 			text="krya_nera_strider_hmg";
+			init="this allowDamage false";
 		};
 		class Item92
 		{
@@ -1830,6 +1834,7 @@ class Mission
 			skill=0.74495852;
 			fuel=0;
 			text="krya_nera_strider";
+			init="this allowDamage false";
 		};
 		class Item96
 		{

@@ -284,6 +284,10 @@ krya_nera_strider lock 0;
 krya_nera_strider_gmg lock 3; 
 krya_nera_strider_hmg lock 3;
 
+krya_nera_strider allowDamage true;
+krya_nera_strider_gmg allowDamage true; 
+krya_nera_strider_hmg allowDamage true;
+
 _gmgGroup = createGroup west;
 "B_G_Soldier_TL_F" createUnit [ getMarkerPos "MARKER_STRIDER_GMG", _gmgGroup,"this moveInCommander krya_nera_strider_gmg;", 1.0, "sergeant"];
 "B_G_Soldier_lite_F" createUnit [ getMarkerPos "MARKER_STRIDER_GMG", _gmgGroup,"this moveInGunner krya_nera_strider_gmg;", 1.0, "private"];
