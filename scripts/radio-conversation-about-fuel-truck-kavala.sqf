@@ -27,7 +27,7 @@ kavalaFuelTruck allowDamage true;
 
 null = [kavalaFuelTruck] execVM "scripts\monitor-kavala-fuel-truck-status.sqf";
 
-player sideChat "It is full! I'm gonna try sneak this baby out of here.";
+player sideChat "It's got some fuel in it! I'm gonna try sneak this baby out of here.";
 
 sleep 5;
 
