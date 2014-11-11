@@ -19,12 +19,7 @@ _unit moveInDriver casplane;
 
 (assignedDriver casplane) disableAI "AUTOTARGET";
 
-
-//{
-//    if !(_x in ["1000Rnd_Gatling_30mm_Plane_CAS_01_F","120Rnd_CMFlare_Chaff_Magazine"]) then {
-//        casplane removeMagazines _x;
-//    };
-//} forEach (magazines casplane);
+null = [] execVM "scripts\monitor-number-of-bombs.sqf";
 
 
 
