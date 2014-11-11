@@ -21,7 +21,10 @@ _perimeter = ["MARKER_PERIMETER_ODS_OP_AGIOS"] call HAYMAKER_fnc_constructPerime
 
 TASK_SEIZE_SRIFLE_DONE = true;
 null = [] execVM "scripts\scavenge-agios-konstantinos.sqf";
-null = [] execVM "scripts\spawn-guer-fireteam-warehouse-agios.sqf";
+spawningComplete = [] execVM "scripts\spawn-guer-fireteam-warehouse-agios.sqf";
+waitUntil{sleep 0.5;scriptDone spawningComplete};
+spawningComplete = nil;
+
 
 
 _skiptimeValue = (15-daytime+random 0.25);

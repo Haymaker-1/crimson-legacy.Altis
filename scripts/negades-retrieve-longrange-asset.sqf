@@ -70,10 +70,11 @@ saveGame;
 
 waitUntil{sleep 5;AGIOS_KONSTANTINOS_IS_CLEAR AND NEGADES_IS_CLEAR};
 
-null = [] execVM "scripts\spawn-blufor-fireteams-agios-konstantinos.sqf";
-sleep 5;
+spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-agios-konstantinos.sqf";
+waitUntil{sleep 0.5;scriptDone spawningComplete};
+spawningComplete = nil;
+
 null = [] execVM "scripts\spawn-blufor-fireteams-negades.sqf";
-sleep 5;
 
 null = [] execVM "scripts\set-up-op-agios-konstantinos.sqf";
 

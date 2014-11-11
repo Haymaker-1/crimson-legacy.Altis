@@ -1,6 +1,3 @@
-waitUntil{sleep 5;SPAWNING_ENABLED};
-SPAWNING_ENABLED = !SPAWNING_ENABLED;
- 
 
 _nPatrols = 1;
 
@@ -51,7 +48,6 @@ for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROL
     
 };  
 
-SPAWNING_ENABLED = !SPAWNING_ENABLED;
 
 
 _veh = createVehicle ["C_Offroad_01_F", getMarkerPos "MARKER_SHED_AGIOS_SPAWN_TRUCK",[],50,"NONE"];

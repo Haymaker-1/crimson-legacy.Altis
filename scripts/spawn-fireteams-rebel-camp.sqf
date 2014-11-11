@@ -1,7 +1,4 @@
 
-waitUntil{sleep 5; SPAWNING_ENABLED;};
-SPAWNING_ENABLED = !SPAWNING_ENABLED;
-
 _nPatrols = 2;
 
 _headgearArray = ["H_Beret_blk",
@@ -64,6 +61,3 @@ for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROL
 };  
 
 
-SPAWNING_ENABLED = !SPAWNING_ENABLED;
-
-//player sideChat "spawn-fireteams-rebel-camp done."

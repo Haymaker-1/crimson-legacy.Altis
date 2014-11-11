@@ -56,8 +56,10 @@ TASK_ESCORT_PILOT_HAS_BEEN_ASSIGNED = true;
 
 
 
-null = [] execVM "scripts\spawn-fireteams-agios-konstantinos.sqf";
-sleep 60;
+spawningComplete = [] execVM "scripts\spawn-fireteams-agios-konstantinos.sqf";
+waitUntil{sleep 0.5;scriptDone spawningComplete};
+spawningComplete = nil;
+
 null = [] execVM "scripts\spawn-fireteams-negades.sqf";
 sleep 60;
 null = [] execVM "scripts\spawn-sniper-negades.sqf";

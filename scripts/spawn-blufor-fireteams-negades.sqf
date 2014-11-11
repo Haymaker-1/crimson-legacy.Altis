@@ -1,5 +1,3 @@
-waitUntil{sleep 5;SPAWNING_ENABLED};
-SPAWNING_ENABLED = !SPAWNING_ENABLED;
 
 _nPatrols = 2 + round (random 2);
 
@@ -50,4 +48,3 @@ for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROL
     
 };  
 
-SPAWNING_ENABLED = !SPAWNING_ENABLED;
