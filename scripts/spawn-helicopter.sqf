@@ -1,5 +1,5 @@
 
-_nMinutes = 4.0;
+_nMinutes = 6.0;
 
 if ((random 1.0)<0.2) then
 {
