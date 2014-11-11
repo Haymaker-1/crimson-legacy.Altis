@@ -42,7 +42,6 @@ AA_GALATI_IS_CLEAR = false;
 AA_IFESTONIA_IS_CLEAR = false;
 AA_FRINI_IS_CLEAR = false;
 CRASH_SITE_POPULATED = false;
-SPAWNING_ENABLED = true;
 ENDMISSION_REASON_THROWN = false;
 SPAWN_AGIOS_DONE = false;
 TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED = false;
@@ -95,13 +94,32 @@ null = [] execVM "scripts\endmission-helicopter-rebelcamp.sqf";
 
 null = [] execVM "scripts\spawn-helicopter.sqf";
 
-null = [] execVM "scripts\spawn-fireteams-krya-nera.sqf";
-null = [] execVM "scripts\spawn-fireteams-airbase.sqf";
-null = [] execVM "scripts\spawn-fireteams-krya-nera-airport.sqf";
-null = [] execVM "scripts\spawn-fireteams-rebel-camp.sqf";
-null = [] execVM "scripts\spawn-fireteam-aa-magos.sqf";
-null = [] execVM "scripts\spawn-fireteam-aa-amfissa.sqf";
+spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera.sqf";
+waitUntil{sleep 0.5;scriptDone spawningComplete};
+spawningComplete = nil;
+
+spawningComplete = [] execVM "scripts\spawn-fireteams-airbase.sqf";
+waitUntil{sleep 0.5;scriptDone spawningComplete};
+spawningComplete = nil;
+
+spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera-airport.sqf";
+waitUntil{sleep 0.5;scriptDone spawningComplete};
+spawningComplete = nil;
+
+spawningComplete = [] execVM "scripts\spawn-fireteams-rebel-camp.sqf";
+waitUntil{sleep 0.5;scriptDone spawningComplete};
+spawningComplete = nil;
+
+spawningComplete = [] execVM "scripts\spawn-fireteam-aa-magos.sqf";
+waitUntil{sleep 0.5;scriptDone spawningComplete};
+spawningComplete = nil;
+
+spawningComplete = [] execVM "scripts\spawn-fireteam-aa-amfissa.sqf";
+waitUntil{sleep 0.5;scriptDone spawningComplete};
+spawningComplete = nil;
+
 null = [] execVM "scripts\spawn-kostas-borrowed-men.sqf";
+
 
 null = [] execVM "scripts\enabletracking.sqf";
 null = [] execVM "scripts\restore-health.sqf";
