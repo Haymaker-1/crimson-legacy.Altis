@@ -713,7 +713,6 @@ class Mission
 					id=30;
 					side="WEST";
 					vehicle="B_soldier_M_F";
-					player="PLAYER COMMANDER";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
@@ -1838,11 +1837,14 @@ class Mission
 		};
 		class Item96
 		{
-			position[]={5384.2886,76.782753,17904.021};
+			position[]={5390.999,76.717934,17905.572};
+			azimut=71.369308;
 			id=131;
 			side="EMPTY";
 			vehicle="Box_FIA_Wps_F";
 			skill=0.60000002;
+			ammo=0;
+			init="clearWeaponCargo this; clearItemCargo this; clearMagazineCargo this;                 this addWeaponCargo [""arifle_Mk20_plain_F"",2]; this addItemCargo [""muzzle_snds_M"",3]; this addWeaponCargo [""launch_RPG32_F"",2]; this addMagazineCargo [""RPG32_F"",7]; this addBackpackCargo [""B_HuntingBackpack"",1];this addBackpackCargo [""B_AssaultPack_khk"",1]; this addItemCargo [""optic_ACO_grn"",2]; this addMagazineCargo [""30Rnd_556x45_Stanag"",4];";
 		};
 		class Item97
 		{
