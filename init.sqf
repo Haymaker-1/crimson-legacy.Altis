@@ -66,6 +66,7 @@ RANDOM_PATROL_GROUP_LAST_KNOWN_POS resize 100;
 {
     RANDOM_PATROL_GROUP_HAS_ARRIVED set [_forEachIndex,[grpNull,false]];
     STOP_RANDOM_PATROL_GROUP set [_forEachIndex,false];
+    RANDOM_PATROL_GROUP_LAST_KNOWN_POS set [_forEachIndex,locationNull];
 } forEach RANDOM_PATROL_GROUP_HAS_ARRIVED;
 
 null = [] execVM "scripts\monitor-if-random-patrol-units-are-moving.sqf";
@@ -94,31 +95,33 @@ null = [] execVM "scripts\endmission-helicopter-rebelcamp.sqf";
 
 null = [] execVM "scripts\spawn-helicopter.sqf";
 
-spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera.sqf";
-waitUntil{sleep 0.5;scriptDone spawningComplete};
-spawningComplete = nil;
+_spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
-spawningComplete = [] execVM "scripts\spawn-fireteams-airbase.sqf";
-waitUntil{sleep 0.5;scriptDone spawningComplete};
-spawningComplete = nil;
+_spawningComplete = [] execVM "scripts\spawn-fireteams-airbase.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
-spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera-airport.sqf";
-waitUntil{sleep 0.5;scriptDone spawningComplete};
-spawningComplete = nil;
+_spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera-airport.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
-spawningComplete = [] execVM "scripts\spawn-fireteams-rebel-camp.sqf";
-waitUntil{sleep 0.5;scriptDone spawningComplete};
-spawningComplete = nil;
+_spawningComplete = [] execVM "scripts\spawn-fireteams-rebel-camp.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
-spawningComplete = [] execVM "scripts\spawn-fireteam-aa-magos.sqf";
-waitUntil{sleep 0.5;scriptDone spawningComplete};
-spawningComplete = nil;
+_spawningComplete = [] execVM "scripts\spawn-fireteam-aa-magos.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
-spawningComplete = [] execVM "scripts\spawn-fireteam-aa-amfissa.sqf";
-waitUntil{sleep 0.5;scriptDone spawningComplete};
-spawningComplete = nil;
+_spawningComplete = [] execVM "scripts\spawn-fireteam-aa-amfissa.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
-null = [] execVM "scripts\spawn-kostas-borrowed-men.sqf";
+_spawningComplete = [] execVM "scripts\spawn-kostas-borrowed-men.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
 
 null = [] execVM "scripts\enabletracking.sqf";
