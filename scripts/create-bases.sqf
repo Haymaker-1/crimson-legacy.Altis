@@ -83,6 +83,19 @@ _data = [
     if (_type isKindOf "Car") then {
         _veh setFuel (0.01+random 0.05);
     };
+    
+    if (_type in ["Box_East_Support_F"]) then {
+    
+        _weapons = weaponCargo _veh;
+        clearWeaponCargo _veh;
+        {
+            if (!_x in ["Laserdesignator"]) then {
+                _veh addWeaponCargo [_x,1];
+            };
+        } forEach _weapons;
+        
+    };
+
 
 } forEach _data;
 
