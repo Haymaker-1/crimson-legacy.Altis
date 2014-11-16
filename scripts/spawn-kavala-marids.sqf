@@ -17,8 +17,7 @@ _headgearArray = ["H_Beret_blk",
                   "H_Booniehat_grn",
                   "H_Booniehat_tan",
                   "H_Booniehat_dirty",
-                  "H_Booniehat_dgtl",
-                  "H_Bandmask_blk"];
+                  "H_Booniehat_dgtl"];
 
 MARID_KAVALA_1_GROUP = createGroup east;
 MARID_KAVALA_1 = createVehicle ["O_APC_Wheeled_02_rcws_F",(getMarkerPos "MARKER_MARID_KAVALA_1"),[],0,"NONE"];

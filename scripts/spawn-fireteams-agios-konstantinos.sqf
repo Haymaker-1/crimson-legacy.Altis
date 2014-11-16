@@ -18,8 +18,7 @@ _headgearArray = ["H_Beret_blk",
                   "H_Booniehat_grn",
                   "H_Booniehat_tan",
                   "H_Booniehat_dirty",
-                  "H_Booniehat_dgtl",
-                  "H_Bandmask_blk"];
+                  "H_Booniehat_dgtl"];
 
 for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do 
 {
