@@ -1,4 +1,5 @@
 
+skiptime 14;
 
 ["MARKER_PERIMETER_AIRBASE",100,"ColorEAST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 ["MARKER_PERIMETER_REBEL_CAMP",50,"ColorGUER",0.70] execVM "scripts\floodfill-perimeter.sqf";
@@ -9,7 +10,6 @@
 OUTLIVED_HIS_USEFULNESS set [0,true];
 
 
-null = [] execVM "scripts\set-up-op-agios-konstantinos.sqf";
 
 
 sleep 5;
@@ -17,11 +17,15 @@ sleep 5;
 player setPos getMarkerPos "MARKER_DBG_RESUME_STATE_6";
 [sf_teamleader,sf_marksman1,sf_rifleman1,sf_atman] joinSilent (group player);
 (group player) selectLeader player;
-{_x setPos getPos player} forEach units group player;
-{_x allowDamage false;} forEach (units (group player));
+
+// {_x setPos getPos player} forEach units group player;
+// {_x allowDamage false;} forEach (units (group player));
 
 
 CRASH_SITE_IS_CLEAR = true;
+AGIOS_KONSTANTINOS_IS_CLEAR = true;
+NEGADES_IS_CLEAR = true;
+
 
 AA_MAGOS setDamage 1;
 {
@@ -32,3 +36,14 @@ AA_AMFISSA setDamage 1;
 {
     _x setDamage 1;
 } forEach ((getMarkerPos "MARKER_OPFOR_AA_AMFISSA") nearEntities ["Man",350]);
+
+
+_spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-agios-konstantinos.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
+
+_spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-negades.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
+
+null = [] execVM "scripts\set-up-op-agios-konstantinos.sqf";
