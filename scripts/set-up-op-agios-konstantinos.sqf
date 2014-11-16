@@ -30,9 +30,8 @@ sleep 3;
 
 TRIGGER_SET_UP_OP_AGIOS_KONSTANTINOS = createTrigger["EmptyDetector",getMarkerPos "MARKER_OP_AGIOS_KONSTANTINOS"];
 TRIGGER_SET_UP_OP_AGIOS_KONSTANTINOS setTriggerArea[30,30,0,false];
-TRIGGER_SET_UP_OP_AGIOS_KONSTANTINOS triggerAttachVehicle [player];
-TRIGGER_SET_UP_OP_AGIOS_KONSTANTINOS setTriggerActivation["VEHICLE","PRESENT",false];
-TRIGGER_SET_UP_OP_AGIOS_KONSTANTINOS setTriggerStatements["this AND TASK_SET_UP_OP_AGIOS_KONSTANTINOS_HAS_BEEN_ASSIGNED","null = [] execVM 'scripts\clear-aa-magos-aa-amfissa-patrols-crash-site.sqf'",""]; 
+TRIGGER_SET_UP_OP_AGIOS_KONSTANTINOS setTriggerActivation["WEST","PRESENT",false];
+TRIGGER_SET_UP_OP_AGIOS_KONSTANTINOS setTriggerStatements["this AND TASK_SET_UP_OP_AGIOS_KONSTANTINOS_HAS_BEEN_ASSIGNED AND ((getPos player) distance (getMarkerPos 'MARKER_OP_AGIOS_KONSTANTINOS') < 15)","null = [] execVM 'scripts\clear-aa-magos-aa-amfissa-patrols-crash-site.sqf'",""]; 
 
 TASK_SET_UP_OP_AGIOS_KONSTANTINOS = player createSimpleTask ["TASKID_SET_UP_OP_AGIOS_KONSTANTINOS"];
 TASK_SET_UP_OP_AGIOS_KONSTANTINOS setSimpleTaskDescription ["Set up a command post overlooking the area around <marker name='MARKER_AGIOS_KONSTANTINOS'>Agios Konstantinos</marker>.","Set up CP","Set up CP"];
