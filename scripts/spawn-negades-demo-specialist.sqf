@@ -9,9 +9,9 @@ demoSpecialistVeh setVehicleLock "LOCKED";
 demoSpecialistVeh lockCargo true;
 
 demoSpecialistVeh addBackpackCargo ["B_AssaultPack_rgr",1];
-N_STICKS_DYNAMITE = 4 + random 3;
-demoSpecialistVeh addMagazineCargo ["DemoCharge_Remote_Mag",N_STICKS_DYNAMITE];
-
+_moreBoom  = 2 + round (random 2);
+demoSpecialistVeh addMagazineCargo ["DemoCharge_Remote_Mag",_moreBoom];
+N_STICKS_DYNAMITE = N_STICKS_DYNAMITE + _moreBoom;
 
 demoSpecialistGroup = createGroup west;
 "C_man_hunter_1_F" createUnit [getMarkerPos "MARKER_NEGADES",demoSpecialistGroup];
