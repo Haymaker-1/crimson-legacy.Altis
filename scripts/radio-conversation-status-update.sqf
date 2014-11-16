@@ -17,7 +17,7 @@ sleep 5;
 THE_CO sideChat "Allright, start with the bad news then.";
 sleep 6;
 
-player sideChat "The helicopter is out for the moment. It started losing fuel all of a sudden, and I just managed to put her down at the rebel camp north of Gori.";
+player sideChat "The helicopter is out for the moment. It started losing fuel all of a sudden, and I just managed to put her down at the old factory east of Mt. Kira.";
 sleep 16;
 
 THE_CO sideChat "Well that could have ended a lot worse. So what's your good news?";
