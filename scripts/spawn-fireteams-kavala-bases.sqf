@@ -27,8 +27,7 @@ _headgearArray = ["H_Beret_blk",
                   "H_Booniehat_grn",
                   "H_Booniehat_tan",
                   "H_Booniehat_dirty",
-                  "H_Booniehat_dgtl",
-                  "H_Bandmask_blk"];
+                  "H_Booniehat_dgtl"];
 
 _opforGroupBaseKavala1 = createGroup EAST;
 _opforGroupBaseKavala2 = createGroup EAST;
@@ -69,14 +68,19 @@ _fighterTypes = ["O_Soldier_TL_F",
 
 
 _perimeter1 = ["MARKER_PERIMETER_FJE_BASE_1"] call HAYMAKER_fnc_constructPerimeter;
-null = [_perimeter1,_opforGroupBaseKavala1,TOTAL_NUMBER_OF_RANDOM_PATROLS] execVM "scripts\setAsRandomPatrol.sqf";
+_spawningComplete = [_perimeter1,_opforGroupBaseKavala1,TOTAL_NUMBER_OF_RANDOM_PATROLS] execVM "scripts\setAsRandomPatrol.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
 
 _perimeter2 = ["MARKER_PERIMETER_WBU_BASE_2"] call HAYMAKER_fnc_constructPerimeter;
-null = [_perimeter2,_opforGroupBaseKavala2,TOTAL_NUMBER_OF_RANDOM_PATROLS+1] execVM "scripts\setAsRandomPatrol.sqf";
-
+_spawningComplete = [_perimeter2,_opforGroupBaseKavala2,TOTAL_NUMBER_OF_RANDOM_PATROLS+1] execVM "scripts\setAsRandomPatrol.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
 _perimeter3 = ["MARKER_PERIMETER_GHS_BASE_3"] call HAYMAKER_fnc_constructPerimeter;
-null = [_perimeter3,_opforGroupBaseKavala3,TOTAL_NUMBER_OF_RANDOM_PATROLS+2] execVM "scripts\setAsRandomPatrol.sqf";
+_spawningComplete = [_perimeter3,_opforGroupBaseKavala3,TOTAL_NUMBER_OF_RANDOM_PATROLS+2] execVM "scripts\setAsRandomPatrol.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
     
 TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 3;
