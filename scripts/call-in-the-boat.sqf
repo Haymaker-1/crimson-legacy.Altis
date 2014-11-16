@@ -36,7 +36,7 @@ _wp = _group addWaypoint [_pos,1];
 [_group,1] setWaypointSpeed "NORMAL";
 [_group,1] setWaypointBehaviour "SAFE";
 [_group,1] setWaypointCombatMode "RED";
-[_group,1] setWaypointStatements ["true","THE_GUNBOAT lockCargo [floor(random 7),false];"];
+[_group,1] setWaypointStatements ["true","THE_GUNBOAT lockCargo [floor(random 7),false]; if (((getPos player) distance (getPos THE_GUNBOAT)) > 200) then {leader gunboatGroup sideChat 'We are in position at egress Alpha.';};"];
 
 
 
