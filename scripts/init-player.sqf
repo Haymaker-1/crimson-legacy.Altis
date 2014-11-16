@@ -18,8 +18,7 @@ _headgearArray = ["H_Beret_blk",
                   "H_Booniehat_grn",
                   "H_Booniehat_tan",
                   "H_Booniehat_dirty",
-                  "H_Booniehat_dgtl",
-                  "H_Bandmask_blk"];
+                  "H_Booniehat_dgtl"];
 
 
 removeAllWeapons _character;
@@ -30,8 +29,8 @@ removeBackpack _character;
 removeVest _character;
 removeUniform _character;
 _character addUniform "U_B_SpecopsUniform_sgg";
-_character addWeapon "RangeFinder";
-_character assignItem "RangeFinder";
+_character addWeapon "Laserdesignator";
+_character assignItem "Laserdesignator";
 _character addItem "ItemGPS";
 _character assignItem "ItemGPS";
 _character addItem "ItemMap";
