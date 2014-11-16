@@ -8,14 +8,17 @@ _otherGroup = createGroup east;
 _soldier = "O_Soldier_TL_F" createUnit [(getMarkerPos "MARKER_SPAWN_PILOT"),_otherGroup,"_pos = getPos this; _pos set [2,2.0]; this setPos _pos;",0.5,"CORPORAL"];
 
 
-spawningComplete = [] execVM "scripts\spawn-fireteam1.sqf";
-waitUntil{sleep 0.5;scriptDone spawningComplete};
-spawningComplete = nil;
+_spawningComplete = [] execVM "scripts\spawn-fireteam1.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
-spawningComplete = [] execVM "scripts\spawn-fireteam2.sqf";
-waitUntil{sleep 0.5;scriptDone spawningComplete};
-spawningComplete = nil;
+_spawningComplete = [] execVM "scripts\spawn-fireteam2.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
-null = [] execVM "scripts\spawn-fireteam3.sqf";
+_spawningComplete = [] execVM "scripts\spawn-fireteam3.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
+
 
 
