@@ -54,7 +54,10 @@ _aaAlphaValue = 0.35;
 "MARKER_PILOT_DISTRESS_SIGNAL" setMarkerText "DISTRESS SIGNAL"; 
 
 
-null = [] execVM "scripts\spawn-fireteam-crash-site.sqf";
+_spawningComplete = [] execVM "scripts\spawn-fireteam-crash-site.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
+
 
 ["MARKER_PERIMETER_REBEL_CAMP",50,"ColorGUER",0.70] execVM "scripts\floodfill-perimeter.sqf";
 
@@ -80,12 +83,13 @@ TASK_CLEAR_AGIOS_KONSTANTINOS_HAS_BEEN_ASSIGNED = true;
 
 waitUntil{sleep 5;AGIOS_KONSTANTINOS_IS_CLEAR AND NEGADES_IS_CLEAR};
 
-spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-agios-konstantinos.sqf";
-waitUntil{sleep 0.5;scriptDone spawningComplete};
-spawningComplete = nil;
+_spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-agios-konstantinos.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
-null = [] execVM "scripts\spawn-blufor-fireteams-negades.sqf";
-sleep 5;
+_spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-negades.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
 
 null = [] execVM "scripts\set-up-op-agios-konstantinos.sqf";
 
