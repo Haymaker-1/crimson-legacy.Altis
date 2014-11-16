@@ -24,7 +24,6 @@ _itemsCrate setDir random 360;
 _itemsCrate allowDamage false;
 
 
-
 _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
                    "MARKER_PERIMETER_KLD_NEGADES",
                    "MARKER_OUTER_PERIMETER_PILOT"];
@@ -58,15 +57,47 @@ _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
 
     _men = nearestObjects [_pos,["Man"], _radius];
     {
-        if (!alive _x) then
-        {
+        if (!alive _x) then {
 
             _man = _x;
             
-            _arr = weapons _man;
+            _primaryWeaponItems = primaryWeaponItems _man;
             {
-                _man removeWeapon _x;
-                _weaponsHolder addWeaponCargo [_x, 1];
+                if (_x != "") then {
+                    _man removePrimaryWeaponItem _x;
+                    _itemsHolder addItemCargo [_x, 1];
+                };
+            } forEach _primaryWeaponItems;
+
+            _handgunItems = handgunItems _man;
+            {
+                if (_x != "") then {
+                    _man removeHandgunItem _x;
+                    _itemsHolder addItemCargo [_x, 1];
+                };
+            } forEach _handgunItems;
+            
+            _arr = weapons _man;
+            {   
+                // retrieve the most basic version of the weapon by 
+                // traversing the inheritance tree:
+                _theWeaponName = _x;
+                _theWeaponConfig = configFile >> "CfgWeapons" >> _theWeaponName;
+                
+                _man removeWeapon _theWeaponName;
+                
+                _cont = true;
+                while {_cont} do {
+                    if (isClass (_theWeaponConfig >> "LinkedItems")) then {
+                        _theWeaponConfig = inheritsFrom (_theWeaponConfig);
+                        _theWeaponName = configName _theWeaponConfig;
+                    } 
+                    else {
+                        _cont = false;
+                    };
+                };
+                _weaponsHolder addWeaponCargo [_theWeaponName, 1];
+                        
             } forEach _arr;
             
             _arr = magazines _man;
@@ -89,21 +120,29 @@ _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
             } forEach _arr;            
            
             _backpackType = backpack _man;
-            // clearAllItemsFromBackpack _man;
-            removeBackpack _man;
-            _itemsHolder addBackpackCargo [_backpackType,1];
+            if (_backpackType != "") then {
+                // clearAllItemsFromBackpack _man;
+                removeBackpack _man;
+                _itemsHolder addBackpackCargo [_backpackType,1];
+            };
                         
             _vest = vest _man;
-            removeVest _man;
-            _itemsHolder addItemCargo [_vest,1];
-            
+            if (_vest != "") then {
+                removeVest _man;
+                _itemsHolder addItemCargo [_vest,1];
+            };
+           
             _headgear = headgear _man;
-            removeHeadgear _man;
-            _itemsHolder addItemCargo [_headgear,1];
+            if (_headgear != "") then {
+                removeHeadgear _man;
+                _itemsHolder addItemCargo [_headgear,1];
+            };
             
             _goggles = goggles _man;
-            removeGoggles _man;
-            _itemsHolder addItemCargo [_goggles,1];
+            if (_goggles != "") then {
+                removeGoggles _man;
+                _itemsHolder addItemCargo [_goggles,1];
+            };
            
         };
     } forEach _men;
@@ -144,6 +183,9 @@ _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
     } forEach _stuffOnTheGround;    
 
 } forEach _areasIveBeenTo;
+
+
+
 
 // attach to respective crate
 
