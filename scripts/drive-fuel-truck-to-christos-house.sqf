@@ -206,6 +206,7 @@ krya_nera_strider addWeaponCargo ["srifle_LRR_F",1];
 krya_nera_strider addMagazineCargo ["7Rnd_408_Mag",12];
 krya_nera_strider addItemCargo ["optic_ACO_grn",1];
 krya_nera_strider addItemCargo ["optic_SOS",1];
+krya_nera_strider addItemCargo ["acc_flashlight",2];
 krya_nera_strider addItemCargo ["FirstAidKit",6];
 
 
@@ -216,8 +217,10 @@ krya_nera_strider_gmg addWeaponCargo ["srifle_EBR_F",1];
 krya_nera_strider_gmg addWeaponCargo ["SMG_01_F",1];
 krya_nera_strider_gmg addMagazineCargo ["20Rnd_762x51_Mag",10];
 krya_nera_strider_gmg addMagazineCargo ["30Rnd_45ACP_Mag_SMG_01",15];
-krya_nera_strider_hmg addItemCargo ["muzzle_snds_B",1];
-krya_nera_strider_hmg addItemCargo ["muzzle_snds_acp",1];
+krya_nera_strider_gmg addItemCargo ["optic_ACO_grn",1];
+krya_nera_strider_gmg addItemCargo ["muzzle_snds_B",1];
+krya_nera_strider_gmg addItemCargo ["muzzle_snds_acp",1];
+krya_nera_strider_gmg addItemCargo ["acc_flashlight",2];
 krya_nera_strider_gmg addItemCargo ["FirstAidKit",6];
 
 
@@ -228,9 +231,10 @@ krya_nera_strider_hmg addWeaponCargo ["arifle_TRG21_F",1];
 krya_nera_strider_hmg addWeaponCargo ["arifle_Mk20_F",1];
 krya_nera_strider_hmg addMagazineCargo ["30Rnd_556x45_Stanag",15];
 krya_nera_strider_hmg addMagazineCargo ["30Rnd_556x45_Stanag_Tracer_Green",15];
-krya_nera_strider_hmg addItemCargo ["acc_flashlight",5];
+krya_nera_strider_hmg addItemCargo ["optic_ACO_grn",1];
+krya_nera_strider_hmg addItemCargo ["acc_flashlight",2];
 krya_nera_strider_hmg addItemCargo ["NVGoggles",3];
-krya_nera_strider_gmg addItemCargo ["muzzle_snds_M",3];
+krya_nera_strider_hmg addItemCargo ["muzzle_snds_M",3];
 krya_nera_strider_hmg addItemCargo ["FirstAidKit",6];
   
 _radius = 50;
@@ -302,9 +306,6 @@ _hmgGroup = createGroup west;
 
 _hmgGroup setBehaviour "SAFE";    
 
-krya_nera_strider setFuel 0.05+random 0.1;
-krya_nera_strider_gmg setFuel 0.05+random 0.1;
-krya_nera_strider_hmg setFuel 0.05+random 0.1;
 
 
 {
@@ -461,6 +462,10 @@ _trig setTriggerStatements["this AND TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED","nul
 
 
 waitUntil {player in crew krya_nera_strider};
+
+krya_nera_strider setFuel 0.05+random 0.1;
+krya_nera_strider_gmg setFuel 0.05+random 0.1;
+krya_nera_strider_hmg setFuel 0.05+random 0.1;
 
 units _gmgGroup joinSilent group player;
 units _hmgGroup joinSilent group player;
