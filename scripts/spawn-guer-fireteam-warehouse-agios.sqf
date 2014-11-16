@@ -18,8 +18,7 @@ _headgearArray = ["H_Beret_blk",
                   "H_Booniehat_grn",
                   "H_Booniehat_tan",
                   "H_Booniehat_dirty",
-                  "H_Booniehat_dgtl",
-                  "H_Bandmask_blk"];
+                  "H_Booniehat_dgtl"];
 
 
 for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do 
@@ -50,11 +49,11 @@ for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROL
 
 
 
-_veh = createVehicle ["C_Offroad_01_F", getMarkerPos "MARKER_SHED_AGIOS_SPAWN_TRUCK",[],50,"NONE"];
+_veh = createVehicle ["I_G_Offroad_01_F", getMarkerPos "MARKER_SHED_AGIOS_SPAWN_TRUCK",[],50,"NONE"];
 _veh setFuel 0.06;
 _veh setDir random 360;
 
-_veh = createVehicle ["C_Offroad_01_F", getMarkerPos "MARKER_SHED_AGIOS_SPAWN_TRUCK",[],50,"NONE"];
+_veh = createVehicle ["I_G_Offroad_01_F", getMarkerPos "MARKER_SHED_AGIOS_SPAWN_TRUCK",[],50,"NONE"];
 _veh setFuel 0.06;
 _veh setDir random 360;
 
