@@ -16,6 +16,22 @@ class Header
 
 class CfgSounds
 {
+
+    // ydbdmwwk = scripts\conversation-with-the-co.sqf
+    // nqccsmpx = scripts\radio-conversation-about-fuel-truck.sqf
+    // dxhqaqgv = scripts\radio-conversation-when-returning-from-athira.sqf
+    // ozjytbcl = scripts\radio-conversation-after-picking-up-radios-krya-nera.sqf
+    // drxopaef = scripts\spawn-and-crash-wipeout
+    // rxbbzszc = scripts\radio-conversation-crash-site-found
+    // xqxqpdkj = scripts\radio-conversation-pilot-not-here
+    // ufvpcvty = scripts\radio-conversation-status-update
+    // yiuwnpkq = scripts\radio-conversation-about-pilot-egress
+    // xwzldnaj = scripts\call-in-the-boat
+    // kxhvkroo = scripts\drive-fuel-truck-to-christos-house
+    // bpxqzvmm = scripts\showoff
+    // sawfkwnw = scripts\walk-to-quarry
+    
+    
 	sounds[] = {};
 	class fuelrateAlarm
 	{
@@ -26,6 +42,342 @@ class CfgSounds
 		// subtitle delay in seconds, subtitle text 
 		titles[] = {};
 	};
+    class ydbdmwwk1 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Hello, Lieutenant."};
+        duration = 0.9;
+    };
+    class ydbdmwwk2 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I have a special assignment for you today."};
+        duration = 2.0;
+    };
+    class ydbdmwwk3 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I need you to assist the Special Forces team at Camp Nabisco. They are tasked with providing the rebels with secure long range comms so we can coordinate the resistance against CSAT better."};
+        duration = 9.9;
+    };
+    class ydbdmwwk4 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd4.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I'll mark Nabisco on your map."};
+        duration = 1.7; 
+    };
+    class ydbdmwwk5 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd5.ogg", 1.0, 1.0};
+        titles[] = {0.0,"The radios are in those cases on the table there."};
+        duration = 2.4;
+    };
+    class ydbdmwwk6 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd6.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Problem is, I currently can't spare the resources to bring those radios to the Special Forces team: everybody's low on fuel and resupply is not foreseen in the near future."};
+        duration = 9.2;
+    };
+    class ydbdmwwk7 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd7.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I want you to go to the airport southwest of here."};
+        duration = 2.4;
+    };
+    class ydbdmwwk8 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd8.ogg", 1.0, 1.0};
+        titles[] = {0.0,"In the meantime, I'll use my black market contact to procure some fuel. Stavros usually comes through but it'll surely take him a couple of hours."};
+        duration = 7.8;
+    };
+    class ydbdmwwk9 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd9.ogg", 1.0, 1.0};
+        titles[] = {0.0,"In any case, I'll tell him to deliver the fuel directly to the airport so you can fill up the helo."};
+        duration = 5.1;
+    };
+    class ydbdmwwk10 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd10.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Once that's done, bring the helo here, load her up with the radios, and deliver them to Nabisco."};
+        duration = 5.3;
+    };
+    class ydbdmwwk11 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd11.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Any questions?"};
+        duration = 0.8;
+    };
+    class ydbdmwwk12 {
+        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd12.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Allright then. Dismissed."};
+        duration = 1.7;
+    };
+    class nqccsmpx1 {
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Delta One, come in, over."};
+        duration = 1.5;
+    };
+    class nqccsmpx2 {
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I just got word from Stavros. He managed to hustle some fuel but his truck is stuck near Athira."};
+        duration = 5.2;
+    };
+    class nqccsmpx3 {
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"And since the fuel is not coming to the helicopter..."};
+        duration = 2.5;
+    };
+    class nqccsmpx4 {
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd4.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I'm sending you the truck's location now."};
+        duration = 1.8;
+    };
+    class nqccsmpx5 {
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd5.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Make no mistake though, CSAT forces control damn near every mountain south of here. I'm marking some of their AA on your map."};
+        duration = 6.9;
+    };
+    class nqccsmpx6 {
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd6.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Furthermore, Gravia Airbase is firmly in CSAT hands, although intel says there's no AA in that area. Be careful though."};
+        duration = 7.9;
+    };
+    class nqccsmpx7 {
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd7.ogg", 1.0, 1.0};
+        titles[] = {0.0,"As you can see, you've got your work cut out for you."};
+        duration = 2.7;
+    };
+    class nqccsmpx8 {
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd8.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Delta Actual, out."};
+        duration = 1.6;
+    };
+    class dxhqaqgv1 {
+        sound[] = {"sounds\radio-conversation-when-returning-from-athira\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Delta One, come in, over."};
+        duration = 1.9;
+    };
+    class dxhqaqgv2 {
+        sound[] = {"sounds\radio-conversation-when-returning-from-athira\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Good work son, just put her down on the helipad when you get here."};
+        duration = 3.6;
+    };
+    class dxhqaqgv3 {
+        sound[] = {"sounds\radio-conversation-when-returning-from-athira\THE_CO_snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"One of my men is standing by to load up the radios."};
+        duration = 2.9;
+    };
+    class ozjytbcl1 {
+        sound[] = {"sounds\radio-conversation-after-picking-up-radios-krya-nera\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Allright! You're loaded up. Make sure to send my best to the guys at Nabisco. Delta Actual, out."};
+        duration = 5.6;
+    };
+    class drxopaef1 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"All units, be advised, we have a pilot down."};
+        duration = 2.7;
+    };
+    class drxopaef2 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I say again, we have a pilot down."};
+        duration = 2.7;
+    };
+    class drxopaef3 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Standby for update."};
+        duration = 1.5;
+    };
+    class drxopaef4 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd4.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Delta One, come in."};
+        duration = 1.1;
+    };
+    class drxopaef5 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd5.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Are you at Nabisco yet?"};
+        duration = 1.4;
+    };
+    class drxopaef6 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd6.ogg", 1.0, 1.0};
+        titles[] = {0.0,"One of our Wipeouts just went down. We are still figuring out where exactly."};
+        duration = 4.1;
+    };
+    class drxopaef7 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd7.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Standby at Nabisco until further notice."};
+        duration = 2.5;
+    };
+    class drxopaef8 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd8.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Delta Actual, out."};
+        duration = 1.1;
+    };
+    class drxopaef9 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd9.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Delta One, come in, over."};
+        duration = 1.7;
+    };
+    class drxopaef10 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd10.ogg", 1.0, 1.0};
+        titles[] = {0.0,"We see a distress signal north of Kore. Looks like the pilot made it out in time."};
+        duration = 4.5;
+    };
+    class drxopaef11 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd11.ogg", 1.0, 1.0};
+        titles[] = {0.0,"We need to get in there on the double before CSAT forces show up."};
+        duration = 3.2;
+    };
+    class drxopaef12 {
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd12.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I'm assigning the Special Forces team from Camp Nabisco to you. Take them to the crash site and see if you can get eyes on the pilot."};
+        duration = 7.5;
+    };
+    class rxbbzszc1 {
+        sound[] = {"sounds\radio-conversation-crash-site-found\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Go ahead, Delta One."};
+        duration = 1.1;
+    };
+    class rxbbzszc2 {
+        sound[] = {"sounds\radio-conversation-crash-site-found\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Check the vicinity of the wreck. Do you see the pilot?"};
+        duration = 2.9;
+    };
+    class xqxqpdkj1 {
+        sound[] = {"sounds\radio-conversation-pilot-not-here\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Dammit! Keep looking!"};
+        duration = 1.6;
+    };
+    class ufvpcvty1 {
+        sound[] = {"sounds\radio-conversation-status-update\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Go ahead, One."};
+        duration = 0.8;
+    };
+    class ufvpcvty2 {
+        sound[] = {"sounds\radio-conversation-status-update\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Allright, start with the bad news then."};
+        duration = 2.3;
+    };
+    class ufvpcvty3 {
+        sound[] = {"sounds\radio-conversation-status-update\THE_CO_snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Well that could have ended a lot worse. So what's your good news?"};
+        duration = 3.7;
+    };
+    class ufvpcvty4 {
+        sound[] = {"sounds\radio-conversation-status-update\THE_CO_snd4.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Good work, One. Be careful out there."};
+        duration = 2.9;
+    };
+    class yiuwnpkq1 {
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Go ahead, One."};
+        duration = 1.0;
+    };
+    class yiuwnpkq2 {
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Outstanding, One!"};
+        duration = 1.3;
+    };
+    class yiuwnpkq3 {
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Absolutely! While you got to run around and shoot guns, I've been busy arranging transport."};
+        duration = 5.9;
+    };
+    class yiuwnpkq4 {
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd4.ogg", 1.0, 1.0};
+        titles[] = {0.0,"One of our boats is standing by off of the coast of Agios Konstantinos. Their callsign is Noah Three."};
+        duration = 6.0;
+    };
+    class yiuwnpkq5 {
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd5.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Your task is to escort the pilot to the boat. I've updated your map with the arranged pickup location."};
+        duration = 5.2;
+    };
+    class yiuwnpkq6 {
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd6.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Be careful though! The western coast has a strong CSAT presence."};
+        duration = 3.6;
+    };
+    class yiuwnpkq7 {
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd7.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Delta Actual, out."};
+        duration = 1.3;
+    };
+    class xwzldnaj1 {
+        sound[] = {"sounds\call-in-the-boat\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Go ahead, One."};
+        duration = 0.8;
+    };
+    class xwzldnaj2 {
+        sound[] = {"sounds\call-in-the-boat\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Sterling work, One."};
+        duration = 1.3;
+    };
+    class xwzldnaj3 {
+        sound[] = {"sounds\call-in-the-boat\THE_CO_snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"You really helped avoid a severe crisis here."};
+        duration = 2.5;
+    };
+    class xwzldnaj4 {
+        sound[] = {"sounds\call-in-the-boat\THE_CO_snd4.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Well, I appreciate it."};
+        duration = 1.6;
+    };
+    class xwzldnaj5 {
+        sound[] = {"sounds\call-in-the-boat\THE_CO_snd5.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I want you to fall back to the rebel camp. See if you can be of any assistance to Commander Kostas."};
+        duration = 5.7;
+    };
+    class xwzldnaj6 {
+        sound[] = {"sounds\call-in-the-boat\THE_CO_snd6.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Catch you later, One. Delta Actual out."};
+        duration = 2.9;
+    };
+    class kxhvkroo1 {
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"This is Actual. Go ahead, One."};
+        duration = 1.9;
+    };
+    class kxhvkroo2 {
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I'm sorry, son, you're out of luck. Those vehicles don't have a drop of fuel in them, so they are pretty much useless at the moment."};
+        duration = 6.9;
+    };
+    class kxhvkroo3 {
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"That's excellent work, soldier!"};
+        duration = 1.6;
+    };
+    class kxhvkroo4 {
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd4.ogg", 1.0, 1.0};
+        titles[] = {0.0,"They are tip-top. Make sure to put them to good use tomorrow!"};
+        duration = 3.5;
+    };
+    class kxhvkroo5 {
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd5.ogg", 1.0, 1.0};
+        titles[] = {0.0,"They are shipshape. Make sure to put them to good use tomorrow!"};
+        duration = 3.6;
+    };
+    class kxhvkroo6 {
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd6.ogg", 1.0, 1.0};
+        titles[] = {0.0,"They are in good shape. Make sure to put them to good use tomorrow!"};
+        duration = 3.9;
+    };
+    class kxhvkroo7 {
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd7.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Don't worry, I'll pass it on."};
+        duration = 1.5;
+    };
+    class bpxqzvmm1 {
+        sound[] = {"sounds\showoff\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"You break it, you buy it, son."};
+        duration = 1.6;
+    };    
+    class bpxqzvmm2 {
+        sound[] = {"sounds\showoff\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Now go show off your flying skills somewhere else."};
+        duration = 2.5;
+    };    
+    class sawfkwnw1 {
+        sound[] = {"sounds\walk-to-quarry\THE_CO_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"This is Actual. Go ahead, One."};
+        duration = 1.9;
+    };
+    class sawfkwnw2 {
+        sound[] = {"sounds\walk-to-quarry\THE_CO_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I'm sorry, son, you're out of luck. Those vehicles don't have a drop of fuel in them, so they are pretty much useless at the moment."};
+        duration = 6.1;
+    };
+    
 };
 
 
