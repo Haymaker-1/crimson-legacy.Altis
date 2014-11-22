@@ -4168,7 +4168,7 @@ class Mission
 			age="UNKNOWN";
 			name="TRIGGER_APPROACHING_OP_KRYA_NERA";
 			expCond="TASK_PICK_UP_RADIOS_HAS_BEEN_ASSIGNED AND ((getPos thehelicopter) distance (getMarkerPos ""MARKER_KRYA_NERA_HELIPAD"") < 2500)";
-			expActiv="null = [] spawn {sleep (random 5);THE_CO sideChat ""Delta One, come in, over""; sleep 2; player sideChat ""Hi there Captain, I'm approaching Krya Nera now.""; sleep 3; THE_CO sideChat ""Good work son, just put her down on the helipad when you get here.""; sleep 5; THE_CO sideChat ""One of my men is standing by to load up the radios.""; sleep 5; suitcase1 setPos (getMarkerPos ""MARKER_SUITCASE1_GOTO_LABEL"");suitcase2 setPos (getMarkerPos ""MARKER_SUITCASE2_GOTO_LABEL"");suitcase3 setPos (getMarkerPos ""MARKER_SUITCASE3_GOTO_LABEL""); SUITCASE_CARRIER_MAN setPos (getMarkerPos ""MARKER_SUITCASE_CARRIER_MAN_GOTO_LABEL"");}";
+			expActiv="null = [] execVM ""scripts\radio-conversation-when-returning-from-athira.sqf""";
 			class Effects
 			{
 			};
@@ -4183,7 +4183,7 @@ class Mission
 			age="UNKNOWN";
 			name="TRIGGER_RADIOS_HAVE_BEEN_LOADED";
 			expCond="TASK_PICK_UP_RADIOS_HAS_BEEN_ASSIGNED AND ((getPos thehelicopter select 2) < 0.05) AND ((getPos thehelicopter) distance (getMarkerPos ""MARKER_KRYA_NERA_HELIPAD"") < 10)";
-			expActiv="null = [] spawn {sleep 3; suitcase1 setPos [0,0,-100]; suitcase2 setPos [1,0,-100]; suitcase3 setPos [0,1,-100]; SUITCASES_LOADED = true;  THE_CO sideChat ""Allright! You're loaded up. Make sure to send my best to the guys at Nabisco. Delta Actual, out."";sleep 4; TASK_PICK_UP_RADIOS setTaskState ""Succeeded""; [""TaskSucceeded"", ["""",""Pick up radios""]] call BIS_fnc_showNotification; TASK_DELIVER_RADIOS setTaskState ""Assigned"";  [""TaskAssigned"", ["""",""Deliver radios""]] call BIS_fnc_showNotification; player setCurrentTask TASK_DELIVER_RADIOS; }";
+			expActiv="null = [] execVM ""scripts\radio-conversation-after-picking-up-radios-krya-nera.sqf""";
 			class Effects
 			{
 			};
