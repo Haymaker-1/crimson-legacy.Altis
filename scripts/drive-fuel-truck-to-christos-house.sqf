@@ -131,9 +131,8 @@ player sideChat "Delta Actual, this is Delta One, come in, over.";
 
 sleep 10;
 
-THE_CO sideChat "This is Actual. Go ahead, One.";
-
-sleep 6;
+_isReady = [THE_CO, "kxhvkroo1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _vehTypeName = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "textPlural");
 
@@ -141,34 +140,31 @@ player sideChat format ["Hello sir. I'm helping Kostas prepare the assault on Ka
 
 sleep 15;
 
-THE_CO sideChat "I'm sorry, son, you're out of luck. Those vehicles don't have a drop of fuel in them, so they are pretty much useless at the moment.";
-
-sleep 14;
+_isReady = [THE_CO, "kxhvkroo2"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Yeah, well,... the thing is, I just nicked a CSAT fuel truck, see, so fuel is not a problem.";
 
 sleep 10;
 
-THE_CO sideChat "That's excellent work, soldier!";
-
-sleep 5;
+_isReady = [THE_CO, "kxhvkroo3"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Fuel aside, are the vehicles operational?";
 
 sleep 7;
 
-THE_CO sideChat format ["They are %1. Make sure to put them to good use tomorrow!",["tip-top",
-                        "shipshape", "in good shape"] call BIS_fnc_selectRandom];
+_voiceSampleId = ["kxhvkroo4","kxhvkroo5","kxhvkroo6"] call BIS_fnc_selectRandom;
 
-sleep 9;
+_isReady = [THE_CO, _voiceSampleId] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "OK then, I'll send someone to pick them up. Just make sure our men don't shoot the truck, OK? It's got CSAT camo patterns.";
 
 sleep 8;
 
-THE_CO sideChat "Don't worry, I'll pass it on.";
-
-sleep 6;
+_isReady = [THE_CO, "kxhvkroo7"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Thanks Captain. Delta One, out.";
 
@@ -403,6 +399,8 @@ _men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
 
 
 null = [] execVM "scripts\spawn-fireteams-kavala-bases.sqf";
+
+null = [] spawn {waitUntil {sleep 60; daytime > 5.75}; LOOKOUT_FOR_MORTAR_TARGETS = false };
 
 5 fadeSound 1;
 cutText ["A few hours later...","BLACK IN",8,false];

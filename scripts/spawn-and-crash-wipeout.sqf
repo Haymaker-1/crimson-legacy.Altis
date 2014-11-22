@@ -27,40 +27,40 @@ null = [] spawn {
 };
 
    
-THE_CO sideChat "All units, be advised, we have a pilot down.";
-sleep (2+random 2);
+_isReady = [THE_CO, "drxopaef1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+_isReady = [THE_CO, "drxopaef2"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
    
-THE_CO sideChat "I say again, we have a pilot down.";
-sleep (2+random 2);
-   
-THE_CO sideChat "Standby for update.";
-sleep (1+random 2); 
+_isReady = [THE_CO, "drxopaef3"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 sleep (8);
 
-THE_CO sideChat "Delta One, come in.";
-sleep (1+random 2); 
+_isReady = [THE_CO, "drxopaef4"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "This is One, over.";
 sleep (1+random 2); 
 
-THE_CO sideChat "Are you at Nabisco yet?";
-sleep (1+random 2); 
+_isReady = [THE_CO, "drxopaef5"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Couple of minutes out.";
 sleep (1+random 2); 
 
-THE_CO sideChat "One of our Wipeouts just went down. We are still figuring out where exactly.";
-sleep (3+random 2); 
+_isReady = [THE_CO, "drxopaef6"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-THE_CO sideChat "Standby at Nabisco until further notice.";
-sleep (3+random 2); 
+_isReady = [THE_CO, "drxopaef7"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Roger that.";
 sleep (1+random 2); 
 
-THE_CO sideChat "Delta Actual, out.";
-sleep (1+random 2); 
+_isReady = [THE_CO, "drxopaef8"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player removeSimpleTask TASK_DELIVER_RADIOS; 
 
@@ -79,8 +79,8 @@ waitUntil {sleep 1; (taskState TASK_WAIT_AT_NABISCO) == "Succeeded"};
 
 sleep (20+random 10);
 
-THE_CO sideChat "Delta One, come in, over.";
-sleep (2+random 2); 
+_isReady = [THE_CO, "drxopaef9"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Go ahead, Actual.";
 sleep (2+random 2); 
@@ -88,18 +88,17 @@ sleep (2+random 2);
 "MARKER_PILOT_DISTRESS_SIGNAL" setMarkerType "mil_dot"; 
 "MARKER_PILOT_DISTRESS_SIGNAL" setMarkerText "DISTRESS SIGNAL"; 
 
-THE_CO sideChat "We see a distress signal north of Kore. Looks like the pilot made it out in time.";
-
-sleep (4+random 2); 
+_isReady = [THE_CO, "drxopaef10"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Glad to hear it, sir. What do we do now?";
 sleep (3+random 2); 
 
-THE_CO sideChat "We need to get in there on the double before CSAT forces show up.";
-sleep (5+random 2); 
+_isReady = [THE_CO, "drxopaef11"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-THE_CO sideChat "I'm assigning the Special Forces team from Camp Nabisco to you. Take them to the crash site and see if you can get eyes on the pilot.";
-sleep (5+random 2); 
+_isReady = [THE_CO, "drxopaef12"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 [sf_teamleader,sf_marksman1,sf_rifleman1,sf_atman] joinSilent (group player);
 (group player) selectLeader player;

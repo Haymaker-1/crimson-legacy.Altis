@@ -156,9 +156,8 @@ player sideChat "Delta Actual, this is Delta One, come in, over.";
 
 sleep 10;
 
-THE_CO sideChat "This is Actual. Go ahead, One.";
-
-sleep 6;
+_isReady = [THE_CO, sawfkwnw1] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _vehTypeName = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "textPlural");
 
@@ -166,9 +165,8 @@ player sideChat format ["Hello sir. I'm helping Kostas prepare the assault on Ka
 
 sleep 15;
 
-THE_CO sideChat "I'm sorry, son, you're out of luck. Those vehicles don't have a drop of fuel in them, so they are pretty much useless at the moment.";
-
-sleep 14;
+_isReady = [THE_CO, sawfkwnw2] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Dammit, I can't catch a break tonight. Allright, thanks Captain. Delta One, out.";
 

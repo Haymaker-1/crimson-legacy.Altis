@@ -1,15 +1,18 @@
+
+
 player sideChat "Delta Actual, come in, over.";
 sleep (2+random 2);
-THE_CO sideChat "Go ahead, Delta One.";
-sleep (2+random 2);
 
-//TASK_FIND_CRASH_SITE setTaskState "Succeeded";
-//["TaskSucceeded", ["","Find crash site"]] call BIS_fnc_showNotification;
+
+_isReady = [THE_CO, "rxbbzszc1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Captain, we are near the crash site.";
 sleep (3+random 2);
-THE_CO sideChat "Check the vicinity of the wreck. Do you see the pilot?";
-sleep (7+random 2);
+
+_isReady = [THE_CO, "rxbbzszc2"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 player sideChat "Wait one.";
 sleep (2+random 2);
 

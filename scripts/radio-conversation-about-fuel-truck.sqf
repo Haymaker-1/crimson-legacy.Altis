@@ -26,56 +26,74 @@ cutText ["Early the following morning...","BLACK IN",8,false];
 player allowDamage true;
 
 sleep (10+random 20);
-THE_CO sideChat "Delta One, come in, over.";
-sleep 3;
+
+
+_isReady = [THE_CO, "nqccsmpx1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 player sideChat "This is One. What's up Captain? Any news on that fuel?";
 sleep 3;
-THE_CO sideChat "I just got word from Stavros. He managed to hustle some fuel but his truck is stuck near Athira.";
-sleep 3;
-THE_CO sideChat "And since the fuel is not coming to the helicopter...";
-sleep 4;
-THE_CO sideChat "I'm sending you the truck's location now.";
-sleep 5;
+
+_isReady = [THE_CO, "nqccsmpx2"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+_isReady = [THE_CO, "nqccsmpx3"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+_isReady = [THE_CO, "nqccsmpx4"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 "MARKER_FUEL_TRUCK" setMarkerType "mil_dot";
-THE_CO sideChat "Make no mistake though, CSAT forces control damn near every mountain south of here. I'm marking some of their AA on your map.";
-sleep 8;
+
+
+_isReady = [THE_CO, "nqccsmpx5"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+
 "MARKER_OPFOR_AA_FRINI" setMarkerShape "ELLIPSE"; 
 "MARKER_OPFOR_AA_FRINI" setMarkerSize [1750,1750];
 "MARKER_OPFOR_AA_FRINI" setMarkerAlpha _aaAlphaValue; 
 "MARKER_OPFOR_AA_FRINI_TEXT" setMarkerType "mil_dot"; 
-sleep (1+random 2);
+sleep (random 2);
 "MARKER_OPFOR_AA_IFESTONIA" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_IFESTONIA" setMarkerSize [1750,1750];
 "MARKER_OPFOR_AA_IFESTONIA" setMarkerAlpha _aaAlphaValue; 
 "MARKER_OPFOR_AA_IFESTONIA_TEXT" setMarkerType "mil_dot"; 
-sleep (1+random 2); 
+sleep (random 2); 
 "MARKER_OPFOR_AA_GALATI" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_GALATI" setMarkerSize [1750,1750];
 "MARKER_OPFOR_AA_GALATI" setMarkerAlpha _aaAlphaValue; 
 "MARKER_OPFOR_AA_GALATI_TEXT" setMarkerType "mil_dot"; 
-sleep (1+random 2);
+sleep (random 2);
 "MARKER_OPFOR_AA_PYRSOS" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_PYRSOS" setMarkerSize [1750,1750];
 "MARKER_OPFOR_AA_PYRSOS" setMarkerAlpha _aaAlphaValue; 
 "MARKER_OPFOR_AA_PYRSOS_TEXT" setMarkerType "mil_dot"; 
-sleep (1+random 2);
+sleep (random 2);
 "MARKER_OPFOR_AA_AMFISSA" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_AMFISSA" setMarkerSize [1750,1750];
 "MARKER_OPFOR_AA_AMFISSA" setMarkerAlpha _aaAlphaValue;
 "MARKER_OPFOR_AA_AMFISSA_TEXT" setMarkerType "mil_dot";  
-sleep (1+random 2);
+sleep (random 2);
 "MARKER_OPFOR_AA_MAGOS" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_MAGOS" setMarkerSize [1750,1750];
 "MARKER_OPFOR_AA_MAGOS" setMarkerAlpha _aaAlphaValue; 
 "MARKER_OPFOR_AA_MAGOS_TEXT" setMarkerType "mil_dot"; 
-sleep (4+random 2);
-THE_CO sideChat "Furthermore, Gravia Airbase is firmly in CSAT hands, although intel says there's no AA in that area. Be careful though.";
+sleep (random 2);
+
+_isReady = [THE_CO, "nqccsmpx6"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+
 ["MARKER_PERIMETER_AIRBASE",100,"ColorEAST",0.70] execVM "scripts\floodfill-perimeter.sqf";
-sleep 5;
-THE_CO sideChat "As you can see, you've got your work cut out for you.";
-sleep 4;
-THE_CO sideChat "Delta Actual, out.";
-sleep 2;
+
+_isReady = [THE_CO, "nqccsmpx7"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+_isReady = [THE_CO, "nqccsmpx8"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+
 TASK_LOAD_FUEL = player createSimpleTask ["TASKID_LOAD_FUEL"];
 TASK_LOAD_FUEL setSimpleTaskDescription ["Refuel the helicopter at Stavros' truck.","Refuel","Refuel"];
 TASK_LOAD_FUEL setSimpleTaskDestination (getMarkerPos "MARKER_LOAD_FUEL");

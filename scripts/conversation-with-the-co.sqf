@@ -6,45 +6,67 @@
 TASK_REPORT_IN_AT_KRYA_NERA setTaskState "Succeeded";
 ["TaskSucceeded", ["","Report in"]] call BIS_fnc_showNotification;
 
-THE_CO sideChat "Hello, Lieutenant.";
-sleep 3;
-THE_CO sideChat "I have a special assignment for you today.";
-sleep 4;
+
+_isReady = [THE_CO, "ydbdmwwk1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+_isReady = [THE_CO, "ydbdmwwk2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 player sideChat "Uh...OK. Anything you need Captain.";
 sleep 4;
-THE_CO sideChat "I need you to assist the Special Forces team at Camp Nabisco. They are tasked with providing the rebels with secure long range comms so we can coordinate the resistance against CSAT better.";
-sleep 12;
-THE_CO sideChat "I'll mark Nabisco on your map.";
-sleep 7;
+
+_isReady = [THE_CO, "ydbdmwwk3"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+
+_isReady = [THE_CO, "ydbdmwwk4"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+
 
 ["MARKER_PERIMETER_LNN_NABISCO",25,"ColorWEST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 
 "MARKER_CAMP_NABISCO" setMarkerType "mil_dot";
 
-THE_CO sideChat "The radios are in those cases on the table there.";
-sleep 7;
-THE_CO sideChat "Problem is, I currently can't spare the resources to bring those radios to the Special Forces team: everybody's low on fuel and resupply is not foreseen in the near future.";
-sleep 10;
+_isReady = [THE_CO, "ydbdmwwk5"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+_isReady = [THE_CO, "ydbdmwwk6"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 player sideChat "OK, what can I do?";
 sleep 3;
-THE_CO sideChat "I want you to go to the airport southwest of here.";
-sleep 4;
+
+_isReady = [THE_CO, "ydbdmwwk7"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 
 
 ["MARKER_PERIMETER_KRYA_NERA_AIRPORT_FTS",25,"ColorWEST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 "MARKER_HELIPORT" setMarkerType "mil_dot";
 
-THE_CO sideChat "In the meantime, I'll use my black market contact to procure some fuel. Stavros usually comes through but it'll surely take him a couple of hours.";
-sleep 5;
-THE_CO sideChat "In any case, I'll tell him to deliver the fuel directly to the airport so you can fill up the helo.";
-sleep 5;
-THE_CO sideChat "Once that's done, bring the helo here, load her up with the radios, and deliver them to Nabisco.";
-sleep 5;
-THE_CO sideChat "Any questions?";
-sleep 3;
+_isReady = [THE_CO, "ydbdmwwk8"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+
+_isReady = [THE_CO, "ydbdmwwk9"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+
+_isReady = [THE_CO, "ydbdmwwk10"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+
+_isReady = [THE_CO, "ydbdmwwk11"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1  ; scriptDone _isReady};
+
 player sideChat "No sir!";
 sleep 2;
-THE_CO sideChat "Allright then. Dismissed.";
+
+_isReady = [THE_CO, "ydbdmwwk12"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 
 { 
     _x lock 0;

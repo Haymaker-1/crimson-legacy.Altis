@@ -1,7 +1,7 @@
 
 _nMinutes = 6.0;
 
-if ((random 1.0)<0.2) then
+if ((random 1.0)<0.3) then
 {
 
     // littlebird

@@ -63,17 +63,17 @@ sleep random 10;
 player sideChat "Delta Actual, come in, over.";
 sleep 3;
 
-THE_CO sideChat "Go ahead, One.";
-sleep 2;
+_isReady = [THE_CO, "xwzldnaj1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Captain, the pilot is on the boat.";
 sleep 4;
 
-THE_CO sideChat "Sterling work, One.";
-sleep 2;
+_isReady = [THE_CO, "xwzldnaj2"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-THE_CO sideChat "You really helped avoid a severe crisis here.";
-sleep 4;
+_isReady = [THE_CO, "xwzldnaj3"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 if (random 1 < 0.5) then
 {   
@@ -86,20 +86,20 @@ else
     sleep 3;
 };
 
-THE_CO sideChat "Well, I appreciate it.";
-sleep 3;
+_isReady = [THE_CO, "xwzldnaj4"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "What do you want me to do now?";
 sleep 4;
 
-THE_CO sideChat "I want you to fall back to the rebel camp. See if you can be of any assistance to Commander Kostas.";
-sleep 7;
+_isReady = [THE_CO, "xwzldnaj5"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 player sideChat "Willco.";
 sleep 2;
 
-THE_CO sideChat "Catch you later, One. Delta Actual out.";
-sleep 3;
+_isReady = [THE_CO, "xwzldnaj6"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 sleep random 4;
 

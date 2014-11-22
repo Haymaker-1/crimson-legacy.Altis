@@ -31,8 +31,8 @@ for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROL
 
     _group = createGroup west;
     "B_G_Soldier_TL_F" createUnit [_spawnPos,_group];
-    
-    for "_j" from 0 to 3 do
+    _nUnits = 2 + round (random 3);
+    for "_iUnit" from 0 to (_nUnits - 1) do
     {
         _fighterType = ["B_G_Soldier_lite_F",
                         "B_G_medic_F",
@@ -40,10 +40,7 @@ for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROL
                         "B_G_Soldier_LAT_F",
                         "B_G_Soldier_AR_F"] call BIS_fnc_selectRandom;
 
-        if (random 1.0 < 0.25) then
-        {
-            _fighterType createUnit [_spawnPos,_group];
-        };
+        _fighterType createUnit [_spawnPos,_group];
     };
     
     {

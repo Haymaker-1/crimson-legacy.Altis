@@ -11,7 +11,7 @@ private "_iShell";
 
 _targetAgeMax = 5/60; // hours
 
-while {true} do {
+while {LOOKOUT_FOR_MORTAR_TARGETS} do {
 
     {
         if (!isNil "_x") then {

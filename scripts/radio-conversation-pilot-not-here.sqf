@@ -5,8 +5,10 @@ TASK_FIND_CRASH_SITE setTaskState "Succeeded";
 sleep (15+random 5);
 player sideChat "The pilot is not here, sir.";
 sleep (2+random 2);
-THE_CO sideChat "Dammit! Keep looking!";
-sleep (2+random 2);
+
+_isReady = [THE_CO, "xqxqpdkj1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 player sideChat "Roger. One, out.";
 sleep (2+random 2);
 

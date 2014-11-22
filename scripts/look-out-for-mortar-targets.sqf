@@ -7,7 +7,7 @@ private "_target";
 _theUnit = _this select 0;
 _theRange = _this select 1;
 
-while {alive _theUnit} do {
+while {alive _theUnit AND LOOKOUT_FOR_MORTAR_TARGETS} do {
     _targets = _theUnit nearTargets _theRange;
     {
         if (_x select 2 == WEST) then {

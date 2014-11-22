@@ -13,8 +13,11 @@ if (_cond) then
     sleep (3+random 2);
     if (alive thehelicopter) then
 	{
-        THE_CO sideChat "You break it, you buy it, son.";
-		sleep (1+random 1);
-		THE_CO sideChat "Now go show off your flying skills somewhere else.";
+        _isReady = [THE_CO, "bpxqzvmm1"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+
+        _isReady = [THE_CO, "bpxqzvmm2"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
     };
 };
