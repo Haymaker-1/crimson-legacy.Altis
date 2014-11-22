@@ -51,6 +51,18 @@ IED2_HAS_BEEN_ACTIVATED = false;
 TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED = false;
 EVERYBODY_IS_DONE_TALKING = true;
 TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED = false;
+LOOKOUT_FOR_MORTAR_TARGETS = true;
+VOICE_AMPLIFIER_DEFAULT = 3.0;
+
+VOICE_PITCH = [[THE_CO,0.9],
+               [player,1.1]];
+               
+VOICE_VOLUME = [[THE_CO,1.0],
+                [player,1.0]];
+
+SPEECH_AUDIBLE_DISTANCE = 25;
+
+MISSION_TOP_LEVEL_DIRECTORY = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
 
 GPS_TRACKING_IS_ON = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "GPS_TRACKING_ENABLED") == 1;
 player addAction ["Disable GPS tracking","scripts\toggle-gpstracking.sqf",nil,0,false];
