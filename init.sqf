@@ -54,11 +54,12 @@ TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED = false;
 LOOKOUT_FOR_MORTAR_TARGETS = true;
 VOICE_AMPLIFIER_DEFAULT = 3.0;
 
-VOICE_PITCH = [[THE_CO,0.9],
-               [player,1.1]];
-               
-VOICE_VOLUME = [[THE_CO,1.0],
-                [player,1.0]];
+
+VOICE_PITCH = [[THE_CO,0.92],
+               [player,1.10]];
+
+VOICE_VOLUME = [[THE_CO,1.70],
+                [player,0.20]];  
 
 SPEECH_AUDIBLE_DISTANCE = 25;
 
