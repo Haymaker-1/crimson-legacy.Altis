@@ -17,6 +17,7 @@ class Header
 class CfgSounds
 {
 
+    // THE_CO:
     // ydbdmwwk = scripts\conversation-with-the-co.sqf
     // nqccsmpx = scripts\radio-conversation-about-fuel-truck.sqf
     // dxhqaqgv = scripts\radio-conversation-when-returning-from-athira.sqf
@@ -31,6 +32,22 @@ class CfgSounds
     // bpxqzvmm = scripts\showoff
     // sawfkwnw = scripts\walk-to-quarry
     
+    // player
+    // feroeowf = scripts\conversation-with-the-co.sqf
+    //          = scripts\radio-conversation-about-fuel-truck.sqf
+    //          = scripts\radio-conversation-when-returning-from-athira.sqf
+    //          = scripts\radio-conversation-after-picking-up-radios-krya-nera.sqf
+    //          = scripts\spawn-and-crash-wipeout
+    //          = scripts\radio-conversation-crash-site-found
+    //          = scripts\radio-conversation-pilot-not-here
+    //          = scripts\radio-conversation-status-update
+    //          = scripts\radio-conversation-about-pilot-egress
+    // qzwpvxsn = scripts\call-in-the-boat
+    //          = scripts\drive-fuel-truck-to-christos-house
+    //          = scripts\showoff
+    //          = scripts\walk-to-quarry
+
+
     
 	sounds[] = {};
 	class fuelrateAlarm
@@ -377,6 +394,67 @@ class CfgSounds
         titles[] = {0.0,"I'm sorry, son, you're out of luck. Those vehicles don't have a drop of fuel in them, so they are pretty much useless at the moment."};
         duration = 6.1;
     };
+    class feroeowf1 {
+        sound[] = {"sounds\conversation-with-the-co\player_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Uh...OK. Anything you need Captain."};
+        duration = 3.8;
+    };    
+    class feroeowf2 {
+        sound[] = {"sounds\conversation-with-the-co\player_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"OK, what can I do?"};
+        duration = 1.8; 
+    };    
+    class feroeowf3 {
+        sound[] = {"sounds\conversation-with-the-co\player_snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"No sir!"};
+        duration = 0.8;
+    };    
+    class qzwpvxsn1 {
+        sound[] = {"sounds\call-in-the-boat\player_snd1.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Noah Three, this is Delta One. Do you read?"};
+        duration = 2.7;
+    };        
+    class qzwpvxsn2 {
+        sound[] = {"sounds\call-in-the-boat\player_snd2.ogg", 1.0, 1.0};
+        titles[] = {0.0,"We are approaching the pickup point."};
+        duration = 1.8;
+    };        
+    class qzwpvxsn3 {
+        sound[] = {"sounds\call-in-the-boat\player_snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"We are ready for pickup at egress Alpha."};
+        duration = 2.4;
+    };        
+    class qzwpvxsn4 {
+        sound[] = {"sounds\call-in-the-boat\player_snd4.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Delta Actual, come in, over."};
+        duration = 2.4;
+    };        
+    class qzwpvxsn5 {
+        sound[] = {"sounds\call-in-the-boat\player_snd5.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Captain, the pilot is on the boat."};
+        duration = 1.8;
+    };        
+    class qzwpvxsn6 {
+        sound[] = {"sounds\call-in-the-boat\player_snd6.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Just doing my job, sir."};
+        duration = 1.7;
+    };        
+    class qzwpvxsn7 {
+        sound[] = {"sounds\call-in-the-boat\player_snd7.ogg", 1.0, 1.0};
+        titles[] = {0.0,"All in a day's work, sir."};
+        duration = 1.7;
+    };        
+    class qzwpvxsn8 {
+        sound[] = {"sounds\call-in-the-boat\player_snd8.ogg", 1.0, 1.0};
+        titles[] = {0.0,"What do you want me to do now?"};
+        duration = 1.8;
+    };        
+    class qzwpvxsn9 {
+        sound[] = {"sounds\call-in-the-boat\player_snd9.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Willco."};
+        duration = 0.6;
+    };        
+    
     
 };
 
