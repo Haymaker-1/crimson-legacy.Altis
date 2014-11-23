@@ -5,8 +5,8 @@ deleteVehicle TRIGGER_ADDACTION_CALL_BOAT;
 
 sleep random 3;
 
-player sideChat "Noah Three, this is Delta One. Do you read?";
-sleep 5;
+_isReady = [player, "qzwpvxsn1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 (leader gunBoatGroup) sideChat "This is Noah Three. I read you loud and clear.";
 sleep 5;
@@ -16,11 +16,14 @@ _pos2 = getMarkerPos "MARKER_EGRESS_ALPHA";
 _dist = _pos1 distance _pos2;
 if (_dist > 100) then
 {
-    player sideChat "We are approaching the pickup point.";
+    _isReady = [player, "qzwpvxsn2"] execVM "scripts\unitspeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
+
 }
 else
 {
-    player sideChat "We are ready for pickup at egress Alpha.";
+    _isReady = [player, "qzwpvxsn3"] execVM "scripts\unitspeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 };
 sleep 5;
 
@@ -60,14 +63,14 @@ _wp = gunboatGroup addWaypoint [_pos,2];
 
 sleep random 10;
 
-player sideChat "Delta Actual, come in, over.";
-sleep 3;
+_isReady = [player, "qzwpvxsn4"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "xwzldnaj1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Captain, the pilot is on the boat.";
-sleep 4;
+_isReady = [player, "qzwpvxsn5"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "xwzldnaj2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
@@ -77,26 +80,27 @@ waitUntil{sleep 1; scriptDone _isReady};
 
 if (random 1 < 0.5) then
 {   
-    player sideChat "Just doing my job, sir.";
-    sleep 3;
+    _isReady = [player, "qzwpvxsn6"] execVM "scripts\unitspeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 }
 else
 {
-    player sideChat "All in a day's work, sir.";
-    sleep 3;
+    _isReady = [player, "qzwpvxsn7"] execVM "scripts\unitspeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 };
 
 _isReady = [THE_CO, "xwzldnaj4"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "What do you want me to do now?";
-sleep 4;
+_isReady = [player, "qzwpvxsn8"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 
 _isReady = [THE_CO, "xwzldnaj5"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Willco.";
-sleep 2;
+_isReady = [player, "qzwpvxsn9"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "xwzldnaj6"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
