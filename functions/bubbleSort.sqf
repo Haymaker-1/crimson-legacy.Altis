@@ -20,11 +20,11 @@ while {_swapped} do
     _swapped = false;
     _j = _j + 1;
     
-    //player sideChat format ["%1",_j];
+    //player globalChat format ["DEBUG (%1): %2",time, _j];
     
     for "_i" from 0 to (_n - _j) do
     {
-        //player sideChat format ["%1",_i];
+        //player globalChat format ["DEBUG (%1): %2",time,_i];
         if (_arr select _i > _arr select (_i+1)) then
         {
             _tmp = _arr select _i;
