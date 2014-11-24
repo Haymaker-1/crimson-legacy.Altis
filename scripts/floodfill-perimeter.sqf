@@ -38,7 +38,7 @@ for "_ix" from 0 to (_nx - 1) do
         };
         if (_isInside) then 
         {
-            //player sideChat format ["%1,%2",_ix,_iy];
+            //player globalChat format ["DEBUG (%1):%2,%3",time,_ix,_iy];
             _markerName = format ["AREA_%1_%2_%3",_markerBasename,_ix,_iy];
             _marker = createMarker [_markerName,_pos];
             _markerName setMarkerShape "RECTANGLE";
