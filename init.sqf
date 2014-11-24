@@ -96,6 +96,7 @@ randomSelectionFromArray = compile loadFile "functions\randomSelectionFromArray.
 strcmpn = compile loadFile "functions\strcmpn.sqf";
 getAddRatingValueExplosives = compile loadFile "functions\getAddRatingValueExplosives.sqf";
 getHitPointReport = compile loadFile "functions\getHitPointReport.sqf";
+datestr = compile loadFile "functions\datestr.sqf";
 
 
 
