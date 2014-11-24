@@ -62,7 +62,8 @@ if (_emitter isKindOf "Man" AND alive _emitter) then {
                  SPEECH_AUDIBLE_DISTANCE];  
                  
     _emitter sideChat _subtitle;
-
+    
+    player createDiaryRecord ["varTranscript",["Transcript","<font color='#00FFFF'>" + (groupID group _emitter) + "</font>: " + _subtitle]];
 
     sleep (_duration/_voicePitch);
     _emitter setRandomLip false;

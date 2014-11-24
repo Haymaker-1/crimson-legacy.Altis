@@ -22,7 +22,7 @@ if (isNil "_amplifier") then {
                     _amplifier = 30.0;
                 };
                 if (_veh isKindOf "Car") then {
-                    _amplifier = 20.0;
+                    _amplifier = 10.0;
                 };
             };
         };
@@ -67,6 +67,8 @@ if (_cond) then {
                  
     _emitter sideChat _subtitle;
 
+    player createDiaryRecord ["varTranscript",["Transcript","<font color='#00FFFF'>" + (groupID group _emitter) + "</font>: " + _subtitle]];
+    
     sleep (_duration/_voicePitch);
 };
 sleep 1;
