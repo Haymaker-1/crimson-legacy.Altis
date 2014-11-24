@@ -4227,7 +4227,6 @@ class Mission
 			a=40;
 			b=20;
 			rectangular=1;
-			activationBy="VEHICLE";
 			interruptable=1;
 			age="UNKNOWN";
 			name="TRIGGER_BREAK_IT_BUY_IT";
