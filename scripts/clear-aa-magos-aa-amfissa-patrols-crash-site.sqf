@@ -46,103 +46,162 @@ if (!SKIP_CLEANING_HOUSE) then {
     player allowDamage true;
 
     sleep 5;
-    kostas sideChat "Hello, lieutenant?";
-    sleep 4;
+    _isReady = [kostas, "lhdnftpm1"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
     _isReady = [player, "notjrcug1"] execVM "scripts\unitspeak.sqf";
     waitUntil{sleep 1; scriptDone _isReady};
 
 
-    _sites = [CRASH_SITE_IS_CLEAR,AA_MAGOS_IS_CLEAR,AA_AMFISSA_IS_CLEAR];
+    _siteIsClear = [CRASH_SITE_IS_CLEAR,AA_MAGOS_IS_CLEAR,AA_AMFISSA_IS_CLEAR];
     _n = 0;
     {
         if (!_x) then
         {
             _n = _n + 1;
         };
-    } forEach _sites;
+    } forEach _siteIsClear;
 
-    if (_n >1) then
+    if (_n > 1) then
     {
-        kostas sideChat "There are a couple of things I want you to do.";
-        sleep 5;
+        _isReady = [kostas, "lhdnftpm2"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
     };
 
-    _words = ["First, ","Second, ", "Third, "];
-    _wordsIndex = 0;
     _needAT = false; 
-    if (!CRASH_SITE_IS_CLEAR) then
-    {
-        if (_n==1) then
-        {
-            kostas sideChat "I have reports of enemy footmobiles in the woods near the crash site. Locate and eliminate them.";
-        } 
-        else
-        {
-            kostas sideChat (_words select _wordsIndex)+"I have reports of enemy footmobiles in the woods near the crash site. Locate and eliminate them.";
-        };
-        sleep 7;
-        _wordsIndex = _wordsIndex + 1;
+    
+    if (_siteIsClear isEqualTo [true,true,true]) then {
+    
+        _isReady = [kostas, "lhdnftpm3"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [player, "notjrcug2"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [kostas, "lhdnftpm4"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [player, "notjrcug3"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [kostas, "lhdnftpm5"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [player, "notjrcug4"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _needAT = true;
+
+    };
+    
+    
+    if (_siteIsClear isEqualTo [true,true,false]) then {
+    
+        _isReady = [kostas, "lhdnftpm6"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [player, "notjrcug2"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [kostas, "lhdnftpm7"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [player, "notjrcug3"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        
+    };
+    
+    
+    if (_siteIsClear isEqualTo [true,false,true]) then {
+    
+        _isReady = [kostas, "lhdnftpm8"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [player, "notjrcug2"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [kostas, "lhdnftpm9"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [player, "notjrcug4"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _needAT = true;
+        
+    };
+    
+    
+    if (_siteIsClear isEqualTo [false,true,true]) then {
+    
+        _isReady = [kostas, "lhdnftpm10"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [player, "notjrcug3"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+
+        _isReady = [kostas, "lhdnftpm11"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _isReady = [player, "notjrcug4"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+        
+        _needAT = true;
+        
+    };
+    
+    
+    if (_siteIsClear isEqualTo [true,false,false]) then {
+        
+        _isReady = [kostas, "lhdnftpm12"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
         
         _isReady = [player, "notjrcug2"] execVM "scripts\unitspeak.sqf";
         waitUntil{sleep 1; scriptDone _isReady};
 
     };
-
-    if (!AA_MAGOS_IS_CLEAR) then
-    {
-        if (_n==1) then 
-        {
-            kostas sideChat "The Anti-Air unit overlooking Kavala needs to go.";
-        }
-        else
-        {
-            kostas sideChat (_words select _wordsIndex)+"the Anti-Air unit overlooking Kavala needs to go.";
-        };
-        sleep 5;
-        _wordsIndex = _wordsIndex + 1;
-        _needAT = true;
+    
+    
+    if (_siteIsClear isEqualTo [false,true,false]) then {
+        
+        _isReady = [kostas, "lhdnftpm13"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
         
         _isReady = [player, "notjrcug3"] execVM "scripts\unitspeak.sqf";
         waitUntil{sleep 1; scriptDone _isReady};
         
-    };
-
-    if (!AA_AMFISSA_IS_CLEAR) then
-    {
-        if (_n==1) then
-        {
-            kostas sideChat "The Anti-Air unit near Amfissa must be eliminated.";
-        }
-        else
-        {
-            kostas sideChat (_words select _wordsIndex)+"the Anti-Air unit near Amfissa must be eliminated.";
-        };
-        sleep 5;
-        _wordsIndex = _wordsIndex + 1;
         _needAT = true;
+
+    };
+    
+    
+    if (_siteIsClear isEqualTo [false,false,true]) then {
+    
+        _isReady = [kostas, "lhdnftpm14"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
         
         _isReady = [player, "notjrcug4"] execVM "scripts\unitspeak.sqf";
         waitUntil{sleep 1; scriptDone _isReady};
+        
+        _needAT = true;
         
     };
 
 
     "MARKER_SHED_AGIOS" setMarkerColor "ColorBLACK";
     "MARKER_SHED_AGIOS" setMarkerType "mil_dot";
-    kostas sideChat "The spoils of war are being collected at a barn in Agios. I've updated your map with the location.";
-    sleep 5;
+    _isReady = [kostas, "lhdnftpm15"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
     if (_needAT) then 
     {
-        kostas sideChat "You may want to check it out before engaging the AA.";
-        sleep 3;
+        _isReady = [kostas, "lhdnftpm16"] execVM "scripts\unitradiospeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
     };
 
 
-    kostas sideChat "Good luck. Kostas out.";
-    sleep 10;
-
+    _isReady = [kostas, "lhdnftpm17"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
 
     if (SHOW_CHAPTER_TITLES) then {
@@ -231,8 +290,8 @@ if (!SKIP_CLEANING_HOUSE) then {
 
     sleep 6;
 
-    kostas sideChat "Yes, I'm listening.";
-    sleep 5;
+    _isReady = [kostas, "lhdnftpm18"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
     if ((count units group player) > 1) then {
         _isReady = [player, "notjrcug6"] execVM "scripts\unitspeak.sqf";
@@ -245,9 +304,8 @@ if (!SKIP_CLEANING_HOUSE) then {
     };
 
 
-    kostas sideChat "Good work! You have earned a few hours respite. Get back to the CP and rest up. I've got something special planned for later.";
-
-    sleep 12;
+    _isReady = [kostas, "lhdnftpm19"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
 
     cutText ["","BLACK OUT",5,false];
@@ -309,29 +367,28 @@ player allowDamage true;
 
 sleep 10;
 
-kostas sideChat "Delta One, this is Kostas, come in please.";
-
-sleep 5;
+_isReady = [kostas, "lhdnftpm20"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "notjrcug8"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 
-kostas sideChat "I hope you've enjoyed a couple of hours rest. Tonight, you're on a sabotage mission in preparation for the main assault on Kavala later.";
-
-sleep 7;
+_isReady = [kostas, "lhdnftpm21"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "notjrcug9"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "You bet!";
-
-sleep 4;
+_isReady = [kostas, "lhdnftpm22"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "notjrcug10"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Tonight's objective is to blow up any vehicles present in the motor pool in the center of Kavala. Be advised that the objective is heavily guarded though.";
+_isReady = [kostas, "lhdnftpm23"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 null = [] execVM "scripts\populate-motor-pool-kavala.sqf";
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-kavala.sqf";
@@ -343,17 +400,22 @@ null = [] execVM "scripts\spawn-kavala-mortar-group.sqf";
 
 sleep 11;
 
-kostas sideChat "We know there are at least two APCs, many footmobiles, as well as static machine guns. I've updated your map with what little intel we got on them.";
+_isReady = [kostas, "lhdnftpm24"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 null = [] execVM "scripts\spawn-kavala-static-defenses.sqf";
 sleep 16;
 
-kostas sideChat "I planned a diversion to deal with the APCs, but watch out for those machine guns, allright?";
-sleep 10;
+_isReady = [kostas, "lhdnftpm25"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "notjrcug11"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "We will first attack the power station just north of Kavala. It should be lightly guarded.";
+_isReady = [kostas, "lhdnftpm26"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+
 _spawningComplete = [] execVM "scripts\spawn-fireteam-power-plant.sqf";
 waitUntil{sleep 0.5;scriptDone _spawningComplete};
 _spawningComplete = nil;
@@ -362,49 +424,46 @@ null = [] execVM "scripts\spawn-transformer-kavala.sqf";
 
 sleep 10;
 
-kostas sideChat "Once the power station is under our control, you blow up the transformer, causing a blackout in Kavala.";
+_isReady = [kostas, "lhdnftpm27"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-sleep 10;
+_isReady = [kostas, "lhdnftpm28"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "While you rig the transformer, I'll have a guy place IEDs on the access routes to the power station.";
+_isReady = [kostas, "lhdnftpm29"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-sleep 8;
-
-kostas sideChat "I'm hoping the blackout will lure the two APCs from Kavala.";
-
-sleep 10;
 
 
 
 if (SKIP_CLEANING_HOUSE) then {
 
 
-    kostas sideChat "With the APCs engaged, you are free to infiltrate Kavala, find the motor pool and rig whatever vehicles are present.";
-    sleep 7;
+    _isReady = [kostas, "lhdnftpm30"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
     
     "MARKER_SHED_AGIOS" setMarkerColor "ColorBLACK";
     "MARKER_SHED_AGIOS" setMarkerType "mil_dot";
     
-    kostas sideChat "The spoils of war are being collected at a barn in Agios. I've updated your map with the location. Take whatever you need to cause as much mayhem as possible.";
-    sleep 9;
+    _isReady = [kostas, "lhdnftpm31"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
+    
 }
 else {
-    kostas sideChat "With the APCs engaged, you are free to infiltrate Kavala, find the motor pool and rig whatever vehicles are present. There's a crate in the barn with the other stuff, just take whatever you need to cause as much mayhem as possible.";
-    sleep 20;
+    _isReady = [kostas, "lhdnftpm32"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 };
     
 
 
-kostas sideChat "So, take over the power station, rig the transformer, then use the cover of darkness to infiltrate Kavala.";
-
-sleep 10;
+_isReady = [kostas, "lhdnftpm33"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "notjrcug11"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Good luck, soldier! You're gonna need it. Kostas out.";
-
-sleep 10;
+_isReady = [kostas, "lhdnftpm34"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _nSeconds = (19.5-daytime)*3600;
 if (_nSeconds>600) then {
