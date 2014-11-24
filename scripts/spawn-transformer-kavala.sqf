@@ -20,9 +20,8 @@ waitUntil{sleep 5; "DemoCharge_Remote_Ammo" in [typeOf ((attachedObjects transfo
 _isReady = [player, "axdxdlzp1"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Just remember these babies have 5-minute fuses, allright? Kostas out.";
-
-sleep 6;
+_isReady = [kostas, "oqlunvdd1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 
 

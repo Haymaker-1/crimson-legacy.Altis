@@ -78,23 +78,20 @@ sleep random 5;
 _isReady = [player, "xqzroloj1"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "This is Kostas. What's on your mind, Lieutenant?";
-
-sleep 5;
+_isReady = [kostas, "apdzaahs1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "xqzroloj2"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Is that right? Well, tell me!";
-
-sleep 4;
+_isReady = [kostas, "apdzaahs2"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "xqzroloj3"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Yes, it's unfortunate, but I don't see how we can change that. It's all I got.";
-
-sleep 9;
+_isReady = [kostas, "apdzaahs3"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _vehName1 = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "displayName");
 _vehName2 = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_gmg_F" >> "displayName");
@@ -103,20 +100,21 @@ _isReady = [player, "xqzroloj4"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 if (MOTOR_POOL_SCORE == 0) then {
-    kostas sideChat "That would help, seeing as we're up against mechanized infantry.";
+    _isReady = [kostas, "apdzaahs4"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
+
 }
 else {
-    kostas sideChat "That would go a long way, seeing as the enemy will be mostly infantry after your little excursion tonight.";
+    _isReady = [kostas, "apdzaahs5"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 };
 
-sleep 9;
 
 _isReady = [player, "xqzroloj5"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "That'd be great!";
-
-sleep 5;
+_isReady = [kostas, "apdzaahs6"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "xqzroloj6"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
@@ -402,34 +400,29 @@ sleep 5;
 player allowDamage true;
 
 
-kostas sideChat "Lieutenant? I have a SITREP for you with the latest intel.";
-
-sleep 6;
+_isReady = [kostas, "apdzaahs7"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "xqzroloj13"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "As a matter of fact, yes. CSAT have fortified the northern access roads into the city. I advise you to give that area a wide berth.";
+_isReady = [kostas, "apdzaahs8"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-sleep 12;
-
-kostas sideChat "So here's my plan. We will attack Kavala from the east and south at the break of dawn.";
-
-sleep 8;
+_isReady = [kostas, "apdzaahs9"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "xqzroloj14"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "I have a couple of rifle squads standing by at the old quarry. You must meet up with them before we start the main assault.";
-
-sleep 15;
+_isReady = [kostas, "apdzaahs10"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "xqzroloj15"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "I'll give you some more details once you are at the staging area. Kostas out.";
-
-sleep 5;
+_isReady = [kostas, "apdzaahs11"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 
 TASK_MEET_AT_QUARRY = player createSimpleTask ["TASKID_MEET_AT_QUARRY"];

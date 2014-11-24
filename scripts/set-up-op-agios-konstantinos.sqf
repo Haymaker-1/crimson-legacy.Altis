@@ -4,27 +4,26 @@ sleep 20;
 _isReady = [player, "qjgztpnn1"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Hello, Lieutenant, Kostas here.";
-sleep 3;
+_isReady = [kostas, "tlmntqjb1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "qjgztpnn2"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "That is good news! I'll send some men to hold the area.";
-sleep 9;
+_isReady = [kostas, "tlmntqjb2"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "qjgztpnn3"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "I want you to set up a CP overlooking the Agios area. In the meantime, I'll have my men collect some of the stuff left behind in your wake, so to speak. I'll check in with you in a couple of hours, OK?";
-sleep 10;
+_isReady = [kostas, "tlmntqjb3"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "qjgztpnn4"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "OK then. Kostas out.";
-sleep 3;
-
+_isReady = [kostas, "tlmntqjb4"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 
 

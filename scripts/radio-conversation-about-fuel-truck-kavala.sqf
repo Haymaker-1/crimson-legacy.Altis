@@ -5,16 +5,14 @@ waitUntil{sleep 1; scriptDone _isReady};
 _isReady = [player, "lqauupuc2"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Go ahead, One.";
-
-sleep 4;
+_isReady = [kostas, "ltmhcxwt1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "lqauupuc3"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "That's huge! But does it have any fuel in it?";
-
-sleep 4;
+_isReady = [kostas, "ltmhcxwt2"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kavalaFuelTruck lock false;
 
@@ -27,8 +25,8 @@ null = [kavalaFuelTruck] execVM "scripts\monitor-kavala-fuel-truck-status.sqf";
 _isReady = [player, "lqauupuc4"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "OK, we can hide the truck at Christos' house in Kore. I'll notify him immediately.";
-
+_isReady = [kostas, "ltmhcxwt3"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 
 TASK_STEAL_KAVALA_FUEL_TRUCK = player createSimpleTask ["TASKID_STEAL_KAVALA_FUEL_TRUCK"];

@@ -1,7 +1,5 @@
 
-
-
-
+player createDiarySubject ["varTranscript","Conversation"];
 
 TASK_REPORT_IN_AT_KRYA_NERA setTaskState "Succeeded";
 ["TaskSucceeded", ["","Report in"]] call BIS_fnc_showNotification;

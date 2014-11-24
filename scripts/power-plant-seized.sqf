@@ -10,20 +10,17 @@ deleteVehicle TRIGGER_POWER_PLANT_SEIZED;
 _isReady = [player, "zdgzzloy1"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Go ahead, One.";
-
-sleep 4;
+_isReady = [kostas, "yazagpmr1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "zdgzzloy2"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Good work, I'll make the call. He'll be there in a couple of minutes. He promised to bring you explosives as well, so check his truck while he's preparing the ambush.";
+_isReady = [kostas, "yazagpmr2"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-sleep 8;
-
-kostas sideChat "Did you manage to rig the transformer?";
-
-sleep 5;
+_isReady = [kostas, "yazagpmr3"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 if ('DemoCharge_Remote_Mag' in magazines player) then {
     _isReady = [player, "zdgzzloy3"] execVM "scripts\unitspeak.sqf";
@@ -36,7 +33,8 @@ else {
 };
 
 
-kostas sideChat "Roger that. Kostas out.";
+_isReady = [kostas, "yazagpmr4"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 null = [] execVM "scripts\spawn-negades-demo-specialist.sqf";
 
