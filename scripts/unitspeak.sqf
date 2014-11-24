@@ -22,7 +22,7 @@ if (isNil "_amplifier") then {
                     _amplifier = 30.0;
                 };
                 if (_veh isKindOf "Car") then {
-                    _amplifier = 20.0;
+                    _amplifier = 10.0;
                 };
             };
         };
