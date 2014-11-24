@@ -3,14 +3,14 @@ TASK_FIND_CRASH_SITE setTaskState "Succeeded";
 ["TaskSucceeded", ["","Find crash site"]] call BIS_fnc_showNotification;
 
 sleep (15+random 5);
-player sideChat "The pilot is not here, sir.";
-sleep (2+random 2);
+_isReady = [player, "xmocpdll1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "xqxqpdkj1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Roger. One, out.";
-sleep (2+random 2);
+_isReady = [player, "xmocpdll2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 sleep (10+random 5);
 player groupChat "Does anyone have a clue how we find this guy?";

@@ -7,17 +7,15 @@ deleteVehicle TRIGGER_POWER_PLANT_CLEARED;
 deleteVehicle TRIGGER_POWER_PLANT_SEIZED;
 
 
-player sideChat "Delta One for Kostas, come in, please.";
-
-sleep 5;
+_isReady = [player, "zdgzzloy1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "Go ahead, One.";
 
 sleep 4;
 
-player sideChat "We've taken control of the power plant, sir. I guess it's time to send in your guy.";
-
-sleep 6;
+_isReady = [player, "zdgzzloy2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "Good work, I'll make the call. He'll be there in a couple of minutes. He promised to bring you explosives as well, so check his truck while he's preparing the ambush.";
 
@@ -28,12 +26,13 @@ kostas sideChat "Did you manage to rig the transformer?";
 sleep 5;
 
 if ('DemoCharge_Remote_Mag' in magazines player) then {
-    player sideChat "I'm about to.";
-    sleep 3;
+    _isReady = [player, "zdgzzloy3"] execVM "scripts\unitspeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
+
 }
 else {
-    player sideChat "I don't have any explosives on me. I guess I'll have to wait for your guy.";
-    sleep 6;
+    _isReady = [player, "zdgzzloy4"] execVM "scripts\unitspeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 };
 
 

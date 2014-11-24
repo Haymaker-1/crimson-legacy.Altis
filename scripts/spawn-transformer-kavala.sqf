@@ -17,9 +17,8 @@ _trig setTriggerStatements["this AND POWER_PLANT_CAN_PLACE_EXPLOSIVES AND 'DemoC
 
 waitUntil{sleep 5; "DemoCharge_Remote_Ammo" in [typeOf ((attachedObjects transformer) select 0)]};
 
-player sideChat "I just placed the explosives, sir.";
-
-sleep 5; 
+_isReady = [player, "axdxdlzp1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "Just remember these babies have 5-minute fuses, allright? Kostas out.";
 

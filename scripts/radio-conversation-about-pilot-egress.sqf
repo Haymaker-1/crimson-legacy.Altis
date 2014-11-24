@@ -6,20 +6,20 @@
 
 
 
-player sideChat "Delta Actual, this is Delta One, come in please.";
-sleep 6;
+_isReady = [player, "qlwajhnj1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "yiuwnpkq1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Good news, Captain! We managed to liberate the pilot! He's with me now.";
-sleep 6;
+_isReady = [player, "qlwajhnj2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "yiuwnpkq2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "What do you want me to do with him, sir? Is there some kind of egress plan?";
-sleep 8;
+_isReady = [player, "qlwajhnj3"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "yiuwnpkq3"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};

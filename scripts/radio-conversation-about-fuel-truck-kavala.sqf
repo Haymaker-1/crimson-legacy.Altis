@@ -1,19 +1,16 @@
 
-player sideChat "Wow, a fuel truck!";
+_isReady = [player, "lqauupuc1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-sleep 5;
-
-player sideChat "Delta One for Kostas, come in.";
-
-sleep 4;
+_isReady = [player, "lqauupuc2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "Go ahead, One.";
 
 sleep 4;
 
-player sideChat "There's a fuel truck in the motor pool. I say again, I've located a fuel truck in the motor pool!";
-
-sleep 12;
+_isReady = [player, "lqauupuc3"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "That's huge! But does it have any fuel in it?";
 
@@ -27,9 +24,8 @@ kavalaFuelTruck allowDamage true;
 
 null = [kavalaFuelTruck] execVM "scripts\monitor-kavala-fuel-truck-status.sqf";
 
-player sideChat "It's got some fuel in it! I'm gonna try sneak this baby out of here.";
-
-sleep 5;
+_isReady = [player, "lqauupuc4"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "OK, we can hide the truck at Christos' house in Kore. I'll notify him immediately.";
 

@@ -31,8 +31,8 @@ sleep (10+random 20);
 _isReady = [THE_CO, "nqccsmpx1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "This is One. What's up Captain? Any news on that fuel?";
-sleep 3;
+_isReady = [player, "rhqqdblf1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "nqccsmpx2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};

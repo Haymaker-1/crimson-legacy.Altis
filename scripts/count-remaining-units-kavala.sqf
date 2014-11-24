@@ -86,7 +86,9 @@ while {!_noVehiclesLeftInKavala} do {
 } forEach (units group player);
 
 
-kostas sideChat "You did it! The remaining troops surrendered!";
+_isReady = [kostas, "nvurkijn1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 
 sleep 10;
 

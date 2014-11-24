@@ -49,8 +49,8 @@ if (!SKIP_CLEANING_HOUSE) then {
     kostas sideChat "Hello, lieutenant?";
     sleep 4;
 
-    player sideChat "Hello, sir.";
-    sleep 3;
+    _isReady = [player, "notjrcug1"] execVM "scripts\unitspeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
 
     _sites = [CRASH_SITE_IS_CLEAR,AA_MAGOS_IS_CLEAR,AA_AMFISSA_IS_CLEAR];
@@ -84,8 +84,8 @@ if (!SKIP_CLEANING_HOUSE) then {
         sleep 7;
         _wordsIndex = _wordsIndex + 1;
         
-        player sideChat "OK, I'm on it.";
-        sleep 3;
+        _isReady = [player, "notjrcug2"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
 
     };
 
@@ -103,8 +103,8 @@ if (!SKIP_CLEANING_HOUSE) then {
         _wordsIndex = _wordsIndex + 1;
         _needAT = true;
         
-        player sideChat "Can do, sir.";
-        sleep 2;
+        _isReady = [player, "notjrcug3"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
         
     };
 
@@ -122,8 +122,8 @@ if (!SKIP_CLEANING_HOUSE) then {
         _wordsIndex = _wordsIndex + 1;
         _needAT = true;
         
-        player sideChat "Eliminate the AA, roger that, sir.";
-        sleep 5;
+        _isReady = [player, "notjrcug4"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
         
     };
 
@@ -226,23 +226,24 @@ if (!SKIP_CLEANING_HOUSE) then {
 
     sleep 10;
 
-    player sideChat "Hey Kostas, you there?";
+    _isReady = [player, "notjrcug5"] execVM "scripts\unitspeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
     sleep 6;
 
     kostas sideChat "Yes, I'm listening.";
-
     sleep 5;
 
     if ((count units group player) > 1) then {
-        player sideChat "We are mission complete. Any chance of some R & R? It's been a long day, you know.";
+        _isReady = [player, "notjrcug6"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
+
     }
     else {
-        player sideChat "I am mission complete. Any chance of some R & R? It's been a long day, you know."; 
+        _isReady = [player, "notjrcug7"] execVM "scripts\unitspeak.sqf";
+        waitUntil{sleep 1; scriptDone _isReady};
     };
 
-
-    sleep 9;
 
     kostas sideChat "Good work! You have earned a few hours respite. Get back to the CP and rest up. I've got something special planned for later.";
 
@@ -312,25 +313,23 @@ kostas sideChat "Delta One, this is Kostas, come in please.";
 
 sleep 5;
 
-player sideChat "This is One. What's up, Kostas?";
+_isReady = [player, "notjrcug8"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-sleep 4;
 
 kostas sideChat "I hope you've enjoyed a couple of hours rest. Tonight, you're on a sabotage mission in preparation for the main assault on Kavala later.";
 
 sleep 7;
 
-player sideChat "Does it involve blowing stuff up?";
-
-sleep 6;
+_isReady = [player, "notjrcug9"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "You bet!";
 
 sleep 4;
 
-player sideChat "Allright then, what's the plan?";
-
-sleep 4;
+_isReady = [player, "notjrcug10"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "Tonight's objective is to blow up any vehicles present in the motor pool in the center of Kavala. Be advised that the objective is heavily guarded though.";
 null = [] execVM "scripts\populate-motor-pool-kavala.sqf";
@@ -351,8 +350,8 @@ sleep 16;
 kostas sideChat "I planned a diversion to deal with the APCs, but watch out for those machine guns, allright?";
 sleep 10;
 
-player sideChat "Amen to that, don't want to get on the wrong side of a fifty. So, what's the diversion?";
-sleep 8;
+_isReady = [player, "notjrcug11"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "We will first attack the power station just north of Kavala. It should be lightly guarded.";
 _spawningComplete = [] execVM "scripts\spawn-fireteam-power-plant.sqf";
@@ -400,9 +399,8 @@ kostas sideChat "So, take over the power station, rig the transformer, then use 
 
 sleep 10;
 
-player sideChat "And blow up some more stuff. Works for me!";
-
-sleep 8;
+_isReady = [player, "notjrcug11"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "Good luck, soldier! You're gonna need it. Kostas out.";
 

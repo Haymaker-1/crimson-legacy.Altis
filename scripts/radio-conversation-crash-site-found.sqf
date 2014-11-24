@@ -1,20 +1,19 @@
 
 
-player sideChat "Delta Actual, come in, over.";
-sleep (2+random 2);
-
+_isReady = [player, "vmwhowzr1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "rxbbzszc1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Captain, we are near the crash site.";
-sleep (3+random 2);
+_isReady = [player, "vmwhowzr2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "rxbbzszc2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Wait one.";
-sleep (2+random 2);
+_isReady = [player, "vmwhowzr3"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 deleteVehicle TRIGGER_I_SEE_SMOKE;
 

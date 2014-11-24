@@ -31,7 +31,10 @@ kostas disableAI "MOVE";
 kostas disableAI "ANIM";
 kostas setVectorDir [_dx,_dy,0];
 kostas action ["salute",kostas];
-kostas sideChat "Welcome, friends!";
+
+_isReady = [kostas, "egcnoprm1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 waitUntil {((getPos player) distance (getPos kostas)) < 4};
 kostas enableAI "MOVE";
 kostas enableAI "ANIM";
@@ -41,31 +44,34 @@ TASK_MEET_KOSTAS setTaskState "Succeeded";
 ["TaskSucceeded", ["","Meet Kostas"]] call BIS_fnc_showNotification;
 
 // ask about our pilot
-player sideChat "Hello sir. I was wondering if you have any information about a plane crash just south of here. The pilot is MIA.";
-sleep (4+random 2);
+_isReady = [player, "mbhglmap1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+
 
 // kostas hasnt heard anything because he hasnt had contact for a few days already
-kostas sideChat "I'm sorry, I can't help you with that.";
-sleep (4+random 2);
+_isReady = [kostas, "egcnoprm2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Christos may know more, he likes to hunt in that area.";
-sleep (4+random 2);
+_isReady = [kostas, "egcnoprm3"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "How do we reach him?";
-sleep (2+random 2);
+_isReady = [player, "mbhglmap2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "He lives near Kore, just a short hop by helicopter.";
-sleep (4+random 2);
+_isReady = [kostas, "egcnoprm4"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Yeah, well... it seems our helicopter is out for the moment. It started losing fuel like crazy all of a sudden.";
-sleep (5+random 2);
+_isReady = [player, "mbhglmap3"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 // but we brought radios
 sf_teamleader groupChat "Perhaps we could use the new radios we brought?";
 sleep (4+random 2);
 OUTLIVED_HIS_USEFULNESS set [0,true];
 
-player sideChat "Of course! I totally forgot about those. We brought you some radios.";
+_isReady = [player, "mbhglmap4"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 // unload radios
 
@@ -101,23 +107,23 @@ kostas playAction "SitDown";
 // kostas gets on radio
 sleep (1+random 2);
 
-kostas sideChat "I'll try to raise Christos.";
-sleep (2+random 2);
+_isReady = [kostas, "egcnoprm5"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "Christos, are you there?";
-sleep (10+random 2);
+_isReady = [kostas, "egcnoprm6"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 christos globalChat "...Kostas, is that you?";
 sleep (3+random 2);
 
-kostas sideChat "Yes, some friends brought us radios!";
-sleep (3+random 2);
+_isReady = [kostas, "egcnoprm7"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 christos globalChat "Great!";
 sleep (2+random 2);
 
-kostas sideChat "Listen, did you hear anything about a plane crash?";
-sleep (5+random 2);
+_isReady = [kostas, "egcnoprm8"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 christos globalChat "Yeah, I saw the whole thing!";
 sleep (2+random 2);
@@ -131,11 +137,11 @@ sleep (5+random 2);
 christos globalChat "They took him to where Sofia used to live. You remember her?";
 sleep (5+random 2);
 
-kostas sideChat "Yes, I remember.";
-sleep (2+random 2);
+_isReady = [kostas, "egcnoprm9"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "OK, thanks Christos.";
-sleep (3+random 2);
+_isReady = [kostas, "egcnoprm10"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 christos globalChat "Bye!";
 sleep (2+random 2);
@@ -147,15 +153,21 @@ kostas enableAI "ANIM";
 deleteVehicle christos;
 
 sleep (2+random 2);
-kostas sideChat "So it looks like the pilot is being held just west of Syrta.";
-sleep (3+random 2);
-kostas sideChat "I'll mark Sofia's house on your map.";
+
+_isReady = [kostas, "egcnoprm11"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+_isReady = [kostas, "egcnoprm12"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
 "MARKER_CAPTURED_PILOT_LOCATION" setMarkerType "mil_dot";
 sleep (3+random 2);
 
-kostas sideChat "Feel free to use the ATVs or the truck if you want.";
-sleep (5+random 2);
-player sideChat "Thanks, that'd be great.";
+_isReady = [kostas, "egcnoprm13"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
+
+_isReady = [player, "mbhglmap5"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 
 {
@@ -188,23 +200,23 @@ waitUntil {sleep 5;EVERYBODY_IS_DONE_TALKING};
 EVERYBODY_IS_DONE_TALKING = false;
 
 
-kostas sideChat "Ehm...hello?";
-sleep (3+random 3);
+_isReady = [kostas, "egcnoprm14"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Hi there, Kostas. What's up?";
-sleep (4+random 2);
+_isReady = [player, "mbhglmap6"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "I just got word from a spotter near the airport that a convoy has left Gravia Airbase heading west. Thought you'd like to know.";
-sleep (5+random 2);
+_isReady = [kostas, "egcnoprm15"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Yeah, I half expected that they would send somebody.";
-sleep (4+random 2);
+_isReady = [player, "mbhglmap7"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-kostas sideChat "I'll ask Christos to be on the lookout. If they are coming this way, they'll probably pass by him.";
-sleep (3+random 3);
+_isReady = [kostas, "egcnoprm16"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Thanks for the update. Delta One, out.";
-sleep (4+random 3);
+_isReady = [player, "mbhglmap8"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 EVERYBODY_IS_DONE_TALKING = true;
 
@@ -219,17 +231,17 @@ if (CAN_ASSIGN_DESTROY_CONVOY_VEHICLES) then {
     waitUntil {sleep 5;EVERYBODY_IS_DONE_TALKING};
     EVERYBODY_IS_DONE_TALKING = false;
 
-    kostas sideChat "Kostas here. Christos just called me to say that the convoy is passing through Kore at the moment. There are three vehicles in the convoy. One truck and two MRAPs.";
-    sleep (15 + random 3);
+    _isReady = [kostas, "egcnoprm17"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
-    kostas sideChat "This is a great opportunity! If there is any chance at all you can ambush the convoy and destroy their vehicles, that would be good for us. But be careful!";
-    sleep (8 + random 3);
+    _isReady = [kostas, "egcnoprm18"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
-    kostas sideChat "Eh...Kostas out.";
-    sleep (2+random 2);
+    _isReady = [kostas, "egcnoprm19"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
-    player sideChat "Roger your last. Thanks, Kostas.";
-    sleep (6+random 3);
+    _isReady = [player, "mbhglmap9"] execVM "scripts\unitspeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 
     EVERYBODY_IS_DONE_TALKING = true;
 

@@ -41,14 +41,14 @@ sleep (8);
 _isReady = [THE_CO, "drxopaef4"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "This is One, over.";
-sleep (1+random 2); 
+_isReady = [player, "embbzaox1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "drxopaef5"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Couple of minutes out.";
-sleep (1+random 2); 
+_isReady = [player, "embbzaox2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "drxopaef6"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
@@ -56,8 +56,8 @@ waitUntil{sleep 1; scriptDone _isReady};
 _isReady = [THE_CO, "drxopaef7"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Roger that.";
-sleep (1+random 2); 
+_isReady = [player, "embbzaox3"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "drxopaef8"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
@@ -82,8 +82,8 @@ sleep (20+random 10);
 _isReady = [THE_CO, "drxopaef9"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Go ahead, Actual.";
-sleep (2+random 2); 
+_isReady = [player, "embbzaox4"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 "MARKER_PILOT_DISTRESS_SIGNAL" setMarkerType "mil_dot"; 
 "MARKER_PILOT_DISTRESS_SIGNAL" setMarkerText "DISTRESS SIGNAL"; 
@@ -91,8 +91,8 @@ sleep (2+random 2);
 _isReady = [THE_CO, "drxopaef10"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Glad to hear it, sir. What do we do now?";
-sleep (3+random 2); 
+_isReady = [player, "embbzaox5"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "drxopaef11"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};

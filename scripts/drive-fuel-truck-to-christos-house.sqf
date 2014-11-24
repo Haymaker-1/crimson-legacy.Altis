@@ -75,25 +75,22 @@ else {
 
 sleep random 5;
 
-player sideChat "Hey Kostas, you there?";
-
-sleep 5;
+_isReady = [player, "xqzroloj1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "This is Kostas. What's on your mind, Lieutenant?";
 
 sleep 5;
 
-player sideChat "Well sir, I have an idea how we can stack the odds in our favor tomorrow.";
-
-sleep 7;
+_isReady = [player, "xqzroloj2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "Is that right? Well, tell me!";
 
 sleep 4;
 
-player sideChat "OK, here's the thing. We are assaulting Kavala tomorrow, but we have only light vehicles and infantry, right?";
-
-sleep 8;
+_isReady = [player, "xqzroloj3"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "Yes, it's unfortunate, but I don't see how we can change that. It's all I got.";
 
@@ -102,9 +99,8 @@ sleep 9;
 _vehName1 = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "displayName");
 _vehName2 = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_gmg_F" >> "displayName");
 
-player sideChat format ["What if I could get my hands on a %1 and a %2?",_vehName1, _vehName2];
-
-sleep 7;
+_isReady = [player, "xqzroloj4"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 if (MOTOR_POOL_SCORE == 0) then {
     kostas sideChat "That would help, seeing as we're up against mechanized infantry.";
@@ -115,58 +111,56 @@ else {
 
 sleep 9;
 
-player sideChat "I remember seeing a bunch of vehicles at the airfield in Krya Nera. Might be worth checking out if we can use them. Shall I call my CO and find out?";
-
-sleep 12;
+_isReady = [player, "xqzroloj5"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "That'd be great!";
 
 sleep 5;
 
-player sideChat "Roger. Delta One, out.";
+_isReady = [player, "xqzroloj6"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-sleep 25;
+sleep 11;
 
-player sideChat "Delta Actual, this is Delta One, come in, over.";
-
-sleep 10;
+_isReady = [player, "xqzroloj7"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "kxhvkroo1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 _vehTypeName = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "textPlural");
 
-player sideChat format ["Hello sir. I'm helping Kostas prepare the assault on Kavala tomorrow. We could really use the %1 parked at the heliport.",_vehTypeName];
-
-sleep 15;
+_isReady = [player, "xqzroloj8"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "kxhvkroo2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Yeah, well,... the thing is, I just nicked a CSAT fuel truck, see, so fuel is not a problem.";
+_isReady = [player, "xqzroloj9"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 sleep 10;
 
 _isReady = [THE_CO, "kxhvkroo3"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Fuel aside, are the vehicles operational?";
-
-sleep 7;
+_isReady = [player, "xqzroloj10"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _voiceSampleId = ["kxhvkroo4","kxhvkroo5","kxhvkroo6"] call BIS_fnc_selectRandom;
 
 _isReady = [THE_CO, _voiceSampleId] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "OK then, I'll send someone to pick them up. Just make sure our men don't shoot the truck, OK? It's got CSAT camo patterns.";
-
-sleep 8;
+_isReady = [player, "xqzroloj11"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "kxhvkroo7"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-player sideChat "Thanks Captain. Delta One, out.";
+_isReady = [player, "xqzroloj12"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 waitUntil{sleep 5; (getPos player) distance (getMarkerPos "MARKER_CHRISTOS_HOUSE") < 50};
 
@@ -412,9 +406,8 @@ kostas sideChat "Lieutenant? I have a SITREP for you with the latest intel.";
 
 sleep 6;
 
-player sideChat "Roger. Anything interesting happened during my nap?";
-
-sleep 7;
+_isReady = [player, "xqzroloj13"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "As a matter of fact, yes. CSAT have fortified the northern access roads into the city. I advise you to give that area a wide berth.";
 
@@ -424,17 +417,15 @@ kostas sideChat "So here's my plan. We will attack Kavala from the east and sout
 
 sleep 8;
 
-player sideChat "Sun behind us, huh? Smart.";
-
-sleep 7;
+_isReady = [player, "xqzroloj14"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "I have a couple of rifle squads standing by at the old quarry. You must meet up with them before we start the main assault.";
 
 sleep 15;
 
-player sideChat "Willco.";
-
-sleep 4;
+_isReady = [player, "xqzroloj15"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "I'll give you some more details once you are at the staging area. Kostas out.";
 

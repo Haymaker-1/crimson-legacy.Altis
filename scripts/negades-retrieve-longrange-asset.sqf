@@ -3,20 +3,20 @@
 kostas sideChat "Hello? Lieutenant? Kostas here.";
 sleep 4;
 
-player sideChat "Hello sir.";
-sleep 3;
+_isReady = [player, "fcfnpird1"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "I could use your help.";
 sleep 3;
 
-player sideChat "Sure thing. Just tell me what you need.";
-sleep 3;
+_isReady = [player, "fcfnpird2"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "I want you to start clearing the western coast towards Kavala.";
 sleep 6;
 
-player sideChat "Roger that, search and destroy towards Kavala.";
-sleep 5;
+_isReady = [player, "fcfnpird3"] execVM "scripts\unitspeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 kostas sideChat "One more thing. We have intel that an anti-material gun is present near Negades. Seizing it could make your life a lot easier. But getting to it may be risky. Anyway, your call. Kostas out.";
 

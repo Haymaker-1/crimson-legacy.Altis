@@ -5,31 +5,31 @@ sleep random 10;
 TASK_MEET_AT_QUARRY setTaskState "Succeeded";
 ["TaskSucceeded", ["","Move to staging area"]] call BIS_fnc_showNotification;
 
-player sideChat "Delta One for Kostas, we are in position at the quarry.";
+_isReady = [player, "nzftunfr1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 sleep 7;
 
-kostas sideChat "Allright, this is it then. There are four squads, Alpha through Delta. Each has its own sector to secure.";
-
-sleep 12;
+_isReady = [kostas, "vhvrxuvu1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 
 if (_attackOnFoot) then {
-    kostas sideChat "Use your radio to control when each squad moves into position.";
-    sleep 7;
+    _isReady = [kostas, "vhvrxuvu2"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 }
 else {
-    kostas sideChat "Use your radio to control when each squad moves into position. I suggest you use the Striders' optics and range advantage to provide fire support, but it is your call.";
-    sleep 14;
+    _isReady = [kostas, "vhvrxuvu3"] execVM "scripts\unitradiospeak.sqf";
+    waitUntil{sleep 1; scriptDone _isReady};
 };
 
 null = [] execVM "scripts\spawn-casplane.sqf";
 
-kostas sideChat "Your CO has arranged for a Wipeout. It's currently on standby a short distance away. Radio 0-0-5 to call it in.";
+_isReady = [kostas, "vhvrxuvu4"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-sleep 11;
-
-kostas sideChat "Good luck and Godspeed, Lieutenant! Kostas out.";
+_isReady = [kostas, "vhvrxuvu5"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
 
 _radius = 100;
@@ -91,25 +91,25 @@ _marker = createMarker ["MARKER_DELTA_SECTOR_KAVALA_TEXT", getMarkerPos "MARKER_
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["ALPHA","PRESENT",false];
-_trig setTriggerStatements["this", "player sideChat 'Go Alpha!';_wp = kavalaRifleSquadAlpha addWaypoint [getMarkerPos 'MARKER_ALPHA_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr2'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; scriptDone _isReady};_wp = kavalaRifleSquadAlpha addWaypoint [getMarkerPos 'MARKER_ALPHA_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
 
 
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["BRAVO","PRESENT",false];
-_trig setTriggerStatements["this", "player sideChat 'Go Bravo!';_wp = kavalaRifleSquadBravo addWaypoint [getMarkerPos 'MARKER_BRAVO_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr3'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; scriptDone _isReady};;_wp = kavalaRifleSquadBravo addWaypoint [getMarkerPos 'MARKER_BRAVO_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
 
 
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["CHARLIE","PRESENT",false];
-_trig setTriggerStatements["this", "player sideChat 'Go Charlie!';_wp = kavalaRifleSquadCharlie addWaypoint [getMarkerPos 'MARKER_CHARLIE_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr3'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; scriptDone _isReady};';_wp = kavalaRifleSquadCharlie addWaypoint [getMarkerPos 'MARKER_CHARLIE_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
 
 
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["DELTA","PRESENT",false];
-_trig setTriggerStatements["this", "player sideChat 'Go Delta!';_wp = kavalaRifleSquadDelta addWaypoint [getMarkerPos 'MARKER_DELTA_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr4'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; scriptDone _isReady};';_wp = kavalaRifleSquadDelta addWaypoint [getMarkerPos 'MARKER_DELTA_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
 
 
 TASK_ASSAULT_KAVALA = player createSimpleTask ["TASKID_ASSAULT_KAVALA"];
