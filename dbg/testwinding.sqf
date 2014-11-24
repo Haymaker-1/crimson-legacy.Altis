@@ -33,7 +33,7 @@ while {_iMarker<_nMarkers} do {
     };
     
     _iMarker = _iMarker + 1;
-    player sideChat format ["%1",_iMarker];
+    player globalChat format ["DEBUG (%1): %2",time,_iMarker];
 };
 
 _nChar = 0;
@@ -42,6 +42,6 @@ _nChar = 0;
     _isEq = [_str,_x,count toArray _str] call HAYMAKER_fnc_strcmpn;
     if (_isEq) then {
         _nChar = _nChar + 1;
-        player sideChat format ["%1:%2",_nChar,_x];
+        player globalChat format ["DEBUG (%1): %2:%3",time,_nChar,_x];
     };
 } forEach allMapMarkers;
