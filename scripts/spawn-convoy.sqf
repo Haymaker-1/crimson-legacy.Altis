@@ -198,7 +198,7 @@ while {!CONVOY_HAS_ARRIVED} do
         _waypointArray set [_i,_posCurrent];
     };
     
-    //player sideChat format ["%1",(_posCurrent distance _posReference)];
+    //player globalChat format ["DEBUG (%1): %2",time,(_posCurrent distance _posReference)];
 
     for "_i" from 1 to (count _convoyMemberGroups - 1) do
     {
