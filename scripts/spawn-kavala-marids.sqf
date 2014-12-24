@@ -27,27 +27,27 @@ MARID_KAVALA_1 lock true;
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_1"),
                             MARID_KAVALA_1_GROUP,
-                            "this assignAsDriver MARID_KAVALA_1; this moveInDriver MARID_KAVALA_1"];
+                            "this assignAsDriver MARID_KAVALA_1; this moveInDriver MARID_KAVALA_1; this removePrimaryWeaponItem 'optic_ACO_grn';"];
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_1"),
                             MARID_KAVALA_1_GROUP,
-                            "this assignAsGunner MARID_KAVALA_1; this moveInGunner MARID_KAVALA_1"];
+                            "this assignAsGunner MARID_KAVALA_1; this moveInGunner MARID_KAVALA_1; this removePrimaryWeaponItem 'optic_ACO_grn';"];
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_1"),
                             MARID_KAVALA_1_GROUP,
-                            "this assignAsCommander MARID_KAVALA_1; this moveInCommander MARID_KAVALA_1"];
+                            "this assignAsCommander MARID_KAVALA_1; this moveInCommander MARID_KAVALA_1; this removePrimaryWeaponItem 'optic_ACO_grn';"];
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_1"),
                             MARID_KAVALA_1_GROUP,
-                            "this assignAsCargoIndex [MARID_KAVALA_1,0]; this moveInCargo MARID_KAVALA_1;"];
+                            "this assignAsCargoIndex [MARID_KAVALA_1,0]; this moveInCargo MARID_KAVALA_1; this removePrimaryWeaponItem 'optic_ACO_grn';"];
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_1"),
                             MARID_KAVALA_1_GROUP,
-                            "this assignAsCargoIndex [MARID_KAVALA_1,1]; this moveInCargo MARID_KAVALA_1;"];
+                            "this assignAsCargoIndex [MARID_KAVALA_1,1]; this moveInCargo MARID_KAVALA_1; this removePrimaryWeaponItem 'optic_ACO_grn';"];
                             
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_1"),
                             MARID_KAVALA_1_GROUP,
-                            "this assignAsCargoIndex [MARID_KAVALA_1,2]; this moveInCargo MARID_KAVALA_1;"];
+                            "this assignAsCargoIndex [MARID_KAVALA_1,2]; this moveInCargo MARID_KAVALA_1; this removePrimaryWeaponItem 'optic_ACO_grn';"];
                             
 
 {
@@ -68,27 +68,27 @@ MARID_KAVALA_2 lock true;
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_2"),
                             MARID_KAVALA_2_GROUP,
-                            "this assignAsDriver MARID_KAVALA_2; this moveInDriver MARID_KAVALA_2"];
+                            "this assignAsDriver MARID_KAVALA_2; this moveInDriver MARID_KAVALA_2; this removePrimaryWeaponItem 'optic_ACO_grn';"];
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_2"),
                             MARID_KAVALA_2_GROUP,
-                            "this assignAsGunner MARID_KAVALA_2; this moveInGunner MARID_KAVALA_2"];
+                            "this assignAsGunner MARID_KAVALA_2; this moveInGunner MARID_KAVALA_2; this removePrimaryWeaponItem 'optic_ACO_grn';"];
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_2"),
                             MARID_KAVALA_2_GROUP,
-                            "this assignAsCommander MARID_KAVALA_2; this moveInCommander MARID_KAVALA_2"];
+                            "this assignAsCommander MARID_KAVALA_2; this moveInCommander MARID_KAVALA_2; this removePrimaryWeaponItem 'optic_ACO_grn';"];
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_2"),
                             MARID_KAVALA_2_GROUP,
-                            "this assignAsCargoIndex [MARID_KAVALA_2,0]; this moveInCargo MARID_KAVALA_2;"];
+                            "this assignAsCargoIndex [MARID_KAVALA_2,0]; this moveInCargo MARID_KAVALA_2; this removePrimaryWeaponItem 'optic_ACO_grn';"];
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_2"),
                             MARID_KAVALA_2_GROUP,
-                            "this assignAsCargoIndex [MARID_KAVALA_2,1]; this moveInCargo MARID_KAVALA_2;"];
+                            "this assignAsCargoIndex [MARID_KAVALA_2,1]; this moveInCargo MARID_KAVALA_2; this removePrimaryWeaponItem 'optic_ACO_grn';"];
                             
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_2"),
                             MARID_KAVALA_2_GROUP,
-                            "this assignAsCargoIndex [MARID_KAVALA_2,2]; this moveInCargo MARID_KAVALA_2;"];
+                            "this assignAsCargoIndex [MARID_KAVALA_2,2]; this moveInCargo MARID_KAVALA_2; this removePrimaryWeaponItem 'optic_ACO_grn';"];
                             
 
 {

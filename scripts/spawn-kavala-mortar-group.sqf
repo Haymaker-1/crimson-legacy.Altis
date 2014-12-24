@@ -2,9 +2,9 @@
 
 
 mortarGroup = createGroup EAST;
-"O_Soldier_TL_F" createUnit [getMarkerPos "MARKER_MORTAR_SPAWN", mortarGroup, "mortarGroup selectLeader this; this allowDamage false;", 0.5, "sergeant"];
-"O_support_Mort_F" createUnit [getMarkerPos "MARKER_MORTAR_SPAWN", mortarGroup, "mortarGunner = this; this allowDamage false; removeBackpack this;", 0.5, "corporal"];
-"O_support_AMort_F" createUnit [getMarkerPos "MARKER_MORTAR_SPAWN", mortarGroup, "this allowDamage false; ", 0.5, "private"];
+"O_Soldier_TL_F" createUnit [getMarkerPos "MARKER_MORTAR_SPAWN", mortarGroup, "mortarGroup selectLeader this; this allowDamage false; this removePrimaryWeaponItem 'optic_ACO_grn';", 0.5, "sergeant"];
+"O_support_Mort_F" createUnit [getMarkerPos "MARKER_MORTAR_SPAWN", mortarGroup, "mortarGunner = this; this allowDamage false; removeBackpack this; this removePrimaryWeaponItem 'optic_ACO_grn';", 0.5, "corporal"];
+"O_support_AMort_F" createUnit [getMarkerPos "MARKER_MORTAR_SPAWN", mortarGroup, "this allowDamage false; this removePrimaryWeaponItem 'optic_ACO_grn';", 0.5, "private"];
 
 
 mortar1 = createVehicle ["O_Mortar_01_F",getMarkerPos "MARKER_MORTAR_SPAWN",[],0,"NONE"];  

@@ -57,6 +57,7 @@ for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROL
         if ((typeOf _x) != "O_Soldier_TL_F") then {
             _x removeWeapon "NVGoggles_OPFOR";
         };
+        _x removePrimaryWeaponItem "optic_ACO_grn";
     } forEach units _group;     
     
     null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";

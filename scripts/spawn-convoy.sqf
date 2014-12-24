@@ -52,6 +52,7 @@ convoyIfritGMG lock 0;
     _headgear = _headgearArray call BIS_fnc_selectRandom;
     _x addHeadGear _headgear;
     _x removeWeapon "NVGoggles_OPFOR";
+    _x removePrimaryWeaponItem "optic_ACO_grn";
 } forEach units convoyIfritGMGGroup;
                             
 convoyIfritHMGGroup = createGroup east;
@@ -85,6 +86,7 @@ convoyIfritHMG lock 0;
     _headgear = _headgearArray call BIS_fnc_selectRandom;
     _x addHeadGear _headgear;
     _x removeWeapon "NVGoggles_OPFOR";
+    _x removePrimaryWeaponItem "optic_ACO_grn";
 } forEach units convoyIfritHMGGroup;
                             
 convoyZamakGroup = createGroup east;
@@ -116,6 +118,7 @@ convoyZamak lock 0;
     _headgear = _headgearArray call BIS_fnc_selectRandom;
     _x addHeadGear _headgear;
     _x removeWeapon "NVGoggles_OPFOR";
+    _x removePrimaryWeaponItem "optic_ACO_grn";
 } forEach units convoyZamakGroup;
                             
 _convoyMemberGroups = [convoyIfritGMGGroup, convoyIfritHMGGroup, convoyZamakGroup];

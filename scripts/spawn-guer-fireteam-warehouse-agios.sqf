@@ -57,5 +57,4 @@ _veh = createVehicle ["I_G_Offroad_01_F", getMarkerPos "MARKER_SHED_AGIOS_SPAWN_
 _veh setFuel 0.06;
 _veh setDir random 360;
 
-SPAWN_AGIOS_DONE = true;
 

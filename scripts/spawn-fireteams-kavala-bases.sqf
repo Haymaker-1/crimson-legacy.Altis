@@ -64,6 +64,10 @@ _fighterTypes = ["O_Soldier_TL_F",
         
     };
     
+    {
+        _x removePrimaryWeaponItem "optic_ACO_grn";
+    } forEach units _group;
+    
 } forEach _groupData;
 
 

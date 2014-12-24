@@ -41,7 +41,7 @@ sleep (8);
 _isReady = [THE_CO, "drxopaef4"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-_isReady = [player, "embbzaox1"] execVM "scripts\unitspeak.sqf";
+_isReady = [player, "embbzaox1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [THE_CO, "drxopaef5"] execVM "scripts\unitradiospeak.sqf";
