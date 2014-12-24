@@ -8,7 +8,18 @@ cutText ["","BLACK OUT",5,false];
 5 fadeSound 0;
 sleep 5;
 
-SKIP_CLEANING_HOUSE = !false in [CRASH_SITE_IS_CLEAR,AA_MAGOS_IS_CLEAR,AA_AMFISSA_IS_CLEAR];
+TASK_SEIZE_SRIFLE_DONE = true;
+null = [] execVM "scripts\scavenge-agios-konstantinos.sqf";
+
+_spawningComplete = [] execVM "scripts\spawn-guer-fireteam-warehouse-agios.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
+
+_skiptimeValue = (15-daytime+random 0.25);
+(_skiptimeValue * 3600) setFog 0;
+skipTime _skiptimeValue;
+
+SKIP_CLEANING_HOUSE = [CRASH_SITE_IS_CLEAR,AA_MAGOS_IS_CLEAR,AA_AMFISSA_IS_CLEAR] isEqualTo [true,true,true];
 
 if (!SKIP_CLEANING_HOUSE) then {
     
@@ -22,23 +33,6 @@ if (!SKIP_CLEANING_HOUSE) then {
             _x setDamage 0;
         };
     } forEach units group player;
-
-    TASK_SEIZE_SRIFLE_DONE = true;
-    null = [] execVM "scripts\scavenge-agios-konstantinos.sqf";
-
-    _spawningComplete = [] execVM "scripts\spawn-guer-fireteam-warehouse-agios.sqf";
-    waitUntil{sleep 0.5;scriptDone _spawningComplete};
-    _spawningComplete = nil;
-
-
-
-    _skiptimeValue = (15-daytime+random 0.25);
-    (_skiptimeValue * 3600) setFog 0;
-    skipTime _skiptimeValue;
-
-    waitUntil {sleep 1;SPAWN_AGIOS_DONE};
-
-
 
 
     5 fadeSound 1;
@@ -70,7 +64,7 @@ if (!SKIP_CLEANING_HOUSE) then {
 
     _needAT = false; 
     
-    if (_siteIsClear isEqualTo [true,true,true]) then {
+    if (_siteIsClear isEqualTo [false,false,false]) then {
     
         _isReady = [kostas, "lhdnftpm3"] execVM "scripts\unitradiospeak.sqf";
         waitUntil{sleep 1; scriptDone _isReady};
@@ -95,7 +89,7 @@ if (!SKIP_CLEANING_HOUSE) then {
     };
     
     
-    if (_siteIsClear isEqualTo [true,true,false]) then {
+    if (_siteIsClear isEqualTo [false,false,true]) then {
     
         _isReady = [kostas, "lhdnftpm6"] execVM "scripts\unitradiospeak.sqf";
         waitUntil{sleep 1; scriptDone _isReady};
@@ -113,7 +107,7 @@ if (!SKIP_CLEANING_HOUSE) then {
     };
     
     
-    if (_siteIsClear isEqualTo [true,false,true]) then {
+    if (_siteIsClear isEqualTo [false,true,false]) then {
     
         _isReady = [kostas, "lhdnftpm8"] execVM "scripts\unitradiospeak.sqf";
         waitUntil{sleep 1; scriptDone _isReady};
@@ -132,7 +126,7 @@ if (!SKIP_CLEANING_HOUSE) then {
     };
     
     
-    if (_siteIsClear isEqualTo [false,true,true]) then {
+    if (_siteIsClear isEqualTo [true,false,false]) then {
     
         _isReady = [kostas, "lhdnftpm10"] execVM "scripts\unitradiospeak.sqf";
         waitUntil{sleep 1; scriptDone _isReady};
@@ -151,7 +145,7 @@ if (!SKIP_CLEANING_HOUSE) then {
     };
     
     
-    if (_siteIsClear isEqualTo [true,false,false]) then {
+    if (_siteIsClear isEqualTo [false,true,true]) then {
         
         _isReady = [kostas, "lhdnftpm12"] execVM "scripts\unitradiospeak.sqf";
         waitUntil{sleep 1; scriptDone _isReady};
@@ -162,7 +156,7 @@ if (!SKIP_CLEANING_HOUSE) then {
     };
     
     
-    if (_siteIsClear isEqualTo [false,true,false]) then {
+    if (_siteIsClear isEqualTo [true,false,true]) then {
         
         _isReady = [kostas, "lhdnftpm13"] execVM "scripts\unitradiospeak.sqf";
         waitUntil{sleep 1; scriptDone _isReady};
@@ -175,7 +169,7 @@ if (!SKIP_CLEANING_HOUSE) then {
     };
     
     
-    if (_siteIsClear isEqualTo [false,false,true]) then {
+    if (_siteIsClear isEqualTo [true,true,false]) then {
     
         _isReady = [kostas, "lhdnftpm14"] execVM "scripts\unitradiospeak.sqf";
         waitUntil{sleep 1; scriptDone _isReady};
@@ -218,7 +212,6 @@ if (!SKIP_CLEANING_HOUSE) then {
 
         TASK_CLEAR_CRASH_SITE = player createSimpleTask ["TASKID_CLEAR_CRASH_SITE"];
         TASK_CLEAR_CRASH_SITE setSimpleTaskDescription ["We have reports of enemies patrolling the area around the crash site. Go there and eliminate them.","Clear crash site","Clear crash site"];
-    //  TASK_CLEAR_CRASH_SITE setSimpleTaskDestination (getMarkerPos "MARKER_PILOT_DISTRESS_SIGNAL");
         TASK_CLEAR_CRASH_SITE setTaskState "Created";
         ["TaskCreated", ["","Clear crash site"]] call BIS_fnc_showNotification;
         TASK_CLEAR_CRASH_SITE_HAS_BEEN_ASSIGNED = true;
@@ -314,12 +307,6 @@ if (!SKIP_CLEANING_HOUSE) then {
 
 };
 
-TASK_SEIZE_SRIFLE_DONE = true;
-null = [] execVM "scripts\scavenge-agios-konstantinos.sqf";
-
-_spawningComplete = [] execVM "scripts\spawn-guer-fireteam-warehouse-agios.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
-_spawningComplete = nil;
 
 
 N_STICKS_DYNAMITE = 2;
@@ -389,22 +376,10 @@ waitUntil{sleep 1; scriptDone _isReady};
 _isReady = [kostas, "lhdnftpm23"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-null = [] execVM "scripts\populate-motor-pool-kavala.sqf";
-
-_spawningComplete = [] execVM "scripts\spawn-fireteams-kavala.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
-_spawningComplete = nil;
-
-null = [] execVM "scripts\spawn-kavala-marids.sqf";
-null = [] execVM "scripts\spawn-kavala-mortar-group.sqf";
-
-sleep 11;
-
 _isReady = [kostas, "lhdnftpm24"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 null = [] execVM "scripts\spawn-kavala-static-defenses.sqf";
-sleep 16;
 
 _isReady = [kostas, "lhdnftpm25"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
@@ -415,14 +390,11 @@ waitUntil{sleep 1; scriptDone _isReady};
 _isReady = [kostas, "lhdnftpm26"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-
 _spawningComplete = [] execVM "scripts\spawn-fireteam-power-plant.sqf";
 waitUntil{sleep 0.5;scriptDone _spawningComplete};
 _spawningComplete = nil;
 
 null = [] execVM "scripts\spawn-transformer-kavala.sqf";
-
-sleep 10;
 
 _isReady = [kostas, "lhdnftpm27"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
@@ -459,7 +431,7 @@ else {
 _isReady = [kostas, "lhdnftpm33"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-_isReady = [player, "notjrcug11"] execVM "scripts\unitspeak.sqf";
+_isReady = [player, "notjrcug12"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [kostas, "lhdnftpm34"] execVM "scripts\unitradiospeak.sqf";
@@ -480,4 +452,19 @@ if (SHOW_CHAPTER_TITLES) then {
 sleep 10;
 TIME_LAST_SAVEGAME = time;
 saveGame;
+
+
+
+// the part below this line used to be executed during the radio conversation iwth kostas;
+// I moved it here because otherwise the conversation halts for 30 seconds or so.
+
+null = [] execVM "scripts\populate-motor-pool-kavala.sqf";
+
+_spawningComplete = [] execVM "scripts\spawn-fireteams-kavala.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
+
+null = [] execVM "scripts\spawn-kavala-marids.sqf";
+null = [] execVM "scripts\spawn-kavala-mortar-group.sqf";
+
 
