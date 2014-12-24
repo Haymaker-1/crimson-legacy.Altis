@@ -300,7 +300,7 @@ _varsuk setDir 302;
     _group = createGroup EAST;
     _staticAT = createVehicle [ "O_static_AT_F", getMarkerPos _marker, [], 0 ,"NONE"];
     _staticAT setDir _x;
-    "O_Soldier_lite_F" createUnit [ getMarkerPos _marker, _group, "this setDir _x; this moveInGunner _staticAT", 1.0, "private"];
+    "O_Soldier_lite_F" createUnit [ getMarkerPos _marker, _group, "this setDir _x; this removePrimaryWeaponItem 'optic_ACO_grn'; this moveInGunner _staticAT", 1.0, "private"];
     "O_spotter_F" createUnit [ getMarkerPos _marker, _group, "this setDir _x;", 1.0, "sergeant"];
 
 } forEach [70,350,10,119,90,10,220];
