@@ -33,7 +33,6 @@ class CfgSounds
     // sawfkwnw = scripts\walk-to-quarry
     
     // player
-    // TODO create voice samples
     // nzftunfr = scripts\assault-kavala.sqf
     // qzwpvxsn = scripts\call-in-the-boat
     // notjrcug = scripts\clear-aa-magos-aa-amfissa-patrols-crash-site.sqf
@@ -72,1359 +71,1370 @@ class CfgSounds
 	sounds[] = {};
 	class fuelrateAlarm
 	{
-		// how the sound is referred to in the editor (e.g. trigger effects)
-		name = "fuelrateAlarm";
-		// filename, volume, pitch
 		sound[] = {"sounds\fuelrate-alarm.ogg", 0.1, 1};
-		// subtitle delay in seconds, subtitle text 
-		titles[] = {};
+        titles[] = {};
 	};
     class ydbdmwwk1 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hello, Lieutenant."};
         duration = 0.9;
     };
     class ydbdmwwk2 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"I have a special assignment for you today."};
         duration = 2.0;
     };
     class ydbdmwwk3 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"I need you to assist the Special Forces team at Camp Nabisco. They are tasked with providing the rebels with secure long range comms so we can coordinate the resistance against CSAT better."};
         duration = 9.9;
     };
     class ydbdmwwk4 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'll mark Nabisco on your map."};
         duration = 1.7; 
     };
     class ydbdmwwk5 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"The radios are in those cases on the table there."};
         duration = 2.4;
     };
     class ydbdmwwk6 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"Problem is, I currently can't spare the resources to bring those radios to the Special Forces team: everybody's low on fuel and resupply is not foreseen in the near future."};
         duration = 9.2;
     };
     class ydbdmwwk7 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"I want you to go to the airport southwest of here."};
         duration = 2.4;
     };
     class ydbdmwwk8 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd8.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"In the meantime, I'll use my black market contact to procure some fuel. Stavros usually comes through but it'll surely take him a couple of hours."};
         duration = 7.8;
     };
     class ydbdmwwk9 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd9.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"In any case, I'll tell him to deliver the fuel directly to the airport so you can fill up the helo."};
         duration = 5.1;
     };
     class ydbdmwwk10 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd10.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd10.ogg", 1.0, 1.0};
         titles[] = {0.0,"Once that's done, bring the helo here, load her up with the radios, and deliver them to Nabisco."};
         duration = 5.3;
     };
     class ydbdmwwk11 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd11.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd11.ogg", 1.0, 1.0};
         titles[] = {0.0,"Any questions?"};
         duration = 0.8;
     };
     class ydbdmwwk12 {
-        sound[] = {"sounds\conversation-with-the-co\THE_CO_snd12.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\THE_CO\snd12.ogg", 1.0, 1.0};
         titles[] = {0.0,"Allright then. Dismissed."};
         duration = 1.7;
     };
     class nqccsmpx1 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta One, come in, over."};
         duration = 1.5;
     };
     class nqccsmpx2 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"I just got word from Stavros. He managed to hustle some fuel but his truck is stuck near Athira."};
         duration = 5.2;
     };
     class nqccsmpx3 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"And since the fuel is not coming to the helicopter..."};
         duration = 2.5;
     };
     class nqccsmpx4 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'm sending you the truck's location now."};
         duration = 1.8;
     };
     class nqccsmpx5 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Make no mistake though, CSAT forces control damn near every mountain south of here. I'm marking some of their AA on your map."};
         duration = 6.9;
     };
     class nqccsmpx6 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"Furthermore, Gravia Airbase is firmly in CSAT hands, although intel says there's no AA in that area. Be careful though."};
         duration = 7.9;
     };
     class nqccsmpx7 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"As you can see, you've got your work cut out for you."};
         duration = 2.7;
     };
     class nqccsmpx8 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO_snd8.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, out."};
         duration = 1.6;
     };
     class dxhqaqgv1 {
-        sound[] = {"sounds\radio-conversation-when-returning-from-athira\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-when-returning-from-athira\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta One, come in, over."};
         duration = 1.9;
     };
     class dxhqaqgv2 {
-        sound[] = {"sounds\radio-conversation-when-returning-from-athira\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-when-returning-from-athira\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Good work son, just put her down on the helipad when you get here."};
         duration = 3.6;
     };
     class dxhqaqgv3 {
-        sound[] = {"sounds\radio-conversation-when-returning-from-athira\THE_CO_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-when-returning-from-athira\THE_CO\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"One of my men is standing by to load up the radios."};
         duration = 2.9;
     };
     class ozjytbcl1 {
-        sound[] = {"sounds\radio-conversation-after-picking-up-radios-krya-nera\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-after-picking-up-radios-krya-nera\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Allright! You're loaded up. Make sure to send my best to the guys at Nabisco. Delta Actual, out."};
         duration = 5.6;
     };
     class drxopaef1 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"All units, be advised, we have a pilot down."};
         duration = 2.7;
     };
     class drxopaef2 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"I say again, we have a pilot down."};
         duration = 2.7;
     };
     class drxopaef3 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Standby for update."};
         duration = 1.5;
     };
     class drxopaef4 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta One, come in."};
         duration = 1.1;
     };
     class drxopaef5 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Are you at Nabisco yet?"};
         duration = 1.4;
     };
     class drxopaef6 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"One of our Wipeouts just went down. We are still figuring out where exactly."};
         duration = 4.1;
     };
     class drxopaef7 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"Standby at Nabisco until further notice."};
         duration = 2.5;
     };
     class drxopaef8 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd8.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, out."};
         duration = 1.1;
     };
     class drxopaef9 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd9.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta One, come in, over."};
         duration = 1.7;
     };
     class drxopaef10 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd10.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd10.ogg", 1.0, 1.0};
         titles[] = {0.0,"We see a distress signal north of Kore. Looks like the pilot made it out in time."};
         duration = 4.5;
     };
     class drxopaef11 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd11.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd11.ogg", 1.0, 1.0};
         titles[] = {0.0,"We need to get in there on the double before CSAT forces show up."};
         duration = 3.2;
     };
     class drxopaef12 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO_snd12.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\THE_CO\snd12.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'm assigning the Special Forces team from Camp Nabisco to you. Take them to the crash site and see if you can get eyes on the pilot."};
         duration = 7.5;
     };
     class rxbbzszc1 {
-        sound[] = {"sounds\radio-conversation-crash-site-found\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-crash-site-found\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Go ahead, Delta One."};
         duration = 1.1;
     };
     class rxbbzszc2 {
-        sound[] = {"sounds\radio-conversation-crash-site-found\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-crash-site-found\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Check the vicinity of the wreck. Do you see the pilot?"};
         duration = 2.9;
     };
     class xqxqpdkj1 {
-        sound[] = {"sounds\radio-conversation-pilot-not-here\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-pilot-not-here\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Dammit! Keep looking!"};
         duration = 1.6;
     };
     class ufvpcvty1 {
-        sound[] = {"sounds\radio-conversation-status-update\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-status-update\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Go ahead, One."};
         duration = 0.8;
     };
     class ufvpcvty2 {
-        sound[] = {"sounds\radio-conversation-status-update\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-status-update\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Allright, start with the bad news then."};
         duration = 2.3;
     };
     class ufvpcvty3 {
-        sound[] = {"sounds\radio-conversation-status-update\THE_CO_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-status-update\THE_CO\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Well that could have ended a lot worse. So what's your good news?"};
         duration = 3.7;
     };
     class ufvpcvty4 {
-        sound[] = {"sounds\radio-conversation-status-update\THE_CO_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-status-update\THE_CO\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Good work, One. Be careful out there."};
         duration = 2.9;
     };
     class yiuwnpkq1 {
-        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Go ahead, One."};
         duration = 1.0;
     };
     class yiuwnpkq2 {
-        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Outstanding, One!"};
         duration = 1.3;
     };
     class yiuwnpkq3 {
-        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Absolutely! While you got to run around and shoot guns, I've been busy arranging transport."};
         duration = 5.9;
     };
     class yiuwnpkq4 {
-        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"One of our boats is standing by off of the coast of Agios Konstantinos. Their callsign is Noah Three."};
         duration = 6.0;
     };
     class yiuwnpkq5 {
-        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Your task is to escort the pilot to the boat. I've updated your map with the arranged pickup location."};
         duration = 5.2;
     };
     class yiuwnpkq6 {
-        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"Be careful though! The western coast has a strong CSAT presence."};
         duration = 3.6;
     };
     class yiuwnpkq7 {
-        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\THE_CO\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, out."};
         duration = 1.3;
     };
     class xwzldnaj1 {
-        sound[] = {"sounds\call-in-the-boat\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Go ahead, One."};
         duration = 0.8;
     };
     class xwzldnaj2 {
-        sound[] = {"sounds\call-in-the-boat\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Sterling work, One."};
         duration = 1.3;
     };
     class xwzldnaj3 {
-        sound[] = {"sounds\call-in-the-boat\THE_CO_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\THE_CO\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"You really helped avoid a severe crisis here."};
         duration = 2.5;
     };
     class xwzldnaj4 {
-        sound[] = {"sounds\call-in-the-boat\THE_CO_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\THE_CO\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Well, I appreciate it."};
         duration = 1.6;
     };
     class xwzldnaj5 {
-        sound[] = {"sounds\call-in-the-boat\THE_CO_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\THE_CO\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"I want you to fall back to the rebel camp. See if you can be of any assistance to Commander Kostas."};
         duration = 5.7;
     };
     class xwzldnaj6 {
-        sound[] = {"sounds\call-in-the-boat\THE_CO_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\THE_CO\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"Catch you later, One. Delta Actual out."};
         duration = 2.9;
     };
     class kxhvkroo1 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"This is Actual. Go ahead, One."};
         duration = 1.9;
     };
     class kxhvkroo2 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'm sorry, son, you're out of luck. Those vehicles don't have a drop of fuel in them, so they are pretty much useless at the moment."};
         duration = 6.9;
     };
     class kxhvkroo3 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"That's excellent work, soldier!"};
         duration = 1.6;
     };
     class kxhvkroo4 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"They are tip-top. Make sure to put them to good use tomorrow!"};
         duration = 3.5;
     };
     class kxhvkroo5 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"They are shipshape. Make sure to put them to good use tomorrow!"};
         duration = 3.6;
     };
     class kxhvkroo6 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"They are in good shape. Make sure to put them to good use tomorrow!"};
         duration = 3.9;
     };
     class kxhvkroo7 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\THE_CO\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"Don't worry, I'll pass it on."};
         duration = 1.5;
     };
     class bpxqzvmm1 {
-        sound[] = {"sounds\showoff\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\showoff\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"You break it, you buy it, son."};
         duration = 1.6;
     };    
     class bpxqzvmm2 {
-        sound[] = {"sounds\showoff\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\showoff\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Now go show off your flying skills somewhere else."};
         duration = 2.5;
     };    
     class sawfkwnw1 {
-        sound[] = {"sounds\walk-to-quarry\THE_CO_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"This is Actual. Go ahead, One."};
         duration = 1.9;
     };
     class sawfkwnw2 {
-        sound[] = {"sounds\walk-to-quarry\THE_CO_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'm sorry, son, you're out of luck. Those vehicles don't have a drop of fuel in them, so they are pretty much useless at the moment."};
         duration = 6.1;
     };
     class feroeowf1 {
-        sound[] = {"sounds\conversation-with-the-co\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Uh...OK. Anything you need Captain."};
-        duration = 3.8;
+        duration = 2.5;
     };    
     class feroeowf2 {
-        sound[] = {"sounds\conversation-with-the-co\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"OK, what can I do?"};
-        duration = 1.8; 
+        duration = 2.1; 
     };    
     class feroeowf3 {
-        sound[] = {"sounds\conversation-with-the-co\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-the-co\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"No sir!"};
         duration = 0.8;
     };    
     class qzwpvxsn1 {
-        sound[] = {"sounds\call-in-the-boat\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Noah Three, this is Delta One. Do you read?"};
         duration = 2.7;
     };        
     class qzwpvxsn2 {
-        sound[] = {"sounds\call-in-the-boat\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"We are approaching the pickup point."};
         duration = 1.8;
     };        
     class qzwpvxsn3 {
-        sound[] = {"sounds\call-in-the-boat\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"We are ready for pickup at egress Alpha."};
-        duration = 2.4;
+        duration = 2.7;
     };        
     class qzwpvxsn4 {
-        sound[] = {"sounds\call-in-the-boat\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, come in, over."};
-        duration = 2.4;
+        duration = 2.2;
     };        
     class qzwpvxsn5 {
-        sound[] = {"sounds\call-in-the-boat\player_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\player\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Captain, the pilot is on the boat."};
-        duration = 1.8;
+        duration = 1.9;
     };        
     class qzwpvxsn6 {
-        sound[] = {"sounds\call-in-the-boat\player_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\player\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"Just doing my job, sir."};
-        duration = 1.7;
+        duration = 1.6;
     };        
     class qzwpvxsn7 {
-        sound[] = {"sounds\call-in-the-boat\player_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\player\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"All in a day's work, sir."};
         duration = 1.7;
     };        
     class qzwpvxsn8 {
-        sound[] = {"sounds\call-in-the-boat\player_snd8.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\player\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"What do you want me to do now?"};
-        duration = 1.8;
+        duration = 1.1;
     };        
     class qzwpvxsn9 {
-        sound[] = {"sounds\call-in-the-boat\player_snd9.ogg", 1.0, 1.0};
+        sound[] = {"sounds\call-in-the-boat\player\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"Willco."};
-        duration = 0.6;
+        duration = 0.5;
     };
     class nzftunfr1 {
-        sound[] = {"sounds\assault-kavala\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\assault-kavala\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta One for Kostas, we are in position at the quarry."};
-        duration = 0.0;
+        duration = 2.7;
     };
     class nzftunfr2 {
-        sound[] = {"sounds\assault-kavala\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\assault-kavala\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Alpha, move into position!"};
-        duration = 0.0;
+        duration = 1.8;
     };
     class nzftunfr3 {
-        sound[] = {"sounds\assault-kavala\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\assault-kavala\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Bravo, move into position!"};
-        duration = 0.0;
+        duration = 2.0;
     };    
     class nzftunfr4 {
-        sound[] = {"sounds\assault-kavala\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\assault-kavala\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Charlie, move into position!"};
-        duration = 0.0;
+         duration = 1.8;
     };    
     class nzftunfr5 {
-        sound[] = {"sounds\assault-kavala\player_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\assault-kavala\player\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta, move into position!"};
-        duration = 0.0;
+        duration = 1.8;
     };    
     class notjrcug1 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hello, sir."};
-        duration = 0.0;
+        duration = 0.9;
     };    
     class notjrcug2 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"OK, I'm on it."};
-        duration = 0.0;
+        duration = 1.1;
     };    
     class notjrcug3 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Can do, sir."};
-        duration = 0.0;
+        duration = 0.9;
     };    
     class notjrcug4 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Eliminate the AA, roger that, sir."};
-        duration = 0.0;
+        duration = 2.2;
     };    
     class notjrcug5 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hey Kostas, you there?"};
-        duration = 0.0;
-    };    
+        duration = 1.4;
+    };
     class notjrcug6 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"We are mission complete. Any chance of some R & R? It's been a long day, you know."};
-        duration = 0.0;
+        duration = 4.6;
     };    
     class notjrcug7 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"I am mission complete. Any chance of some R & R? It's been a long day, you know."};
-        duration = 0.0;
+        duration = 5.4;
     };    
     class notjrcug8 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd8.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"This is One. What's up, Kostas?"};
-        duration = 0.0;
+        duration = 2.2;
     };    
     class notjrcug9 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd9.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"Does it involve blowing stuff up?"};
-        duration = 0.0;
+        duration = 1.7;
     };    
     class notjrcug10 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd10.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd10.ogg", 1.0, 1.0};
         titles[] = {0.0,"Allright then, what's the plan?"};
-        duration = 0.0;
+        duration = 1.8;
     };    
     class notjrcug11 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd11.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd11.ogg", 1.0, 1.0};
         titles[] = {0.0,"Amen to that, don't want to get on the wrong side of a fifty. So, what's the diversion?"};
-        duration = 0.0;
+        duration = 5.2;
     };    
     class notjrcug12 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player_snd12.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd12.ogg", 1.0, 1.0};
         titles[] = {0.0,"And blow up some more stuff. Works for me!"};
-        duration = 0.0;
+        duration = 2.4;
     };
     class mbhglmap1 {
-        sound[] = {"sounds\conversation-with-kostas\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hello sir. I was wondering if you have any information about a plane crash just south of here. The pilot is MIA."};
-        duration = 0.0;
+        duration = 6.2;
     };
     class mbhglmap2 {
-        sound[] = {"sounds\conversation-with-kostas\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"How do we reach him?"};
-        duration = 0.0;
+        duration = 1.1;
     };
     class mbhglmap3 {
-        sound[] = {"sounds\conversation-with-kostas\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Yeah, well... it seems our helicopter is out for the moment. It started losing fuel like crazy all of a sudden."};
-        duration = 0.0;
+        duration = 6.6;
     };
     class mbhglmap4 {
-        sound[] = {"sounds\conversation-with-kostas\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Of course! I totally forgot about those. We brought you some radios."};
-        duration = 0.0;
+        duration = 3.2;
     };
     class mbhglmap5 {
-        sound[] = {"sounds\conversation-with-kostas\player_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\player\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Thanks, that'd be great."};
-        duration = 0.0;
+        duration = 0.9;
     };
     class mbhglmap6 {
-        sound[] = {"sounds\conversation-with-kostas\player_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\player\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hi there, Kostas. What's up?"};
-        duration = 0.0;
+        duration = 1.4;
     };
     class mbhglmap7 {
-        sound[] = {"sounds\conversation-with-kostas\player_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\player\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"Yeah, I half expected that they would send somebody."};
-        duration = 0.0;
+        duration = 2.9;
     };
     class mbhglmap8 {
-        sound[] = {"sounds\conversation-with-kostas\player_snd8.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\player\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"Thanks for the update. Delta One, out."};
-        duration = 0.0;
+        duration = 2.2;
     };
     class mbhglmap9 {
-        sound[] = {"sounds\conversation-with-kostas\player_snd9.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\player\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"Roger your last. Thanks, Kostas."};
-        duration = 0.0;
+        duration = 2.1;
     };
     class xqzroloj1 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hey Kostas, you there?"};
-        duration = 0.0;
+        duration = 1.4;
     };
     class xqzroloj2 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Well sir, I have an idea how we can stack the odds in our favor tomorrow."};
-        duration = 0.0;
+        duration = 3.6;
     };
     class xqzroloj3 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"OK, here's the thing. We are assaulting Kavala tomorrow, but we have only light vehicles and infantry, right?"};
-        duration = 0.0;
+        duration = 5.7;
     };
     class xqzroloj4 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"What if I could get my hands on two Striders?"};
-        duration = 0.0;
+        duration = 2.9;
     };
     class xqzroloj5 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd5.ogg", 1.0, 1.0};
-        titles[] = {0.0,"I remember seeing a bunch of vehicles at the airfield in Krya Nera. Might be worth checking out if we can use them. Shall I call my CO and find out?"};
-        duration = 0.0;
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd5.ogg", 1.0, 1.0};
+        titles[] = {0.0,"I remember seeing a bunch of vehicles at the airfield at Krya Nera. Might be worth checking out if we can use them. Shall I call my CO and find out?"};
+        duration = 7.6;
     };
     class xqzroloj6 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"Roger. Delta One, out."};
-        duration = 0.0;
+        duration = 2.2;
     };
     class xqzroloj7 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, this is Delta One, come in, over."};
-        duration = 0.0;
+        duration = 2.9;
     };
     class xqzroloj8 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd8.ogg", 1.0, 1.0};
-        titles[] = {0.0,"Hello sir. I'm helping Kostas prepare the assault on Kavala tomorrow. We could really use the MRAPS parked at the heliport."};
-        duration = 0.0;
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd8.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Hello sir. I'm helping Kostas prepare the assault on Kavala tomorrow. We could really use the MRAPs parked at the heliport."};
+        duration = 6.9;
     };
     class xqzroloj9 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd9.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"Yeah, well,... the thing is, I just nicked a CSAT fuel truck, see, so fuel is not a problem."};
-        duration = 0.0;
+        duration = 5.9;
     };
     class xqzroloj10 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd10.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd10.ogg", 1.0, 1.0};
         titles[] = {0.0,"Fuel aside, are the vehicles operational?"};
-        duration = 0.0;
+        duration = 2.6;
     };
     class xqzroloj11 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd11.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd11.ogg", 1.0, 1.0};
         titles[] = {0.0,"OK then, I'll send someone to pick them up. Just make sure our men don't shoot the truck, OK? It's got CSAT camo patterns."};
-        duration = 0.0;
+        duration = 7.7;
     };
     class xqzroloj12 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd12.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd12.ogg", 1.0, 1.0};
         titles[] = {0.0,"Thanks Captain. Delta One, out."};
-        duration = 0.0;
+        duration = 2.2;
     };
     class xqzroloj13 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd13.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd13.ogg", 1.0, 1.0};
         titles[] = {0.0,"Roger. Anything interesting happened during my nap?"};
-        duration = 0.0;
+        duration = 3.3;
     };
     class xqzroloj14 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd14.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd14.ogg", 1.0, 1.0};
         titles[] = {0.0,"Sun behind us, huh? Smart."};
-        duration = 0.0;
+        duration = 2.0;
     };
     class xqzroloj15 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player_snd15.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\player\snd15.ogg", 1.0, 1.0};
         titles[] = {0.0,"Willco."};
-        duration = 0.0;
+        duration = 0.7;
     };
     class fcfnpird1 {
-        sound[] = {"sounds\negades-retrieve-longrange-asset\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\negades-retrieve-longrange-asset\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hello sir."};
-        duration = 0.0;
+        duration = 0.7;
     };
     class fcfnpird2 {
-        sound[] = {"sounds\negades-retrieve-longrange-asset\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\negades-retrieve-longrange-asset\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Sure thing. Just tell me what you need."};
-        duration = 0.0;
+        duration = 2.0;
     };
     class fcfnpird3 {
-        sound[] = {"sounds\negades-retrieve-longrange-asset\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\negades-retrieve-longrange-asset\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Roger that, search and destroy towards Kavala."};
-        duration = 0.0;
+        duration = 2.6;
     };
     class zdgzzloy1 {
-        sound[] = {"sounds\power-plant-seized\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\power-plant-seized\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta One for Kostas, come in, please."};
-        duration = 0.0;
+        duration = 2.1;
     };
     class zdgzzloy2 {
-        sound[] = {"sounds\power-plant-seized\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\power-plant-seized\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"We've taken control of the power plant, sir. I guess it's time to send in your guy."};
-        duration = 0.0;
+        duration = 4.0;
     };
     class zdgzzloy3 {
-        sound[] = {"sounds\power-plant-seized\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\power-plant-seized\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'm about to."};
-        duration = 0.0;
+        duration = 0.9;
     };
     class zdgzzloy4 {
-        sound[] = {"sounds\power-plant-seized\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\power-plant-seized\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"I don't have any explosives on me. I guess I'll have to wait for your guy."};
-        duration = 0.0;
+        duration = 3.5;
     };
     class lqauupuc1 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Wow, a fuel truck!"};
-        duration = 0.0;
+        duration = 1.3;
     };
     class lqauupuc2 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta One for Kostas, come in."};
-        duration = 0.0;
+        duration = 1.8;
     };
     class lqauupuc3 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"There's a fuel truck in the motor pool. I say again, I've located a fuel truck in the motor pool!"};
-        duration = 0.0;
+        duration = 4.9;
     };
     class lqauupuc4 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"It's got some fuel in it! I'm gonna try sneak this baby out of here."};
-        duration = 0.0;
+        duration = 3.5;
     };
     class rhqqdblf1 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"This is One. What's up Captain? Any news on that fuel?"};
-        duration = 0.0;
+        duration = 3.5;
     };
     class qlwajhnj1 {
-        sound[] = {"sounds\radio-conversation-about-pilot-egress\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, this is Delta One, come in please."};
-        duration = 0.0;
+        duration = 2.6;
     };    
     class qlwajhnj2 {
-        sound[] = {"sounds\radio-conversation-about-pilot-egress\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Good news, Captain! We managed to liberate the pilot! He's with me now."};
-        duration = 0.0;
+        duration = 3.6;
     };    
     class qlwajhnj3 {
-        sound[] = {"sounds\radio-conversation-about-pilot-egress\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-pilot-egress\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"What do you want me to do with him, sir? Is there some kind of egress plan?"};
-        duration = 0.0;
+        duration = 3.2;
     };    
     class vmwhowzr1 {
-        sound[] = {"sounds\radio-conversation-crash-site-found\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-crash-site-found\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, come in, over."};
-        duration = 0.0;
+        duration = 1.8;
     };
     class vmwhowzr2 {
-        sound[] = {"sounds\radio-conversation-crash-site-found\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-crash-site-found\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Captain, we are near the crash site."};
-        duration = 0.0;
+        duration = 2.0;
     };
     class vmwhowzr3 {
-        sound[] = {"sounds\radio-conversation-crash-site-found\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-crash-site-found\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Wait one."};
-        duration = 0.0;
+        duration = 0.5;
     };
     class xmocpdll1 {
-        sound[] = {"sounds\radio-conversation-pilot-not-here\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-pilot-not-here\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"The pilot is not here, sir."};
-        duration = 0.0;
+        duration = 1.5;
     };
     class xmocpdll2 {
-        sound[] = {"sounds\radio-conversation-pilot-not-here\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-pilot-not-here\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Roger. One, out."};
-        duration = 0.0;
+        duration = 2.2;
     };
     class wfgtacli1 {
-        sound[] = {"sounds\radio-conversation-status-update\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-status-update\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, this is Delta One, come in, over."};
-        duration = 0.0;
+        duration = 3.4;
     };
     class wfgtacli2 {
-        sound[] = {"sounds\radio-conversation-status-update\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-status-update\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"I have good news and bad news."};
-        duration = 0.0;
+        duration = 1.6;
     };
     class wfgtacli3 {
-        sound[] = {"sounds\radio-conversation-status-update\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-status-update\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"The helicopter is out for the moment. It started losing fuel all of a sudden, and I just managed to put her down at the old factory east of Mt. Kira."};
-        duration = 0.0;
+        duration = 7.7;
     };
     class wfgtacli4 {
-        sound[] = {"sounds\radio-conversation-status-update\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-status-update\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Commander Kostas gave us some fresh intel about a possible location where our guy is being held. We are on our way now to check it out."};
-        duration = 0.0;
+        duration = 6.7;
     };
     class wfgtacli5 {
-        sound[] = {"sounds\radio-conversation-status-update\player_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-status-update\player\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Will do, Captain. Delta One, out."};
-        duration = 0.0;
+        duration = 2.2;
     };
     class uejykcxp1 {
-        sound[] = {"sounds\radio-conversation-when-returning-from-athira\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-when-returning-from-athira\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hi there Captain, I'm approaching Krya Nera now."};
-        duration = 0.0;
+        duration = 2.7;
     };    
     class qjgztpnn1 {
-        sound[] = {"sounds\set-up-op-agios-konstantinos\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\set-up-op-agios-konstantinos\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Kostas, this is Delta One, come in please."};
-        duration = 0.0;
+        duration = 2.8;
     };
     class qjgztpnn2 {
-        sound[] = {"sounds\set-up-op-agios-konstantinos\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\set-up-op-agios-konstantinos\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Agios Konstantinos and Negades are now under our control, sir."};
-        duration = 0.0;
+        duration = 3.4;
     };
     class qjgztpnn3 {
-        sound[] = {"sounds\set-up-op-agios-konstantinos\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\set-up-op-agios-konstantinos\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"What's next, sir?"};
-        duration = 0.0;
+        duration = 1.0;
     };
     class qjgztpnn4 {
-        sound[] = {"sounds\set-up-op-agios-konstantinos\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\set-up-op-agios-konstantinos\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Sounds good to me, sir."};
-        duration = 0.0;
+        duration = 1.3;
     };
     class embbzaox1 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"This is One, over."};
-        duration = 0.0;
+        duration = 1.4;
     };
     class embbzaox2 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Couple of minutes out."};
-        duration = 0.0;
+        duration = 0.9;
     };
     class embbzaox3 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Roger that."};
-        duration = 0.0;
+        duration = 0.7;
     };
     class embbzaox4 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Go ahead, Actual."};
-        duration = 0.0;
+        duration = 0.9;
     };
     class embbzaox5 {
-        sound[] = {"sounds\spawn-and-crash-wipeout\player_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-and-crash-wipeout\player\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Glad to hear it, sir. What do we do now?"};
-        duration = 0.0;
+        duration = 2.3;
     };
     class axdxdlzp1 {
-        sound[] = {"sounds\spawn-transformer-kavala\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-transformer-kavala\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"I just placed the explosives, sir."};
-        duration = 0.0;
+        duration = 1.9;
     };
     class pobbanfx1 {
-        sound[] = {"sounds\walk-to-quarry\player_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hey Kostas, you there?"};
-        duration = 0.0;
+        duration = 1.3;
     };
     class pobbanfx2 {
-        sound[] = {"sounds\walk-to-quarry\player_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Well sir, I have an idea how we can stack the odds in our favor tomorrow."};
-        duration = 0.0;
+        duration = 3.4;
     };
     class pobbanfx3 {
-        sound[] = {"sounds\walk-to-quarry\player_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"OK, here's the thing. We are assaulting Kavala tomorrow, but we have only light vehicles and infantry, right?"};
-        duration = 0.0;
+        duration = 6.6;
     };
     class pobbanfx4 {
-        sound[] = {"sounds\walk-to-quarry\player_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"What if I could get my hands on two Striders?"};
-        duration = 0.0;
+        duration = 2.6;
     };
     class pobbanfx5 {
-        sound[] = {"sounds\walk-to-quarry\player_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"I remember seeing a bunch of vehicles at the airfield in Krya Nera. Might be worth checking out if we can use them. Shall I call my CO and find out?"};
-        duration = 0.0;
+        duration = 8.3;
     };
     class pobbanfx6 {
-        sound[] = {"sounds\walk-to-quarry\player_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"Roger. Delta One, out."};
-        duration = 0.0;
+        duration = 2.0;
     };
     class pobbanfx7 {
-        sound[] = {"sounds\walk-to-quarry\player_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, this is Delta One, come in, over."};
-        duration = 0.0;
+        duration = 3.2;
     };
     class pobbanfx8 {
-        sound[] = {"sounds\walk-to-quarry\player_snd8.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hello sir. I'm helping Kostas prepare the assault on Kavala tomorrow. We could really use the MRAPs parked at the heliport."};
-        duration = 0.0;
+        duration = 7.1;
     };
     class pobbanfx9 {
-        sound[] = {"sounds\walk-to-quarry\player_snd9.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"Dammit, I can't catch a break tonight. Allright, thanks Captain. Delta One, out."};
-        duration = 0.0;
+        duration = 5.5;
     };
     class pobbanfx10 {
-        sound[] = {"sounds\walk-to-quarry\player_snd10.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd10.ogg", 1.0, 1.0};
         titles[] = {0.0,"Kostas, come in please."};
-        duration = 0.0;
+        duration = 1.7;
     };
     class pobbanfx11 {
-        sound[] = {"sounds\walk-to-quarry\player_snd11.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd11.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'm afraid it's a no-go. Sorry sir."};
-        duration = 0.0;
+        duration = 2.5;
     };
     class pobbanfx12 {
-        sound[] = {"sounds\walk-to-quarry\player_snd12.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd12.ogg", 1.0, 1.0};
         titles[] = {0.0,"So what's the plan for tomorrow?"};
-        duration = 0.0;
+        duration = 1.5;
     };
     class pobbanfx13 {
-        sound[] = {"sounds\walk-to-quarry\player_snd13.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd13.ogg", 1.0, 1.0};
         titles[] = {0.0,"Sun behind us, huh? Smart."};
-        duration = 0.0;
+        duration = 2.0;
     };
     class pobbanfx14 {
-        sound[] = {"sounds\walk-to-quarry\player_snd14.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd14.ogg", 1.0, 1.0};
         titles[] = {0.0,"Willco."};
-        duration = 0.0;
+        duration = 0.8;
     };
     class pobbanfx15 {
-        sound[] = {"sounds\walk-to-quarry\player_snd15.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd15.ogg", 1.0, 1.0};
         titles[] = {0.0,"Roger. Anything interesting happened just now?"};
-        duration = 0.0;
+        duration = 2.9;
     };
     class pobbanfx16 {
-        sound[] = {"sounds\walk-to-quarry\player_snd16.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd16.ogg", 1.0, 1.0};
         titles[] = {0.0,"Will do. Thanks for the update."};
-        duration = 0.0;
+        duration = 1.6;
     };
     class pobbanfx17 {
-        sound[] = {"sounds\walk-to-quarry\player_snd17.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\player\snd17.ogg", 1.0, 1.0};
         titles[] = {0.0,"One, Out."};
-        duration = 0.0;
+        duration = 1.3;
     };
     class vhvrxuvu1 {
-        sound[] = {"sounds\assault-kavala\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\assault-kavala\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Allright, this is it then. There are four squads, Alpha through Delta. Each has its own sector to secure."};
-        duration = 0.0;
+        duration = 5.8;
     };
     class vhvrxuvu2 {
-        sound[] = {"sounds\assault-kavala\kostas_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\assault-kavala\kostas\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Use your radio to control when each squad moves into position."};
-        duration = 0.0;
+        duration = 3.2;
     };
     class vhvrxuvu3 {
-        sound[] = {"sounds\assault-kavala\kostas_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\assault-kavala\kostas\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Use your radio to control when each squad moves into position. I suggest you use the Striders' optics and range advantage to provide fire support, but it is your call."};
-        duration = 0.0;
+        duration = 9.3;
     };
     class vhvrxuvu4 {
-        sound[] = {"sounds\assault-kavala\kostas_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\assault-kavala\kostas\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Your CO has arranged for a Wipeout. It's currently on standby a short distance away. Radio 0-0-5 to call it in."};
-        duration = 0.0;
+        duration = 7.1;
     };
     class vhvrxuvu5 {
-        sound[] = {"sounds\assault-kavala\kostas_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\assault-kavala\kostas\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Good luck and Godspeed, Lieutenant! Kostas out."};
-        duration = 0.0;
+        duration = 3.1;
     };
     class lhdnftpm1 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hello, lieutenant?"};
-        duration = 0.0;
+        duration = 1.1;
     };
     class lhdnftpm2 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"There are a couple of things I want you to do."};
-        duration = 0.0;
+        duration = 2.0;
     };
     class lhdnftpm3 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd3.ogg", 1.0, 1.0};
+        // has copies
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"First off, I have reports of enemy footmobiles in the woods near the crash site. Locate and eliminate them."};
-        duration = 0.0;
+        duration = 6.0;
     };
     class lhdnftpm4 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd4.ogg", 1.0, 1.0};
+        // has copies
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Secondly, the Anti-Air unit overlooking Kavala needs to go."};
-        duration = 0.0;
+        duration = 3.3;
     };
     class lhdnftpm5 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Finally, the Anti-Air unit near Amfissa must be eliminated."};
-        duration = 0.0;
+        duration = 3.9;
     };
     class lhdnftpm6 {
         // equal to lhdnftpm3
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"First off, I have reports of enemy footmobiles in the woods near the crash site. Locate and eliminate them."};
+        duration = 6.0;
     };
     class lhdnftpm7 {
         // equal to lhdnftpm4
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd4.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Secondly, the Anti-Air unit overlooking Kavala needs to go."};
+        duration = 3.3;
     };
     class lhdnftpm8 {
         // equal to lhdnftpm3
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd3.ogg", 1.0, 1.0};
+        titles[] = {0.0,"First off, I have reports of enemy footmobiles in the woods near the crash site. Locate and eliminate them."};
+        duration = 6.0;
     };
     class lhdnftpm9 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd9.ogg", 1.0, 1.0};
+        // has copies
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"Secondly, the Anti-Air unit near Amfissa must be eliminated."};
-        duration = 0.0;
+        duration = 3.8;
     };
     class lhdnftpm10 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd10.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd10.ogg", 1.0, 1.0};
         titles[] = {0.0,"First off, the Anti-Air unit overlooking Kavala needs to go."};
-        duration = 0.0;
+        duration = 3.7;
     };
     class lhdnftpm11 {
         // equal to lhdnftpm9
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd9.ogg", 1.0, 1.0};
+        titles[] = {0.0,"Secondly, the Anti-Air unit near Amfissa must be eliminated."};
+        duration = 3.8;
     };
     class lhdnftpm12 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd12.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd12.ogg", 1.0, 1.0};
         titles[] = {0.0,"I have reports of enemy footmobiles in the woods near the crash site. Locate and eliminate them."};
-        duration = 0.0;
+        duration = 5.4;
     };
     class lhdnftpm13 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd13.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd13.ogg", 1.0, 1.0};
         titles[] = {0.0,"The Anti-Air unit overlooking Kavala needs to go."};
-        duration = 0.0;
+        duration = 2.8;
     };
     class lhdnftpm14 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd14.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd14.ogg", 1.0, 1.0};
         titles[] = {0.0,"The Anti-Air unit near Amfissa must be eliminated."};
-        duration = 0.0;
+        duration = 3.1;
     };
     class lhdnftpm15 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd15.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd15.ogg", 1.0, 1.0};
         titles[] = {0.0,"The spoils of war are being collected at a barn in Agios. I've updated your map with the location."};
-        duration = 0.0;
+        duration = 6.4;
     };
     class lhdnftpm16 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd16.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd16.ogg", 1.0, 1.0};
         titles[] = {0.0,"You may want to check it out before engaging the AA."};
-        duration = 0.0;
+        duration = 2.7;
     };
     class lhdnftpm17 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd17.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd17.ogg", 1.0, 1.0};
         titles[] = {0.0,"Good luck. Kostas out."};
-        duration = 0.0;
+        duration = 1.7;
     };
     class lhdnftpm18 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd18.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd18.ogg", 1.0, 1.0};
         titles[] = {0.0,"Yes, I'm listening."};
-        duration = 0.0;
+        duration = 1.2;
     };
     class lhdnftpm19 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd19.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd19.ogg", 1.0, 1.0};
         titles[] = {0.0,"Good work! You have earned a few hours respite. Get back to the CP and rest up. I've got something special planned for later."};
-        duration = 0.0;
+        duration = 7.4;
     };
     class lhdnftpm20 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd20.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd20.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta One, this is Kostas, come in please."};
-        duration = 0.0;
+        duration = 2.7;
     };
     class lhdnftpm21 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd21.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd21.ogg", 1.0, 1.0};
         titles[] = {0.0,"I hope you've enjoyed a couple of hours rest. Tonight, you're on a sabotage mission in preparation for the main assault on Kavala later."};
-        duration = 0.0;
+        duration = 6.6;
     };
     class lhdnftpm22 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd22.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd22.ogg", 1.0, 1.0};
         titles[] = {0.0,"You bet!"};
-        duration = 0.0;
+        duration = 0.7;
     };
     class lhdnftpm23 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd23.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd23.ogg", 1.0, 1.0};
         titles[] = {0.0,"Tonight's objective is to blow up any vehicles present in the motor pool in the center of Kavala. Be advised that the objective is heavily guarded though."};
-        duration = 0.0;
+        duration = 8.1;
     };
     class lhdnftpm24 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd24.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd24.ogg", 1.0, 1.0};
         titles[] = {0.0,"We know there are at least two APCs, many footmobiles, as well as static machine guns. I've updated your map with what little intel we got on them."};
-        duration = 0.0;
+        duration = 9.5;
     };
     class lhdnftpm25 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd25.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd25.ogg", 1.0, 1.0};
         titles[] = {0.0,"I planned a diversion to deal with the APCs, but watch out for those machine guns, allright?"};
-        duration = 0.0;
+        duration = 4.7;
     };
     class lhdnftpm26 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd26.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd26.ogg", 1.0, 1.0};
         titles[] = {0.0,"We will first attack the power station just north of Kavala. It should be lightly guarded."};
-        duration = 0.0;
+        duration = 5.1;
     };
     class lhdnftpm27 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd27.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd27.ogg", 1.0, 1.0};
         titles[] = {0.0,"Once the power station is under our control, you blow up the transformer, causing a blackout in Kavala."};
-        duration = 0.0;
+        duration = 6.0;
     };
     class lhdnftpm28 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd28.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd28.ogg", 1.0, 1.0};
         titles[] = {0.0,"While you rig the transformer, I'll have a guy place IEDs on the access routes to the power station."};
-        duration = 0.0;
+        duration = 5.7;
     };
     class lhdnftpm29 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd29.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd29.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'm hoping the blackout will lure the two APCs from Kavala."};
-        duration = 0.0;
+        duration = 3.2;
     };
     class lhdnftpm30 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd30.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd30.ogg", 1.0, 1.0};
         titles[] = {0.0,"With the APCs engaged, you are free to infiltrate Kavala, find the motor pool and rig whatever vehicles are present."};
-        duration = 0.0;
+        duration = 6.7;
     };
     class lhdnftpm31 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd31.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd31.ogg", 1.0, 1.0};
         titles[] = {0.0,"The spoils of war are being collected at a barn in Agios. I've updated your map with the location. Take whatever you need to cause as much mayhem as possible."};
-        duration = 0.0;
+        duration = 9.2;
     };
     class lhdnftpm32 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd32.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd32.ogg", 1.0, 1.0};
         titles[] = {0.0,"With the APCs engaged, you are free to infiltrate Kavala, find the motor pool and rig whatever vehicles are present. There's a crate in the barn with the other stuff, just take whatever you need to cause as much mayhem as possible."};
-        duration = 0.0;
+        duration = 12.3;
     };
     class lhdnftpm33 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd33.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd33.ogg", 1.0, 1.0};
         titles[] = {0.0,"So, take over the power station, rig the transformer, then use the cover of darkness to infiltrate Kavala."};
-        duration = 0.0;
+        duration = 6.0;
     };
     class lhdnftpm34 {
-        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas_snd34.ogg", 1.0, 1.0};
+        sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\kostas\snd34.ogg", 1.0, 1.0};
         titles[] = {0.0,"Good luck, soldier! You're gonna need it. Kostas out."};
-        duration = 0.0;
+        duration = 3.5;
     };
     class egcnoprm1 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Welcome, friends!"};
-        duration = 0.0;
+        duration = 1.3;
     };
     class egcnoprm2 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'm sorry, I can't help you with that."};
-        duration = 0.0;
+        duration = 2.0;
     };
     class egcnoprm3 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Christos may know more, he likes to hunt in that area."};
-        duration = 0.0;
+        duration = 2.8;
     };
     class egcnoprm4 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"He lives near Kore, just a short hop by helicopter."};
-        duration = 0.0;
+        duration = 3.2;
     };
     class egcnoprm5 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'll try to raise Christos."};
-        duration = 0.0;
+        duration = 1.5;
     };
     class egcnoprm6 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"Christos, are you there?"};
-        duration = 0.0;
+        duration = 1.2;
     };
     class egcnoprm7 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"Yes, some friends brought us radios!"};
-        duration = 0.0;
+        duration = 2.3;
     };
     class egcnoprm8 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd8.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"Listen, did you hear anything about a plane crash?"};
-        duration = 0.0;
+        duration = 2.5;
     };
     class egcnoprm9 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd9.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"Yes, I remember."};
-        duration = 0.0;
+        duration = 1.4;
     };
     class egcnoprm10 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd10.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd10.ogg", 1.0, 1.0};
         titles[] = {0.0,"OK, thanks Christos."};
-        duration = 0.0;
+        duration = 1.5;
     };
     class egcnoprm11 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd11.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd11.ogg", 1.0, 1.0};
         titles[] = {0.0,"So it looks like the pilot is being held just west of Syrta."};
-        duration = 0.0;
+        duration = 3.2;
     };
     class egcnoprm12 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd12.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd12.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'll mark Sofia's house on your map."};
-        duration = 0.0;
+        duration = 2.2;
     };
     class egcnoprm13 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd13.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd13.ogg", 1.0, 1.0};
         titles[] = {0.0,"Feel free to use the ATVs or the truck if you want."};
-        duration = 0.0;
+        duration = 3.0;
     };
     class egcnoprm14 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd14.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd14.ogg", 1.0, 1.0};
         titles[] = {0.0,"Ehm...hello?"};
-        duration = 0.0;
+        duration = 1.8;
     };
     class egcnoprm15 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd15.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd15.ogg", 1.0, 1.0};
         titles[] = {0.0,"I just got word from a spotter near the airport that a convoy has left Gravia Airbase heading west. Thought you'd like to know."};
-        duration = 0.0;
+        duration = 7.6;
     };
     class egcnoprm16 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd16.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd16.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'll ask Christos to be on the lookout. If they are coming this way, they'll probably pass by him."};
-        duration = 0.0;
+        duration = 6.2;
     };
     class egcnoprm17 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd17.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd17.ogg", 1.0, 1.0};
         titles[] = {0.0,"Kostas here. Christos just called me to say that the convoy is passing through Kore at the moment. There are three vehicles in the convoy. One truck and two MRAPs."};
-        duration = 0.0;
+        duration = 10.4;
     };
     class egcnoprm18 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd18.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd18.ogg", 1.0, 1.0};
         titles[] = {0.0,"This is a great opportunity! If there is any chance at all you can ambush the convoy and destroy their vehicles, that would be good for us. But be careful!"};
-        duration = 0.0;
+        duration = 8.8;
     };
     class egcnoprm19 {
-        sound[] = {"sounds\conversation-with-kostas\kostas_snd19.ogg", 1.0, 1.0};
+        sound[] = {"sounds\conversation-with-kostas\kostas\snd19.ogg", 1.0, 1.0};
         titles[] = {0.0,"Eh...Kostas out."};
-        duration = 0.0;
+        duration = 2.4;
     };
     class nvurkijn1 {
-        sound[] = {"sounds\count-remaining-units-kavala\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\count-remaining-units-kavala\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"You did it! The remaining troops surrendered!"};
-        duration = 0.0;
+        duration = 2.9;
     };
     class apdzaahs1 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"This is Kostas. What's on your mind, Lieutenant?"};
-        duration = 0.0;
+        duration = 2.5;
     };
     class apdzaahs2 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Is that right? Well, tell me!"};
-        duration = 0.0;
+        duration = 2.1;
     };
     class apdzaahs3 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Yes, it's unfortunate, but I don't see how we can change that. It's all I got."};
-        duration = 0.0;
+        duration = 4.2;
     };
     class apdzaahs4 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"That would help, seeing as we're up against mechanized infantry."};
-        duration = 0.0;
+        duration = 3.2;
     };
     class apdzaahs5 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"That would go a long way, seeing as the enemy will be mostly infantry after your little excursion tonight."};
-        duration = 0.0;
+        duration = 4.9;
     };
     class apdzaahs6 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"That'd be great!"};
-        duration = 0.0;
+        duration = 1.0;
     };
     class apdzaahs7 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"Lieutenant? I have a SITREP for you with the latest intel."};
-        duration = 0.0;
+        duration = 3.3;
     };
     class apdzaahs8 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd8.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"As a matter of fact, yes. CSAT have fortified the northern access roads into the city. I advise you to give that area a wide berth."};
-        duration = 0.0;
+        duration = 7.1;
     };
     class apdzaahs9 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd9.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"So here's my plan. We will attack Kavala from the east and south at the break of dawn."};
-        duration = 0.0;
+        duration = 4.4;
     };
     class apdzaahs10 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd10.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd10.ogg", 1.0, 1.0};
         titles[] = {0.0,"I have a couple of rifle squads standing by at the old quarry. You must meet up with them before we start the main assault."};
-        duration = 0.0;
+        duration = 5.9;
     };
     class apdzaahs11 {
-        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas_snd11.ogg", 1.0, 1.0};
+        sound[] = {"sounds\drive-fuel-truck-to-christos-house\kostas\snd11.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'll give you some more details once you are at the staging area. Kostas out."};
-        duration = 0.0;
+        duration = 4.1;
     };
     class eyxywhrw1 {
-        sound[] = {"sounds\negades-retrieve-longrange-asset\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\negades-retrieve-longrange-asset\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hello? Lieutenant? Kostas here."};
-        duration = 0.0;
+        duration = 3.3;
     };
     class eyxywhrw2 {
-        sound[] = {"sounds\negades-retrieve-longrange-asset\kostas_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\negades-retrieve-longrange-asset\kostas\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"I could use your help."};
-        duration = 0.0;
+        duration = 1.0;
     };
     class eyxywhrw3 {
-        sound[] = {"sounds\negades-retrieve-longrange-asset\kostas_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\negades-retrieve-longrange-asset\kostas\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"I want you to start clearing the western coast towards Kavala."};
-        duration = 0.0;
+        duration = 3.0;
     };
     class eyxywhrw4 {
-        sound[] = {"sounds\negades-retrieve-longrange-asset\kostas_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\negades-retrieve-longrange-asset\kostas\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"One more thing. We have intel that an anti-material gun is present near Negades. Seizing it could make your life a lot easier. But getting to it may be risky. Anyway, your call. Kostas out."};
-        duration = 0.0;
+        duration = 11.8;
     };
     class yazagpmr1 {
-        sound[] = {"sounds\power-plant-seized\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\power-plant-seized\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Go ahead, One."};
-        duration = 0.0;
+        duration = 1.1;
     };
     class yazagpmr2 {
-        sound[] = {"sounds\power-plant-seized\kostas_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\power-plant-seized\kostas\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Good work, I'll make the call. He'll be there in a couple of minutes. He promised to bring you explosives as well, so check his truck while he's preparing the ambush."};
-        duration = 0.0;
+        duration = 8.7;
     };
     class yazagpmr3 {
-        sound[] = {"sounds\power-plant-seized\kostas_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\power-plant-seized\kostas\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Did you manage to rig the transformer?"};
-        duration = 0.0;
+        duration = 1.9;
     };
     class yazagpmr4 {
-        sound[] = {"sounds\power-plant-seized\kostas_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\power-plant-seized\kostas\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Roger that. Kostas out."};
-        duration = 0.0;
+        duration = 2.3;
     };
     class ltmhcxwt1 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Go ahead, One."};
-        duration = 0.0;
+        duration = 0.9;
     };
     class ltmhcxwt2 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\kostas_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\kostas\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"That's huge! But does it have any fuel in it?"};
-        duration = 0.0;
+        duration = 3.1;
     };
     class ltmhcxwt3 {
-        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\kostas_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\radio-conversation-about-fuel-truck-kavala\kostas\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"OK, we can hide the truck at Christos' house in Kore. I'll notify him immediately."};
-        duration = 0.0;
+        duration = 5.1;
     };
     class tlmntqjb1 {
-        sound[] = {"sounds\set-up-op-agios-konstantinos\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\set-up-op-agios-konstantinos\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hello, Lieutenant, Kostas here."};
-        duration = 0.0;
+        duration = 1.9;
     };
     class tlmntqjb2 {
-        sound[] = {"sounds\set-up-op-agios-konstantinos\kostas_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\set-up-op-agios-konstantinos\kostas\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"That is good news! I'll send some men to hold the area."};
-        duration = 0.0;
+        duration = 3.0;
     };
     class tlmntqjb3 {
-        sound[] = {"sounds\set-up-op-agios-konstantinos\kostas_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\set-up-op-agios-konstantinos\kostas\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"I want you to set up a CP overlooking the Agios area. In the meantime, I'll have my men collect some of the stuff left behind in your wake, so to speak. I'll check in with you in a couple of hours, OK?"};
-        duration = 0.0;
+        duration = 11.6;
     };
     class tlmntqjb4 {
-        sound[] = {"sounds\set-up-op-agios-konstantinos\kostas_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\set-up-op-agios-konstantinos\kostas\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"OK then. Kostas out."};
-        duration = 0.0;
+        duration = 1.8;
     };
     class oqlunvdd1 {
-        sound[] = {"sounds\spawn-transformer-kavala\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\spawn-transformer-kavala\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Just remember these babies have 5-minute fuses, allright? Kostas out."};
-        duration = 0.0;
+        duration = 4.9;
     };
     class lrxfuuzi1 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd1.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"This is Kostas. What's on your mind, Lieutenant?"};
-        duration = 0.0;
+        duration = 2.5;
     };
     class lrxfuuzi2 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd2.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Is that right? Well, tell me!"};
-        duration = 0.0;
+        duration = 2.0;
     };
     class lrxfuuzi3 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd3.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Yes, it's unfortunate, but I don't see how we can change that. It's all I got."};
-        duration = 0.0;
+        duration = 3.9;
     };
     class lrxfuuzi4 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd4.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"That would help, seeing as we're up against mechanized infantry."};
-        duration = 0.0;
+        duration = 3.1;
     };
     class lrxfuuzi5 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd5.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"That would go a long way, seeing as the enemy will be mostly infantry after your little excursion tonight."};
-        duration = 0.0;
+        duration = 4.9;
     };
     class lrxfuuzi6 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd6.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"That'd be great!"};
-        duration = 0.0;
+        duration = 1.0;
     };
     class lrxfuuzi7 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd7.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"Kostas here. What did your CO say?"};
-        duration = 0.0;
+        duration = 2.4;
     };
     class lrxfuuzi8 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd8.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"We will attack Kavala from the east and south at the break of dawn."};
-        duration = 0.0;
+        duration = 3.3;
     };
     class lrxfuuzi9 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd9.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"I have a couple of rifle squads standing by at the old quarry. You must meet up with them before we start the main assault."};
-        duration = 0.0;
+        duration = 6.1;
     };
     class lrxfuuzi10 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd10.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd10.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'll give you some more details once you are at the staging area. Kostas out."};
-        duration = 0.0;
+        duration = 4.7;
     };
     class lrxfuuzi11 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd11.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd11.ogg", 1.0, 1.0};
         titles[] = {0.0,"Lieutenant? I have a SITREP for you with the latest intel."};
-        duration = 0.0;
+        duration = 3.3;
     };
     class lrxfuuzi12 {
-        sound[] = {"sounds\walk-to-quarry\kostas_snd12.ogg", 1.0, 1.0};
+        sound[] = {"sounds\walk-to-quarry\kostas\snd12.ogg", 1.0, 1.0};
         titles[] = {0.0,"As a matter of fact, yes. CSAT have fortified the northern access roads into the city. I advise you to give that area a wide berth."};
-        duration = 0.0;
+        duration = 7.9;
     };
     
 };
@@ -1547,6 +1557,9 @@ class CfgFunctions
             };
             class datestr {
                 file = "functions\datestr.sqf";
+            };
+            class calcAddVolume {
+                file = "functions\calcAddVolume.sqf";
             };
 		};
 	};
