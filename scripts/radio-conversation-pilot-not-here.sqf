@@ -41,7 +41,10 @@ sleep (6+random 2);
 player groupChat "Allright, let's pay him a visit. Back to the helicopter!";
 sleep (2+random 2);
 
-waitUntil {player in crew thehelicopter};
+waitUntil {
+    sleep 1;
+    crew thehelicopter isEqualTo units group player;
+};
 
 
 TASK_MEET_KOSTAS = player createSimpleTask ["Meet Kostas"];
