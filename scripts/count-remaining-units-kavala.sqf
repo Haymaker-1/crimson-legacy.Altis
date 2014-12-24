@@ -1,36 +1,34 @@
 
 
-_nEast = 1;
-_nWest = 0;
+_nEast = 1e10;
+_nEastThres = 45;
 
-_nEastThres = 30;
 
-TASK_CLEAR_STRAGGLERS_KAVALA_HAS_BEEN_ASSIGNED = false;
 
 _men = nil;
 
-while {(_nEast > _nEastThres) OR (_nEast > _nWest)} do {
+while {_nEast > _nEastThres} do {
 
     _men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
-    
     _nEast = east countSide _men;
-    _nWest = west countSide _men;
-    
-    if (!TASK_CLEAR_STRAGGLERS_KAVALA_HAS_BEEN_ASSIGNED AND (_nEast < (_nEastThres+5))) then {
-
-        TASK_ASSAULT_KAVALA setTaskState "Succeeded";
-        
-        TASK_CLEAR_STRAGGLERS_KAVALA = player createSimpleTask ["TASKID_CLEAR_STRAGGLERS_KAVALA"];
-        TASK_CLEAR_STRAGGLERS_KAVALA setSimpleTaskDescription ["We are gaining the upper hand in this battle, but there are a few remaining pockets of resistance. Locate and eliminate them.","Clear stragglers","Clear stragglers"];
-        TASK_CLEAR_STRAGGLERS_KAVALA setTaskState "Assigned";
-        ["TaskAssigned", ["","Clear stragglers"]] call BIS_fnc_showNotification;
-        player setCurrentTask TASK_CLEAR_STRAGGLERS_KAVALA; 
-        TASK_CLEAR_STRAGGLERS_KAVALA_HAS_BEEN_ASSIGNED = true;
-   
-    };
-    
     sleep 60;
+};
 
+TASK_ASSAULT_KAVALA setTaskState "Succeeded";
+
+TASK_CLEAR_STRAGGLERS_KAVALA = player createSimpleTask ["TASKID_CLEAR_STRAGGLERS_KAVALA"];
+TASK_CLEAR_STRAGGLERS_KAVALA setSimpleTaskDescription ["We are gaining the upper hand in this battle, but there are a few remaining pockets of resistance. Locate and eliminate them.","Clear stragglers","Clear stragglers"];
+TASK_CLEAR_STRAGGLERS_KAVALA setTaskState "Assigned";
+["TaskAssigned", ["","Clear stragglers"]] call BIS_fnc_showNotification;
+player setCurrentTask TASK_CLEAR_STRAGGLERS_KAVALA; 
+TASK_CLEAR_STRAGGLERS_KAVALA_HAS_BEEN_ASSIGNED = true;
+
+
+while {_nEast > (_nEastThres - 10)} do {
+
+    _men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
+    _nEast = east countSide _men;
+    sleep 60;
 };
 
 sleep 10;
@@ -82,7 +80,7 @@ while {!_noVehiclesLeftInKavala} do {
 
 
 {
-    allowDamage false;
+    _x allowDamage false;
 } forEach (units group player);
 
 
