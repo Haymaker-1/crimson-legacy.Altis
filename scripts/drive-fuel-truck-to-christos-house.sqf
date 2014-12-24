@@ -138,8 +138,6 @@ waitUntil{sleep 1; scriptDone _isReady};
 _isReady = [player, "xqzroloj9"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-sleep 10;
-
 _isReady = [THE_CO, "kxhvkroo3"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
@@ -196,6 +194,7 @@ krya_nera_strider addItemCargo ["optic_ACO_grn",1];
 krya_nera_strider addItemCargo ["optic_SOS",1];
 krya_nera_strider addItemCargo ["acc_flashlight",2];
 krya_nera_strider addItemCargo ["FirstAidKit",6];
+krya_nera_strider addWeaponCargo ["Laserdesignator",1];
 
 
 clearItemCargo krya_nera_strider_gmg;
@@ -330,8 +329,8 @@ _varsuk setDir 302;
     _group = createGroup EAST;
     _staticAT = createVehicle [ "O_static_AT_F", getMarkerPos _marker, [], 0 ,"NONE"];
     _staticAT setDir _x;
-    "O_Soldier_lite_F" createUnit [ getMarkerPos _marker, _group, "this setDir _x; this moveInGunner _staticAT", 1.0, "private"];
-    "O_spotter_F" createUnit [ getMarkerPos _marker, _group, "this setDir _x;", 1.0, "sergeant"];
+    "O_Soldier_lite_F" createUnit [ getMarkerPos _marker, _group, "this setDir _x; this moveInGunner _staticAT; this removePrimaryWeaponItem 'optic_ACO_grn';", 1.0, "private"];
+    "O_spotter_F" createUnit [ getMarkerPos _marker, _group, "this setDir _x; this removePrimaryWeaponItem 'optic_ACO_grn';", 1.0, "sergeant"];
 
 } forEach [70,350,10,119,90,10,220];
 
