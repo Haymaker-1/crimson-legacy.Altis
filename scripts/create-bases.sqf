@@ -1,6 +1,6 @@
 
 
-
+// FIXME somehow the support boxes and ammo boxes are not created
 
 _data = [
             ["Land_Cargo_Patrol_V3_F",[3870.47,13476.1,-0.25],125.3],
@@ -84,19 +84,17 @@ _data = [
         _veh setFuel (0.01+random 0.05);
     };
     
-    if (_type in ["Box_East_Support_F"]) then {
+    if (_type == "Box_East_Support_F") then {
     
         _weapons = weaponCargo _veh;
         clearWeaponCargo _veh;
         {
-            if (!_x in ["Laserdesignator"]) then {
+            if (_x != "Laserdesignator") then {
+                // re-add all weapons except the designator
                 _veh addWeaponCargo [_x,1];
             };
         } forEach _weapons;
-        
     };
-
-
 } forEach _data;
 
 
