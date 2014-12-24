@@ -1,37 +1,33 @@
 
 _emitter = _this select 0;
 _soundId = _this select 1;
-_amplifier = _this select 2;
+_addVolume = _this select 2;
 
 _emitterObj = _emitter;
-_emitterPos = getPosASL _emitter;
+_emitterPos = eyePos _emitter;
 
 _relPath = (getArray (missionConfigFile >> "CfgSounds" >> _soundId >> "sound")) select 0;
 _subtitle = (getArray (missionConfigFile >> "CfgSounds" >> _soundId >> "titles")) select 1;
 _duration = getNumber (missionConfigFile >> "CfgSounds" >> _soundId >> "duration");
 
-if (isNil "_amplifier") then {
 
-    _amplifier = VOICE_AMPLIFIER_DEFAULT; //default value
+_audibleDistance = nil;
+if (_emitter == player) then {
     
-    _veh = assignedVehicle player;
-    if (!isNull (_veh)) then {
-        if (player in crew _veh) then {
-            if (isEngineOn _veh) then {
-                if (_veh isKindOf "Helicopter") then {
-                    _amplifier = 30.0;
-                };
-                if (_veh isKindOf "Car") then {
-                    _amplifier = 10.0;
-                };
-            };
-        };
-    };
+    // Setting sound decay parameter to 0 means there is no decay. This
+    // way, the player can always hear himself equally well. Without this
+    // tweak, you can have a strong decay on your own speach when traveling
+    // at speed, for instance when flying in a helicopter.
+    _audibleDistance = 0;
+} 
+else {
+    _audibleDistance = SPEECH_AUDIBLE_DISTANCE;
 };
 
-_acc = accTime;
 
-_isInside = false;
+_acc = accTime;
+_isInside = cameraView != "EXTERNAL";
+
 
 _voicePitch = 1.0*_acc;
 {
@@ -40,32 +36,41 @@ _voicePitch = 1.0*_acc;
     };
 } forEach VOICE_PITCH;
 
+
 _voiceVolume = 1.0;
 {
     if ((_x select 0) == _emitter) then {
         _voiceVolume = _x select 1;
     };
 } forEach VOICE_VOLUME;
-_voiceVolume = _voiceVolume * _amplifier;
+if (isNil "_addVolume") then {
+    _addVolume = [] call HAYMAKER_fnc_calcAddVolume;
+};
+_voiceVolume = _voiceVolume + _addVolume;
 
+
+// player globalChat format ["volume = %1",_voiceVolume];
 
 
 if (_emitter isKindOf "Man" AND alive _emitter) then {
-    _emitter setRandomLip true;
 
+    _emitter setRandomLip true;
+    
     playSound3D [MISSION_TOP_LEVEL_DIRECTORY + _relPath,
-                 _emitterObj, 
-                 _isInside, 
-                 _emitterPos, 
-                 _voiceVolume,
-                 _voicePitch,
-                 SPEECH_AUDIBLE_DISTANCE];  
-                 
+                _emitterObj, 
+                _isInside, 
+                _emitterPos, 
+                _voiceVolume,
+                _voicePitch,
+                _audibleDistance];
+
     _emitter sideChat _subtitle;
     
     player createDiaryRecord ["varTranscript",["Transcript","<font color='#00FFFF'>" + (groupID group _emitter) + "</font>: " + _subtitle]];
 
     sleep (_duration/_voicePitch);
+    
     _emitter setRandomLip false;
 };
+
 sleep 1;
