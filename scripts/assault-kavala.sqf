@@ -5,7 +5,7 @@ sleep random 10;
 TASK_MEET_AT_QUARRY setTaskState "Succeeded";
 ["TaskSucceeded", ["","Move to staging area"]] call BIS_fnc_showNotification;
 
-_isReady = [player, "nzftunfr1"] execVM "scripts\unitradiospeak.sqf";
+_isReady = [player, "nzftunfr1"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 sleep 7;
@@ -97,19 +97,19 @@ _trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr2'] execVM 'scr
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["BRAVO","PRESENT",false];
-_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr3'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; scriptDone _isReady};;_wp = kavalaRifleSquadBravo addWaypoint [getMarkerPos 'MARKER_BRAVO_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr3'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; scriptDone _isReady};_wp = kavalaRifleSquadBravo addWaypoint [getMarkerPos 'MARKER_BRAVO_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
 
 
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["CHARLIE","PRESENT",false];
-_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr3'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; scriptDone _isReady};';_wp = kavalaRifleSquadCharlie addWaypoint [getMarkerPos 'MARKER_CHARLIE_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr4'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; scriptDone _isReady};_wp = kavalaRifleSquadCharlie addWaypoint [getMarkerPos 'MARKER_CHARLIE_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
 
 
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["DELTA","PRESENT",false];
-_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr4'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; scriptDone _isReady};';_wp = kavalaRifleSquadDelta addWaypoint [getMarkerPos 'MARKER_DELTA_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr5'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; scriptDone _isReady};_wp = kavalaRifleSquadDelta addWaypoint [getMarkerPos 'MARKER_DELTA_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
 
 
 TASK_ASSAULT_KAVALA = player createSimpleTask ["TASKID_ASSAULT_KAVALA"];
