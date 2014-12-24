@@ -43,7 +43,6 @@ AA_IFESTONIA_IS_CLEAR = false;
 AA_FRINI_IS_CLEAR = false;
 CRASH_SITE_POPULATED = false;
 ENDMISSION_REASON_THROWN = false;
-SPAWN_AGIOS_DONE = false;
 TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED = false;
 TASK_ESCORT_PILOT_HAS_BEEN_ASSIGNED = false;
 IED1_HAS_BEEN_ACTIVATED = false;
@@ -52,21 +51,23 @@ TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED = false;
 EVERYBODY_IS_DONE_TALKING = true;
 TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED = false;
 LOOKOUT_FOR_MORTAR_TARGETS = true;
-VOICE_AMPLIFIER_DEFAULT = 3.0;
 
+VOICE_ADDVOLUME_DEFAULT = 0.0;
 
 VOICE_PITCH = [[THE_CO,0.92],
-               [player,1.10]];
+               [player,1.02]];
 
-VOICE_VOLUME = [[THE_CO,1.70],
-                [player,0.20]];  
+VOICE_VOLUME = [[THE_CO,2.0],
+                [player,0.9]];
 
-SPEECH_AUDIBLE_DISTANCE = 25;
+SPEECH_AUDIBLE_DISTANCE = 40;
 
 MISSION_TOP_LEVEL_DIRECTORY = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
 
 GPS_TRACKING_IS_ON = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "GPS_TRACKING_ENABLED") == 1;
 player addAction ["Disable GPS tracking","scripts\toggle-gpstracking.sqf",nil,0,false];
+
+OUTLIVED_HIS_USEFULNESS = [false,true,true,true];
 
 RANDOM_PATROL_GROUP_HAS_ARRIVED = [];
 STOP_RANDOM_PATROL_GROUP = [];
@@ -97,7 +98,7 @@ strcmpn = compile loadFile "functions\strcmpn.sqf";
 getAddRatingValueExplosives = compile loadFile "functions\getAddRatingValueExplosives.sqf";
 getHitPointReport = compile loadFile "functions\getHitPointReport.sqf";
 datestr = compile loadFile "functions\datestr.sqf";
-
+calcAddVolume = compile loadFile "functions\calcAddVolume.sqf";
 
 
 null = [] execVM "scripts\endmission-team-member-died.sqf";
@@ -167,11 +168,5 @@ shedAgios setDir 44.5;
 
 
 SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
-
-player createDiarySubject ["techNotes","Technical notes"];
-
-player createDiaryRecord ["techNotes",["Version control","Go to https://github.com/Haymaker-1/crimson-legacy.Altis/ for the mission source files."]];
-
-
 
 null = [] execVM "scripts\savegames.sqf";
