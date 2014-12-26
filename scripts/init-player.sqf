@@ -19,7 +19,7 @@ _headgearArray = ["H_Beret_blk",
                   "H_Booniehat_tan",
                   "H_Booniehat_dirty",
                   "H_Booniehat_dgtl"];
-
+                  
 
 removeAllWeapons _character;
 removeAllItems _character;
@@ -45,17 +45,9 @@ _character addItem "FirstAidKit";
 _character addItem "FirstAidKit";
 _character addItem "FirstAidKit";
 _character addVest "V_Chestrig_blk";
-_character addMagazine "20Rnd_762x51_Mag";
-_character addMagazine "20Rnd_762x51_Mag";
-_character addMagazine "20Rnd_762x51_Mag";
-_character addMagazine "20Rnd_762x51_Mag";
-_character addMagazine "20Rnd_762x51_Mag";
-_character addMagazine "20Rnd_762x51_Mag";
-_character addMagazine "20Rnd_762x51_Mag";
-_character addWeapon "srifle_EBR_F";
-_character addPrimaryWeaponItem "muzzle_snds_B";
-_character addPrimaryWeaponItem "optic_ACO_grn";
-_character addItem "optic_SOS";
+
+null = [_character] execVM "scripts\add-random-blufor-weapon.sqf";
+
 _character addMagazine "9Rnd_45ACP_Mag";
 _character addMagazine "9Rnd_45ACP_Mag";
 _character addWeapon "hgun_ACPC2_F";
@@ -65,6 +57,9 @@ _headgear = _headgearArray call BIS_fnc_selectRandom;
 _character addHeadGear _headgear;
 
 
+waitUntil {primaryWeapon _character != ""};
+
+_character selectWeapon (primaryWeapon _character);
 
 
 null = [] spawn {
