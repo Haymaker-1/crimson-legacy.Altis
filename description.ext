@@ -1561,6 +1561,9 @@ class CfgFunctions
             class calcAddVolume {
                 file = "functions\calcAddVolume.sqf";
             };
+            class selectWeightedRandom {
+                file = "functions\selectWeightedRandom.sqf";
+            };
 		};
 	};
 };
