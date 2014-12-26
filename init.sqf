@@ -99,6 +99,7 @@ getAddRatingValueExplosives = compile loadFile "functions\getAddRatingValueExplo
 getHitPointReport = compile loadFile "functions\getHitPointReport.sqf";
 datestr = compile loadFile "functions\datestr.sqf";
 calcAddVolume = compile loadFile "functions\calcAddVolume.sqf";
+selectWeightedRandom = compile loadFile "functions\selectWeightedRandom.sqf";
 
 
 null = [] execVM "scripts\endmission-team-member-died.sqf";
