@@ -36,10 +36,11 @@ for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROL
     
     for "_j" from 0 to 3 do
     {
-        _fighterType = ["O_Soldier_lite_F",
-                        "O_medic_F",
-                        "O_Soldier_A_F",
-                        "O_Soldier_LAT_F"] call BIS_fnc_selectRandom;
+        _fighterType = [[["O_Soldier_lite_F",0.35],
+                        ["O_medic_F",0.2],
+                        ["O_Soldier_A_F",0.2],
+                        ["O_Soldier_LAT_F",0.2],
+                        ["O_Soldier_M_F",0.05]]] call HAYMAKER_fnc_selectWeightedRandom;
 
         if (random 1.0 < 0.25) then
         {
