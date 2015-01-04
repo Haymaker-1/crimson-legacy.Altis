@@ -27,6 +27,10 @@ else
 thehelicopter lock 2;
 thehelicopter setDir random 360;
 
+clearWeaponCargo thehelicopter;
+clearItemCargo thehelicopter;
+clearMagazineCargo thehelicopter;
+
 _usesNLitersPerSecond = (helicopterFuelConsumptionRate * helicopterFuelCapacity)/60;
 
 thehelicopter setFuel (_nMinutes * 60 * _usesNLitersPerSecond)/helicopterFuelCapacity;
