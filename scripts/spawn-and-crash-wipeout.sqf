@@ -3,7 +3,7 @@ sleep (5+random 5);
 
 null = [] execVM "scripts\spawn-fireteam-crash-site.sqf";
 
-thewipeout = createVehicle ["B_Plane_CAS_01_F",(getMarkerPos "MARKER_SPAWN_DOOMED_PLANE"),[],0,"FLYING"];
+thewipeout = createVehicle ["B_Plane_CAS_01_F",(getMarkerPos "MARKER_SPAWN_DOOMED_PLANE"),[],0,"FLY"];
 thewipeout setPos [getPos thewipeout select 0,getPos thewipeout select 1,250]; 
 thewipeout setDamage 1;
 thewipeout setDir 45;
@@ -100,36 +100,41 @@ waitUntil{sleep 1; scriptDone _isReady};
 _isReady = [THE_CO, "drxopaef12"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-[sf_teamleader,sf_marksman1,sf_rifleman1,sf_atman] joinSilent (group player);
+
+_iRandomPatrol = [sf0] call HAYMAKER_fnc_findRandomPatrolmansGroup;
+STOP_RANDOM_PATROL_GROUP set [_iRandomPatrol,true];
+
+
+[sf0,sf1,sf2,sf3] joinSilent (group player);
 (group player) selectLeader player;
 
 null = [] spawn {
     waitUntil{
         sleep 5;
-        sf_teamleader in crew thehelicopter;
+        sf0 in crew thehelicopter;
     };
-    sf_teamleader allowDamage true;
+    sf0 allowDamage true;
 };
 null = [] spawn {
     waitUntil{
         sleep 5;
-        sf_marksman1 in crew thehelicopter;
+        sf1 in crew thehelicopter;
     };
-    sf_marksman1 allowDamage true;
+    sf1 allowDamage true;
 };
 null = [] spawn {
     waitUntil{
         sleep 5;
-        sf_rifleman1 in crew thehelicopter;
+        sf2 in crew thehelicopter;
     };
-    sf_rifleman1 allowDamage true;
+    sf2 allowDamage true;
 };
 null = [] spawn {
     waitUntil{
         sleep 5;
-        sf_atman in crew thehelicopter;
+        sf3 in crew thehelicopter;
     };
-    sf_atman allowDamage true;
+    sf3 allowDamage true;
 };
 
 TASK_FIND_CRASH_SITE = player createSimpleTask ["Find crash site"];
