@@ -19,13 +19,13 @@ player setPos (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD");
 
 thehelicopter setFuel 0.0;
 
-[sf_teamleader,sf_marksman1,sf_rifleman1,sf_atman] joinSilent (group player);
+[sf0,sf1,sf2,sf3] joinSilent (group player);
 (group player) selectLeader player;
 
-sf_teamleader setPos (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD");
-sf_marksman1 setPos (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD");
-sf_rifleman1 setPos (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD");
-sf_atman setPos (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD");
+sf0 setPos (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD");
+sf1 setPos (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD");
+sf2 setPos (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD");
+sf3 setPos (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD");
 
 {_x allowDamage false;} forEach (units (group player));
 

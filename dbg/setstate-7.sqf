@@ -22,7 +22,7 @@ CRASH_SITE_IS_CLEAR = true;
 AA_MAGOS_IS_CLEAR = true;
 AA_AMFISSA_IS_CLEAR = true;
 
-[sf_teamleader,sf_marksman1,sf_rifleman1,sf_atman] joinSilent (group player);
+[sf0,sf1,sf2,sf3] joinSilent (group player);
 (group player) selectLeader player;
 {_x setPos getPos player} forEach units group player;
 {_x allowDamage false;} forEach (units (group player));
@@ -54,10 +54,10 @@ _vehiclesMotorpool = nearestObjects [(getMarkerPos "MARKER_MOTOR_POOL"),["Car","
 waitUntil{player in crew krya_nera_strider};
 skiptime 0.3;
 
-sf_teamleader moveInCommander krya_nera_strider;
-sf_marksman1 moveInCargo krya_nera_strider;
-sf_rifleman1 moveInCargo krya_nera_strider;
-sf_atman moveInCargo krya_nera_strider_gmg;
+sf0 moveInCommander krya_nera_strider;
+sf1 moveInCargo krya_nera_strider;
+sf2 moveInCargo krya_nera_strider;
+sf3 moveInCargo krya_nera_strider_gmg;
 
 
 krya_nera_strider setPos getMarkerPos "MARKER_STRIDER_1_RESUME";
@@ -65,7 +65,7 @@ krya_nera_strider_gmg setPos getMarkerPos "MARKER_STRIDER_2_RESUME";
 krya_nera_strider_hmg setPos getMarkerPos "MARKER_STRIDER_3_RESUME";
 
 
-null = [] execVM "dbg\show-men-kavala.sqf";
+null = [player,500] execVM "dbg\show-men.sqf";
 
 sleep 20;
 saveGame;

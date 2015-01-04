@@ -15,7 +15,7 @@ OUTLIVED_HIS_USEFULNESS set [0,true];
 sleep 5;
 
 player setPos getMarkerPos "MARKER_DBG_RESUME_STATE_6";
-[sf_teamleader,sf_marksman1,sf_rifleman1,sf_atman] joinSilent (group player);
+[sf0,sf1,sf2,sf3] joinSilent (group player);
 (group player) selectLeader player;
 
 // {_x setPos getPos player} forEach units group player;

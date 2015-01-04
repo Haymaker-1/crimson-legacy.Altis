@@ -16,7 +16,7 @@ thehelicopter setFuel 1;
 
 
 
-thewipeout = createVehicle ["B_Plane_CAS_01_F",(getMarkerPos "MARKER_SPAWN_DOOMED_PLANE"),[],0,"FLYING"];
+thewipeout = createVehicle ["B_Plane_CAS_01_F",(getMarkerPos "MARKER_SPAWN_DOOMED_PLANE"),[],0,"FLY"];
 thewipeout setPos [getPos thewipeout select 0,getPos thewipeout select 1,250]; 
 thewipeout setDamage 1;
 thewipeout setDir 45;
@@ -30,13 +30,13 @@ thewipeout setVelocity [(vectorDir thewipeout select 0)*(0 + random 100),(vector
 "MARKER_PILOT_DISTRESS_SIGNAL" setMarkerText "DISTRESS SIGNAL"; 
 
 
-[sf_teamleader,sf_marksman1,sf_rifleman1,sf_atman] joinSilent (group player);
+[sf0,sf1,sf2,sf3] joinSilent (group player);
 (group player) selectLeader player;
 
-sf_teamleader moveInCargo [thehelicopter,2];
-sf_marksman1 moveInCargo [thehelicopter,3];
-sf_rifleman1 moveInCargo [thehelicopter,4];
-sf_atman moveInCargo [thehelicopter,5];
+sf0 moveInCargo [thehelicopter,2];
+sf1 moveInCargo [thehelicopter,3];
+sf2 moveInCargo [thehelicopter,4];
+sf3 moveInCargo [thehelicopter,5];
 
 
 {_x allowDamage true;} forEach (units (group player));

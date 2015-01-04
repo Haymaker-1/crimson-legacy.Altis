@@ -12,7 +12,7 @@ thehelicopter setDir (random 360);
 thehelicopter engineOn false;
 thehelicopter setFuel 0.05;
 
-[sf_teamleader,sf_marksman1,sf_rifleman1,sf_atman] joinSilent (group player);
+[sf0,sf1,sf2,sf3] joinSilent (group player);
 (group player) selectLeader player;
 
 {_x allowDamage true;} forEach (units (group player));

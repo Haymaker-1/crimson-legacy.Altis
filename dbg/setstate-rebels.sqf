@@ -19,13 +19,13 @@ player moveInDriver thehelicopter;
 thehelicopter engineOn false;
 thehelicopter setFuel 0.05;
 
-[sf_teamleader,sf_marksman1,sf_rifleman1,sf_atman] joinSilent (group player);
+[sf0,sf1,sf2,sf3] joinSilent (group player);
 (group player) selectLeader player;
 
-sf_teamleader moveInCargo [thehelicopter,2];
-sf_marksman1 moveInCargo [thehelicopter,3];
-sf_rifleman1 moveInCargo [thehelicopter,4];
-sf_atman moveInCargo [thehelicopter,5];
+sf0 moveInCargo [thehelicopter,2];
+sf1 moveInCargo [thehelicopter,3];
+sf2 moveInCargo [thehelicopter,4];
+sf3 moveInCargo [thehelicopter,5];
 
 {_x allowDamage true;} forEach (units (group player));
 
