@@ -24,6 +24,9 @@ player setCurrentTask TASK_CLEAR_STRAGGLERS_KAVALA;
 TASK_CLEAR_STRAGGLERS_KAVALA_HAS_BEEN_ASSIGNED = true;
 
 
+null = [] execVM "scripts\kavala-opfor-groups-fall-back.sqf";
+
+
 while {_nEast > (_nEastThres - 10)} do {
 
     _men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
@@ -33,19 +36,27 @@ while {_nEast > (_nEastThres - 10)} do {
 
 sleep 10;
 
-_noVehiclesLeftInKavala = false;
-_enemyVehicleTypes = ["O_APC_Tracked_02_cannon_F", "O_APC_Wheeled_02_rcws_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F", "O_MRAP_02_F"];
+//_noVehiclesLeftInKavala = false;
+//_enemyVehicleTypes = ["O_APC_Tracked_02_cannon_F", "O_APC_Wheeled_02_rcws_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F", "O_MRAP_02_F"];
+//
+//while {!_noVehiclesLeftInKavala} do {
+//    _noVehiclesLeftInKavala = true;
+//    {
+//        _veh = _x;
+//        if ((side _veh == EAST) AND (alive _veh) AND (typeOf _veh in _enemyVehicleTypes)) then {
+//            _noVehiclesLeftInKavala = false;
+//        };
+//    } forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearEntities [["Car","Tank"],1250]);
+//    sleep 10;
+//};
 
-while {!_noVehiclesLeftInKavala} do {
-    _noVehiclesLeftInKavala = true;
+{
+    _veh = _x;
     {
-        _veh = _x;
-        if ((side _veh == EAST) AND (alive _veh) AND (typeOf _veh in _enemyVehicleTypes)) then {
-            _noVehiclesLeftInKavala = false;
-        };
-    } forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearEntities [["Car","Tank"],1250]);
-    sleep 10;
-};
+        _unit = _x;
+        _unit leaveVehicle _veh;
+    } forEach crew _veh;
+} forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearEntities [["Car","Tank"],1250]);
 
 
 {
@@ -82,19 +93,6 @@ while {!_noVehiclesLeftInKavala} do {
 {
     _x allowDamage false;
 } forEach (units group player);
-
-
-_isReady = [kostas, "nvurkijn1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
-
-
-sleep 10;
-
-TASK_CLEAR_STRAGGLERS_KAVALA setTaskState "Succeeded";
-
-["TaskSucceeded", ["","Clear stragglers"]] call BIS_fnc_showNotification;
-
-sleep 10;
 
 
 _powGroup = createGroup EAST;
@@ -144,15 +142,34 @@ _powGroup = createGroup EAST;
     };
 } forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250]);
 
-
-_wp = _powGroup addWaypoint [getMarkerPos "MARKER_MOTOR_POOL",10];
-_wp setWaypointBehaviour "CARELESS";
-_wp setWaypointFormation "FILE";
-_wp setWaypointSpeed "LIMITED";
-
 {   
     _x setCaptive true;
+    _x allowFleeing 0.0; 
+    _x setUnitPos "UP";
+    
+    null = [_x] spawn {
+        _unit = _this select 0; 
+        waitUntil {sleep 5; (getPos _unit) distance (getMarkerPos "MARKER_MOTOR_POOL") < 20}; 
+        [_unit] joinSilent grpNull;
+        _unit playAction "Surrender";
+    };
+    
 } forEach (units _powGroup);
+
+{
+    deleteWaypoint [_powGroup, _forEachIndex];
+} forEach waypoints _powGroup;
+
+
+_wp = _powGroup addWaypoint [getMarkerPos "MARKER_MOTOR_POOL",10];
+[_powGroup,0] setBehaviour "CARELESS";
+[_powGroup,0] setFormation "FILE";
+[_powGroup,0] setWaypointSpeed "LIMITED";
+_powGroup setCurrentWaypoint [_powGroup, 0];
+
+
+
+
 
 
 null = [] execVM "scripts\flip-marker-color-kavala.sqf";
@@ -168,16 +185,17 @@ deleteMarker "MARKER_DELTA_SECTOR_KAVALA";
 deleteMarker "MARKER_DELTA_SECTOR_KAVALA_TEXT";
 
 
-null = [] spawn {
-    cutText ["Thanks for playing","PLAIN",10,true];
+_isReady = [kostas, "nvurkijn1"] execVM "scripts\unitradiospeak.sqf";
+waitUntil{sleep 1; scriptDone _isReady};
 
-    sleep 20;
+sleep 10;
 
-    ENDMISSION_REASON_THROWN = true;
-    _endName = "Win1";
-    _isVictory = true;
-    _fadeType = true;
+TASK_CLEAR_STRAGGLERS_KAVALA setTaskState "Succeeded";
 
-    [_endName,_isVictory,_fadeType] spawn BIS_fnc_endMission;
-};
+["TaskSucceeded", ["","Clear stragglers"]] call BIS_fnc_showNotification;
+
+sleep 10;
+
+
+null = [] execVM "scripts\spawn-exfilhelo.sqf";
 
