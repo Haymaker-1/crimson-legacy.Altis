@@ -1,4 +1,6 @@
 
+
+
 //null = [] execVM "scripts\setAsRandomPatrol.sqf"
 
 _perimeter = _this select 0;
