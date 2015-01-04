@@ -389,7 +389,10 @@ _men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
 } forEach _men;
 
 
-null = [] execVM "scripts\spawn-fireteams-kavala-bases.sqf";
+_spawningComplete = [] execVM "scripts\spawn-fireteams-kavala-bases.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
+
 
 null = [] spawn {waitUntil {sleep 60; daytime > 5.75}; LOOKOUT_FOR_MORTAR_TARGETS = false };
 
