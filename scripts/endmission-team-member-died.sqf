@@ -16,7 +16,7 @@ while {false in OUTLIVED_HIS_USEFULNESS} do
             };
 
         };
-    } forEach [sf_teamleader,sf_marksman1,sf_rifleman1,sf_atman];
+    } forEach [sf0,sf1,sf2,sf3];
     sleep 5;
 };
 
