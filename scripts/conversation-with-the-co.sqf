@@ -20,7 +20,7 @@ waitUntil{sleep 1; scriptDone _isReady};
 _isReady = [THE_CO, "ydbdmwwk4"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
-["MARKER_PERIMETER_LNN_NABISCO",25,"ColorWEST",0.70] execVM "scripts\floodfill-perimeter.sqf";
+["MARKER_PERIMETER_LNN_NABISCO",100,"ColorWEST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 
 "MARKER_CAMP_NABISCO" setMarkerType "mil_dot";
 
