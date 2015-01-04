@@ -14,19 +14,21 @@ _duration = getNumber (missionConfigFile >> "CfgSounds" >> _soundId >> "duration
 _audibleDistance = nil;
 if (_emitter == player) then {
     
-    // Setting sound decay parameter to 0 means there is no decay. This
+    // Setting sound decay parameter to 1e10 means there is no decay. This
     // way, the player can always hear himself equally well. Without this
-    // tweak, you can have a strong decay on your own speach when traveling
+    // tweak, you can have a strong decay on your own speech when traveling
     // at speed, for instance when flying in a helicopter.
-    _audibleDistance = 0;
+    _audibleDistance = 1e10;
 } 
 else {
     _audibleDistance = SPEECH_AUDIBLE_DISTANCE;
+    _emitter doWatch player;
 };
 
 
 _acc = accTime;
-_isInside = cameraView != "EXTERNAL";
+//_isInside = cameraView != "EXTERNAL";
+_isInside = false;
 
 
 _voicePitch = 1.0*_acc;
@@ -48,8 +50,6 @@ if (isNil "_addVolume") then {
 };
 _voiceVolume = _voiceVolume + _addVolume;
 
-
-// player globalChat format ["volume = %1",_voiceVolume];
 
 
 if (_emitter isKindOf "Man" AND alive _emitter) then {
@@ -74,3 +74,5 @@ if (_emitter isKindOf "Man" AND alive _emitter) then {
 };
 
 sleep 1;
+
+_emitter doWatch objNull;
