@@ -2,9 +2,11 @@
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
 
-    _marker = createMarker ["MARKER_OPFOR_BASE_KAVALA_1", [3500.28,13632.7,-0.25] ];
-    _marker = createMarker ["MARKER_OPFOR_BASE_KAVALA_2", [3870.47,13476.1,-0.25] ];
-    _marker = createMarker ["MARKER_OPFOR_BASE_KAVALA_3", [3894.33,12692.1,-0.25] ];
+    _marker = createMarker ["MARKER_OPFOR_BASE_NEGADES", [4927.61,16404.2,-0.25] ];
+    _marker = createMarker ["MARKER_OPFOR_BASE_AGIOS", [4213.22,17385.7,-0.25] ];
+
+
+
 
 
     _headgearArray = ["H_Beret_blk",
@@ -26,14 +28,11 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
                       "H_Booniehat_dirty",
                       "H_Booniehat_dgtl"];
 
-    _opforGroupBaseKavala1 = createGroup EAST;
-    _opforGroupBaseKavala2 = createGroup EAST;
-    _opforGroupBaseKavala3 = createGroup EAST;
+    _opforGroupBaseNegades = createGroup EAST;
+    _opforGroupBaseAgios = createGroup EAST;
 
-    _groupData = [["MARKER_OPFOR_BASE_KAVALA_1",_opforGroupBaseKavala1],
-                  ["MARKER_OPFOR_BASE_KAVALA_2",_opforGroupBaseKavala2],
-                  ["MARKER_OPFOR_BASE_KAVALA_3",_opforGroupBaseKavala3]];
-     
+    _groupData = [ ["MARKER_OPFOR_BASE_NEGADES",_opforGroupBaseNegades],
+                   ["MARKER_OPFOR_BASE_AGIOS",_opforGroupBaseAgios]];
 
     _fighterTypes = ["O_Soldier_TL_F",
                      "O_Soldier_GL_F",
@@ -66,15 +65,13 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
     } forEach _groupData;
 
 
-    _perimeter1 = ["MARKER_PERIMETER_FJE_BASE_1"] call HAYMAKER_fnc_constructPerimeter;
-    [_perimeter1,_opforGroupBaseKavala1,TOTAL_NUMBER_OF_RANDOM_PATROLS] execVM "scripts\setAsRandomPatrol.sqf";
+    _perimeter4 = ["MARKER_PERIMETER_KFR"] call HAYMAKER_fnc_constructPerimeter;
+    [_perimeter4,_opforGroupBaseNegades,TOTAL_NUMBER_OF_RANDOM_PATROLS] execVM "scripts\setAsRandomPatrol.sqf";
 
-    _perimeter2 = ["MARKER_PERIMETER_WBU_BASE_2"] call HAYMAKER_fnc_constructPerimeter;
-    [_perimeter2,_opforGroupBaseKavala2,TOTAL_NUMBER_OF_RANDOM_PATROLS+1] execVM "scripts\setAsRandomPatrol.sqf";
-
-    _perimeter3 = ["MARKER_PERIMETER_GHS_BASE_3"] call HAYMAKER_fnc_constructPerimeter;
-    [_perimeter3,_opforGroupBaseKavala3,TOTAL_NUMBER_OF_RANDOM_PATROLS+2] execVM "scripts\setAsRandomPatrol.sqf";
+    _perimeter5 = ["MARKER_PERIMETER_FWB"] call HAYMAKER_fnc_constructPerimeter;
+    [_perimeter5,_opforGroupBaseAgios,TOTAL_NUMBER_OF_RANDOM_PATROLS+1] execVM "scripts\setAsRandomPatrol.sqf";
     
-    TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 3;
+        
+    TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 2;
 
 };
