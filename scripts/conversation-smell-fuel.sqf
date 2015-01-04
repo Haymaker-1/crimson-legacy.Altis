@@ -93,11 +93,11 @@ player groupChat "O shit, we're losing fuel!";
 
 sleep 4;
 
-sf_teamleader groupChat "We can make it to the rebel camp!";
+sf0 groupChat "We can make it to the rebel camp!";
 
 sleep 5;
 
-sf_teamleader groupChat "Just make sure to stay close to the ground to avoid the AA locking on to us.";
+sf0 groupChat "Just make sure to stay close to the ground to avoid the AA locking on to us.";
 
 
 
