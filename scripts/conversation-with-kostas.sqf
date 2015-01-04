@@ -66,7 +66,7 @@ _isReady = [player, "mbhglmap3"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 // but we brought radios
-sf_teamleader groupChat "Perhaps we could use the new radios we brought?";
+sf0 groupChat "Perhaps we could use the new radios we brought?";
 sleep (4+random 2);
 OUTLIVED_HIS_USEFULNESS set [0,true];
 
