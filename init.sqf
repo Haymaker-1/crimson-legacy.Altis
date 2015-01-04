@@ -11,7 +11,7 @@ EAST setFriend [WEST, 0.0];
 RESISTANCE setFriend [EAST, 0.0];
 EAST setFriend [RESISTANCE, 0.0];
 
-
+deactivateKey "missionCompletedKey";
 
 0 fadeSound 0;
 
@@ -51,6 +51,7 @@ TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED = false;
 EVERYBODY_IS_DONE_TALKING = true;
 TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED = false;
 LOOKOUT_FOR_MORTAR_TARGETS = true;
+SPAWN_RANDOM_PATROLS_ENABLED = true;
 
 VOICE_ADDVOLUME_DEFAULT = 0.0;
 
@@ -138,6 +139,11 @@ _spawningComplete = nil;
 _spawningComplete = [] execVM "scripts\spawn-kostas-borrowed-men.sqf";
 waitUntil{sleep 0.5;scriptDone _spawningComplete};
 _spawningComplete = nil;
+
+_spawningComplete = [] execVM "scripts\spawn-sfteam.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
+
 
 
 null = [] execVM "scripts\enabletracking.sqf";
