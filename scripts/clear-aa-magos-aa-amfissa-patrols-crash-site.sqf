@@ -300,7 +300,21 @@ if (!SKIP_CLEANING_HOUSE) then {
     _isReady = [kostas, "lhdnftpm19"] execVM "scripts\unitradiospeak.sqf";
     waitUntil{sleep 1; scriptDone _isReady};
 
+    sleep 10;
+    
+    cancelSimpleTaskDestination TASK_SET_UP_OP_AGIOS_KONSTANTINOS;
+    
+    TASK_FALL_BACK_TO_CP = player createSimpleTask ["TASKID_FALL_BACK_TO_CP"];
+    TASK_FALL_BACK_TO_CP setSimpleTaskDescription ["Fall back to <marker name='MARKER_OP_AGIOS_KONSTANTINOS'>Agios Konstantinos</marker> to rest up.","Fall back to Agios","Fall back to Agios"];
+    TASK_FALL_BACK_TO_CP setSimpleTaskDestination (getMarkerPos "MARKER_OP_AGIOS_KONSTANTINOS");
+    TASK_FALL_BACK_TO_CP setTaskState "Created";
+    ["TaskCreated", ["","Fall back to Agios"]] call BIS_fnc_showNotification;
+    
+    waitUntil {sleep 5; (getPos player) distance (getMarkerPos "MARKER_OP_AGIOS_KONSTANTINOS") < 30};
 
+    TASK_FALL_BACK_TO_CP setTaskState "Succeeded";
+    ["TaskSucceeded", ["","Fall back to Agios"]] call BIS_fnc_showNotification;
+    
     cutText ["","BLACK OUT",5,false];
     5 fadeSound 0;
     player allowDamage false;
