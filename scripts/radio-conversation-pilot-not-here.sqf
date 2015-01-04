@@ -16,21 +16,21 @@ sleep (10+random 5);
 player groupChat "Does anyone have a clue how we find this guy?";
 sleep (6+random 2);
 
-if (alive sf_rifleman1) then 
+if (alive sf2) then 
 {
-    sf_rifleman1 groupChat "Ehm...not really. Sorry sir.";
+    sf2 groupChat "Ehm...not really. Sorry sir.";
     sleep (4+random 2);
 };
 
-sf_teamleader groupChat "We could go and ask Kostas, see what he knows.";
+sf0 groupChat "We could go and ask Kostas, see what he knows.";
 sleep (3+random 2);
 
 player groupChat "I'm sorry, who is he? I don't think I know him.";
 sleep (3+random 2);
 
-_dir = [getPos sf_teamleader,getMarkerPos "MARKER_REBEL_CAMP_HELIPAD"] call HAYMAKER_fnc_calcDirectionWindrose;
+_dir = [getPos sf0,getMarkerPos "MARKER_REBEL_CAMP_HELIPAD"] call HAYMAKER_fnc_calcDirectionWindrose;
 
-sf_teamleader groupChat "Kostas is the local resistance commander. He's got a base "+_dir+" of here. Maybe his people have seen or heard something.";
+sf0 groupChat "Kostas is the local resistance commander. He's got a base "+_dir+" of here. Maybe his people have seen or heard something.";
 sleep (6+random 2);
 
 ["MARKER_PERIMETER_REBEL_CAMP",50,"ColorGUER",0.70] execVM "scripts\floodfill-perimeter.sqf";
