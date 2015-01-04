@@ -1,7 +1,7 @@
 
 
 
-player globalChat "ag4df";
+// player globalChat "ag4df";
 
 _men = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
 _perimeters = [["MARKER_PERIMETER_FJE_BASE_1"] call HAYMAKER_fnc_constructPerimeter,
@@ -20,7 +20,7 @@ _perimeters = [["MARKER_PERIMETER_FJE_BASE_1"] call HAYMAKER_fnc_constructPerime
         
         if (_iRandomPatrol >= 0) then {
         
-            player globalChat format ["stopping group %1",_iRandomPatrol];
+//            player globalChat format ["stopping group %1",_iRandomPatrol];
             
             STOP_RANDOM_PATROL_GROUP set [_iRandomPatrol,true];
 
@@ -31,11 +31,11 @@ _perimeters = [["MARKER_PERIMETER_FJE_BASE_1"] call HAYMAKER_fnc_constructPerime
                 _group = _this select 2;
                 _iRandomPatrol = _this select 3;
                 
-                player globalChat format ["waiting for group %1",_iRandomPatrol];
+//                player globalChat format ["waiting for group %1",_iRandomPatrol];
                         
                 waitUntil{sleep 5;!(STOP_RANDOM_PATROL_GROUP select _iRandomPatrol)};
                     
-                player globalChat format ["starting group %1",_iRandomPatrol];
+//                player globalChat format ["starting group %1",_iRandomPatrol];
 
                 _dists = [_man distance getMarkerPos "MARKER_OPFOR_BASE_KAVALA_1",
                           _man distance getMarkerPos "MARKER_OPFOR_BASE_KAVALA_2",
@@ -53,17 +53,14 @@ _perimeters = [["MARKER_PERIMETER_FJE_BASE_1"] call HAYMAKER_fnc_constructPerime
                 
                 _perimeter = _perimeters select _indexMinimum;
                         
-                player globalChat format["_indexMinimum = %1",_indexMinimum];
-                player globalChat format["_group = %1",_group];
-                player globalChat format["_iRandomPatrol = %1",_iRandomPatrol];
+//                player globalChat format["_indexMinimum = %1",_indexMinimum];
+//                player globalChat format["_group = %1",_group];
+//                player globalChat format["_iRandomPatrol = %1",_iRandomPatrol];
                 
                 null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
             };
         };
     };
-    
-    
-    
 } forEach _men;
 
 
