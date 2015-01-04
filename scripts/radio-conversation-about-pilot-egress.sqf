@@ -65,6 +65,10 @@ _spawningComplete = [] execVM "scripts\spawn-fireteams-negades.sqf";
 waitUntil{sleep 0.5;scriptDone _spawningComplete};
 _spawningComplete = nil;
 
+_spawningComplete = [] execVM "scripts\spawn-fireteams-agios-negades-bases.sqf";
+waitUntil{sleep 0.5;scriptDone _spawningComplete};
+_spawningComplete = nil;
+
 null = [] execVM "scripts\spawn-sniper-negades.sqf";
 null = [] execVM "scripts\create-bases.sqf";
 
