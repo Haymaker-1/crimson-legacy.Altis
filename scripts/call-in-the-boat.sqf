@@ -45,8 +45,11 @@ _wp = _group addWaypoint [_pos,1];
 
 waitUntil {sleep 5;pilot in crew THE_GUNBOAT};
 
+pilot disableAI "MOVE";
+pilot disableAI "ANIM";
+
 pilot allowDamage false;
-//THE_GUNBOAT setPos getMarkerPos "MARKER_EGRESS_ALPHA_BOAT";
+
 null = [] execVM "scripts\translate-and-rotate-gunboat.sqf";
 
 PILOT_EGRESS_WAS_SUCCESSFUL = true;
