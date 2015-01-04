@@ -64,7 +64,7 @@ _character selectWeapon (primaryWeapon _character);
 
 null = [] spawn {
     sleep 8;
-    TASK_REPORT_IN_AT_KRYA_NERA = player createSimpleTask ["TASK_REPORT_IN_AT_KRYA_NERA"];
+    TASK_REPORT_IN_AT_KRYA_NERA = player createSimpleTask ["TASKID_REPORT_IN_AT_KRYA_NERA"];
     TASK_REPORT_IN_AT_KRYA_NERA setSimpleTaskDescription ["Report to your commanding officer at <marker name='MARKER_OP_KRYA_NERA'>OP Krya Nera</marker>.","Report in","Report in"];
     TASK_REPORT_IN_AT_KRYA_NERA setSimpleTaskDestination (getMarkerPos "MARKER_COMMANDING_OFFICER");
     player setCurrentTask TASK_REPORT_IN_AT_KRYA_NERA;
