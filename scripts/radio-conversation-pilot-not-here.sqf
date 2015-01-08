@@ -13,25 +13,35 @@ _isReady = [player, "xmocpdll2"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 sleep (10+random 5);
-player groupChat "Does anyone have a clue how we find this guy?";
-sleep (6+random 2);
-
-if (alive sf2) then 
-{
-    sf2 groupChat "Ehm...not really. Sorry sir.";
-    sleep (4+random 2);
+if (count units group player >= 3) then {
+    player groupChat "Does anyone have a clue how we find this guy?";
+    sleep (6+random 2);
+}
+else {
+    player groupChat "Do you have any idea how we find this guy?";
+    sleep (6+random 2);
 };
 
-sf0 groupChat "We could go and ask Kostas, see what he knows.";
+
+_speaker = nil;
+{
+    _x allowDamage false;
+    if (alive _x) exitWith {_speaker = _x};
+} forEach [sf0,sf1,sf2,sf3];
+
+_speaker groupChat "We could go and ask Kostas, see what he knows.";
 sleep (3+random 2);
 
 player groupChat "I'm sorry, who is he? I don't think I know him.";
 sleep (3+random 2);
 
-_dir = [getPos sf0,getMarkerPos "MARKER_REBEL_CAMP_HELIPAD"] call HAYMAKER_fnc_calcDirectionWindrose;
-
-sf0 groupChat "Kostas is the local resistance commander. He's got a base "+_dir+" of here. Maybe his people have seen or heard something.";
+_speaker groupChat "Kostas is the local resistance commander. He's got a base near here. Maybe his people have seen or heard something.";
 sleep (6+random 2);
+
+{
+    _x allowDamage true;
+} forEach [sf0,sf1,sf2,sf3];
+
 
 ["MARKER_PERIMETER_REBEL_CAMP",50,"ColorGUER",0.70] execVM "scripts\floodfill-perimeter.sqf";
 "MARKER_REBEL_CAMP" setMarkerType "mil_dot"; 
@@ -43,7 +53,7 @@ sleep (2+random 2);
 
 waitUntil {
     sleep 1;
-    crew thehelicopter isEqualTo units group player;
+    (crew thehelicopter) isEqualTo (units group player)
 };
 
 
