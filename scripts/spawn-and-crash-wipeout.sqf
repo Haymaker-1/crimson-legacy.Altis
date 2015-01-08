@@ -144,14 +144,14 @@ TASK_FIND_CRASH_SITE setTaskState "Assigned";
 TASK_FIND_CRASH_SITE_HAS_BEEN_ASSIGNED = true;
 player setCurrentTask TASK_FIND_CRASH_SITE;
 
-TRIGGER_WATCH_FOR_SMOKE = createTrigger["EmptyDetector",getPos thehelicopter];
-TRIGGER_WATCH_FOR_SMOKE setTriggerArea[150,150,0,false];
-TRIGGER_WATCH_FOR_SMOKE triggerAttachVehicle [player];
-TRIGGER_WATCH_FOR_SMOKE setTriggerActivation["VEHICLE","NOT PRESENT",false];
-TRIGGER_WATCH_FOR_SMOKE setTriggerStatements["this", "sleep (random 5); player groupChat 'Everybody, keep your eyes peeled for smoke!';",""]; 
+//TRIGGER_WATCH_FOR_SMOKE = createTrigger["EmptyDetector",getPos thehelicopter];
+//TRIGGER_WATCH_FOR_SMOKE setTriggerArea[150,150,0,false];
+//TRIGGER_WATCH_FOR_SMOKE triggerAttachVehicle [player];
+//TRIGGER_WATCH_FOR_SMOKE setTriggerActivation["VEHICLE","NOT PRESENT",false];
+//TRIGGER_WATCH_FOR_SMOKE setTriggerStatements["this", "sleep (random 5); player groupChat 'Everybody, keep your eyes peeled for smoke!';",""]; 
 
 TRIGGER_I_SEE_SMOKE = createTrigger["EmptyDetector",getPos thewipeout];
-TRIGGER_I_SEE_SMOKE setTriggerArea[3000,3000,0,false];
+TRIGGER_I_SEE_SMOKE setTriggerArea[2000,2000,0,false];
 TRIGGER_I_SEE_SMOKE triggerAttachVehicle [player];
 TRIGGER_I_SEE_SMOKE setTriggerActivation["VEHICLE","PRESENT",false];
 TRIGGER_I_SEE_SMOKE setTriggerStatements["this AND ((getPos thehelicopter select 2) > 30)","sleep (random 5); player groupChat format ['I see smoke to our %1!',([getPos player, getPos thewipeout] call HAYMAKER_fnc_calcDirectionWindrose)];",""]; 
@@ -172,4 +172,10 @@ sleep 10;
 TIME_LAST_SAVEGAME = time;
 saveGame;
 
+
+waitUntil {sleep 10; (getPos thehelicopter) distance (getMarkerPos "MARKER_NABISCO_HELIPAD") > 800};
+
+if (!triggerActivated TRIGGER_I_SEE_SMOKE AND count crew thehelicopter >= 3) then {
+    player groupChat "Everybody, keep your eyes peeled for smoke!"; 
+};
 
