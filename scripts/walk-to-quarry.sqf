@@ -261,10 +261,18 @@ null = [_radius,_location] spawn {
 };
 
 
+
+{
+    if (alive _x) then {
+        [_x] joinSilent (group player);
+    };
+} forEach [sf0,sf1,sf2,sf3];
+
 {
     if (alive _x) then {
         _x setPos getMarkerPos "MARKER_STAGING_AREA_QUARRY_WALKING";
         _x setDir 260 + random 20;
+        _x enableFatigue true;
         _x setFatigue 0.9;
         _x doFollow player;
         _x setUnitPos "UP";
