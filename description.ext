@@ -137,7 +137,7 @@ class CfgSounds
     class nqccsmpx1 {
         sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta One, come in, over."};
-        duration = 1.5;
+        duration = 1.9;
     };
     class nqccsmpx2 {
         sound[] = {"sounds\radio-conversation-about-fuel-truck\THE_CO\snd2.ogg", 1.0, 1.0};
@@ -1454,7 +1454,7 @@ class CfgDebriefing
 	class End1
 	{
 		title = "MISSION FAILED";
-		subtitle = "A crucial member of your team has died.";
+		subtitle = "Your team has suffered too many losses.";
 		description = "";
 		pictureBackground = "";
 		picture = "";
