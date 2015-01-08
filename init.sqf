@@ -68,8 +68,6 @@ MISSION_TOP_LEVEL_DIRECTORY = [(str missionConfigFile), 0, -15] call BIS_fnc_tri
 GPS_TRACKING_IS_ON = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "GPS_TRACKING_ENABLED") == 1;
 player addAction ["Disable GPS tracking","scripts\toggle-gpstracking.sqf",nil,0,false];
 
-OUTLIVED_HIS_USEFULNESS = [false,true,true,true];
-
 RANDOM_PATROL_GROUP_HAS_ARRIVED = [];
 STOP_RANDOM_PATROL_GROUP = [];
 RANDOM_PATROL_GROUP_LAST_KNOWN_POS = [];
@@ -83,6 +81,10 @@ RANDOM_PATROL_GROUP_LAST_KNOWN_POS resize 100;
     STOP_RANDOM_PATROL_GROUP set [_forEachIndex,false];
     RANDOM_PATROL_GROUP_LAST_KNOWN_POS set [_forEachIndex,locationNull];
 } forEach RANDOM_PATROL_GROUP_HAS_ARRIVED;
+
+
+BLUFOR_ARIFLE_OF_CHOICE = [[["f2000",0.67],["tavor",0.33]]] call HAYMAKER_fnc_selectWeightedRandom;
+
 
 null = [] execVM "scripts\monitor-if-random-patrol-units-are-moving.sqf";
 
@@ -103,14 +105,14 @@ calcAddVolume = compile loadFile "functions\calcAddVolume.sqf";
 selectWeightedRandom = compile loadFile "functions\selectWeightedRandom.sqf";
 
 
-null = [] execVM "scripts\endmission-team-member-died.sqf";
+null = [] execVM "scripts\endmission-sfteam-decimated.sqf";
 null = [] execVM "scripts\endmission-pilot-died.sqf";
 null = [] execVM "scripts\endmission-helicopter-damaged.sqf";
 null = [] execVM "scripts\endmission-helicopter-out-of-fuel.sqf";
 null = [] execVM "scripts\endmission-helicopter-rebelcamp.sqf";
-//null = [] execVM "scripts\endmission-player-died.sqf";
 
 null = [] execVM "scripts\spawn-helicopter.sqf";
+null = [] execVM "scripts\spawn-helipad-nabisco.sqf";
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera.sqf";
 waitUntil{sleep 0.5;scriptDone _spawningComplete};
@@ -177,3 +179,6 @@ shedAgios setDir 44.5;
 SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
 
 null = [] execVM "scripts\savegames.sqf";
+
+
+
