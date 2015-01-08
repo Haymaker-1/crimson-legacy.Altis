@@ -7,7 +7,7 @@ skiptime 14;
 ["MARKER_PERIMETER_KLD_NEGADES",100,"ColorGUER",0.70] execVM "scripts\floodfill-perimeter.sqf";
 ["MARKER_PERIMETER_FKS_KAVALA",100,"ColorEAST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 
-OUTLIVED_HIS_USEFULNESS set [0,true];
+//OUTLIVED_HIS_USEFULNESS set [0,true];
 
 
 

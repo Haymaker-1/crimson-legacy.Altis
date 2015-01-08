@@ -1,7 +1,7 @@
 
 TRIGGER_LANDED_AT_REBEL_CAMP_FIRED = true;
 
-OUTLIVED_HIS_USEFULNESS set [0,true];
+//OUTLIVED_HIS_USEFULNESS set [0,true];
 
 null = [] execVM "scripts\spawn-pilot.sqf";
 sleep 5;

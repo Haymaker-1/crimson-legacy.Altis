@@ -62,7 +62,7 @@ _aaAlphaValue = 0.35;
 
 ["MARKER_PERIMETER_REBEL_CAMP",50,"ColorGUER",0.70] execVM "scripts\floodfill-perimeter.sqf";
 
-OUTLIVED_HIS_USEFULNESS set [0,true];
+//OUTLIVED_HIS_USEFULNESS set [0,true];
 
 "MARKER_REBEL_CAMP" setMarkerType "mil_dot"; 
 "MARKER_REBEL_CAMP" setMarkerText "REBEL CAMP"; 
