@@ -66,9 +66,18 @@ _isReady = [player, "mbhglmap3"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 // but we brought radios
-sf0 groupChat "Perhaps we could use the new radios we brought?";
+_speaker = nil;
+{
+    _x allowDamage false;
+    if (alive _x) exitWith {_speaker = _x};
+} forEach [sf0,sf1,sf2,sf3];
+_speaker groupChat "Perhaps we could use the new radios we brought?";
 sleep (4+random 2);
-OUTLIVED_HIS_USEFULNESS set [0,true];
+//OUTLIVED_HIS_USEFULNESS set [0,true];
+{
+    _x allowDamage true;
+} forEach [sf0,sf1,sf2,sf3];
+
 
 _isReady = [player, "mbhglmap4"] execVM "scripts\unitspeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
