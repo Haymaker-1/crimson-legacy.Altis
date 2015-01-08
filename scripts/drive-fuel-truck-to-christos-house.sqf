@@ -250,6 +250,12 @@ null = [_radius,_location] spawn {
     
 };
 
+{
+    if (alive _x) then {
+        [_x] joinSilent (group player);
+    };
+} forEach [sf0,sf1,sf2,sf3];
+
 
 {
     if (alive _x) then {
