@@ -14,11 +14,11 @@ _duration = getNumber (missionConfigFile >> "CfgSounds" >> _soundId >> "duration
 _audibleDistance = nil;
 if (_emitter == player) then {
     
-    // Setting sound decay parameter to 1e10 means there is no decay. This
+    // Setting sound decay parameter to 0 means there is no decay. This
     // way, the player can always hear himself equally well. Without this
     // tweak, you can have a strong decay on your own speech when traveling
     // at speed, for instance when flying in a helicopter.
-    _audibleDistance = 1e10;
+    _audibleDistance = 0;
 } 
 else {
     _audibleDistance = SPEECH_AUDIBLE_DISTANCE;
