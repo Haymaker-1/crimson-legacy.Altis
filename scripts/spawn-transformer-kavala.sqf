@@ -28,7 +28,7 @@ waitUntil{sleep 1; scriptDone _isReady};
 sleep 10;
 
 TASK_DESTROY_VEHICLES_KAVALA = player createSimpleTask ["TASKID_DESTROY_VEHICLES_KAVALA"];
-TASK_DESTROY_VEHICLES_KAVALA setSimpleTaskDescription ["Use the cover of darkness to infiltrate Kavala. Rig the vehicles in the <marker name='MARKER_MOTOR_POOL'>motorpool</marker> with explosives. Use your judgement to prioritize targets if there are too many vehicles to destroy them all.","Destroy vehicles","Destroy vehicles"];
+TASK_DESTROY_VEHICLES_KAVALA setSimpleTaskDescription ["Use the cover of darkness to infiltrate Kavala. Stay undetected as long as possible by going in alone. Rig the vehicles in the <marker name='MARKER_MOTOR_POOL'>motorpool</marker> with explosives. Use your judgement to prioritize targets if there are too many vehicles to destroy them all.","Destroy vehicles","Destroy vehicles"];
 TASK_DESTROY_VEHICLES_KAVALA setTaskState "Assigned";
 ["TaskAssigned", ["","Destroy vehicles"]] call BIS_fnc_showNotification;
 player setCurrentTask TASK_DESTROY_VEHICLES_KAVALA; 
