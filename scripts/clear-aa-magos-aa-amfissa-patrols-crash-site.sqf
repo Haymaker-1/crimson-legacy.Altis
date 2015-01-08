@@ -469,7 +469,7 @@ saveGame;
 
 
 
-// the part below this line used to be executed during the radio conversation iwth kostas;
+// the part below this line used to be executed during the radio conversation with kostas;
 // I moved it here because otherwise the conversation halts for 30 seconds or so.
 
 null = [] execVM "scripts\populate-motor-pool-kavala.sqf";
