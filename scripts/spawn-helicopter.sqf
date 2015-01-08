@@ -1,7 +1,14 @@
 
 _nMinutes = 6.0;
 
-if ((random 1.0)<0.8) then
+_prob = [["littlebird",0.5],
+         ["hellcat",0.5]];
+         
+         
+// force littlebird:         
+_heloType = [_prob,0] call HAYMAKER_fnc_selectWeightedRandom;
+
+if (_heloType == "littlebird") then
 {
 
     // littlebird
@@ -14,9 +21,10 @@ if ((random 1.0)<0.8) then
     helicopterFuelConsumptionRate = 0.0368; // nTanks per minute?
     
     
-}
-else
-{
+};
+
+if (_heloType == "hellcat") then {
+
     // hellcat
     thehelicopter = createVehicle ["I_Heli_light_03_unarmed_F",(getMarkerPos "MARKER_SPAWN_HELICOPTER"),[],0,"NONE"];
 
