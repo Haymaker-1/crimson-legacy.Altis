@@ -10,10 +10,13 @@ _relPath = (getArray (missionConfigFile >> "CfgSounds" >> _soundId >> "sound")) 
 _subtitle = (getArray (missionConfigFile >> "CfgSounds" >> _soundId >> "titles")) select 1;
 _duration = getNumber (missionConfigFile >> "CfgSounds" >> _soundId >> "duration");
 
+_choice = ["RadioAmbient2","RadioAmbient6","RadioAmbient8"] call BIS_fnc_selectRandom;
+_chatterFile = (getArray (ConfigFile >> "CfgSounds" >> _choice >> "sound") select 0) + ".wss";
+_chatterFileDuration = getNumber (ConfigFile >> "CfgSounds" >> _choice >> "duration");
 
 _acc = accTime;
-_isInside = cameraView != "EXTERNAL";
-
+//_isInside = cameraView != "EXTERNAL";
+_isInside = false;
 
 _voicePitch = 1.0*_acc;
 {
@@ -36,7 +39,7 @@ _voiceVolume = _voiceVolume + _addVolume;
 
 
 // player globalChat format ["volume = %1",_voiceVolume];
-
+_decay = 0;
 
 if (_emitter isKindOf "Man" AND alive _emitter) then {
 
@@ -51,8 +54,16 @@ if (_emitter isKindOf "Man" AND alive _emitter) then {
                      _emitterPos, 
                      _voiceVolume,
                      _voicePitch,
-                     0];  
-                     
+                     _decay]; 
+
+        playSound3D [_chatterFile, 
+                     _emitterObj, 
+                     _isInside, 
+                     _emitterPos, 
+                     _voiceVolume * 0.025,
+                     _voicePitch,
+                     _decay]; 
+
         _emitter sideChat _subtitle;
 
         player createDiaryRecord ["varTranscript",["Transcript","<font color='#00FFFF'>" + (groupID group _emitter) + "</font>: " + _subtitle]];
