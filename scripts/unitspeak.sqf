@@ -47,6 +47,9 @@ _voiceVolume = 1.0;
 } forEach VOICE_VOLUME;
 if (isNil "_addVolume") then {
     _addVolume = [] call HAYMAKER_fnc_calcAddVolume;
+    if (_emitter == player) then {
+        _addVolume = _addVolume * 0.1;
+    };
 };
 _voiceVolume = _voiceVolume + _addVolume;
 
