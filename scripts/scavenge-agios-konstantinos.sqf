@@ -27,6 +27,19 @@ _itemsCrate allowDamage false;
 _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
                    "MARKER_PERIMETER_KLD_NEGADES",
                    "MARKER_OUTER_PERIMETER_PILOT"];
+                   
+
+_inventory = 
+[   
+    [ "weapons"   , [] ],
+    [ "magazines" , [] ],
+    [ "items"     , [] ],
+    [ "headgear"  , [] ],
+    [ "backpack"  , [] ],
+    [ "vest"      , [] ],
+    [ "goggles"   , [] ]
+];
+
 
 {
 
@@ -60,89 +73,7 @@ _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
         if (!alive _x) then {
 
             _man = _x;
-            
-            _primaryWeaponItems = primaryWeaponItems _man;
-            {
-                if (_x != "") then {
-                    _man removePrimaryWeaponItem _x;
-                    _itemsHolder addItemCargo [_x, 1];
-                };
-            } forEach _primaryWeaponItems;
-
-            _handgunItems = handgunItems _man;
-            {
-                if (_x != "") then {
-                    _man removeHandgunItem _x;
-                    _itemsHolder addItemCargo [_x, 1];
-                };
-            } forEach _handgunItems;
-            
-            _arr = weapons _man;
-            {   
-                // retrieve the most basic version of the weapon by 
-                // traversing the inheritance tree:
-                _theWeaponName = _x;
-                _theWeaponConfig = configFile >> "CfgWeapons" >> _theWeaponName;
-                
-                _man removeWeapon _theWeaponName;
-                
-                _cont = true;
-                while {_cont} do {
-                    if (isClass (_theWeaponConfig >> "LinkedItems")) then {
-                        _theWeaponConfig = inheritsFrom (_theWeaponConfig);
-                        _theWeaponName = configName _theWeaponConfig;
-                    } 
-                    else {
-                        _cont = false;
-                    };
-                };
-                _weaponsHolder addWeaponCargo [_theWeaponName, 1];
-                        
-            } forEach _arr;
-            
-            _arr = magazines _man;
-            {
-                _man removeMagazine _x;
-                _magazinesHolder addMagazineCargo [_x, 1];
-            } forEach _arr;
-            
-            _arr = items _man;
-            {
-                _man removeItem _x;
-                _itemsHolder addItemCargo [_x, 1];
-            } forEach _arr;
-
-            _arr = assignedItems _man;
-            {
-                _man unassignItem _x;
-                _man removeItem _x;
-                _itemsHolder addItemCargo [_x, 1];
-            } forEach _arr;            
-           
-            _backpackType = backpack _man;
-            if (_backpackType != "") then {
-                // clearAllItemsFromBackpack _man;
-                removeBackpack _man;
-                _itemsHolder addBackpackCargo [_backpackType,1];
-            };
-                        
-            _vest = vest _man;
-            if (_vest != "") then {
-                removeVest _man;
-                _itemsHolder addItemCargo [_vest,1];
-            };
-           
-            _headgear = headgear _man;
-            if (_headgear != "") then {
-                removeHeadgear _man;
-                _itemsHolder addItemCargo [_headgear,1];
-            };
-            
-            _goggles = goggles _man;
-            if (_goggles != "") then {
-                removeGoggles _man;
-                _itemsHolder addItemCargo [_goggles,1];
-            };
+            _inventory = [_man,true,_inventory] call HAYMAKER_fnc_showMeWhatYouGot;
            
         };
     } forEach _men;
@@ -159,21 +90,48 @@ _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
         _holder = _x;
         
         _arr = weaponCargo _holder;
-        {
-            _holder removeWeapon _x;
-            _weaponsHolder addWeaponCargo [_x, 1];
+        {   
+            _theWeaponName = _x;
+            _tmpPos = getPos _holder;
+            _tmpPos set [2, 1e5];
+            _tmpMan = createVehicle["C_man_1",_tmpPos,[],0,"NONE"];
+            _tmpMan enableSimulation false; 
+            removeAllAssignedItems _tmpMan;
+            removeHeadgear _tmpMan;
+            _tmpMan addWeapon _theWeaponName;
+            _inventory = [_tmpMan,true,_inventory] call HAYMAKER_fnc_showMeWhatYouGot;
+            deleteVehicle _tmpMan;
+            _holder removeWeapon _theWeaponName;
         } forEach _arr;
         
         _arr = magazineCargo _holder;
         {
-            _holder removeMagazine _x;
-            _magazinesHolder addMagazineCargo [_x, 1];
+            _theMagazineName = _x;
+            _tmpPos = getPos _holder;
+            _tmpPos set [2, 1e5];
+            _tmpMan = createVehicle["C_man_1",_tmpPos,[],0,"NONE"];
+            _tmpMan enableSimulation false; 
+            removeAllAssignedItems _tmpMan;
+            removeHeadgear _tmpMan;
+            _tmpMan addMagazine _theMagazineName;
+            _inventory = [_tmpMan,true,_inventory] call HAYMAKER_fnc_showMeWhatYouGot;
+            deleteVehicle _tmpMan;
+            _holder removeMagazine _theMagazineName;
         } forEach _arr;
         
         _arr = itemCargo _holder;
         {
-            _holder removeItem _x;
-            _itemsHolder addItemCargo [_x, 1];
+            _theItemName = _x;
+            _tmpPos = getPos _holder;
+            _tmpPos set [2, 1e5];
+            _tmpMan = createVehicle["C_man_1",_tmpPos,[],0,"NONE"];
+            _tmpMan enableSimulation false; 
+            removeAllAssignedItems _tmpMan;
+            removeHeadgear _tmpMan;
+            _tmpMan addItem _theItemName;
+            _inventory = [_tmpMan,true,_inventory] call HAYMAKER_fnc_showMeWhatYouGot;
+            deleteVehicle _tmpMan;
+            _holder removeItem _theItemName;
         } forEach _arr;
         
         if (typeOf(_holder)=="WeaponHolderSimulated") then
@@ -185,9 +143,32 @@ _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
 } forEach _areasIveBeenTo;
 
 
-
+INVENTORY = _inventory;
 
 // attach to respective crate
+
+{
+    _weaponsHolder addWeaponCargo [_x,1];
+} forEach (_inventory select 0 select 1);
+{
+    _magazinesHolder addMagazineCargo [_x,1];
+} forEach (_inventory select 1 select 1);
+{
+    _itemsHolder addItemCargo [_x,1];
+} forEach (_inventory select 2 select 1);
+{
+    _itemsHolder addItemCargo [_x,1];
+} forEach (_inventory select 3 select 1);
+{
+    _itemsHolder addItemCargo [_x,1];
+} forEach (_inventory select 4 select 1);
+{
+    _itemsHolder addItemCargo [_x,1];
+} forEach (_inventory select 5 select 1);
+{
+    _itemsHolder addItemCargo [_x,1];
+} forEach (_inventory select 6 select 1);
+
 
 _weaponsHolder attachTo [_weaponsCrate,[0,0,0.65]]; 
 _magazinesHolder attachTo [_magazinesCrate,[0,0,0.65]];

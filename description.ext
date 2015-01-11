@@ -1564,6 +1564,12 @@ class CfgFunctions
             class selectWeightedRandom {
                 file = "functions\selectWeightedRandom.sqf";
             };
+            class showMeWhatYouGot {
+                file = "functions\showMeWhatYouGot.sqf";
+            };
+            class getBaseWeaponClass {
+                file = "functions\getBaseWeaponClass.sqf";
+            };
 		};
 	};
 };

@@ -103,6 +103,8 @@ getHitPointReport = compile loadFile "functions\getHitPointReport.sqf";
 datestr = compile loadFile "functions\datestr.sqf";
 calcAddVolume = compile loadFile "functions\calcAddVolume.sqf";
 selectWeightedRandom = compile loadFile "functions\selectWeightedRandom.sqf";
+showMeWhatYouGot = compile loadFile "functions\showMeWhatYouGot.sqf";
+getBaseWeaponClass = compile loadFile "functions\getBaseWeaponClass.sqf";
 
 
 null = [] execVM "scripts\endmission-sfteam-decimated.sqf";
