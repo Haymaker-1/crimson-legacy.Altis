@@ -54,7 +54,7 @@ null = [] execVM "scripts\translate-and-rotate-gunboat.sqf";
 
 PILOT_EGRESS_WAS_SUCCESSFUL = true;
 
-[pilot] joinSilent gunboatGroup;
+[pilot] joinSilent grpNull;
 
 _perimeter = ["MARKER_PERIMETER_SPAWN_GUNBOAT"] call HAYMAKER_fnc_constructPerimeter;
 _pos = [_perimeter] call HAYMAKER_fnc_generateRandomPositionInPolygon;
