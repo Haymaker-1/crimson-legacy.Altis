@@ -56,13 +56,32 @@ if (_emitter isKindOf "Man" AND alive _emitter) then {
                      _voicePitch,
                      _decay]; 
 
-        playSound3D [_chatterFile, 
-                     _emitterObj, 
-                     _isInside, 
-                     _emitterPos, 
-                     _voiceVolume * 0.025,
-                     _voicePitch,
-                     _decay]; 
+        _cond1 = (_duration/_voicePitch) > 4.0;
+        _cond2 = (random 1.0) < 0.5;
+        
+        if (_cond1 AND _cond2) then {
+        
+            null = [_chatterFile,_emitterObj,_isInside,_emitterPos,_voiceVolume,_voicePitch,_decay] spawn {
+                
+                _chatterFile = _this select 0; 
+                _emitterObj  = _this select 1; 
+                _isInside    = _this select 2;
+                _emitterPos  = _this select 3;
+                _voiceVolume = _this select 4;
+                _voicePitch  = _this select 5;
+                _decay       = _this select 6; 
+                
+                sleep (random 2.0);
+                
+                playSound3D [_chatterFile, 
+                             _emitterObj, 
+                             _isInside, 
+                             _emitterPos, 
+                             _voiceVolume * 0.025,
+                             _voicePitch,
+                             _decay]; 
+             };
+        };
 
         _emitter sideChat _subtitle;
 
