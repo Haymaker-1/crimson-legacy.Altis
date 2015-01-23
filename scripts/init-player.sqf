@@ -71,6 +71,6 @@ null = [] spawn {
     TASK_REPORT_IN_AT_KRYA_NERA setTaskState "Assigned";
 };
 
-5 fadeSound 1;
+//5 fadeSound 1; see also init.sqf
 null = [] spawn {titleText ["", "BLACK FADED", 0]; sleep 3;titleText ["", "BLACK IN", 5];}; 
 null = [] spawn {sleep 10; ["TaskAssigned", ["","Report in"]] call BIS_fnc_showNotification;};

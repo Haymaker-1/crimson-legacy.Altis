@@ -13,7 +13,7 @@ EAST setFriend [RESISTANCE, 0.0];
 
 deactivateKey "missionCompletedKey";
 
-0 fadeSound 0;
+//0 fadeSound 0; see also init-player.sqf
 
 null = [] execVM "scripts\setFuelStationsEmpty.sqf";
 
@@ -181,6 +181,5 @@ shedAgios setDir 44.5;
 SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
 
 null = [] execVM "scripts\savegames.sqf";
-
 
 

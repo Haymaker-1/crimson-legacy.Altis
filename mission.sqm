@@ -41,7 +41,8 @@ class Mission
 		"a3_soft_f_offroad_01",
 		"A3_Weapons_F_Bootcamp_Ammoboxes",
 		"A3_Structures_F_Walls",
-		"A3_Weapons_F_Ammoboxes"
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Modules_F_Intel"
 	};
 	addOnsAuto[]=
 	{
