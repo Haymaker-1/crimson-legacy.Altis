@@ -53,7 +53,8 @@ sleep (2+random 2);
 
 waitUntil {
     sleep 1;
-    (crew thehelicopter) isEqualTo (units group player)
+    if ((crew thehelicopter) isEqualTo (units group player)) exitWith {true};
+    false
 };
 
 
