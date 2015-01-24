@@ -60,6 +60,7 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
         
         {
             _x removePrimaryWeaponItem "optic_ACO_grn";
+            _x removeWeapon "NVGoggles_OPFOR";
         } forEach units _group;
         
     } forEach _groupData;
