@@ -160,7 +160,7 @@ INVENTORY = _inventory;
     _itemsHolder addItemCargo [_x,1];
 } forEach (_inventory select 3 select 1);
 {
-    _itemsHolder addItemCargo [_x,1];
+    _itemsHolder addBackpackCargo [_x,1];
 } forEach (_inventory select 4 select 1);
 {
     _itemsHolder addItemCargo [_x,1];
