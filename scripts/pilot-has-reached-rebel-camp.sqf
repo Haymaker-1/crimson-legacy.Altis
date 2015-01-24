@@ -6,7 +6,11 @@ TASK_MOVE_PILOT_TO_REBEL_CAMP setTaskState "Succeeded";
 ["TaskSucceeded", ["","Return to rebel camp"]] call BIS_fnc_showNotification;
 
 
-waitUntil {sleep 5;EVERYBODY_IS_DONE_TALKING};
+waitUntil {
+    sleep 5;
+    if (EVERYBODY_IS_DONE_TALKING) exitWith {true};
+    false
+};
 EVERYBODY_IS_DONE_TALKING = !EVERYBODY_IS_DONE_TALKING;
 null = execVM "scripts\radio-conversation-about-pilot-egress.sqf";
 EVERYBODY_IS_DONE_TALKING = !EVERYBODY_IS_DONE_TALKING;

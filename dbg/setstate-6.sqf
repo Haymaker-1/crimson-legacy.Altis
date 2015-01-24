@@ -39,11 +39,19 @@ AA_AMFISSA setDamage 1;
 
 
 _spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-agios-konstantinos.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-negades.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 null = [] execVM "scripts\set-up-op-agios-konstantinos.sqf";

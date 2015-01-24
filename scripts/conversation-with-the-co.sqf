@@ -6,59 +6,119 @@ TASK_REPORT_IN_AT_KRYA_NERA setTaskState "Succeeded";
 
 
 _isReady = [THE_CO, "ydbdmwwk1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "ydbdmwwk2"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "feroeowf1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "ydbdmwwk3"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "ydbdmwwk4"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 ["MARKER_PERIMETER_LNN_NABISCO",100,"ColorWEST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 
 "MARKER_CAMP_NABISCO" setMarkerType "mil_dot";
 
 _isReady = [THE_CO, "ydbdmwwk5"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "ydbdmwwk6"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "feroeowf2"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "ydbdmwwk7"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 ["MARKER_PERIMETER_KRYA_NERA_AIRPORT_FTS",25,"ColorWEST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 "MARKER_HELIPORT" setMarkerType "mil_dot";
 
 _isReady = [THE_CO, "ydbdmwwk8"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 _isReady = [THE_CO, "ydbdmwwk9"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 _isReady = [THE_CO, "ydbdmwwk10"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 _isReady = [THE_CO, "ydbdmwwk11"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1  ; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "feroeowf3"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "ydbdmwwk12"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 { 

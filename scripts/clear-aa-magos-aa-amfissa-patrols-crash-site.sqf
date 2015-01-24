@@ -12,7 +12,11 @@ TASK_SEIZE_SRIFLE_DONE = true;
 null = [] execVM "scripts\scavenge-agios-konstantinos.sqf";
 
 _spawningComplete = [] execVM "scripts\spawn-guer-fireteam-warehouse-agios.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil {
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _skiptimeValue = (15-daytime+random 0.25);
@@ -41,10 +45,18 @@ if (!SKIP_CLEANING_HOUSE) then {
 
     sleep 5;
     _isReady = [kostas, "lhdnftpm1"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil {
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 
     _isReady = [player, "notjrcug1"] execVM "scripts\unitspeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil {
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 
 
     _siteIsClear = [CRASH_SITE_IS_CLEAR,AA_MAGOS_IS_CLEAR,AA_AMFISSA_IS_CLEAR];
@@ -59,7 +71,11 @@ if (!SKIP_CLEANING_HOUSE) then {
     if (_n > 1) then
     {
         _isReady = [kostas, "lhdnftpm2"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
     };
 
     _needAT = false; 
@@ -67,22 +83,46 @@ if (!SKIP_CLEANING_HOUSE) then {
     if (_siteIsClear isEqualTo [false,false,false]) then {
     
         _isReady = [kostas, "lhdnftpm3"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };        
         
         _isReady = [player, "notjrcug2"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [kostas, "lhdnftpm4"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug3"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [kostas, "lhdnftpm5"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug4"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _needAT = true;
 
@@ -92,16 +132,32 @@ if (!SKIP_CLEANING_HOUSE) then {
     if (_siteIsClear isEqualTo [false,false,true]) then {
     
         _isReady = [kostas, "lhdnftpm6"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug2"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [kostas, "lhdnftpm7"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug3"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         
     };
@@ -110,16 +166,32 @@ if (!SKIP_CLEANING_HOUSE) then {
     if (_siteIsClear isEqualTo [false,true,false]) then {
     
         _isReady = [kostas, "lhdnftpm8"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug2"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [kostas, "lhdnftpm9"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug4"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _needAT = true;
         
@@ -129,16 +201,32 @@ if (!SKIP_CLEANING_HOUSE) then {
     if (_siteIsClear isEqualTo [true,false,false]) then {
     
         _isReady = [kostas, "lhdnftpm10"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug3"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
 
         _isReady = [kostas, "lhdnftpm11"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug4"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _needAT = true;
         
@@ -148,10 +236,18 @@ if (!SKIP_CLEANING_HOUSE) then {
     if (_siteIsClear isEqualTo [false,true,true]) then {
         
         _isReady = [kostas, "lhdnftpm12"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug2"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
 
     };
     
@@ -159,10 +255,18 @@ if (!SKIP_CLEANING_HOUSE) then {
     if (_siteIsClear isEqualTo [true,false,true]) then {
         
         _isReady = [kostas, "lhdnftpm13"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug3"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _needAT = true;
 
@@ -172,10 +276,18 @@ if (!SKIP_CLEANING_HOUSE) then {
     if (_siteIsClear isEqualTo [true,true,false]) then {
     
         _isReady = [kostas, "lhdnftpm14"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _isReady = [player, "notjrcug4"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
         _needAT = true;
         
@@ -185,17 +297,29 @@ if (!SKIP_CLEANING_HOUSE) then {
     "MARKER_SHED_AGIOS" setMarkerColor "ColorBLACK";
     "MARKER_SHED_AGIOS" setMarkerType "mil_dot";
     _isReady = [kostas, "lhdnftpm15"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil {
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 
     if (_needAT) then 
     {
         _isReady = [kostas, "lhdnftpm16"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil {
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
     };
 
 
     _isReady = [kostas, "lhdnftpm17"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil {
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 
 
     if (SHOW_CHAPTER_TITLES) then {
@@ -220,7 +344,11 @@ if (!SKIP_CLEANING_HOUSE) then {
         
         null = [] spawn {
             
-            waitUntil{sleep 5;CRASH_SITE_IS_CLEAR};
+            waitUntil { 
+                sleep 5;
+                if (CRASH_SITE_IS_CLEAR) exitWith {true};
+                false
+            };
             TASK_CLEAR_CRASH_SITE setTaskState "Succeeded";
             ["TaskSucceeded", ["","Clear crash site"]] call BIS_fnc_showNotification;
         };
@@ -241,7 +369,11 @@ if (!SKIP_CLEANING_HOUSE) then {
         
         null = [] spawn {
             
-            waitUntil{sleep 5;AA_MAGOS_IS_CLEAR};
+            waitUntil { 
+                sleep 5;
+                if (AA_MAGOS_IS_CLEAR) exitWith {true};
+                false
+            };
             TASK_CLEAR_AA_MAGOS setTaskState "Succeeded";
             ["TaskSucceeded", ["","Neutralize AA Magos"]] call BIS_fnc_showNotification;
         };    
@@ -262,7 +394,11 @@ if (!SKIP_CLEANING_HOUSE) then {
         
         null = [] spawn {
             
-            waitUntil{sleep 5;AA_AMFISSA_IS_CLEAR};
+            waitUntil { 
+                sleep 5;
+                if (AA_AMFISSA_IS_CLEAR) exitWith {true};
+                false
+            };
             TASK_CLEAR_AA_AMFISSA setTaskState "Succeeded";
             ["TaskSucceeded", ["","Neutralize AA Amfissa"]] call BIS_fnc_showNotification;
         };     
@@ -270,36 +406,66 @@ if (!SKIP_CLEANING_HOUSE) then {
     };
 
 
-    waitUntil{sleep 5;CRASH_SITE_IS_CLEAR};
+    waitUntil { 
+        sleep 5;
+        if (CRASH_SITE_IS_CLEAR) exitWith {true};
+        false
+    };
 
-    waitUntil{sleep 5;AA_MAGOS_IS_CLEAR};
+    waitUntil { 
+        sleep 5;
+        if (AA_MAGOS_IS_CLEAR) exitWith {true};
+        false
+    };
 
-    waitUntil{sleep 5;AA_AMFISSA_IS_CLEAR};
+    waitUntil {
+        sleep 5;
+        if (AA_AMFISSA_IS_CLEAR) exitWith {true};
+        false
+    };
 
     sleep 10;
 
     _isReady = [player, "notjrcug5"] execVM "scripts\unitspeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil { 
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 
     sleep 6;
 
     _isReady = [kostas, "lhdnftpm18"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil { 
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 
     if ((count units group player) > 1) then {
         _isReady = [player, "notjrcug6"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil { 
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
 
     }
     else {
         _isReady = [player, "notjrcug7"] execVM "scripts\unitspeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil { 
+            sleep 1;
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
     };
 
-
     _isReady = [kostas, "lhdnftpm19"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
-
+    waitUntil { 
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
     sleep 10;
     
     cancelSimpleTaskDestination TASK_SET_UP_OP_AGIOS_KONSTANTINOS;
@@ -310,7 +476,11 @@ if (!SKIP_CLEANING_HOUSE) then {
     TASK_FALL_BACK_TO_CP setTaskState "Created";
     ["TaskCreated", ["","Fall back to Agios"]] call BIS_fnc_showNotification;
     
-    waitUntil {sleep 5; (getPos player) distance (getMarkerPos "MARKER_OP_AGIOS_KONSTANTINOS") < 30};
+    waitUntil {
+        sleep 5;
+        if ((getPos player) distance (getMarkerPos "MARKER_OP_AGIOS_KONSTANTINOS") < 30) exitWith {true};
+        false
+    };
 
     TASK_FALL_BACK_TO_CP setTaskState "Succeeded";
     ["TaskSucceeded", ["","Fall back to Agios"]] call BIS_fnc_showNotification;
@@ -369,55 +539,114 @@ player allowDamage true;
 sleep 10;
 
 _isReady = [kostas, "lhdnftpm20"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "notjrcug8"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
-
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lhdnftpm21"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "notjrcug9"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lhdnftpm22"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "notjrcug10"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lhdnftpm23"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lhdnftpm24"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 null = [] execVM "scripts\spawn-kavala-static-defenses.sqf";
 
 _isReady = [kostas, "lhdnftpm25"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "notjrcug11"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lhdnftpm26"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam-power-plant.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 null = [] execVM "scripts\spawn-transformer-kavala.sqf";
 
 _isReady = [kostas, "lhdnftpm27"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lhdnftpm28"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lhdnftpm29"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 
@@ -426,30 +655,54 @@ if (SKIP_CLEANING_HOUSE) then {
 
 
     _isReady = [kostas, "lhdnftpm30"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil { 
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
     
     "MARKER_SHED_AGIOS" setMarkerColor "ColorBLACK";
     "MARKER_SHED_AGIOS" setMarkerType "mil_dot";
     
     _isReady = [kostas, "lhdnftpm31"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil { 
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
     
 }
 else {
     _isReady = [kostas, "lhdnftpm32"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil { 
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 };
     
 
 
 _isReady = [kostas, "lhdnftpm33"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "notjrcug12"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lhdnftpm34"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _nSeconds = (19.5-daytime)*3600;
 if (_nSeconds>600) then {
@@ -457,8 +710,6 @@ if (_nSeconds>600) then {
     _nSeconds setRain 0;
     _nSeconds setOvercast 0.75;
 };
-
-
 
 if (SHOW_CHAPTER_TITLES) then {
     null = ["Nightstalker"] execVM "scripts\show-chapter-title.sqf";
@@ -475,7 +726,11 @@ saveGame;
 null = [] execVM "scripts\populate-motor-pool-kavala.sqf";
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-kavala.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 null = [] execVM "scripts\spawn-kavala-marids.sqf";

@@ -1,19 +1,39 @@
 
 
 _isReady = [player, "vmwhowzr1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "rxbbzszc1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "vmwhowzr2"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "rxbbzszc2"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "vmwhowzr3"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 deleteVehicle TRIGGER_I_SEE_SMOKE;
 

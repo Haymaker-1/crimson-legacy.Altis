@@ -7,17 +7,29 @@ _otherGroup = createGroup east;
 "O_Soldier_TL_F" createUnit [(getMarkerPos "MARKER_SPAWN_PILOT"),_otherGroup,"_pos = getPos this; _pos set [2,2.0]; this setPos _pos;this removeWeapon 'NVGoggles_OPFOR';this removePrimaryWeaponItem 'optic_ACO_grn';",0.5,"CORPORAL"];
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam1.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil{
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 if ((random 1.0) < 0.5) then {
     _spawningComplete = [] execVM "scripts\spawn-fireteam2.sqf";
-    waitUntil{sleep 0.5;scriptDone _spawningComplete};
+    waitUntil {
+        sleep 0.5;
+        if (scriptDone _spawningComplete) exitWith {true};
+        false
+    };
     _spawningComplete = nil;
 };
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam3.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 
@@ -33,9 +45,17 @@ kostas setVectorDir [_dx,_dy,0];
 kostas action ["salute",kostas];
 
 _isReady = [kostas, "egcnoprm1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
-waitUntil {((getPos player) distance (getPos kostas)) < 4};
+waitUntil {
+    sleep 1;
+    if (((getPos player) distance (getPos kostas)) < 4) exitWith {true};
+    false
+};
 kostas enableAI "MOVE";
 kostas enableAI "ANIM";
 
@@ -45,25 +65,47 @@ TASK_MEET_KOSTAS setTaskState "Succeeded";
 
 // ask about our pilot
 _isReady = [player, "mbhglmap1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
-
-
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 // kostas hasnt heard anything because he hasnt had contact for a few days already
 _isReady = [kostas, "egcnoprm2"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "egcnoprm3"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "mbhglmap2"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "egcnoprm4"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "mbhglmap3"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 // but we brought radios
 _speaker = nil;
@@ -80,7 +122,11 @@ sleep (4+random 2);
 
 
 _isReady = [player, "mbhglmap4"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil { 
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 // unload radios
 
@@ -117,22 +163,38 @@ kostas playAction "SitDown";
 sleep (1+random 2);
 
 _isReady = [kostas, "egcnoprm5"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "egcnoprm6"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 christos globalChat "...Kostas, is that you?";
 sleep (3+random 2);
 
 _isReady = [kostas, "egcnoprm7"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 christos globalChat "Great!";
 sleep (2+random 2);
 
 _isReady = [kostas, "egcnoprm8"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 christos globalChat "Yeah, I saw the whole thing!";
 sleep (2+random 2);
@@ -147,10 +209,18 @@ christos globalChat "They took him to where Sofia used to live. You remember her
 sleep (5+random 2);
 
 _isReady = [kostas, "egcnoprm9"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "egcnoprm10"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 christos globalChat "Bye!";
 sleep (2+random 2);
@@ -164,19 +234,35 @@ deleteVehicle christos;
 sleep (2+random 2);
 
 _isReady = [kostas, "egcnoprm11"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "egcnoprm12"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 "MARKER_CAPTURED_PILOT_LOCATION" setMarkerType "mil_dot";
 sleep (3+random 2);
 
 _isReady = [kostas, "egcnoprm13"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "mbhglmap5"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 {
@@ -203,54 +289,109 @@ TRIGGER_STATUS_UPDATE setTriggerStatements["this", "null = [] execVM 'scripts\sp
 // spotter near Gravia airport notifies kostas of an enemy convoy leaving in westerly direction
 
 
-waitUntil{sleep 5;CONVOY_HAS_REACHED_LAKKA};
+waitUntil { 
+    sleep 5;
+    if (CONVOY_HAS_REACHED_LAKKA) exitWith {true};
+    false
+};
 
-waitUntil {sleep 5;EVERYBODY_IS_DONE_TALKING};
+waitUntil {
+    sleep 5;
+    if (EVERYBODY_IS_DONE_TALKING) exitWith {true};
+    false
+};
 EVERYBODY_IS_DONE_TALKING = false;
 
 
 _isReady = [kostas, "egcnoprm14"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "mbhglmap6"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "egcnoprm15"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "mbhglmap7"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "egcnoprm16"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "mbhglmap8"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 EVERYBODY_IS_DONE_TALKING = true;
 
 
-
-waitUntil{sleep 5;CONVOY_HAS_REACHED_KORE};
+waitUntil { 
+    sleep 5;
+    if (CONVOY_HAS_REACHED_KORE) exitWith {true};
+    false
+};
 
 
 
 if (CAN_ASSIGN_DESTROY_CONVOY_VEHICLES) then {
 
-    waitUntil {sleep 5;EVERYBODY_IS_DONE_TALKING};
+    waitUntil {
+        sleep 5;
+        if (EVERYBODY_IS_DONE_TALKING) exitWith {true};
+        false
+    };
     EVERYBODY_IS_DONE_TALKING = false;
 
     _isReady = [kostas, "egcnoprm17"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil{
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 
     _isReady = [kostas, "egcnoprm18"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil{
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 
     _isReady = [kostas, "egcnoprm19"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil{
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 
     _isReady = [player, "mbhglmap9"] execVM "scripts\unitspeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil{
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 
     EVERYBODY_IS_DONE_TALKING = true;
 

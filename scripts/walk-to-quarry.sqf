@@ -30,7 +30,8 @@ waitUntil{
     _cond1 = _windingNumber == 0;
     _cond2 = ((getPos player) distance (getMarkerPos "MARKER_MOTOR_POOL_REPOSITION")) > 300;
     _cond3 = ((getPos player) distance (getMarkerPos "MARKER_MOTOR_POOL")) > 150;
-    _cond1 AND _cond2 AND _cond3
+    if (_cond1 AND _cond2 AND _cond3) exitWith {true};
+    false
 };
     
 if (TASK_LEAVE_KAVALA_HAS_BEEN_ASSIGNED) then {    
@@ -101,97 +102,197 @@ else {
 sleep 10;
 
 _isReady = [player, "pobbanfx1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lrxfuuzi1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{sleep 1; scriptDone _isReady};
 
 _isReady = [player, "pobbanfx2"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lrxfuuzi2"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "pobbanfx3"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lrxfuuzi3"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _vehName1 = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "displayName");
 _vehName2 = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_gmg_F" >> "displayName");
 
 _isReady = [player, "pobbanfx4"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 if (MOTOR_POOL_SCORE == 0) then {
     _isReady = [kostas, "lrxfuuzi4"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil {
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 }
 else {
     _isReady = [kostas, "lrxfuuzi5"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil {
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 };
 
 _isReady = [player, "pobbanfx5"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lrxfuuzi6"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 _isReady = [player, "pobbanfx6"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 sleep 10;
 
 _isReady = [player, "pobbanfx7"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, sawfkwnw1] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _vehTypeName = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "textPlural");
 
 _isReady = [player, "pobbanfx8"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, sawfkwnw2] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "pobbanfx9"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 sleep 10;
 
 sleep 5;
 
 _isReady = [player, "pobbanfx10"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lrxfuuzi7"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "pobbanfx11"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "pobbanfx12"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lrxfuuzi8"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "pobbanfx13"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lrxfuuzi9"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "pobbanfx14"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lrxfuuzi10"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 TASK_MEET_AT_QUARRY = player createSimpleTask ["TASKID_MEET_AT_QUARRY"];
@@ -251,8 +352,12 @@ null = [_radius,_location] spawn {
     _radius = _this select 0;
     _location = _this select 1;
     _lights = _location nearObjects ["#lightpoint",_radius];
-    
-    waitUntil{sleep 300; daytime > 6.00};
+  
+    waitUntil {
+        sleep 300;
+        if (daytime > 6.00) exitWith {true};
+        false
+    };  
     
     {
         deleteVehicle _x;
@@ -371,20 +476,39 @@ player allowDamage true;
 
 
 _isReady = [kostas, "lrxfuuzi11"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "pobbanfx15"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "lrxfuuzi12"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "pobbanfx16"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "pobbanfx17"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
-
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 

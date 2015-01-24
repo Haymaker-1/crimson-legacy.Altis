@@ -48,8 +48,12 @@ FUEL_LOSS_RATE_WHEN_BROKEN = 2.68; // liters per second
 TRIGGER_BREAK_IT_BUY_IT triggerAttachVehicle [thehelicopter];
 
 
+waitUntil{
+    sleep 5;
+    if (TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED) exitWith {true};
+    false
+};
 
-waitUntil{sleep 5;TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED};
 
 thehelicopter lock 0;
 

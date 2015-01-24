@@ -2,16 +2,32 @@ sleep (random 5);
 
 
 _isReady = [THE_CO, "dxhqaqgv1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "uejykcxp1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "dxhqaqgv2"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "dxhqaqgv3"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 suitcase1 setPos (getMarkerPos "MARKER_SUITCASE1_GOTO_LABEL");
 suitcase2 setPos (getMarkerPos "MARKER_SUITCASE2_GOTO_LABEL");

@@ -9,7 +9,11 @@ if ("DemoCharge_Remote_Mag" in (magazineCargo demoSpecialistVeh)) then {
     demoSpecialist sideChat "Hey! Don't forget your explosives. I can't wait too long here.";
     sleep 5;
 
-    waitUntil{sleep 5; "DemoCharge_Remote_Ammo" in [typeOf ((attachedObjects transformer) select 0)] OR (!alive transformer)};
+    waitUntil{
+        sleep 5;
+        if ("DemoCharge_Remote_Ammo" in [typeOf ((attachedObjects transformer) select 0)] OR (!alive transformer)) exitWith {true};
+        false
+    };
     
     _then = daytime;
     _fiveMinutes = 5/60;
@@ -21,7 +25,8 @@ if ("DemoCharge_Remote_Mag" in (magazineCargo demoSpecialistVeh)) then {
         !("DemoCharge_Remote_Mag" in (magazineCargo demoSpecialistVeh)) OR
         ((demoSpecialist distance MARID_KAVALA_1) < 500) OR
         ((demoSpecialist distance MARID_KAVALA_2) < 500);
-        _cond
+        if (_cond) exitWith {true};
+        false
     };
 
     if ("DemoCharge_Remote_Mag" in (magazineCargo demoSpecialistVeh)) then {

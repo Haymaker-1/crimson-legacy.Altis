@@ -18,7 +18,11 @@ _wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_WP_DEMO_SPECIALISTS_
 [demoSpecialistGroup,4] setWaypointStatements ["true", "null = [] execVM 'scripts\arm-ieds-powerplant.sqf'"];
 
 
-waitUntil {sleep 1; (demoSpecialist distance ied2) > 35};
+waitUntil {
+    sleep 1; 
+    if ((demoSpecialist distance ied2) > 35) exitWith {true};
+    false
+};
 demoSpecialist sideChat "Be advised, there is an IED on the access road to the southeast of the power plant.";
 "MARKER_POWERPLANT_IED2" setMarkerType "mil_warning";
 IED2_HAS_BEEN_ACTIVATED = true;

@@ -6,7 +6,11 @@ deleteVehicle TRIGGER_ADDACTION_CALL_BOAT;
 sleep random 3;
 
 _isReady = [player, "qzwpvxsn1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 (leader gunBoatGroup) sideChat "This is Noah Three. I read you loud and clear.";
 sleep 5;
@@ -17,13 +21,20 @@ _dist = _pos1 distance _pos2;
 if (_dist > 100) then
 {
     _isReady = [player, "qzwpvxsn2"] execVM "scripts\unitspeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
-
+    waitUntil {
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 }
 else
 {
     _isReady = [player, "qzwpvxsn3"] execVM "scripts\unitspeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil {
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 };
 sleep 5;
 
@@ -43,7 +54,11 @@ _wp = _group addWaypoint [_pos,1];
 
 
 
-waitUntil {sleep 5;pilot in crew THE_GUNBOAT};
+waitUntil {
+    sleep 5;
+    if (pilot in crew THE_GUNBOAT) exitWith {true};
+    false
+};
 
 pilot disableAI "MOVE";
 pilot disableAI "ANIM";
@@ -67,46 +82,94 @@ _wp = gunboatGroup addWaypoint [_pos,2];
 sleep random 10;
 
 _isReady = [player, "qzwpvxsn4"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "xwzldnaj1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "qzwpvxsn5"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "xwzldnaj2"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "xwzldnaj3"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 if (random 1 < 0.5) then
 {   
     _isReady = [player, "qzwpvxsn6"] execVM "scripts\unitspeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil {
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 }
 else
 {
     _isReady = [player, "qzwpvxsn7"] execVM "scripts\unitspeak.sqf";
-    waitUntil{sleep 1; scriptDone _isReady};
+    waitUntil {
+        sleep 1;
+        if (scriptDone _isReady) exitWith {true};
+        false
+    };
 };
 
 _isReady = [THE_CO, "xwzldnaj4"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "qzwpvxsn8"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 _isReady = [THE_CO, "xwzldnaj5"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "qzwpvxsn9"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "xwzldnaj6"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 sleep random 4;
 

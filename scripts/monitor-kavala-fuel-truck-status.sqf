@@ -28,7 +28,11 @@ while {_cond} do {
         _vehHasStopped = [_veh] execVM "scripts\bring-vehicle-to-a-stop.sqf";
         (assignedDriver kavalaFuelTruck) sideChat "Aw, crap!";
         sleep 3;
-        waitUntil { scriptDone _vehHasStopped};
+        waitUntil {
+            sleep 2;
+            if (scriptDone _vehHasStopped) exitWith {true};
+            false
+        };
         null = [] execVM "scripts\walk-to-quarry.sqf";
         _condDone = true;
     } else {

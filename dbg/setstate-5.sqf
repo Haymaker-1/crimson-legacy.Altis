@@ -55,7 +55,11 @@ _aaAlphaValue = 0.35;
 
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam-crash-site.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 
@@ -81,14 +85,26 @@ _spawningComplete = nil;
 TASK_CLEAR_NEGADES_HAS_BEEN_ASSIGNED = true;
 TASK_CLEAR_AGIOS_KONSTANTINOS_HAS_BEEN_ASSIGNED = true;
 
-waitUntil{sleep 5;AGIOS_KONSTANTINOS_IS_CLEAR AND NEGADES_IS_CLEAR};
+waitUntil{
+    sleep 5;
+    if (AGIOS_KONSTANTINOS_IS_CLEAR AND NEGADES_IS_CLEAR) exitWith {true};
+    false
+};
 
 _spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-agios-konstantinos.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-negades.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 null = [] execVM "scripts\set-up-op-agios-konstantinos.sqf";

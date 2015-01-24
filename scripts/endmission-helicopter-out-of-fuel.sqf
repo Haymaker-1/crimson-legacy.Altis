@@ -2,7 +2,8 @@
 waitUntil 
 {
     sleep 5;
-    (NEED_HELO AND ((getMarkerPos "MARKER_REBEL_CAMP_HELIPAD" distance getPos thehelicopter)>50) AND ((fuel thehelicopter) == 0))
+    if ((NEED_HELO AND ((getMarkerPos "MARKER_REBEL_CAMP_HELIPAD" distance getPos thehelicopter)>50) AND ((fuel thehelicopter) == 0))) exitWith {true};
+    false
 };
 
 _endName = "End3";

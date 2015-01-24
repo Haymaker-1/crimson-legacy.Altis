@@ -35,8 +35,12 @@ exfilhelo allowDamage false;
 } forEach crew exfilhelo;
 
 
- 
-waitUntil {sleep 5;!isnil "exfilhelo"};
+waitUntil {
+    sleep 5;
+    if (!isnil "exfilhelo") exitWith {true};
+    false
+}; 
+
 {
     deleteWaypoint _x;
 } forEach waypoints _group;
@@ -47,7 +51,12 @@ _wp = _group addWaypoint [getMarkerPos "MARKER_LZ_EXFILHELO",0];
 [_group, _idx] setWaypointBehaviour "CARELESS";
 [_group, _idx] setWaypointStatements ["true", "exfilhelo land 'LAND';"];
 
-waitUntil {sleep 1; (getPos exfilhelo select 2) < 5.0};
+waitUntil {
+    sleep 1;
+    if ((getPos exfilhelo select 2) < 5.0) exitWith {true};
+    false
+};
+
 exfilhelo animateDoor ["door_rear_source", 1, false];
 
 _cond = true;
@@ -75,7 +84,11 @@ TASK_BOARD_EXFILHELO setTaskState "Succeeded";
 sleep 10;
 
 
-waitUntil {sleep 5; (getPos exfilhelo) distance (getMarkerPos "MARKER_LZ_EXFILHELO") > 500};
+waitUntil {
+    sleep 5; 
+    if ((getPos exfilhelo) distance (getMarkerPos "MARKER_LZ_EXFILHELO") > 500) exitWith {true};
+    false
+};
 
 
 null = [] spawn {

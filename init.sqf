@@ -1,4 +1,7 @@
 
+titleText ["", "BLACK FADED", 0];
+0 fadeSound 0;
+
 // WEST and GUER are friends
 WEST setFriend [RESISTANCE, 1.0];
 RESISTANCE setFriend [WEST, 1.0];
@@ -13,7 +16,7 @@ EAST setFriend [RESISTANCE, 0.0];
 
 deactivateKey "missionCompletedKey";
 
-//0 fadeSound 0; see also init-player.sqf
+
 
 null = [] execVM "scripts\setFuelStationsEmpty.sqf";
 
@@ -117,35 +120,67 @@ null = [] execVM "scripts\spawn-helicopter.sqf";
 null = [] execVM "scripts\spawn-helipad-nabisco.sqf";
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-airbase.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera-airport.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-rebel-camp.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam-aa-magos.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam-aa-amfissa.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-kostas-borrowed-men.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-sfteam.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 

@@ -1,8 +1,16 @@
 
 
-waitUntil {sleep 5;!isnil "pilot"};
+waitUntil {
+    sleep 5;
+    if (!isnil "pilot") exitWith {true};
+    false
+};
 
-waitUntil {sleep 5;!alive pilot};
+waitUntil {
+    sleep 5;
+    if (!alive pilot) exitWith {true};
+    false
+};
 
 if (alive player AND !ENDMISSION_REASON_THROWN) then
 {

@@ -9,15 +9,27 @@ _soldier = "O_Soldier_TL_F" createUnit [(getMarkerPos "MARKER_SPAWN_PILOT"),_oth
 
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam1.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam2.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam3.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 

@@ -29,25 +29,49 @@ sleep (10+random 20);
 
 
 _isReady = [THE_CO, "nqccsmpx1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "rhqqdblf1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "nqccsmpx2"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "nqccsmpx3"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "nqccsmpx4"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 "MARKER_FUEL_TRUCK" setMarkerType "mil_dot";
 
 
 _isReady = [THE_CO, "nqccsmpx5"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 "MARKER_OPFOR_AA_FRINI" setMarkerShape "ELLIPSE"; 
@@ -82,16 +106,27 @@ sleep (random 2);
 sleep (random 2);
 
 _isReady = [THE_CO, "nqccsmpx6"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
-
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 ["MARKER_PERIMETER_AIRBASE",100,"ColorEAST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 
 _isReady = [THE_CO, "nqccsmpx7"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "nqccsmpx8"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 TASK_LOAD_FUEL = player createSimpleTask ["TASKID_LOAD_FUEL"];

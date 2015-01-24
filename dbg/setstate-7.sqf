@@ -36,7 +36,11 @@ null = [] execVM "scripts\spawn-kavala-mortar-group.sqf";
 null = [] execVM "scripts\spawn-kavala-static-defenses.sqf";
 
 sleep 20;
-waitUntil{!isnil "kavalaFuelTruck"};
+waitUntil {
+    sleep 1;
+    if (!isnil "kavalaFuelTruck") exitWith {true};
+    false
+};
 player hideObject true;
 player moveInDriver kavalaFuelTruck;
 
@@ -51,7 +55,11 @@ _vehiclesMotorpool = nearestObjects [(getMarkerPos "MARKER_MOTOR_POOL"),["Car","
     _x setDamage 1;
 } forEach _vehiclesMotorpool;
 
-waitUntil{player in crew krya_nera_strider};
+waitUntil {
+    sleep 1;
+    if (player in crew krya_nera_strider) exitWith {true};
+    false
+};
 skiptime 0.3;
 
 sf0 moveInCommander krya_nera_strider;

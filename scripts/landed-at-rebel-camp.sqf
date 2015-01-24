@@ -1,5 +1,9 @@
 
-waitUntil {sleep 1; (fuel thehelicopter) == 0};
+waitUntil {
+    sleep 1;
+    if ((fuel thehelicopter) == 0) exitWith {true};
+    false
+};
 
 TRIGGER_LANDED_AT_REBEL_CAMP_FIRED = true;
 

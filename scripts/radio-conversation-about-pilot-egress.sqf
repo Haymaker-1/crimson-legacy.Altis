@@ -7,38 +7,76 @@
 
 
 _isReady = [player, "qlwajhnj1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "yiuwnpkq1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "qlwajhnj2"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "yiuwnpkq2"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "qlwajhnj3"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "yiuwnpkq3"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "yiuwnpkq4"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 "MARKER_EGRESS_ALPHA" setMarkerType "mil_dot";
 
 _isReady = [THE_CO, "yiuwnpkq5"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "yiuwnpkq6"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "yiuwnpkq7"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
-
-
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 // add task
 // show notification
@@ -58,15 +96,27 @@ TASK_ESCORT_PILOT_HAS_BEEN_ASSIGNED = true;
 
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-agios-konstantinos.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil{
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-negades.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil{
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-agios-negades-bases.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil{
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 null = [] execVM "scripts\spawn-sniper-negades.sqf";

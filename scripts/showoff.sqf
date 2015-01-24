@@ -14,10 +14,18 @@ if (_cond) then
     if (alive thehelicopter) then
 	{
         _isReady = [THE_CO, "bpxqzvmm1"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil{
+            sleep 1; 
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
 
         _isReady = [THE_CO, "bpxqzvmm2"] execVM "scripts\unitradiospeak.sqf";
-        waitUntil{sleep 1; scriptDone _isReady};
+        waitUntil{
+            sleep 1; 
+            if (scriptDone _isReady) exitWith {true};
+            false
+        };
         
     };
 };

@@ -14,16 +14,25 @@ _trig setTriggerActivation["VEHICLE","PRESENT",true];
 _trig setTriggerStatements["this AND POWER_PLANT_CAN_PLACE_EXPLOSIVES AND 'DemoCharge_Remote_Mag' in magazines player","null = [] execVM 'scripts\addaction-attach-explosives.sqf';","null = [] execVM 'scripts\removeaction-attach-explosives.sqf';"]; 
 
 
-
-waitUntil{sleep 5; "DemoCharge_Remote_Ammo" in [typeOf ((attachedObjects transformer) select 0)]};
+waitUntil {
+    sleep 5;
+    if ("DemoCharge_Remote_Ammo" in [typeOf ((attachedObjects transformer) select 0)]) exitWith {true};
+    false
+};
 
 _isReady = [player, "axdxdlzp1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "oqlunvdd1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
-
-
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 sleep 10;
 
@@ -36,9 +45,11 @@ TASK_DESTROY_VEHICLES_KAVALA_HAS_BEEN_ASSIGNED = true;
 
 
 
-
-
-waitUntil{sleep 1; !alive transformer};
+waitUntil {
+    sleep 1;
+    if (!alive transformer) exitWith {true};
+    false
+};
 
 null = [1.00] execVM 'scripts\lights-out-aggelochori.sqf';
 

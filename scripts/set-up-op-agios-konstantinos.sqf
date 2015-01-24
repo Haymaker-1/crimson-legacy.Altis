@@ -2,28 +2,60 @@
 sleep 20;
 
 _isReady = [player, "qjgztpnn1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "tlmntqjb1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "qjgztpnn2"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "tlmntqjb2"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "qjgztpnn3"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "tlmntqjb3"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "qjgztpnn4"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "tlmntqjb4"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 

@@ -78,7 +78,11 @@ _placementOffset =  [-0.88,1.1,-1.2] ;
 _trig attachTo [kavalaFuelTruck,_placementOffset];
 
 
-waitUntil{sleep 5;player in crew kavalaFuelTruck};
+waitUntil{
+    sleep 5;
+    if (player in crew kavalaFuelTruck) exitWith {true};
+    false
+};
 
 deleteVehicle _trig;
 kavalaFuelTruck setSide west;

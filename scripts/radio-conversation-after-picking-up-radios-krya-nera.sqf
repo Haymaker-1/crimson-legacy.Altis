@@ -5,7 +5,11 @@ suitcase3 setPos [0,1,-100];
 SUITCASES_LOADED = true;  
 
 _isReady = [THE_CO, "ozjytbcl1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1; 
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 TASK_PICK_UP_RADIOS setTaskState "Succeeded"; 
 ["TaskSucceeded", ["","Pick up radios"]] call BIS_fnc_showNotification; 

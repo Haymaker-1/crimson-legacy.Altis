@@ -9,7 +9,8 @@ _hitEngineThreshold = 0.9;
 waitUntil 
 {
     sleep 5;
-    ((thehelicopter getHitPointDamage "HitHRotor") > _hitHRotorThreshold) OR ((thehelicopter getHitPointDamage "HitEngine") > _hitEngineThreshold)
+    if (((thehelicopter getHitPointDamage "HitHRotor") > _hitHRotorThreshold) OR ((thehelicopter getHitPointDamage "HitEngine") > _hitEngineThreshold)) exitWith {true};
+    false
 };
 
 _endName = "End2";

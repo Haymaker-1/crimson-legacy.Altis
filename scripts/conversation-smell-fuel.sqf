@@ -3,9 +3,10 @@
 
 null = [] spawn {
     
-    waitUntil{
+    waitUntil {
         sleep 1;
-        !(player in crew thehelicopter);
+        if (!(player in crew thehelicopter)) exitWith {true};
+        false
     };
     thehelicopter setFuel 0.00;
 
@@ -14,9 +15,10 @@ null = [] spawn {
 
 null = [] spawn {
     
-    waitUntil{
+    waitUntil {
         sleep 1;
-        ((getPos thehelicopter select 2)<0.1);
+        if (((getPos thehelicopter select 2) < 0.1)) exitWith {true};
+        false
     };
     sleep random 3;
     thehelicopter setFuel 0.00;

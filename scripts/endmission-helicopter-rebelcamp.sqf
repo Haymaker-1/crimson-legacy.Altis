@@ -2,7 +2,8 @@
 waitUntil 
 {
     sleep 5;
-    (TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED AND ((fuel thehelicopter) == 0))
+    if (TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED AND ((fuel thehelicopter) == 0)) exitWith {true};
+    false
 };
 
 sleep 30;

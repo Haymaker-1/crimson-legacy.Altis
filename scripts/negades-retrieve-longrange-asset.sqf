@@ -1,27 +1,53 @@
 
 
 _isReady = [kostas, "eyxywhrw1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "fcfnpird1"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "eyxywhrw2"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "fcfnpird2"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "eyxywhrw3"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "fcfnpird3"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [kostas, "eyxywhrw4"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
-
-
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 
@@ -67,14 +93,26 @@ TIME_LAST_SAVEGAME = time;
 saveGame;
 
 
-waitUntil{sleep 5;AGIOS_KONSTANTINOS_IS_CLEAR AND NEGADES_IS_CLEAR};
+waitUntil{
+    sleep 5;
+    if (AGIOS_KONSTANTINOS_IS_CLEAR AND NEGADES_IS_CLEAR) exitWith {true};
+    false
+};
 
 _spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-agios-konstantinos.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil{
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-blufor-fireteams-negades.sqf";
-waitUntil{sleep 0.5;scriptDone _spawningComplete};
+waitUntil{
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
 _spawningComplete = nil;
 
 null = [] execVM "scripts\set-up-op-agios-konstantinos.sqf";

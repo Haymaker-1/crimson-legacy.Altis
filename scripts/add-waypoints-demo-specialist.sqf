@@ -1,7 +1,11 @@
 
 demoSpecialist leaveVehicle demoSpecialistVeh;
 
-waitUntil {sleep 1;!(demoSpecialist in crew demoSpecialistVeh)};
+waitUntil {
+    sleep 1;
+    if (!(demoSpecialist in crew demoSpecialistVeh)) exitWith {true};
+    false
+};
 
 _wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_POWERPLANT_IED1", 2];
 

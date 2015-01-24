@@ -1,5 +1,9 @@
 
-waitUntil{sleep 5; !isnil "TASK_FIND_CRASH_SITE"};
+waitUntil {
+    sleep 5;
+    if (!isnil "TASK_FIND_CRASH_SITE") exitWith {true};
+    false
+};
 
 while {isnil "TASK_FREE_PILOT"} do
 {

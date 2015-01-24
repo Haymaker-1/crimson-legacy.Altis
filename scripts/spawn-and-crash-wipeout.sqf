@@ -28,43 +28,87 @@ null = [] spawn {
 
    
 _isReady = [THE_CO, "drxopaef1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "drxopaef2"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
    
 _isReady = [THE_CO, "drxopaef3"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 sleep (8);
 
 _isReady = [THE_CO, "drxopaef4"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "embbzaox1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "drxopaef5"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "embbzaox2"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "drxopaef6"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "drxopaef7"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "embbzaox3"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "drxopaef8"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil {
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 player removeSimpleTask TASK_DELIVER_RADIOS; 
 
-TASK_WAIT_AT_NABISCO = player createSimpleTask ["Wait at Nabisco"];
+TASK_WAIT_AT_NABISCO = player createSimpleTask ["TASKID_WAIT_AT_NABISCO"];
 TASK_WAIT_AT_NABISCO setSimpleTaskDestination (getMarkerPos "MARKER_NABISCO_HELIPAD");
 TASK_WAIT_AT_NABISCO setSimpleTaskDescription ["We just got news that one of our planes went down. The CO ordered me to stand by at Nabisco until they have more information about the pilot's whereabouts.","Wait at Nabisco","Wait at Nabisco"];
 TASK_WAIT_AT_NABISCO setTaskState "Assigned";
@@ -74,31 +118,59 @@ player setCurrentTask TASK_WAIT_AT_NABISCO;
 
 
 
-waitUntil {sleep 1; (taskState TASK_WAIT_AT_NABISCO) == "Succeeded"};
+waitUntil {
+    sleep 1;
+    if ((taskState TASK_WAIT_AT_NABISCO) == "Succeeded") exitWith {true};
+    false
+};
 
 
 sleep (20+random 10);
 
 _isReady = [THE_CO, "drxopaef9"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "embbzaox4"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 "MARKER_PILOT_DISTRESS_SIGNAL" setMarkerType "mil_dot"; 
 "MARKER_PILOT_DISTRESS_SIGNAL" setMarkerText "DISTRESS SIGNAL"; 
 
 _isReady = [THE_CO, "drxopaef10"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "embbzaox5"] execVM "scripts\unitspeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "drxopaef11"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [THE_CO, "drxopaef12"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 
 _iRandomPatrol = [sf0] call HAYMAKER_fnc_findRandomPatrolmansGroup;
@@ -111,28 +183,32 @@ STOP_RANDOM_PATROL_GROUP set [_iRandomPatrol,true];
 null = [] spawn {
     waitUntil{
         sleep 5;
-        sf0 in crew thehelicopter;
+        if (sf0 in crew thehelicopter) exitWith {true};
+        false
     };
     sf0 allowDamage true;
 };
 null = [] spawn {
     waitUntil{
         sleep 5;
-        sf1 in crew thehelicopter;
+        if (sf1 in crew thehelicopter) exitWith {true};
+        false
     };
     sf1 allowDamage true;
 };
 null = [] spawn {
     waitUntil{
         sleep 5;
-        sf2 in crew thehelicopter;
+        if (sf2 in crew thehelicopter) exitWith {true};
+        false
     };
     sf2 allowDamage true;
 };
 null = [] spawn {
     waitUntil{
         sleep 5;
-        sf3 in crew thehelicopter;
+        if (sf3 in crew thehelicopter) exitWith {true};
+        false
     };
     sf3 allowDamage true;
 };
@@ -173,7 +249,11 @@ TIME_LAST_SAVEGAME = time;
 saveGame;
 
 
-waitUntil {sleep 10; (getPos thehelicopter) distance (getMarkerPos "MARKER_NABISCO_HELIPAD") > 800};
+waitUntil {
+    sleep 10; 
+    if ((getPos thehelicopter) distance (getMarkerPos "MARKER_NABISCO_HELIPAD") > 800) exitWith {true};
+    false
+};
 
 if (!triggerActivated TRIGGER_I_SEE_SMOKE AND count crew thehelicopter >= 3) then {
     player groupChat "Everybody, keep your eyes peeled for smoke!"; 

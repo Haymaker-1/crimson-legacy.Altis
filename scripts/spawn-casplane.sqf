@@ -83,7 +83,16 @@ while {alive casplane AND _hasAmmo AND (fuel casplane > _fuelThreshold)} do {
         null = [] spawn {sleep (1+random 10); (assignedDriver casplane) sideChat "Receiving coordinates...on my way.";};
         
         CAS_START_DAYTIME = daytime;
-        null = [] spawn {waitUntil {daytime - CAS_START_DAYTIME > 0.1}; ADD_CASPLANE_HOLDING_WP = true;  (assignedDriver casplane) disableAI "TARGET"; (group (assignedDriver casplane)) setCombatMode "GREEN"; };
+        null = [] spawn {
+            waitUntil {
+                sleep 60;
+                if (daytime - CAS_START_DAYTIME > 0.1) exitWith {true};
+                false
+            }; 
+            ADD_CASPLANE_HOLDING_WP = true;  
+            (assignedDriver casplane) disableAI "TARGET"; 
+            (group (assignedDriver casplane)) setCombatMode "GREEN";
+        };
     
         while {count (waypoints casplane) > 0} do {
             deleteWaypoint [_casPlaneGroup,0];

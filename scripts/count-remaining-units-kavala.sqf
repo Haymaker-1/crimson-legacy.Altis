@@ -149,7 +149,11 @@ _powGroup = createGroup EAST;
     
     null = [_x] spawn {
         _unit = _this select 0; 
-        waitUntil {sleep 5; (getPos _unit) distance (getMarkerPos "MARKER_MOTOR_POOL") < 20}; 
+        waitUntil {
+            sleep 5;
+            if ((getPos _unit) distance (getMarkerPos "MARKER_MOTOR_POOL") < 20) exitWith {true};
+            false
+        }; 
         [_unit] joinSilent grpNull;
         _unit playAction "Surrender";
     };
@@ -186,7 +190,11 @@ deleteMarker "MARKER_DELTA_SECTOR_KAVALA_TEXT";
 
 
 _isReady = [kostas, "nvurkijn1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 sleep 10;
 
