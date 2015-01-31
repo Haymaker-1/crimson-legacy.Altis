@@ -77,13 +77,6 @@ _inventory =
            
         };
     } forEach _men;
-    
-    // remove the contents of the backpacks in the _itemsHolder
-    {
-        clearMagazineCargo _x;
-        clearWeaponCargo _x;
-        clearItemCargo _x;
-    } forEach everyBackpack _itemsHolder;
 
     _stuffOnTheGround = nearestObjects [_pos,["GroundWeaponHolder","WeaponHolderSimulated"], _radius];
     {
@@ -168,6 +161,15 @@ INVENTORY = _inventory;
 {
     _itemsHolder addItemCargo [_x,1];
 } forEach (_inventory select 6 select 1);
+
+
+
+// remove the contents of the backpacks in the _itemsHolder
+{
+    clearMagazineCargo _x;
+    clearWeaponCargo _x;
+    clearItemCargo _x;
+} forEach everyBackpack _itemsHolder;
 
 
 _weaponsHolder attachTo [_weaponsCrate,[0,0,0.65]]; 
