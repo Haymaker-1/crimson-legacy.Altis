@@ -5,10 +5,6 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
     _marker = createMarker ["MARKER_OPFOR_BASE_NEGADES", [4927.61,16404.2,-0.25] ];
     _marker = createMarker ["MARKER_OPFOR_BASE_AGIOS", [4213.22,17385.7,-0.25] ];
 
-
-
-
-
     _headgearArray = ["H_Beret_blk",
                       "H_Beret_grn",
                       "H_Beret_grn_SF",
@@ -61,6 +57,7 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
         {
             _x removePrimaryWeaponItem "optic_ACO_grn";
             _x removeWeapon "NVGoggles_OPFOR";
+            _x addHeadGear (_headGearArray call BIS_fnc_selectRandom);
         } forEach units _group;
         
     } forEach _groupData;
