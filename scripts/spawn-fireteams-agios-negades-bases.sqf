@@ -56,8 +56,9 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
         
         {
             _x removePrimaryWeaponItem "optic_ACO_grn";
+            removeHeadGear _x;
             _x removeWeapon "NVGoggles_OPFOR";
-            _x addHeadGear (_headGearArray call BIS_fnc_selectRandom);
+            _x addHeadGear (_headgearArray call BIS_fnc_selectRandom);
         } forEach units _group;
         
     } forEach _groupData;
