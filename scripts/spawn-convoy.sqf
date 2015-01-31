@@ -24,7 +24,7 @@ convoyIfritGMGGroup = createGroup east;
 convoyIfritGMG = createVehicle ["O_MRAP_02_gmg_F",(getMarkerPos "MARKER_SPAWN_CONVOY_0"),[],0,"NONE"];
 convoyIfritGMG setDir -137.972;
 convoyIfritGMGGroup addVehicle convoyIfritGMG;
-convoyIfritGMG lock 0;
+convoyIfritGMG lock true;
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_SPAWN_CONVOY_0"),
                             convoyIfritGMGGroup,
@@ -59,7 +59,7 @@ convoyIfritHMGGroup = createGroup east;
 convoyIfritHMG = createVehicle ["O_MRAP_02_hmg_F",(getMarkerPos "MARKER_SPAWN_CONVOY_1"),[],0,"NONE"];
 convoyIfritHMG setDir -137.972;
 convoyIfritHMGGroup addVehicle convoyIfritHMG;
-convoyIfritHMG lock 0;
+convoyIfritHMG lock true;
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_SPAWN_CONVOY_1"),
                             convoyIfritHMGGroup,
@@ -94,7 +94,7 @@ convoyZamakGroup = createGroup east;
 convoyZamak = createVehicle ["O_Truck_02_covered_F",(getMarkerPos "MARKER_SPAWN_CONVOY_2"),[],0,"NONE"];
 convoyZamak setDir -137.972;
 convoyZamakGroup addVehicle convoyZamak;
-convoyZamak lock 0;
+convoyZamak lock true;
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_SPAWN_CONVOY_2"),
                             convoyZamakGroup,
