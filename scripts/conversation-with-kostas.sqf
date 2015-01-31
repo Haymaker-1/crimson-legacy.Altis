@@ -143,6 +143,13 @@ _posRadioFiddle = suitcase3 modelToWorld [0,-1,0];
 
 SUITCASES_LOADED = false;
 
+
+waitUntil {
+    sleep 0.5;
+    if (!isnil "_posRadioFiddle") exitWith {true};
+    false
+};
+
 _wp = (group kostas) addWaypoint [_posRadioFiddle,0];
 _wp setWaypointCompletionRadius 0.4;
  
