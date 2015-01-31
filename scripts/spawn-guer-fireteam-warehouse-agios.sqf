@@ -55,15 +55,16 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
         while {_spawnAnother} do {
             _veh = createVehicle ["I_G_Offroad_01_F", getMarkerPos "MARKER_SHED_AGIOS_SPAWN_TRUCK",[],50,"NONE"];
             _veh setDir random 360;
+            _veh setFuel (0.05 + (random 0.03));
             sleep 2.0;
-            if (damage _veh == 0.0) then {
+            if ((damage _veh) == 0.0) then {
                 _spawnAnother = false;
             }
             else {
                 deleteVehicle _veh;
             };
         };  
-        _veh setFuel (0.05 + (random 0.03));
+
         
     } forEach ["car0","car1"];
 
