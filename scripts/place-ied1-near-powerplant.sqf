@@ -9,6 +9,7 @@ demoSpecialist enableAI "MOVE";
 demoSpecialist enableAI "ANIM";
 
 
+
 _wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_POWERPLANT_IED2", 3];
 
 [demoSpecialistGroup,3] setWaypointType "MOVE";
