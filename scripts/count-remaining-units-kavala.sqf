@@ -166,7 +166,7 @@ _powGroup = createGroup EAST;
 
 
 _wp = _powGroup addWaypoint [getMarkerPos "MARKER_MOTOR_POOL",10];
-[_powGroup,0] setBehaviour "CARELESS";
+_powGroup setBehaviour "CARELESS";
 [_powGroup,0] setFormation "FILE";
 [_powGroup,0] setWaypointSpeed "LIMITED";
 _powGroup setCurrentWaypoint [_powGroup, 0];
