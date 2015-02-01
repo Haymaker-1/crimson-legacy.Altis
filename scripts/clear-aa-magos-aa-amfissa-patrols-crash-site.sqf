@@ -473,8 +473,8 @@ if (!SKIP_CLEANING_HOUSE) then {
     TASK_FALL_BACK_TO_CP = player createSimpleTask ["TASKID_FALL_BACK_TO_CP"];
     TASK_FALL_BACK_TO_CP setSimpleTaskDescription ["Fall back to <marker name='MARKER_OP_AGIOS_KONSTANTINOS'>Agios Konstantinos</marker> to rest up.","Fall back to Agios","Fall back to Agios"];
     TASK_FALL_BACK_TO_CP setSimpleTaskDestination (getMarkerPos "MARKER_OP_AGIOS_KONSTANTINOS");
-    TASK_FALL_BACK_TO_CP setTaskState "Created";
-    ["TaskCreated", ["","Fall back to Agios"]] call BIS_fnc_showNotification;
+    TASK_FALL_BACK_TO_CP setTaskState "Assigned";
+    ["TaskAssigned", ["","Fall back to Agios"]] call BIS_fnc_showNotification;
     
     waitUntil {
         sleep 5;
