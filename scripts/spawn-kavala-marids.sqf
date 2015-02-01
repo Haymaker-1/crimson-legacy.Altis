@@ -24,6 +24,10 @@ MARID_KAVALA_1 = createVehicle ["O_APC_Wheeled_02_rcws_F",(getMarkerPos "MARKER_
 MARID_KAVALA_1 setDir 17.0;
 MARID_KAVALA_1 lock true;
 
+clearItemCargo MARID_KAVALA_1;
+clearWeaponCargo MARID_KAVALA_1;
+clearMagazineCargo MARID_KAVALA_1;
+
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_1"),
                             MARID_KAVALA_1_GROUP,
@@ -63,6 +67,9 @@ MARID_KAVALA_2 = createVehicle ["O_APC_Wheeled_02_rcws_F",(getMarkerPos "MARKER_
 MARID_KAVALA_2 setDir 60.0;
 MARID_KAVALA_2 lock true;
 
+clearItemCargo MARID_KAVALA_2;
+clearWeaponCargo MARID_KAVALA_2;
+clearMagazineCargo MARID_KAVALA_2;
 
 
 
@@ -95,6 +102,6 @@ MARID_KAVALA_2 lock true;
     removeHeadGear _x;
     _headgear = _headgearArray call BIS_fnc_selectRandom;
     _x addHeadGear _headgear;
-} forEach units MARID_KAVALA_1_GROUP;
+} forEach units MARID_KAVALA_2_GROUP;
 
 
