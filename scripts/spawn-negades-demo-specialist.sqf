@@ -20,6 +20,6 @@ demoSpecialistGroup = createGroup west;
 demoSpecialist = units demoSpecialistGroup select 0;
 demoSpecialist assignAsDriver demoSpecialistVeh;
 demoSpecialist moveInDriver demoSpecialistVeh;
-demoSpecialist allowDamage false;
+//demoSpecialist allowDamage false;
 demoSpecialist allowFleeing 0.0; 
 (group demoSpecialist) setGroupId ["IED Specialist","GroupColor4"];
