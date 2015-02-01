@@ -181,8 +181,10 @@ class Mission
 					side="EAST";
 					vehicle="O_APC_Tracked_02_AA_F";
 					leader=1;
+					lock="LOCKED";
 					skill=1;
 					text="AA_PYRSOS";
+					init="{_x removeWeapon ""NVGoggles_OPFOR""} forEach crew AA_PYRSOS;";
 				};
 			};
 			class Waypoints
@@ -213,8 +215,10 @@ class Mission
 					side="EAST";
 					vehicle="O_APC_Tracked_02_AA_F";
 					leader=1;
+					lock="LOCKED";
 					skill=1;
 					text="AA_GALATI";
+					init="{_x removeWeapon ""NVGoggles_OPFOR""} forEach crew AA_GALATI;";
 				};
 			};
 			class Waypoints
@@ -246,8 +250,10 @@ class Mission
 					side="EAST";
 					vehicle="O_APC_Tracked_02_AA_F";
 					leader=1;
+					lock="LOCKED";
 					skill=1;
 					text="AA_AMFISSA";
+					init="{_x removeWeapon ""NVGoggles_OPFOR""} forEach crew AA_AMFISSA;";
 				};
 			};
 			class Waypoints
@@ -279,8 +285,10 @@ class Mission
 					side="EAST";
 					vehicle="O_APC_Tracked_02_AA_F";
 					leader=1;
+					lock="LOCKED";
 					skill=1;
 					text="AA_FRINI";
+					init="{_x removeWeapon ""NVGoggles_OPFOR""} forEach crew AA_FRINI;";
 				};
 			};
 			class Waypoints
@@ -312,8 +320,10 @@ class Mission
 					side="EAST";
 					vehicle="O_APC_Tracked_02_AA_F";
 					leader=1;
+					lock="LOCKED";
 					skill=1;
 					text="AA_MAGOS";
+					init="{_x removeWeapon ""NVGoggles_OPFOR""} forEach crew AA_MAGOS;";
 				};
 			};
 			class Waypoints
@@ -344,8 +354,10 @@ class Mission
 					side="EAST";
 					vehicle="O_APC_Tracked_02_AA_F";
 					leader=1;
+					lock="LOCKED";
 					skill=1;
 					text="AA_IFESTONIA_2";
+					init="{_x removeWeapon ""NVGoggles_OPFOR""} forEach crew AA_IFESTONIA_2;";
 				};
 			};
 			class Waypoints
@@ -377,8 +389,10 @@ class Mission
 					side="EAST";
 					vehicle="O_APC_Tracked_02_AA_F";
 					leader=1;
+					lock="LOCKED";
 					skill=1;
 					text="AA_IFESTONIA_1";
+					init="{_x removeWeapon ""NVGoggles_OPFOR""} forEach crew AA_IFESTONIA_1;";
 				};
 			};
 			class Waypoints
@@ -3012,7 +3026,7 @@ class Mission
 		};
 		class Item198
 		{
-			position[]={4113.6528,7.2684536,14959.229};
+			position[]={4098.9297,7.5809031,14939.145};
 			name="MARKER_POWERPLANT_IED1";
 			text=" IED";
 			type="Empty";
@@ -3382,7 +3396,7 @@ class Mission
 		};
 		class Item259
 		{
-			position[]={4116.9902,8.1511745,14970.354};
+			position[]={4097.1851,7.6251149,14937.315};
 			name="MARKER_MARID_KAVALA_1_WP_1";
 			type="Empty";
 		};
@@ -4293,7 +4307,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="TRIGGER_AA_MAGOS_IS_CLEAR";
-			expCond="this AND !alive AA_MAGOS";
+			expCond="this AND !alive AA_MAGOS AND (count units GROUP_AA_MAGOS == 0)";
 			expActiv="AA_MAGOS_IS_CLEAR = true;";
 			class Effects
 			{
@@ -4309,7 +4323,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="TRIGGER_AA_AMFISSA_IS_CLEAR";
-			expCond="this AND !alive AA_AMFISSA";
+			expCond="this AND !alive AA_AMFISSA AND (count units GROUP_AA_AMFISSA == 0)";
 			expActiv="AA_AMFISSA_IS_CLEAR = true;";
 			class Effects
 			{
@@ -4381,7 +4395,7 @@ class Mission
 		};
 		class Item17
 		{
-			position[]={4113.1045,7.1167307,14957.988};
+			position[]={4098.3037,7.5803504,14939.38};
 			a=3;
 			b=9;
 			angle=-56.2514;
