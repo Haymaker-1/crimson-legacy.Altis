@@ -73,7 +73,11 @@ waitUntil{
 
 null = [] execVM "scripts\spawn-negades-demo-specialist.sqf";
 
-sleep 10;
+waitUntil {
+    sleep 1;
+    if (!isnil "demoSpecialistGroup") exitWith {true};
+    false
+};
 
 POWER_PLANT_CAN_PLACE_EXPLOSIVES = true;
 
@@ -83,7 +87,7 @@ _wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_WP_DEMO_SPECIALISTS_
 [demoSpecialistGroup,1] setWaypointType "MOVE";
 [demoSpecialistGroup,1] setWaypointCompletionRadius 50;
 [demoSpecialistGroup,1] setWaypointSpeed "LIMITED";
-[demoSpecialistGroup,1] setBehaviour "CARELESS";
+demoSpecialistGroup setBehaviour "CARELESS";
 [demoSpecialistGroup,1] setWaypointStatements ["true", "null = [] execVM 'scripts\add-waypoints-demo-specialist.sqf'"];
 demoSpecialistGroup setCurrentWaypoint [demoSpecialistGroup, 1];
 
@@ -93,6 +97,7 @@ waitUntil{
     false
 };
 
+sleep 15;
 
 _grp = createGroup WEST;
 {
@@ -101,14 +106,15 @@ _grp = createGroup WEST;
         _x enableFatigue false;
         _x setFatigue 0;
         [_x] join _grp;
+        sleep 2;
     };
-} forEach [sf0,sf1,sf2,sf3];
+} forEach [sf3,sf2,sf1,sf0];
 _wp = _grp addWaypoint [getMarkerPos "MARKER_CHRISTOS_HOUSE", 1];
 [_grp,1] setWaypointType "MOVE";
 [_grp,1] setWaypointCompletionRadius 50;
 [_grp,1] setWaypointSpeed "FULL";
-[_grp,1] setBehaviour "CARELESS";
-
+_grp setBehaviour "CARELESS";
+_grp setCurrentWaypoint [_grp, 1];
 
 TASK_SEIZE_POWER_PLANT setTaskState "Succeeded";
 ["TaskSucceeded", ["","Seize power plant"]] call BIS_fnc_showNotification;
