@@ -71,8 +71,8 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
     TASK_SEIZE_POWER_PLANT = player createSimpleTask ["TASKID_SEIZE_POWER_PLANT"];
     TASK_SEIZE_POWER_PLANT setSimpleTaskDescription ["Seize the power plant and rig the <marker name='MARKER_POWER_PLANT'>transformer</marker> with explosives.","Seize power plant","Seize power plant"];
     TASK_SEIZE_POWER_PLANT setSimpleTaskDestination (getMarkerPos "MARKER_POWER_PLANT");
-    TASK_SEIZE_POWER_PLANT setTaskState "Created";
-    ["TaskCreated", ["","Seize power plant"]] call BIS_fnc_showNotification;
+    TASK_SEIZE_POWER_PLANT setTaskState "Assigned";
+    ["TaskAssigned", ["","Seize power plant"]] call BIS_fnc_showNotification;
     player setCurrentTask TASK_SEIZE_POWER_PLANT;
     TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED = true;
 
