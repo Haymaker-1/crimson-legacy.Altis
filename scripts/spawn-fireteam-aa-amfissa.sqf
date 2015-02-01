@@ -31,11 +31,11 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
         
         _iRandomPatrol = _i;
 
-        _group = createGroup east;
+        GROUP_AA_AMFISSA = createGroup east;
         _n = 3 + round (random 2);
         for "_iSoldier" from 1 to _n do
         {
-            "O_Soldier_GL_F" createUnit [_spawnPos,_group];
+            "O_Soldier_GL_F" createUnit [_spawnPos,GROUP_AA_AMFISSA];
         };
 
         {
@@ -44,9 +44,9 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
             _x addHeadGear _headgear;
             _x removeWeapon "NVGoggles_OPFOR";
             _x removePrimaryWeaponItem "optic_ACO_grn";
-        } forEach units _group;     
+        } forEach units GROUP_AA_AMFISSA;     
         
-        null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
+        null = [_perimeter,GROUP_AA_AMFISSA,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
         
         TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 1;
         
