@@ -82,7 +82,7 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
     POWER_PLANT_CAN_PLACE_EXPLOSIVES = false;
 
     TRIGGER_POWER_PLANT_CLEARED = createTrigger["EmptyDetector",getMarkerPos "MARKER_POWER_PLANT"];
-    TRIGGER_POWER_PLANT_CLEARED setTriggerArea[300,300,0,false];
+    TRIGGER_POWER_PLANT_CLEARED setTriggerArea[600,600,0,false];
     TRIGGER_POWER_PLANT_CLEARED setTriggerActivation["EAST","NOT PRESENT",false];
     TRIGGER_POWER_PLANT_CLEARED setTriggerStatements["this AND TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED","null = [] execVM 'scripts\power-plant-seized.sqf'",""]; 
 
