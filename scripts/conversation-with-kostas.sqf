@@ -42,7 +42,16 @@ _dy = ((getPos thehelicopter) select 1) - ((getPos kostas) select 1);
 kostas disableAI "MOVE";
 kostas disableAI "ANIM";
 kostas setVectorDir [_dx,_dy,0];
-kostas action ["salute",kostas];
+
+null = [] spawn {
+    kostas playAction "Salute";
+    sleep 5;
+    kostas playAction "SaluteOff";
+};
+
+//kostas action ["salute",kostas];
+
+
 
 _isReady = [kostas, "egcnoprm1"] execVM "scripts\unitspeak.sqf";
 waitUntil { 
