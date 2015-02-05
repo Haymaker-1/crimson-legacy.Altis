@@ -10,7 +10,7 @@ _vehOffroads    = [ "B_G_Offroad_01_F" , "I_G_Offroad_01_F" , "C_Offroad_01_F"  
 _vehHunters     = [ "O_MRAP_02_base_F" , "O_MRAP_02_hmg_F"  , "O_MRAP_02_gmg_F" ];
 _vehQuads       = [ "B_Quadbike_01_F"  , "I_Quadbike_01_F"  , "O_Quadbike_01_F" ];
 _vehStriders    = [ "I_MRAP_03_base_F" , "I_MRAP_03_hmg_F"  , "I_MRAP_03_gmg_F" ];
-_vehZamaks      = [ "O_Truck_02_transport_F"];
+_vehZamaks      = [ "O_Truck_02_transport_F","O_Truck_02_fuel_F"];
 
 
 
