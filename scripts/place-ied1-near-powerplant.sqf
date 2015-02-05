@@ -1,12 +1,11 @@
-
-
 demoSpecialist disableAI "MOVE";
 demoSpecialist disableAI "ANIM";
 demoSpecialist playAction "Crouch";
 sleep 4;
 ied1 = createMine ["IEDUrbanBig_F",(getMarkerPos "MARKER_POWERPLANT_IED1"),[],0];
-demoSpecialist enableAI "MOVE"; 
+demoSpecialist playAction "Up";
 demoSpecialist enableAI "ANIM";
+demoSpecialist enableAI "MOVE";
 
 
 

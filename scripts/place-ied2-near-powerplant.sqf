@@ -5,10 +5,9 @@ demoSpecialist disableAI "ANIM";
 demoSpecialist playAction "Crouch";
 sleep 4;
 ied2 = createMine ["IEDUrbanBig_F",(getMarkerPos "MARKER_POWERPLANT_IED2"),[],0];
-demoSpecialist enableAI "MOVE"; 
+demoSpecialist playAction "Up";
 demoSpecialist enableAI "ANIM";
-
-
+demoSpecialist enableAI "MOVE"; 
 
 _wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_WP_DEMO_SPECIALISTS_DISEMBARK", 4];
 
