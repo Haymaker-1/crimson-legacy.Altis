@@ -125,6 +125,16 @@ waitUntil{
     _x lock 0;
 } forEach (getMarkerPos "MARKER_OP_KRYA_NERA" nearObjects ["Car",30]);
 
+
+
+_trig = createTrigger["EmptyDetector",getMarkerPos "MARKER_DESTINATION_TASK_WAIT_FOR_FUEL"];
+_trig setTriggerArea[15,20,56.4208,true];
+_trig triggerAttachVehicle [player];
+_trig setTriggerActivation["VEHICLE","PRESENT",false];
+_trig setTriggerStatements["this AND TASK_GO_TO_THE_AIRPORT_HAS_BEEN_ASSIGNED","null = [] execVM 'scripts\radio-conversation-about-fuel-truck.sqf';",""]; 
+
+
+
 TASK_GO_TO_THE_AIRPORT = player createSimpleTask ["TASKID_GO_TO_THE_AIRPORT"];
 TASK_GO_TO_THE_AIRPORT setSimpleTaskDescription ["Go to the heliport SW of Krya Nera and wait for the CO's contact to deliver the fuel.","Go to the airport","Go to the airport"];
 TASK_GO_TO_THE_AIRPORT setSimpleTaskDestination (getMarkerPos "MARKER_DESTINATION_TASK_WAIT_FOR_FUEL");
