@@ -1,5 +1,10 @@
 
-_basenameArr = toArray("AREA_MARKER_PERIMETER_FKS_KAVALA_");
+
+_basenameStr = _this select 0;
+_theColor = _this select 1;
+
+
+_basenameArr = toArray(_basenameStr);
 _n = count _basenameArr;
 
 {
@@ -19,7 +24,7 @@ _n = count _basenameArr;
     
     if (_stringsAreEqual) then 
     {
-        _x setMarkerColor "ColorGUER";
+        _x setMarkerColor _theColor;
     };
 
 } forEach allMapMarkers;
