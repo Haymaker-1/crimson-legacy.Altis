@@ -10,7 +10,6 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
                       "H_Shemag_tan",
                       "H_ShemagOpen_khk",
                       "H_ShemagOpen_tan",
-                      "H_TurbanO_blk",
                       "H_Booniehat_indp",
                       "H_Cap_oli",
                       "H_Cap_blk_Raven",
