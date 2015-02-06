@@ -2,30 +2,14 @@
 _group = createGroup WEST;
 _nUnitsSF = 4;
 
-
-
 sfTeamProb = [
-         [[0,"B_Soldier_M_F",     "marksman"],    0.15],
-         [[1,"B_soldier_repair_F","engineer"],    0.15],
-         [[2,"B_medic_F",         "medic"],       0.15],
-         [[3,"B_soldier_AR_F",    "autorifleman"],0.15],
-         [[4,"B_Soldier_F",       "rifleman"],    0.25],
-         [[5,"B_Soldier_GL_F",    "grenadier"],   0.15]
-        ];
-
-_arifle = nil;
-_arifleGL = nil;
-if (BLUFOR_ARIFLE_OF_CHOICE == "f2000") then {
-    _arifle = "arifle_Mk20_plain_F";
-    _arifleGL = "arifle_Mk20_GL_plain_F";
-
-};
-if (BLUFOR_ARIFLE_OF_CHOICE == "tavor") then {
-    _arifle = "arifle_TRG21_F";
-    _arifleGL = "arifle_TRG21_GL_F";
-};
-
-
+     [[0,"B_Soldier_M_F",     "marksman"],    0.15],
+     [[1,"B_soldier_repair_F","engineer"],    0.15],
+     [[2,"B_medic_F",         "medic"],       0.15],
+     [[3,"B_soldier_AR_F",    "autorifleman"],0.15],
+     [[4,"B_Soldier_F",       "rifleman"],    0.25],
+     [[5,"B_Soldier_GL_F",    "grenadier"],   0.15]
+    ];
 
 for "_iUnitSF" from 0 to (_nUnitsSF - 1) do {
 
