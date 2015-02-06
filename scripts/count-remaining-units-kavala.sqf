@@ -58,25 +58,21 @@ sleep 10;
     } forEach crew _veh;
 } forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearEntities [["Car","Tank"],1250]);
 
-
 {
     _veh = (assignedVehicle _x);
     _unit = _x;
     _unit leaveVehicle _veh;
 } forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["O_HMG_01_high_F",1250]);
 
-
 {
     _x setDamage 1;
 } forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearObjects ["O_HMG_01_high_F",1250]);
-
 
 {
     _veh = (assignedVehicle _x);
     _unit = _x;
     _unit leaveVehicle _veh;
 } forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["O_Mortar_01_F",1250]);
-
 
 {
     _x setDamage 1;
@@ -88,95 +84,71 @@ sleep 10;
     };
 } forEach allMapMarkers;
 
-
-
 {
     _x allowDamage false;
 } forEach (units group player);
 
+_menNearMotorPool = (getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250];
+_everybodySurrendered = false;
 
-_powGroup = createGroup EAST;
+_iUnitCaptured = 0;
 
 {
     _theUnit = _x;
     
-    if ((side _theUnit == EAST) AND (alive _theUnit)) then {
+    if (((side _theUnit) == EAST) AND (alive _theUnit)) then {
         
-        _mags = magazines _theUnit;
-        _weaps = weapons _theUnit;
-        _items = items _theUnit;
+        null = [_theUnit] execVM "scripts\opfor-unit-dump-gear.sqf";
         
-        {
-            _theUnit removeMagazine _x; 
-        } forEach _mags;
+        _grp = createGroup EAST;
+        [_x] joinSilent _grp;
         
-        {
-            _theUnit removeWeapon _x; 
-        } forEach _weaps;
+        _x setCaptive true;
+        _x allowFleeing 0.0; 
+        _x setUnitPos "UP";
         
         {
-            _theUnit removeItem _x; 
-        } forEach _items;
+            deleteWaypoint [_grp, _forEachIndex];
+        } forEach (waypoints _grp);
         
-        _holder = createVehicle ["GroundWeaponHolder",getPos _theUnit,[],3,"NONE"];
+        _pos = getMarkerPos "MARKER_MOTOR_POOL";
+        _x = (_pos select 0) + (_iUnitCaptured%5 - 2) * 4;
+        _y = (_pos select 1) + ((floor(_iUnitCaptured/5) - 2) * 4);
+        _pos set [0,_x];
+        _pos set [1,_y];
         
-        {
-            _holder addMagazineCargo [_x,1];
-        } forEach _mags;
-        
-        {
-            _holder addWeaponCargo [_x,1];
-        } forEach _weaps;
-        
-        {
-            _holder addItemCargo [_x,1];
-        } forEach _items;
-        
-        removeVest _theUnit;
-        removeAllAssignedItems _theUnit;
-        removeBackpack _x;
-        removeHeadgear _x;
-        removeGoggles _x;
-        
-        [_x] joinSilent _powGroup;
-    };
-} forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearEntities ["Man",1250]);
+        _wp = _grp addWaypoint [_pos,0,0];
+        _grp setBehaviour "CARELESS";
+        _grp setFormation "FILE";
+        [_grp,0] setWaypointSpeed "LIMITED";
+        [_grp,0] setWaypointCompletionRadius 4;
+        [_grp,0] setWaypointStatements ["true", "{[_x] joinSilent grpNull;_x playAction 'Surrender';} forEach thisList"];
+        _grp setCurrentWaypoint [_grp,0];
 
-{   
-    _x setCaptive true;
-    _x allowFleeing 0.0; 
-    _x setUnitPos "UP";
-    
-    null = [_x] spawn {
-        _unit = _this select 0; 
-        waitUntil {
-            sleep 5;
-            if ((getPos _unit) distance (getMarkerPos "MARKER_MOTOR_POOL") < 20) exitWith {true};
-            false
-        }; 
-        [_unit] joinSilent grpNull;
-        _unit playAction "Surrender";
+        _iUnitCaptured = _iUnitCaptured + 1;
+
     };
     
-} forEach (units _powGroup);
+    
+    if (_forEachIndex == ((count _menNearMotorPool) - 1)) then {
+        _everybodySurrendered = true;
+        
+        player globalChat format ["%1 units surrendered",_iUnitCaptured];
+        
+    };
+    
+} forEach _menNearMotorPool;
 
-{
-    deleteWaypoint [_powGroup, _forEachIndex];
-} forEach waypoints _powGroup;
+waitUntil {
+    sleep 2.0;
+    if (_everybodySurrendered) exitWith {true};
+    false
+};
 
+null = ["AREA_MARKER_PERIMETER_FKS_KAVALA_","ColorGUER"] execVM "scripts\flip-marker-color.sqf";
+null = ["AREA_MARKER_PERIMETER_SHJ_","ColorGUER"] execVM "scripts\flip-marker-color.sqf";
+null = ["AREA_MARKER_PERIMETER_AIRBASE_","ColorGUER"] execVM "scripts\flip-marker-color.sqf";
 
-_wp = _powGroup addWaypoint [getMarkerPos "MARKER_MOTOR_POOL",10];
-_powGroup setBehaviour "CARELESS";
-[_powGroup,0] setFormation "FILE";
-[_powGroup,0] setWaypointSpeed "LIMITED";
-_powGroup setCurrentWaypoint [_powGroup, 0];
-
-
-
-
-
-
-null = [] execVM "scripts\flip-marker-color-kavala.sqf";
 
 
 deleteMarker "MARKER_ALPHA_SECTOR_KAVALA";
