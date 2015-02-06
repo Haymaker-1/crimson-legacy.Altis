@@ -23,7 +23,7 @@ null = [] execVM "scripts\setFuelStationsEmpty.sqf";
 ["MARKER_PERIMETER_KRYA_NERA_KMJ",25,"ColorWEST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 
 
-(group player) setGroupId ["Delta One","GroupColor4"];
+
 (group THE_CO) setGroupId ["Delta Actual","GroupColor4"];
 (group kostas) setGroupId ["Kostas","GroupColor4"];
 (group christos) setGroupId ["Christos","GroupColor4"];
@@ -68,8 +68,8 @@ SPEECH_AUDIBLE_DISTANCE = 40;
 
 MISSION_TOP_LEVEL_DIRECTORY = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
 
-GPS_TRACKING_IS_ON = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "GPS_TRACKING_ENABLED") == 1;
-player addAction ["Disable GPS tracking","scripts\toggle-gpstracking.sqf",nil,0,false];
+// GPS_TRACKING_IS_ON = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "GPS_TRACKING_ENABLED") == 1;
+// player addAction ["Disable GPS tracking","scripts\toggle-gpstracking.sqf",nil,0,false];
 
 RANDOM_PATROL_GROUP_HAS_ARRIVED = [];
 STOP_RANDOM_PATROL_GROUP = [];
@@ -182,6 +182,9 @@ waitUntil {
     false
 };
 _spawningComplete = nil;
+
+
+
 
 
 
