@@ -746,8 +746,9 @@ class Mission
 					side="WEST";
 					vehicle="B_Boat_Armed_01_minigun_F";
 					leader=1;
+					lock="LOCKED";
 					skill=0.60000002;
-					init="this setDir random 360";
+					init="this setDir random 360; this allowDamage false; {_x allowDamage false;} forEach crew this;";
 				};
 			};
 		};
@@ -1785,7 +1786,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=378;
+		items=379;
 		class Item0
 		{
 			position[]={4875.251,351.21344,21945.549};
@@ -4128,10 +4129,16 @@ class Mission
 			name="MARKER_SFTEAM_ROUTE_TO_CHRISTOS";
 			type="Empty";
 		};
+		class Item378
+		{
+			position[]={9171.3789,14.313767,21687.555};
+			name="MARKER_TRIGGER_HINT_SAVEGAMES";
+			type="Empty";
+		};
 	};
 	class Sensors
 	{
-		items=20;
+		items=16;
 		class Item0
 		{
 			position[]={14409.995,38.220116,18986.307};
@@ -4139,45 +4146,12 @@ class Mission
 			age="UNKNOWN";
 			name="TRIGGER_FUEL_TRUCK_EMPTY";
 			expCond="TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED AND ((getFuelCargo THE_FUEL_TRUCK) < 0.05) AND ((getPos thehelicopter) distance (getPos THE_FUEL_TRUCK) < 20)";
-			expActiv="null = [] spawn {TASK_LOAD_FUEL setTaskState ""Succeeded"";  [""TaskSucceeded"", ["""",""Refuel""]] call BIS_fnc_showNotification; sleep (10+random 10); TASK_PICK_UP_RADIOS =  player createSimpleTask [""TASKID_PICK_UP_RADIOS""];          TASK_PICK_UP_RADIOS setSimpleTaskDescription [""Pick up the radios at OP Krya Nera."",""Pick up radios"",""Pick up radios""]; TASK_PICK_UP_RADIOS setSimpleTaskDestination (getMarkerPos ""MARKER_KRYA_NERA_HELIPAD"");           player setCurrentTask TASK_PICK_UP_RADIOS;           TASK_PICK_UP_RADIOS setTaskState ""Assigned"";  [""TaskAssigned"", ["""",""Pick up radios""]] call BIS_fnc_showNotification; TASK_PICK_UP_RADIOS_HAS_BEEN_ASSIGNED = true;  sleep (4 + random 3);                                  TASK_DELIVER_RADIOS =  player createSimpleTask [""TASKID_DELIVER_RADIOS""];          TASK_DELIVER_RADIOS setSimpleTaskDescription [""Deliver the radios to Camp Nabisco."",""Deliver radios"",""Deliver radios""]; TASK_DELIVER_RADIOS setSimpleTaskDestination (getMarkerPos ""MARKER_NABISCO_HELIPAD"");           TASK_DELIVER_RADIOS setTaskState ""Created"";  [""TaskCreated"", ["""",""Deliver radios""]] call BIS_fnc_showNotification; TASK_DELIVER_RADIOS_HAS_BEEN_ASSIGNED = true;}";
+			expActiv="null = [] execVM ""scripts\got-fuel-from-stavros.sqf""";
 			class Effects
 			{
 			};
 		};
 		class Item1
-		{
-			position[]={9187.25,14.406191,21663.367};
-			a=15;
-			b=20;
-			angle=56.420799;
-			rectangular=1;
-			activationBy="VEHICLE";
-			interruptable=1;
-			age="UNKNOWN";
-			idVehicle=26;
-			name="TRIGGER_TASK_GO_TO_THE_AIRPORT";
-			expCond="this AND TASK_GO_TO_THE_AIRPORT_HAS_BEEN_ASSIGNED";
-			expActiv="null = [] execVM ""scripts\radio-conversation-about-fuel-truck.sqf"";";
-			class Effects
-			{
-			};
-		};
-		class Item2
-		{
-			position[]={9712.3486,2.5908971,22305.41};
-			a=2;
-			b=2;
-			rectangular=1;
-			activationBy="VEHICLE";
-			interruptable=1;
-			age="UNKNOWN";
-			idVehicle=26;
-			expActiv="null = [] execVM ""scripts\conversation-with-the-co.sqf""";
-			class Effects
-			{
-			};
-		};
-		class Item3
 		{
 			position[]={9665.9834,3.2574463,22283.756};
 			a=2500;
@@ -4191,7 +4165,7 @@ class Mission
 			{
 			};
 		};
-		class Item4
+		class Item2
 		{
 			position[]={9670.4551,3.0915017,22285.424};
 			a=10;
@@ -4206,23 +4180,7 @@ class Mission
 			{
 			};
 		};
-		class Item5
-		{
-			position[]={4814.0908,328.08801,22002.09};
-			a=3500;
-			b=3500;
-			activationBy="VEHICLE";
-			interruptable=1;
-			age="UNKNOWN";
-			idVehicle=26;
-			name="TRIGGER_MSG_PILOT_DOWN";
-			expCond="this AND SUITCASES_LOADED AND TASK_DELIVER_RADIOS_HAS_BEEN_ASSIGNED";
-			expActiv="null = [] execVM ""scripts\spawn-and-crash-wipeout.sqf"";";
-			class Effects
-			{
-			};
-		};
-		class Item6
+		class Item3
 		{
 			position[]={9722.6309,2.5488939,22301.826};
 			a=40;
@@ -4236,7 +4194,7 @@ class Mission
 			{
 			};
 		};
-		class Item7
+		class Item4
 		{
 			position[]={3879.8318,16.69248,17531.273};
 			a=1000;
@@ -4254,7 +4212,7 @@ class Mission
 			{
 			};
 		};
-		class Item8
+		class Item5
 		{
 			position[]={5125.7036,40.046494,16272.398};
 			a=1000;
@@ -4270,7 +4228,7 @@ class Mission
 			{
 			};
 		};
-		class Item9
+		class Item6
 		{
 			position[]={12778.798,-185.97,27714.041};
 			a=666;
@@ -4286,7 +4244,7 @@ class Mission
 			{
 			};
 		};
-		class Item10
+		class Item7
 		{
 			position[]={6670.7656,171.09648,17122.734};
 			a=450;
@@ -4303,7 +4261,7 @@ class Mission
 			{
 			};
 		};
-		class Item11
+		class Item8
 		{
 			position[]={4580.2041,261.78827,15371.405};
 			a=250;
@@ -4319,7 +4277,7 @@ class Mission
 			{
 			};
 		};
-		class Item12
+		class Item9
 		{
 			position[]={7524.0449,185.79156,17525.141};
 			a=250;
@@ -4335,7 +4293,7 @@ class Mission
 			{
 			};
 		};
-		class Item13
+		class Item10
 		{
 			position[]={9220.0156,272.66083,19300.607};
 			a=300;
@@ -4351,7 +4309,7 @@ class Mission
 			{
 			};
 		};
-		class Item14
+		class Item11
 		{
 			position[]={9917.0557,242.80116,19379.838};
 			a=222;
@@ -4367,7 +4325,7 @@ class Mission
 			{
 			};
 		};
-		class Item15
+		class Item12
 		{
 			position[]={11881.854,63.225498,19884.246};
 			a=333;
@@ -4383,7 +4341,7 @@ class Mission
 			{
 			};
 		};
-		class Item16
+		class Item13
 		{
 			position[]={14154.429,76.883873,21226.922};
 			a=333;
@@ -4399,7 +4357,7 @@ class Mission
 			{
 			};
 		};
-		class Item17
+		class Item14
 		{
 			position[]={4098.3037,7.5803504,14939.38};
 			a=3;
@@ -4415,7 +4373,7 @@ class Mission
 			{
 			};
 		};
-		class Item18
+		class Item15
 		{
 			position[]={4477.4082,14.503321,14864.168};
 			a=5;
@@ -4427,23 +4385,6 @@ class Mission
 			age="UNKNOWN";
 			expCond="this AND IED2_HAS_BEEN_ACTIVATED";
 			expActiv="null = [] spawn {       _nBombs = 10;      for ""_i"" from 0 to _nBombs do {          _bomb = ""Bo_Mk82"" createVehicle (getPos ied2);      };      deleteVehicle ied2;       ""MARKER_POWERPLANT_IED2"" setMarkerType ""Empty"";  };  ";
-			class Effects
-			{
-			};
-		};
-		class Item19
-		{
-			position[]={9503.8496,8.1953869,22093.033};
-			a=500;
-			angle=-137.155;
-			rectangular=1;
-			activationBy="VEHICLE";
-			interruptable=1;
-			age="UNKNOWN";
-			idVehicle=26;
-			text="HINT_SAVEGAMES";
-			name="HINT_SAVEGAMES";
-			expActiv="null = [] execVM ""scripts\hint-savegames.sqf""";
 			class Effects
 			{
 			};
