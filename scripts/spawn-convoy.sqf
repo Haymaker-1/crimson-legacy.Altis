@@ -7,7 +7,6 @@ _headgearArray = ["H_Beret_blk",
                   "H_Shemag_tan",
                   "H_ShemagOpen_khk",
                   "H_ShemagOpen_tan",
-                  "H_TurbanO_blk",
                   "H_Booniehat_indp",
                   "H_Cap_oli",
                   "H_Cap_blk_Raven",
@@ -25,6 +24,9 @@ convoyIfritGMG = createVehicle ["O_MRAP_02_gmg_F",(getMarkerPos "MARKER_SPAWN_CO
 convoyIfritGMG setDir -137.972;
 convoyIfritGMGGroup addVehicle convoyIfritGMG;
 convoyIfritGMG lock true;
+clearItemCargo convoyIfritGMG;
+clearWeaponCargo convoyIfritGMG;
+clearMagazineCargo convoyIfritGMG;
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_SPAWN_CONVOY_0"),
                             convoyIfritGMGGroup,
@@ -60,6 +62,9 @@ convoyIfritHMG = createVehicle ["O_MRAP_02_hmg_F",(getMarkerPos "MARKER_SPAWN_CO
 convoyIfritHMG setDir -137.972;
 convoyIfritHMGGroup addVehicle convoyIfritHMG;
 convoyIfritHMG lock true;
+clearItemCargo convoyIfritHMG;
+clearWeaponCargo convoyIfritHMG;
+clearMagazineCargo convoyIfritHMG;
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_SPAWN_CONVOY_1"),
                             convoyIfritHMGGroup,
@@ -95,6 +100,10 @@ convoyZamak = createVehicle ["O_Truck_02_covered_F",(getMarkerPos "MARKER_SPAWN_
 convoyZamak setDir -137.972;
 convoyZamakGroup addVehicle convoyZamak;
 convoyZamak lock true;
+clearItemCargo convoyZamak;
+clearWeaponCargo convoyZamak;
+clearMagazineCargo convoyZamak;
+
 
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_SPAWN_CONVOY_2"),
                             convoyZamakGroup,
