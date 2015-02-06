@@ -185,6 +185,8 @@ if (alive casplane AND (fuel casplane > _fuelThreshold)) then {
 deleteVehicle TRIGGER_CALL_CASPLANE;
 5 setRadioMsg "NULL";
 
+deleteVehicle "MARKER_CASPLANE_ZONE";
+
 
 
 
