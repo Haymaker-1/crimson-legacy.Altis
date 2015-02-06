@@ -34,6 +34,9 @@ while {SHOW_MEN_KAVALA} do {
         };
 
     } forEach _men;
+    
+    _nEast = east countSide _men;
+    hintSilent format ["(DEBUG) %1: _nEast = %2",time, _nEast];
 
     sleep 10;    
 };
