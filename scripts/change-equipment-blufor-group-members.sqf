@@ -1,6 +1,18 @@
 
 
 _group = _this select 0;
+_iMember = _this select 1;
+
+_selectedUnits = nil;
+
+if (isnil "_iMember") then {
+    _selectedUnits = units _group;
+}
+else {
+   _selectedUnits = [(units _group) select _iMember];
+};
+
+
 
 _arifle = nil;
 _arifleGL = nil;
@@ -274,4 +286,4 @@ _headGearArray =  ["H_Shemag_khk",
     
     _x selectWeapon (primaryWeapon _x);
     
-} forEach units _group;
+} forEach _selectedUnits;
