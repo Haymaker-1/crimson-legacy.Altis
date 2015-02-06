@@ -149,6 +149,12 @@ gunboatGroup setGroupId ["Noah Three","GroupColor4"];
 "B_crew_F" createUnit [_pos,gunboatGroup,"this moveInGunner THE_GUNBOAT; this allowDamage false;"];
 "B_crew_F" createUnit [_pos,gunboatGroup,"this moveInDriver THE_GUNBOAT; this allowDamage false;"];
 
+{
+    _x removeWeapon "NVGoggles_OPFOR";
+    _x removePrimaryWeaponItem "optic_ACO_grn";
+} forEach units gunboatGroup;
+
+
 
 TRIGGER_ADDACTION_CALL_BOAT = createTrigger["EmptyDetector",getMarkerPos "MARKER_EGRESS_ALPHA"];
 TRIGGER_ADDACTION_CALL_BOAT setTriggerArea[1000,1000,0,false];
