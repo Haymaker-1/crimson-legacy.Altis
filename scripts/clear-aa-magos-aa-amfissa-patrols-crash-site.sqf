@@ -497,10 +497,31 @@ N_STICKS_DYNAMITE = 2;
 _box = createVehicle ["Box_NATO_Ammo_F", getMarkerPos "MARKER_SHED_AGIOS",[],6,"NONE"]; 
 _box setDir random 360;
 _box addMagazineCargo ["DemoCharge_Remote_Mag",N_STICKS_DYNAMITE];
-_box addWeaponCargo ["arifle_TRG21_F",2];
-_box addMagazineCargo ["30Rnd_556x45_Stanag_Tracer_Green",19];
-_box addItemCargo ["muzzle_snds_M",4];
-_box addItemCargo ["optic_ACO_grn",4];
+
+_weapon = [[["vector",0.25],["scorpion",0.50],["tavor",0.25]]] call HAYMAKER_fnc_selectWeightedRandom;
+switch (_weapon) do {
+    case "vector" : {
+        _box addWeaponCargo ["SMG_01_F",1]; 
+        _box addMagazineCargo ["30Rnd_45ACP_Mag_SMG_01_tracer_green",8];
+        _box addMagazineCargo ["30Rnd_45ACP_Mag_SMG_01",8]; 
+        _box addItemCargo ["muzzle_snds_acp",1]; 
+    };
+    case "scorpion": {
+        _box addWeaponCargo ["SMG_02_F",1]; 
+        _box addMagazineCargo ["30Rnd_9x21_Mag",12]; 
+        _box addItemCargo ["muzzle_snds_L",1];
+    };
+    case "tavor": {
+        _box addWeaponCargo ["arifle_TRG21_F",2];
+        _box addMagazineCargo ["30Rnd_556x45_Stanag_Tracer_Green",19];
+        _box addItemCargo ["muzzle_snds_M",4];
+        _box addItemCargo ["optic_ACO_grn",4];
+    };
+    default { 
+        player globalChat "error: no switch case."; 
+    };
+};
+
 _box addItemCargo ["acc_flashlight",2];
 
 sleep 5;
