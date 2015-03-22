@@ -2,6 +2,14 @@ TASK_LOAD_FUEL setTaskState "Succeeded";
 ["TaskSucceeded", ["","Refuel"]] call BIS_fnc_showNotification; 
 sleep (10+random 10); 
 
+_trig = createTrigger["EmptyDetector",getMarkerPos "MARKER_KRYA_NERA_HELIPAD"];
+_trig setTriggerArea[2500,2500,0,false];
+_trig triggerAttachVehicle [player];
+_trig setTriggerActivation["VEHICLE","PRESENT",false];
+_trig setTriggerStatements["this AND TASK_PICK_UP_RADIOS_HAS_BEEN_ASSIGNED AND ((getPos thehelicopter) distance (getMarkerPos 'MARKER_KRYA_NERA_HELIPAD') < 2500)","null = [] execVM 'scripts\radio-conversation-when-returning-from-athira.sqf';",""]; 
+
+
+
 TASK_PICK_UP_RADIOS =  player createSimpleTask ["TASKID_PICK_UP_RADIOS"];          
 TASK_PICK_UP_RADIOS setSimpleTaskDescription ["Pick up the radios at OP Krya Nera.","Pick up radios","Pick up radios"];
 TASK_PICK_UP_RADIOS setSimpleTaskDestination (getMarkerPos "MARKER_KRYA_NERA_HELIPAD");           
