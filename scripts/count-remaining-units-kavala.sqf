@@ -132,9 +132,6 @@ _iUnitCaptured = 0;
     
     if (_forEachIndex == ((count _menNearMotorPool) - 1)) then {
         _everybodySurrendered = true;
-        
-        player globalChat format ["%1 units surrendered",_iUnitCaptured];
-        
     };
     
 } forEach _menNearMotorPool;
