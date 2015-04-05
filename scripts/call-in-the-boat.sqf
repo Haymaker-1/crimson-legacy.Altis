@@ -55,7 +55,6 @@ _wp = _group addWaypoint [_pos,1];
 
 
 waitUntil {
-    sleep 5;
     if (pilot in crew THE_GUNBOAT) exitWith {pilot disableAI "ANIM"; true};
     false
 };
