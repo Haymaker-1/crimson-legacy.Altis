@@ -108,6 +108,12 @@ waitUntil {
 
 player removeSimpleTask TASK_DELIVER_RADIOS; 
 
+_trg = createTrigger["EmptyDetector",getMarkerPos "MARKER_NABISCO_HELIPAD"]; 
+_trg setTriggerArea[10,10,_dir,true];
+_trg triggerAttachVehicle [player];
+_trg setTriggerActivation["VEHICLE","PRESENT",false];
+_trg setTriggerStatements["this AND TASK_WAIT_AT_NABISCO_HAS_BEEN_ASSIGNED AND (((getPos thehelicopter) distance (getMarkerPos 'MARKER_NABISCO_HELIPAD')) < 10) AND ((getPos thehelicopter select 2) <0.05) ", "TASK_WAIT_AT_NABISCO setTaskState 'Succeeded'; ['TaskSucceeded', ['','Wait at Nabisco']] call BIS_fnc_showNotification;", ""]; 
+
 TASK_WAIT_AT_NABISCO = player createSimpleTask ["TASKID_WAIT_AT_NABISCO"];
 TASK_WAIT_AT_NABISCO setSimpleTaskDestination (getMarkerPos "MARKER_NABISCO_HELIPAD");
 TASK_WAIT_AT_NABISCO setSimpleTaskDescription ["We just got news that one of our planes went down. The CO ordered me to stand by at Nabisco until they have more information about the pilot's whereabouts.","Wait at Nabisco","Wait at Nabisco"];
