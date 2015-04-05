@@ -3,11 +3,12 @@ author = "Haymaker-1";
 OnloadName = "CRIMSON LEGACY";
 OnLoadMission = "<t size='0.75'>Help the Resistance gain the upper hand in their fight against CSAT.</t>"
 loadScreen = "images\mission-wait-08.paa"; // Preview picture
-OnLoadIntroTime = True;
-OnLoadMissionTime = True;
+overviewPicture = "images\mission-wait-08.paa"; // mission onSelect picture
 
-briefing = 1;
+briefing = 0;
 debriefing = 1;
+
+enableItemsDropping  = 0;
 
 class Header
 {
