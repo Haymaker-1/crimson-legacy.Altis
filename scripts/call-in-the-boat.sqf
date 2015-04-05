@@ -56,13 +56,11 @@ _wp = _group addWaypoint [_pos,1];
 
 waitUntil {
     sleep 5;
-    if (pilot in crew THE_GUNBOAT) exitWith {true};
+    if (pilot in crew THE_GUNBOAT) exitWith {pilot disableAI "ANIM"; true};
     false
 };
 
 pilot disableAI "MOVE";
-pilot disableAI "ANIM";
-
 pilot allowDamage false;
 
 null = [] execVM "scripts\translate-and-rotate-gunboat.sqf";
