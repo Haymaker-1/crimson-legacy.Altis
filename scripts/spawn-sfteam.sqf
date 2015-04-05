@@ -2,15 +2,6 @@
 _group = createGroup WEST;
 _nUnitsSF = 4;
 
-sfTeamProb = [
-     [[0,"B_Soldier_M_F",     "marksman"],    0.15],
-     [[1,"B_soldier_repair_F","engineer"],    0.15],
-     [[2,"B_medic_F",         "medic"],       0.15],
-     [[3,"B_soldier_AR_F",    "autorifleman"],0.15],
-     [[4,"B_Soldier_F",       "rifleman"],    0.25],
-     [[5,"B_Soldier_GL_F",    "grenadier"],   0.15]
-    ];
-
 for "_iUnitSF" from 0 to (_nUnitsSF - 1) do {
 
     _fighterType = nil;
@@ -20,13 +11,13 @@ for "_iUnitSF" from 0 to (_nUnitsSF - 1) do {
     else {
 
         // FIXME for some reason the call to selectWeightedRandom only works
-        // as intended when the scope of the input variable 'sfTeamProb' is global
+        // as intended when the scope of the input variable 'TEAM_PROB' is global
         
-        _tmp = [sfTeamProb] call HAYMAKER_fnc_selectWeightedRandom;
+        _tmp = [TEAM_PROB] call HAYMAKER_fnc_selectWeightedRandom;
 
         _fighterTypeIdx = _tmp select 0;    
         _fighterType = _tmp select 1;
-        sfTeamProb set [_fighterTypeIdx,[_tmp,0.00]];    
+        TEAM_PROB set [_fighterTypeIdx,[_tmp,0.00]];    
         
     };
 
@@ -56,8 +47,8 @@ sf2 = units _group select 2;
 sf3 = units _group select 3;
 
 
-// destroy global var sfTeamProb
-sfTeamProb = nil;
+// destroy global var TEAM_PROB
+TEAM_PROB = nil;
 
 
 

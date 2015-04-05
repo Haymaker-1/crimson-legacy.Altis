@@ -2,6 +2,8 @@
 titleText ["", "BLACK FADED", 0];
 0 fadeSound 0;
 
+
+
 // WEST and GUER are friends
 WEST setFriend [RESISTANCE, 1.0];
 RESISTANCE setFriend [WEST, 1.0];
@@ -15,6 +17,16 @@ RESISTANCE setFriend [EAST, 0.0];
 EAST setFriend [RESISTANCE, 0.0];
 
 deactivateKey "missionCompletedKey";
+
+
+TEAM_PROB = [
+     [[0,"B_Soldier_M_F",     "marksman"],    0.15],
+     [[1,"B_soldier_repair_F","engineer"],    0.15],
+     [[2,"B_medic_F",         "medic"],       0.15],
+     [[3,"B_soldier_AR_F",    "autorifleman"],0.15],
+     [[4,"B_Soldier_F",       "rifleman"],    0.25],
+     [[5,"B_Soldier_GL_F",    "grenadier"],   0.15]
+    ];
 
 
 

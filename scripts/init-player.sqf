@@ -8,60 +8,43 @@ _spawningComplete = [] spawn {
         false
     }; 
     
-    if (false) then {
+    if (true) then {
 
-        unit1 = player;
-        
         waitUntil {
             sleep 0.5;
-            if (!isNil "sfTeamProb") exitWith {true};
+            if (!isNil "TEAM_PROB") exitWith {true};
             false
         };
     
-        _tmp = [sfTeamProb] call HAYMAKER_fnc_selectWeightedRandom;
+        _tmp = [TEAM_PROB] call HAYMAKER_fnc_selectWeightedRandom;
         
         _fighterTypeIdx = _tmp select 0;
         _fighterType = _tmp select 1;
-        sfTeamProb set [_fighterTypeIdx,[_tmp,0.00]];
-            
+        TEAM_PROB set [_fighterTypeIdx,[_tmp,0.00]];
+        
+        CHARACTER_POOL_GROUP = group player;
+        
+        selectPlayer (units CHARACTER_POOL_GROUP select _fighterTypeIdx);
+        
         _grp = createGroup west;
-        _fighterType createUnit [getPos unit1, _grp, "unit2 = this;"];
-        selectPlayer unit2;
+        _grp setGroupId ["Delta One","GroupColor4"];
         
-        // FIXME triggerAttachVehicle does not work after this
+        [player] joinSilent _grp;
+        player setName profileName;
+        _grp selectLeader player;
+        player setRank "LIEUTENANT";
         
-        unit2 setName (name unit1);
-        (group unit2) setGroupId ["Delta One","GroupColor4"];
+        null = [_grp] execVM "scripts\change-equipment-blufor-group-members.sqf";
         
-        null = [group unit2] execVM "scripts\change-equipment-blufor-group-members.sqf";
+        _pos = getPos (units CHARACTER_POOL_GROUP select 0);
         
         {
-            _char = _x select 0;
-            if (_char == unit1) then {
-                _pitch = _x select 1;
-                VOICE_PITCH set [_forEachIndex,[unit2,_pitch]];
-            };
-        } forEach VOICE_PITCH;
+            removeSwitchableUnit _x;
+            deleteVehicle _x;
+        } forEach (units CHARACTER_POOL_GROUP);
 
-        {
-            _char = _x select 0;
-           if (_char == unit1) then {
-                _volume = _x select 1;
-                VOICE_VOLUME set [_forEachIndex,[unit2,_volume]];
-            };
-        } forEach VOICE_VOLUME;
-
-        [unit1] joinSilent grpNull;
-        deleteVehicle unit1;
+        player setPos _pos;
         
-        waitUntil {
-            sleep 0.5;
-            if (isPlayer unit2) exitWith {true};
-            false
-        };
-
-        unit1 = nil;
-        unit2 = nil;
     }
     else {
         null = [group player] execVM "scripts\change-equipment-blufor-group-members.sqf";
@@ -92,8 +75,8 @@ null = [] spawn {
     
     _trig = createTrigger["EmptyDetector",getPos THE_CO];
     _trig setTriggerArea[2,2,0,false];
-    _trig triggerAttachVehicle [player];
     _trig setTriggerActivation["VEHICLE","PRESENT",false];
+    _trig triggerAttachVehicle [player];
     _trig setTriggerStatements["this","null = [] execVM 'scripts\conversation-with-the-co.sqf';",""]; 
     
     TASK_REPORT_IN_AT_KRYA_NERA = player createSimpleTask ["TASKID_REPORT_IN_AT_KRYA_NERA"];
