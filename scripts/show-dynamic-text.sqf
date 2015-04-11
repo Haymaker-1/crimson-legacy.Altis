@@ -19,38 +19,48 @@ _monthStr = switch (_iMonth) do {
     case 12: {"December"};
 };
 
+//_structuredText = parseText format 
+//        [
+//            ("<t align = 'right'>%2 %3, %1  %4:%5</t><br/>"+
+//             "<t align='center' size='1.5'>&quot;%6&quot;</t><br/>"),
+//            date select 0,  // year
+//            _monthStr,      // month
+//            date select 2,  // day
+//            date select 3,  // hour
+//            date select 4,  // minute
+//            _titleText
+//        ];
+
 _structuredText = parseText format 
         [
-            ("<t align = 'right'>%2 %3, %1  %4:%5</t><br/>"+
-             "<t align='center' size='1.5'>&quot;%6&quot;</t><br/>"),
-            date select 0,  // year
-            _monthStr,      // month
-            date select 2,  // day
-            date select 3,  // hour
-            date select 4,  // minute
+            ("<t align='center' size='1.5' color='ffffff' shadow='0'>&quot;%1&quot;</t>"),
             _titleText
         ];
 
-_useMissionTextArea = true;
+_width = 0.5;
+_height = 0.1;
+        
+        
+_useMissionTextArea = false;
 _showAt = null;
 if (_useMissionTextArea) then {
     _showAt = true;
 } 
 else {
     _showAt = [
-                safeZoneX + safeZoneW - 0.35 - 0.025,
-                safeZoneY + safeZoneH - 0.25 - 0.05,
-                0.35,  // width
-                0.15   // height
+                0.75,//safeZoneX + safeZoneW * 0.50 - _height * 0.50,
+                0.25,//safeZoneY + safeZoneH * 0.75 - _width  * 0.50,
+                _width,
+                _height
                ];
 };
 
 _nCols = 9;
-_nRows = 4;
+_nRows = 7;
 
 _showDuration = 7.0;
-_fadeDuration = 0.5;
-_transparency = 0.1;
+_fadeDuration = 0.4;
+_transparency = 0.0;
 
 
 null = [
