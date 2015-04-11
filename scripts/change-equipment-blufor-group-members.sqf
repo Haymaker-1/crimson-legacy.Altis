@@ -154,14 +154,14 @@ _headGearArray =  ["H_Shemag_khk",
    
     if (_fighterType == "B_soldier_AR_F") then {
     
-        _x addMagazine "150Rnd_762x51_Box";
+        _x addMagazine "150Rnd_762x54_Box_Tracer";
         _x addWeapon "LMG_Zafir_F";
         _x addBackpack "B_AssaultPack_rgr";
-        _x addMagazine "150Rnd_762x51_Box";
-        _x addMagazine "150Rnd_762x51_Box";
-        _x addMagazine "150Rnd_762x51_Box";
-        _x addMagazine "150Rnd_762x51_Box";
-        _x addMagazine "150Rnd_762x51_Box";
+        _x addMagazine "150Rnd_762x54_Box_Tracer";
+        _x addMagazine "150Rnd_762x54_Box_Tracer";
+        _x addMagazine "150Rnd_762x54_Box_Tracer";
+        _x addMagazine "150Rnd_762x54_Box_Tracer";
+        _x addMagazine "150Rnd_762x54_Box_Tracer";
         _x addPrimaryWeaponItem "optic_ACO_grn";
         _x addHeadGear (_headGearArray call BIS_fnc_selectRandom);
         
