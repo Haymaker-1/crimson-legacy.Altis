@@ -8,6 +8,7 @@ cutText ["","BLACK OUT",5,false];
 player allowDamage false;
 sleep 5;
 skipTime (10.0+random 1.0);
+player setFatigue 0;
 
 
 _perimeter = ["MARKER_PERIMETER_SPAWN_AREA_KDX"] call HAYMAKER_fnc_constructPerimeter;
