@@ -1,5 +1,19 @@
 pilotGroup = createGroup west;
-"B_Pilot_F" createUnit [(getMarkerPos "MARKER_SPAWN_PILOT"),pilotGroup,"pilot = this;this disableAI 'MOVE';this disableAI 'ANIM';_pos = getPos this; _pos set [2,2.0]; this setPos _pos;this setDir 205;this playAction 'SitDown'; this setCaptive true; removeBackpack this;removeAllWeapons this; removeHeadgear this; {this unassignItem _x; this removeItem _x;} forEach assignedItems this;",0.5,"LIEUTENANT"];  
+"B_Pilot_F" createUnit [(getMarkerPos "MARKER_SPAWN_PILOT"),pilotGroup,"
+pilot = this;
+this disableAI 'MOVE';
+this disableAI 'ANIM';
+_pos = getPos this;
+_pos set [2,2.0];
+this setPos _pos;
+this setDir 205;
+this playAction 'SitDown';
+this setCaptive true;
+removeBackpack this;
+removeAllWeapons this;
+removeHeadgear this;
+{this unassignItem _x; this removeItem _x;} forEach assignedItems this;
+",0.5,"LIEUTENANT"];  
 
 
 

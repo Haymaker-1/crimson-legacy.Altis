@@ -20,7 +20,9 @@ waitUntil {
 _spawningComplete = nil;
 
 _skiptimeValue = (15-daytime+random 0.25);
-(_skiptimeValue * 3600) setFog 0;
+if (WEATHER_IS_CONTROLLED) then {
+    (_skiptimeValue * 3600) setFog 0;
+};
 skipTime _skiptimeValue;
 
 SKIP_CLEANING_HOUSE = [CRASH_SITE_IS_CLEAR,AA_MAGOS_IS_CLEAR,AA_AMFISSA_IS_CLEAR] isEqualTo [true,true,true];
@@ -727,9 +729,11 @@ waitUntil {
 
 _nSeconds = (19.5-daytime)*3600;
 if (_nSeconds>600) then {
-    _nSeconds setFog [0.5,0.05,4];
-    _nSeconds setRain 0;
-    _nSeconds setOvercast 0.75;
+    if (WEATHER_IS_CONTROLLED) then {
+        _nSeconds setFog [0.5,0.05,4];
+        _nSeconds setRain 0;
+        _nSeconds setOvercast 0.75;
+    };
 };
 
 if (SHOW_CHAPTER_TITLES) then {

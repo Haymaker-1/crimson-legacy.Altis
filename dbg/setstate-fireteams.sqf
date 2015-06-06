@@ -5,7 +5,15 @@ pilotGroup = createGroup west;
 pilot = "B_Pilot_F" createUnit [(getMarkerPos "MARKER_SPAWN_PILOT"),pilotGroup,"this disableAI 'MOVE';this disableAI 'ANIM';_pos = getPos this; _pos set [2,2.0]; this setPos _pos;this setDir 205;this playAction 'SitDown'; this setCaptive true; removeBackpack this;removeAllWeapons this; removeHeadgear this",0.5,"LIEUTENANT"];  
 
 _otherGroup = createGroup east;
-_soldier = "O_Soldier_TL_F" createUnit [(getMarkerPos "MARKER_SPAWN_PILOT"),_otherGroup,"_pos = getPos this; _pos set [2,2.0]; this setPos _pos; this removePrimaryWeaponItem 'optic_ACO_grn';",0.5,"CORPORAL"];
+_soldier = "O_Soldier_TL_F" createUnit [(getMarkerPos "MARKER_SPAWN_PILOT"),_otherGroup,"
+_pos = getPos this;
+_pos set [2,2.0];
+this setPos _pos;
+this removePrimaryWeaponItem 'optic_ACO_grn';
+removeHeadGear this;
+this addHeadGear 'H_Beret_blk';
+",0.5,"CORPORAL"];
+
 
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam1.sqf";
