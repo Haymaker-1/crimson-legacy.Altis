@@ -74,9 +74,9 @@ _perfectScore = 0;
             _grp = group ((crew _veh) select 0);
             _dest = [_perimeter] call HAYMAKER_fnc_generateRandomPositionInPolygon;
             _wp = _grp addWaypoint [_dest, 20];
-            _wp setWaypointSpeed "LIMITED";
-            _wp setWaypointBehaviour "CARELESS";
-            _wp setWaypointCompletionRadius 100;
+            [_grp,1] setWaypointSpeed "LIMITED";
+            [_grp,1] setWaypointBehaviour "CARELESS";
+            [_grp,1] setWaypointCompletionRadius 100;
         };
     };
 
@@ -86,7 +86,7 @@ _perfectScore = 0;
     _x allowDamage true;
 } forEach _vehiclesMotorpool;
 
-MOTOR_POOL_SCORE = _actualScore/_perfectScore;
+MOTOR_POOL_SCORE = _actualScore / _perfectScore;
 
 sleep 10;
 if (MOTOR_POOL_SCORE == 0) then {
@@ -109,7 +109,11 @@ waitUntil {
 };
 
 _isReady = [kostas, "lrxfuuzi1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil{sleep 1; scriptDone _isReady};
+waitUntil{
+    sleep 1;
+    if (scriptDone _isReady) exitWith {true};
+    false
+};
 
 _isReady = [player, "pobbanfx2"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -197,7 +201,7 @@ waitUntil {
     false
 };
 
-_isReady = [THE_CO, sawfkwnw1] execVM "scripts\unitradiospeak.sqf";
+_isReady = [THE_CO, "sawfkwnw1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
     sleep 1;
     if (scriptDone _isReady) exitWith {true};
@@ -213,7 +217,7 @@ waitUntil {
     false
 };
 
-_isReady = [THE_CO, sawfkwnw2] execVM "scripts\unitradiospeak.sqf";
+_isReady = [THE_CO, "sawfkwnw2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
     sleep 1;
     if (scriptDone _isReady) exitWith {true};
@@ -328,12 +332,17 @@ _dd = _theDate select 2;
 setDate [_yyyy, _mm, _dd, 0, 1];
 
 _tod = 4.75;
-((24 + _tod)*3600) setFog [0.6,0.1,5.0];
-((24 + _tod)*3600) setRain 0.0;
-((24 + _tod)*3600) setOvercast 0.4;
-skiptime (24 + _tod + random 0.25);
-(2*3600) setFog [0.02, 0.10, 2.3];
+if (WEATHER_IS_CONTROLLED) then {    
+    ((24 + _tod)*3600) setFog [0.6,0.1,5.0];
+    ((24 + _tod)*3600) setRain 0.0;
+    ((24 + _tod)*3600) setOvercast 0.4;
+};
 
+skipTime (24 + _tod + random 0.25);
+
+if (WEATHER_IS_CONTROLLED) then {
+    (2*3600) setFog [0.02, 0.10, 2.3];
+};
  
 _radius = 50;
 {
