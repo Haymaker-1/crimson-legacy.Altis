@@ -86,17 +86,11 @@ class Mission
 	randomSeed=11888084;
 	class Intel
 	{
-		startWeather=0.099999994;
-		startWind=0.25;
-		startWindDir=35;
-		startGust=0.52999997;
-		forecastWeather=0.099999994;
+		startWeather=0.25;
+		startWind=0;
+		forecastWeather=0.28999999;
 		forecastWind=0;
 		forecastWaves=0;
-		rainForced=1;
-		lightningsForced=1;
-		wavesForced=1;
-		windForced=1;
 		year=2035;
 		month=4;
 		day=24;
@@ -3262,7 +3256,7 @@ class Mission
 		};
 		class Item229
 		{
-			position[]={3422.9683,13.77696,14065.636};
+			position[]={3399.3311,4.7035723,14046.075};
 			name="MARKER_PERIMETER_FKS_KAVALA_9";
 			type="Empty";
 		};
@@ -3274,19 +3268,19 @@ class Mission
 		};
 		class Item231
 		{
-			position[]={3536.6023,2.9673963,13438.219};
+			position[]={3500.3862,1.3438337,13452.239};
 			name="MARKER_PERIMETER_FKS_KAVALA_11";
 			type="Empty";
 		};
 		class Item232
 		{
-			position[]={3319.769,4.052104,13163.463};
+			position[]={3287.0576,0,13207.856};
 			name="MARKER_PERIMETER_FKS_KAVALA_12";
 			type="Empty";
 		};
 		class Item233
 		{
-			position[]={2976.6968,18.627146,13300.098};
+			position[]={2972.0234,-0.02341078,13339.816};
 			name="MARKER_PERIMETER_FKS_KAVALA_13";
 			type="Empty";
 		};
