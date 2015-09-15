@@ -98,6 +98,7 @@ _headGearArray =  ["H_Shemag_khk",
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addWeapon _arifle;    
         _x addPrimaryWeaponItem "optic_ACO_grn";
+        _x addPrimaryWeaponItem "acc_flashlight";
         _x addWeapon "RangeFinder";
         
         _tmpArray = _headGearArray + ["H_beret_blk","H_beret_grn","H_beret_grn_SF"];
@@ -118,6 +119,7 @@ _headGearArray =  ["H_Shemag_khk",
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addWeapon _arifle;
         _x addPrimaryWeaponItem "optic_ACO_grn";
+        _x addPrimaryWeaponItem "acc_flashlight";
         _x addWeapon "RangeFinder";
         
         _tmpArray = ["H_beret_blk","H_beret_grn","H_beret_grn_SF"];
@@ -142,6 +144,7 @@ _headGearArray =  ["H_Shemag_khk",
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addWeapon _arifleGL;    
         _x addPrimaryWeaponItem "optic_ACO_grn";
+        _x addPrimaryWeaponItem "acc_flashlight";
         _x addMagazine "1Rnd_HE_Grenade_shell";
         _x addMagazine "1Rnd_HE_Grenade_shell";
         _x addMagazine "1Rnd_HE_Grenade_shell";
@@ -163,6 +166,7 @@ _headGearArray =  ["H_Shemag_khk",
         _x addMagazine "150Rnd_762x54_Box_Tracer";
         _x addMagazine "150Rnd_762x54_Box_Tracer";
         _x addPrimaryWeaponItem "optic_ACO_grn";
+        _x addPrimaryWeaponItem "acc_flashlight";
         _x addHeadGear (_headGearArray call BIS_fnc_selectRandom);
         
     };
@@ -181,6 +185,7 @@ _headGearArray =  ["H_Shemag_khk",
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addPrimaryWeaponItem "optic_ACO_grn";
+        _x addPrimaryWeaponItem "acc_flashlight";
         _x addBackpack "B_AssaultPack_rgr_Medic";
         _x addHeadGear (_headGearArray call BIS_fnc_selectRandom);
         
@@ -200,6 +205,7 @@ _headGearArray =  ["H_Shemag_khk",
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addPrimaryWeaponItem "optic_ACO_grn";
+        _x addPrimaryWeaponItem "acc_flashlight";
         _x addHeadGear (_headGearArray call BIS_fnc_selectRandom);
 
     };    
@@ -217,6 +223,7 @@ _headGearArray =  ["H_Shemag_khk",
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addPrimaryWeaponItem "optic_ACO_grn";
+        _x addPrimaryWeaponItem "acc_flashlight";
         _x addHeadGear (_headGearArray call BIS_fnc_selectRandom);
         _x addMagazine "NLAW_F";
         _x addWeapon "launch_NLAW_F";
@@ -236,6 +243,7 @@ _headGearArray =  ["H_Shemag_khk",
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addPrimaryWeaponItem "optic_ACO_grn";
+        _x addPrimaryWeaponItem "acc_flashlight";
         _x addHeadGear (_headGearArray call BIS_fnc_selectRandom);
         _x addBackpack "B_AssaultPack_rgr";
         (unitBackpack _x) addMagazineCargo ["30Rnd_556x45_Stanag",7];
@@ -255,6 +263,7 @@ _headGearArray =  ["H_Shemag_khk",
         _x addWeapon "srifle_EBR_SOS_F";
         _x addItem "optic_ACO_grn";
         _x addWeapon "RangeFinder";
+        _x addPrimaryWeaponItem "acc_flashlight";
         _x addHeadGear (_headGearArray call BIS_fnc_selectRandom);
 
     };
@@ -273,17 +282,14 @@ _headGearArray =  ["H_Shemag_khk",
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addMagazine "30Rnd_556x45_Stanag_Tracer_green";
         _x addPrimaryWeaponItem "optic_ACO_grn";
+        _x addPrimaryWeaponItem "acc_flashlight";
         _x addBackpack "B_AssaultPack_rgr_Repair";
         _x addHeadGear (_headGearArray call BIS_fnc_selectRandom);
     
     };
 
-
-
-
-   
-   
-    
     _x selectWeapon (primaryWeapon _x);
     
 } forEach _selectedUnits;
+
+
