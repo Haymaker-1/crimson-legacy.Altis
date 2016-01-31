@@ -1,36 +1,46 @@
 
 
+titleText ["", "BLACK FADED", 0];
+0 fadeSound 0;
+player globalChat format ["DEBUG (%1): sound off", time];
+
+
 null = [] spawn{
     setDate [2035,1 + round(random 11),1 + round(random 27),18,35];
-    // respawn all chemlights that were placed using the editor
-    _pos = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
-    _approximateMapSize = 50000;
-    _greenLights = nearestObjects [_pos,["chemlight_green"],_approximateMapSize];
-    {
-        "chemlight_green" createVehicle (getPos _x);
-    } forEach _greenLights;
+    // // respawn all chemlights that were placed using the editor
+    // _pos = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
+    // _approximateMapSize = 50000;
+    // _greenLights = nearestObjects [_pos,["chemlight_green"],_approximateMapSize];
+    // {
+        // "chemlight_green" createVehicle (getPos _x);
+    // } forEach _greenLights;
 
-    _yellowLights = nearestObjects [_pos,["chemlight_yellow"],_approximateMapSize];
-    {
-        "chemlight_yellow" createVehicle (getPos _x);
-    } forEach _yellowLights;
-    
-    _redLights = nearestObjects [_pos,["chemlight_red"],_approximateMapSize];
-    {
-        "chemlight_red" createVehicle (getPos _x);
-    } forEach _redLights;
+    // _yellowLights = nearestObjects [_pos,["chemlight_yellow"],_approximateMapSize];
+    // {
+        // "chemlight_yellow" createVehicle (getPos _x);
+    // } forEach _yellowLights;
 
-    _blueLights = nearestObjects [_pos,["chemlight_blue"],_approximateMapSize];
-    {
-        "chemlight_blue" createVehicle (getPos _x);
-    } forEach _blueLights;
+    // _redLights = nearestObjects [_pos,["chemlight_red"],_approximateMapSize];
+    // {
+        // "chemlight_red" createVehicle (getPos _x);
+    // } forEach _redLights;
+
+    // _blueLights = nearestObjects [_pos,["chemlight_blue"],_approximateMapSize];
+    // {
+        // "chemlight_blue" createVehicle (getPos _x);
+    // } forEach _blueLights;
     
 };
 
 
-titleText ["", "BLACK FADED", 0];
-0 fadeSound 0;
 
+_spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera.sqf";
+waitUntil { 
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
+_spawningComplete = nil;
 
 
 // WEST and GUER are friends
@@ -161,13 +171,7 @@ null = [] execVM "scripts\endmission-helicopter-rebelcamp.sqf";
 null = [] execVM "scripts\spawn-helicopter.sqf";
 null = [] execVM "scripts\spawn-helipad-nabisco.sqf";
 
-_spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera.sqf";
-waitUntil { 
-    sleep 0.5;
-    if (scriptDone _spawningComplete) exitWith {true};
-    false
-};
-_spawningComplete = nil;
+
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-airbase.sqf";
 waitUntil { 
