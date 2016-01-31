@@ -63,10 +63,10 @@ waitUntil {
 
 
 
-5 fadeSound 1;
 null = [] spawn {
     sleep 3;
     titleText ["", "BLACK IN", 5];
+    5 fadeSound 1;
 }; 
 
 null = [] spawn {
