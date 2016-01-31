@@ -1,6 +1,11 @@
+
+THE_FUEL_TRUCK setFuelCargo 0.0;
+
 TASK_LOAD_FUEL setTaskState "Succeeded";
 ["TaskSucceeded", ["","Refuel"]] call BIS_fnc_showNotification; 
 sleep (10+random 10); 
+
+
 
 _trig = createTrigger["EmptyDetector",getMarkerPos "MARKER_KRYA_NERA_HELIPAD"];
 _trig setTriggerArea[2500,2500,0,false];

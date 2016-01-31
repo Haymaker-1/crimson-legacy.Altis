@@ -4240,20 +4240,8 @@ class Mission
 	};
 	class Sensors
 	{
-		items=15;
+		items=14;
 		class Item0
-		{
-			position[]={14409.995,38.220116,18986.307};
-			interruptable=1;
-			age="UNKNOWN";
-			name="TRIGGER_FUEL_TRUCK_EMPTY";
-			expCond="TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED AND ((getFuelCargo THE_FUEL_TRUCK) < 0.05) AND ((getPos thehelicopter) distance (getPos THE_FUEL_TRUCK) < 20)";
-			expActiv="null = [] execVM ""scripts\got-fuel-from-stavros.sqf""";
-			class Effects
-			{
-			};
-		};
-		class Item1
 		{
 			position[]={9670.4551,3.0915017,22285.424};
 			a=10;
@@ -4268,7 +4256,7 @@ class Mission
 			{
 			};
 		};
-		class Item2
+		class Item1
 		{
 			position[]={9722.6309,2.5488939,22301.826};
 			a=40;
@@ -4282,7 +4270,7 @@ class Mission
 			{
 			};
 		};
-		class Item3
+		class Item2
 		{
 			position[]={3879.8318,16.69248,17531.273};
 			a=1000;
@@ -4300,7 +4288,7 @@ class Mission
 			{
 			};
 		};
-		class Item4
+		class Item3
 		{
 			position[]={5125.7036,40.046494,16272.398};
 			a=1000;
@@ -4316,7 +4304,7 @@ class Mission
 			{
 			};
 		};
-		class Item5
+		class Item4
 		{
 			position[]={12778.798,-185.97,27714.041};
 			a=666;
@@ -4332,7 +4320,7 @@ class Mission
 			{
 			};
 		};
-		class Item6
+		class Item5
 		{
 			position[]={6670.7656,171.09648,17122.734};
 			a=450;
@@ -4349,7 +4337,7 @@ class Mission
 			{
 			};
 		};
-		class Item7
+		class Item6
 		{
 			position[]={4580.2041,261.78827,15371.405};
 			a=250;
@@ -4365,7 +4353,7 @@ class Mission
 			{
 			};
 		};
-		class Item8
+		class Item7
 		{
 			position[]={7524.0449,185.79156,17525.141};
 			a=250;
@@ -4381,7 +4369,7 @@ class Mission
 			{
 			};
 		};
-		class Item9
+		class Item8
 		{
 			position[]={9220.0156,272.66083,19300.607};
 			a=300;
@@ -4397,7 +4385,7 @@ class Mission
 			{
 			};
 		};
-		class Item10
+		class Item9
 		{
 			position[]={9917.0557,242.80116,19379.838};
 			a=222;
@@ -4413,7 +4401,7 @@ class Mission
 			{
 			};
 		};
-		class Item11
+		class Item10
 		{
 			position[]={11881.854,63.225498,19884.246};
 			a=333;
@@ -4429,7 +4417,7 @@ class Mission
 			{
 			};
 		};
-		class Item12
+		class Item11
 		{
 			position[]={14154.429,76.883873,21226.922};
 			a=333;
@@ -4445,7 +4433,7 @@ class Mission
 			{
 			};
 		};
-		class Item13
+		class Item12
 		{
 			position[]={4098.3037,7.5803504,14939.38};
 			a=3;
@@ -4461,7 +4449,7 @@ class Mission
 			{
 			};
 		};
-		class Item14
+		class Item13
 		{
 			position[]={4477.4082,14.503321,14864.168};
 			a=5;
