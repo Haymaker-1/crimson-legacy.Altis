@@ -3,12 +3,12 @@
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
     _nPatrols = round (2 + random 2);
-
-    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do 
-    {
+    
+    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do {
 
         _perimeter = ["MARKER_PERIMETER_KRYA_NERA_KMJ"] call HAYMAKER_fnc_constructPerimeter;
-        _spawnPos = getMarkerPos "MARKER_SPAWN_KMJ";
+        _randindex = floor (random (count _perimeter));
+        _spawnPos = _perimeter select _randindex;
         
         _iRandomPatrol = _i;
 
