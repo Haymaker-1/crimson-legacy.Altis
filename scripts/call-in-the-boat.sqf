@@ -55,18 +55,13 @@ _wp = _group addWaypoint [_pos,1];
 
 
 waitUntil {
-    if (pilot in crew THE_GUNBOAT) exitWith {pilot disableAI "ANIM"; true};
+    if (pilot in crew THE_GUNBOAT) exitWith {pilot joinSilent gunBoatGroup; true};
     false
 };
-
-pilot disableAI "MOVE";
-pilot allowDamage false;
 
 null = [] execVM "scripts\translate-and-rotate-gunboat.sqf";
 
 PILOT_EGRESS_WAS_SUCCESSFUL = true;
-
-[pilot] joinSilent grpNull;
 
 _perimeter = ["MARKER_PERIMETER_SPAWN_GUNBOAT"] call HAYMAKER_fnc_constructPerimeter;
 _pos = [_perimeter] call HAYMAKER_fnc_generateRandomPositionInPolygon;
