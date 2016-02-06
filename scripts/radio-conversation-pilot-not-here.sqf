@@ -63,11 +63,38 @@ sleep (6+random 2);
 player groupChat "Allright, let's pay him a visit. Back to the helicopter!";
 sleep (2+random 2);
 
+
+
+TASK_BACK_TO_HELICOPTER = player createSimpleTask ["Go back to the helicopter"];
+TASK_BACK_TO_HELICOPTER setSimpleTaskDescription ["Go back to the helicopter.","Go back to the helicopter","Go back to the helicopter"];
+TASK_BACK_TO_HELICOPTER setTaskState "Assigned";
+["TaskAssigned", ["","Go back to the helicopter"]] call BIS_fnc_showNotification;
+TASK_BACK_TO_HELICOPTER_HAS_BEEN_ASSIGNED = true;
+player setCurrentTask TASK_BACK_TO_HELICOPTER;
+
+
+
+
 waitUntil {
     sleep 1;
-    if ((crew thehelicopter) isEqualTo (units group player)) exitWith {true};
+    _thecrew = crew thehelicopter;
+    _theunits = units group player;
+    _allAboard = true;
+
+    {
+        if !(_x in _thecrew) then {
+            _allAboard = false;
+        };
+    } forEach _theunits;
+    
+    if (_allAboard) exitWith {true};
     false
 };
+
+["TaskSucceeded", ["","Go back to the helicopter"]] call BIS_fnc_showNotification;
+TASK_BACK_TO_HELICOPTER setTaskState "Succeeded";
+
+sleep 10 + random 2;
 
 
 TASK_MEET_KOSTAS = player createSimpleTask ["Meet Kostas"];
