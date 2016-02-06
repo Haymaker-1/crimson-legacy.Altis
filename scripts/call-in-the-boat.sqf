@@ -12,7 +12,7 @@ waitUntil {
     false
 };
 
-(leader gunBoatGroup) sideChat "This is Noah Three. I read you loud and clear.";
+(leader gunboatGroup) sideChat "This is Noah Three. I read you loud and clear.";
 sleep 5;
 
 _pos1 = getPos player;
@@ -38,7 +38,7 @@ else
 };
 sleep 5;
 
-(leader gunBoatGroup) sideChat "Stand by. We are coming in now. Noah out.";
+(leader gunboatGroup) sideChat "Stand by. We are coming in now. Noah out.";
 sleep 6;
 
 _group = gunboatGroup;
@@ -55,9 +55,18 @@ _wp = _group addWaypoint [_pos,1];
 
 
 waitUntil {
-    if (pilot in crew THE_GUNBOAT) exitWith {pilot joinSilent gunBoatGroup; true};
+    sleep 1.0;
+    if ((pilot distance THE_GUNBOAT) < 8.0) exitWith {true};
     false
 };
+
+[pilot] joinSilent grpNull;
+[pilot] joinSilent gunboatGroup;
+pilot allowDamage false;
+pilot assignAsCargo THE_GUNBOAT;
+[pilot] orderGetIn true;
+
+sleep 10 + random 4;
 
 null = [] execVM "scripts\translate-and-rotate-gunboat.sqf";
 
