@@ -4,7 +4,7 @@
 
 null = [] execVM "scripts\spawn-pilot.sqf";
 _otherGroup = createGroup east;
-"O_Soldier_TL_F" createUnit [(getMarkerPos "MARKER_SPAWN_PILOT"),_otherGroup,"_pos = getPos this; _pos set [2,2.0]; this setPos _pos;this removeWeapon 'NVGoggles_OPFOR';this removePrimaryWeaponItem 'optic_ACO_grn';",0.5,"CORPORAL"];
+"O_Soldier_TL_F" createUnit [(getMarkerPos "MARKER_SPAWN_PILOT"),_otherGroup,"_pos = getPos this; _pos set [2,2.0]; this setPos _pos; removeHeadgear this; this removeWeapon 'NVGoggles_OPFOR';this removePrimaryWeaponItem 'optic_ACO_grn';",0.5,"CORPORAL"];
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam1.sqf";
 waitUntil{
