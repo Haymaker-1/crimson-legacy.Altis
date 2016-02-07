@@ -1771,7 +1771,7 @@ class Mission
 			skill=0.74495852;
 			fuel=0;
 			text="krya_nera_strider_gmg";
-			init="this allowDamage false";
+			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
 		class Item87
 		{
@@ -1784,7 +1784,7 @@ class Mission
 			skill=0.74495852;
 			fuel=0;
 			text="krya_nera_strider_hmg";
-			init="this allowDamage false";
+			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
 		class Item88
 		{
@@ -1797,6 +1797,7 @@ class Mission
 			skill=0.74495852;
 			fuel=0;
 			ammo=0;
+			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
 		class Item89
 		{
@@ -1809,6 +1810,7 @@ class Mission
 			skill=0.74495852;
 			fuel=0;
 			ammo=0;
+			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
 		class Item90
 		{
@@ -1821,6 +1823,7 @@ class Mission
 			skill=0.60000002;
 			fuel=0;
 			ammo=0;
+			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
 		class Item91
 		{
@@ -1833,7 +1836,7 @@ class Mission
 			skill=0.74495852;
 			fuel=0;
 			text="krya_nera_strider";
-			init="this allowDamage false";
+			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
 		class Item92
 		{
