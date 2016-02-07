@@ -16,22 +16,21 @@ RESISTANCE setFriend [WEST, 1.0];
 WEST setFriend [EAST, 0.0];
 EAST setFriend [WEST, 0.0];
 
-// WEST and GUER are enemies
+// EAST and GUER are enemies
 RESISTANCE setFriend [EAST, 0.0];
 EAST setFriend [RESISTANCE, 0.0];
 
 deactivateKey "missionCompletedKey";
 
-
+// engineer disabled for the moment (issue #32)
 TEAM_PROB = [
-     [[0,"B_Soldier_M_F",     "marksman"],    0.15],
-     [[1,"B_soldier_repair_F","engineer"],    0.15],
-     [[2,"B_medic_F",         "medic"],       0.15],
-     [[3,"B_soldier_AR_F",    "autorifleman"],0.15],
-     [[4,"B_Soldier_F",       "rifleman"],    0.25],
-     [[5,"B_Soldier_GL_F",    "grenadier"],   0.15]
+     [[0,"B_Soldier_M_F",     "marksman"],    0.20],
+     [[1,"B_soldier_repair_F","engineer"],    0.00],
+     [[2,"B_medic_F",         "medic"],       0.20],
+     [[3,"B_soldier_AR_F",    "autorifleman"],0.20],
+     [[4,"B_Soldier_F",       "rifleman"],    0.20],
+     [[5,"B_Soldier_GL_F",    "grenadier"],   0.20]
     ];
-
 
 
 null = [] execVM "scripts\setFuelStationsEmpty.sqf";
