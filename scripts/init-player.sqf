@@ -98,7 +98,8 @@ _trig setTriggerStatements["this","null = [] execVM 'scripts\hint-savegames.sqf'
 
 
 
-
+player createDiarySubject ["varAbout","About"];
+player createDiaryRecord ["varAbout",["Version","<br /><br />This mission was built on: {{AUTO_INSERT_BUILD_DATETIME}}"]];
 
 
 
