@@ -365,6 +365,8 @@ null = [_radius,_location] spawn {
 {
     if (alive _x) then {
         _x setPos getMarkerPos "MARKER_CHRISTOS_HOUSE";
+        _x setFatigue 0;
+        _x setUnitPos "AUTO";
     };
 } forEach units group player;
 
@@ -390,6 +392,11 @@ krya_nera_strider allowDamage true;
 krya_nera_strider_gmg allowDamage true; 
 krya_nera_strider_hmg allowDamage true;
 
+krya_nera_strider setFuel 0.05+random 0.1;
+krya_nera_strider_gmg setFuel 0.05+random 0.1;
+krya_nera_strider_hmg setFuel 0.05+random 0.1;
+
+
 _gmgGroup = createGroup west;
 "B_G_Soldier_TL_F" createUnit [ getMarkerPos "MARKER_STRIDER_GMG", _gmgGroup,"this moveInCommander krya_nera_strider_gmg;", 1.0, "sergeant"];
 "B_G_Soldier_lite_F" createUnit [ getMarkerPos "MARKER_STRIDER_GMG", _gmgGroup,"this moveInGunner krya_nera_strider_gmg;", 1.0, "private"];
@@ -404,6 +411,8 @@ _hmgGroup = createGroup west;
 
 _hmgGroup setBehaviour "SAFE";    
 
+
+(group player) setBehaviour "SAFE";
 
 
 {
@@ -581,36 +590,23 @@ waitUntil{
 };
 
 
-TASK_MEET_AT_QUARRY = player createSimpleTask ["TASKID_MEET_AT_QUARRY"];
-TASK_MEET_AT_QUARRY setSimpleTaskDescription ["Lead the convoy of Striders through the hills east of Kavala, and meet up with the rifle squads that are already present at the <marker name='MARKER_STAGING_AREA_QUARRY'>staging area</marker>.","Move to staging area","Move to staging area"];
-TASK_MEET_AT_QUARRY setSimpleTaskDestination (getMarkerPos "MARKER_STAGING_AREA_QUARRY");
-TASK_MEET_AT_QUARRY setTaskState "Assigned";
-["TaskAssigned", ["","Move to staging area"]] call BIS_fnc_showNotification;
-player setCurrentTask TASK_MEET_AT_QUARRY; 
-TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED = true;
+TASK_MEET_STRIDERS = player createSimpleTask ["TASKID_TASK_MEET_STRIDERS"];
+TASK_MEET_STRIDERS setSimpleTaskDescription ["The convoy of Striders is waiting for you in <marker name='MARKER_TOPOLIA'>Topolia</marker>.","Hook up with Striders","Hook up with Striders"];
+TASK_MEET_STRIDERS setSimpleTaskDestination (getMarkerPos "MARKER_TOPOLIA");
+TASK_MEET_STRIDERS setTaskState "Assigned";
+["TaskAssigned", ["","Hook up with Striders"]] call BIS_fnc_showNotification;
+player setCurrentTask TASK_MEET_STRIDERS; 
+TASK_MEET_STRIDERS_HAS_BEEN_ASSIGNED = true;
 
 
-_trig = createTrigger["EmptyDetector",getMarkerPos "MARKER_STAGING_AREA_QUARRY"];
-_trig setTriggerArea[111,111,0,false];
+_trig = createTrigger["EmptyDetector",getMarkerPos "MARKER_TOPOLIA"];
+_trig setTriggerArea[55,55,0,false];
 _trig triggerAttachVehicle [player];
 _trig setTriggerActivation["VEHICLE","PRESENT",false];
-_trig setTriggerStatements["this AND TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED","null = [false] execVM 'scripts\assault-kavala.sqf';",""]; 
+_trig setTriggerStatements["this AND TASK_MEET_STRIDERS_HAS_BEEN_ASSIGNED","null = [] execVM 'scripts\joined-striders-at-topolia.sqf';",""]; 
 
 
 
-
-waitUntil {
-    sleep 1;
-    if (player in crew krya_nera_strider) exitWith {true};
-    false
-};
-
-krya_nera_strider setFuel 0.05+random 0.1;
-krya_nera_strider_gmg setFuel 0.05+random 0.1;
-krya_nera_strider_hmg setFuel 0.05+random 0.1;
-
-units _gmgGroup joinSilent group player;
-units _hmgGroup joinSilent group player;
 
 
 

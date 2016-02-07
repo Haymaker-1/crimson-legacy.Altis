@@ -1891,7 +1891,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=379;
+		items=380;
 		class Item0
 		{
 			position[]={4875.251,351.21344,21945.549};
@@ -3652,19 +3652,19 @@ class Mission
 		};
 		class Item282
 		{
-			position[]={7448.2827,109.29352,16284.239};
+			position[]={7365.854,53.953121,15429.036};
 			name="MARKER_STRIDER_HMG";
 			type="Empty";
 		};
 		class Item283
 		{
-			position[]={7433.1494,109.32787,16286.044};
+			position[]={7366.8218,54.069664,15417.223};
 			name="MARKER_STRIDER_GMG";
 			type="Empty";
 		};
 		class Item284
 		{
-			position[]={7440.1797,108.02149,16272.221};
+			position[]={7358.7119,53.809441,15424.962};
 			name="MARKER_STRIDER";
 			type="Empty";
 		};
@@ -4238,6 +4238,12 @@ class Mission
 		{
 			position[]={9700.8047,2.8058496,22332.34};
 			name="MARKER_PERIMETER_KRYA_NERA_KMJ_4";
+			type="Empty";
+		};
+		class Item379
+		{
+			position[]={7362.9517,53.905357,15423.911};
+			name="MARKER_TOPOLIA";
 			type="Empty";
 		};
 	};
