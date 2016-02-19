@@ -9,7 +9,7 @@ SET FLAGS=/NP /NDL /NFL /NJH /NJS /E
 
 robocopy .\data      .\..\%THE_TMP_DIR%\data %FLAGS%
 robocopy .\functions .\..\%THE_TMP_DIR%\functions %FLAGS%
-robocopy .\images    .\..\%THE_TMP_DIR%\images mission-wait-08.paa %FLAGS%
+robocopy .\images    .\..\%THE_TMP_DIR%\images mission-wait-08.jpg %FLAGS%
 robocopy .\scripts   .\..\%THE_TMP_DIR%\scripts %FLAGS%
 robocopy .\sounds    .\..\%THE_TMP_DIR%\sounds %FLAGS%
 robocopy .\          .\..\%THE_TMP_DIR%\ description.ext init.sqf LICENSE mission.sqm  /NP /NDL /NFL /NJH /NJS
