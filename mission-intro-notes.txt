@@ -1,13 +1,9 @@
-* CSAT is oppressor
-* rebels are friendly
-* Player side is NATO 
-* NATO present in small numbers, mostly as military advisors
-* A couple of weeks ago, battle for Kavala: important deep water harbor. Rebels were defeated. 
-* With their supply lines cut, the rebels have almost no fuel left. Affects the rebels' mobility and ability to attack
-* My role is to support the rebels in regaining control of Kavala
+<t align='center'>CRIMSON LEGACY</t>
 
+<p>
+A couple of months ago, CSAT launched an offensive to gain control of the North-Western part of Altis. During the Battle for Kavala, many civilians were driven from their homes by the oppressor, and as a result, many have joined the Resistance.
+</p>
 
-A couple of weeks ago, CSAT launched an offensive to gain control of the North-Western part of Altis. Many civilians were driven from their homes. The fugitives 
-
-
-After it became apparent that CSAT were
+<p>
+Since then, NATO has been covertly supporting the Resistance by deploying special forces teams to the region. The special forces are training the Resistance in guerrilla warfare methods, while advising them in strategic matters. An immediate problem that the rebels are facing is that they have almost run out of fuel. Becuase this greatly affects their fighting capabilities, it is paramount that the deep-water harbor of Kavala is liberated from any and all enemy forces, and that supply lines are re-established.
+</p>
