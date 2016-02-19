@@ -12,7 +12,7 @@ if (_cond) then
 {
     sleep (3+random 2);
     if (alive thehelicopter) then
-	{
+    {
         _isReady = [THE_CO, "bpxqzvmm1"] execVM "scripts\unitradiospeak.sqf";
         waitUntil{
             sleep 1; 
