@@ -375,26 +375,49 @@ player setDir 334;
 
 MORTAR_TARGETS = [];
 
+// move the striders to Topolia
 krya_nera_strider_gmg setPos getMarkerPos "MARKER_STRIDER_GMG";
 krya_nera_strider_hmg setPos getMarkerPos "MARKER_STRIDER_HMG";
 krya_nera_strider setPos getMarkerPos "MARKER_STRIDER";
+
+// now move the kavalaFuelTruck to the position previously occupied 
+// by krya_nera_strider
 kavalaFuelTruck setPos _repositionPos;
 
+// set the striders orientation
 krya_nera_strider_gmg setDir 180 + random 20;
 krya_nera_strider_hmg setDir 180 + random 20;
 krya_nera_strider setDir 180 + random 20;
 
+// unlock all positions on my vehicle for me, and unlock 
+// the other vehicles for everyone but me
 krya_nera_strider lock 0;
 krya_nera_strider_gmg lock 3; 
 krya_nera_strider_hmg lock 3;
 
+// enable damaging the vehicles
 krya_nera_strider allowDamage true;
 krya_nera_strider_gmg allowDamage true; 
 krya_nera_strider_hmg allowDamage true;
 
+// set the vehicles' fuel state
 krya_nera_strider setFuel 0.05+random 0.1;
 krya_nera_strider_gmg setFuel 0.05+random 0.1;
 krya_nera_strider_hmg setFuel 0.05+random 0.1;
+
+// set the thermal properties of the vehicles
+_hot = 1.0;
+_cold = 0.0;
+_thermalImagingEngine = _hot;
+_thermalImagingWheels = _cold;
+_thermalImagingWeapon = _cold;
+_thermalImagingPars = [_thermalImagingEngine, _thermalImagingWheels, _thermalImagingWeapon];
+
+kavalaFuelTruck setVehicleTiPars _thermalImagingPars;
+krya_nera_strider setVehicleTiPars _thermalImagingPars;
+krya_nera_strider_gmg setVehicleTiPars _thermalImagingPars;
+krya_nera_strider_hmg setVehicleTiPars _thermalImagingPars;
+
 
 
 _gmgGroup = createGroup west;
