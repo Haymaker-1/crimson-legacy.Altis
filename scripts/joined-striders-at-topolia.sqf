@@ -2,9 +2,8 @@
 TASK_MEET_STRIDERS setTaskState "Succeeded";
 ["TaskSucceeded", ["","Hook up with Striders"]] call BIS_fnc_showNotification; 
 
-units _gmgGroup joinSilent group player;
-units _hmgGroup joinSilent group player;
-
+(crew krya_nera_strider_gmg) joinSilent group player;
+(crew krya_nera_strider_hmg) joinSilent group player;
 
 TASK_MEET_AT_QUARRY = player createSimpleTask ["TASKID_MEET_AT_QUARRY"];
 TASK_MEET_AT_QUARRY setSimpleTaskDescription ["Lead the convoy of Striders through the hills east of Kavala, and meet up with the rifle squads that are already present at the <marker name='MARKER_STAGING_AREA_QUARRY'>staging area</marker>.","Move to staging area","Move to staging area"];
