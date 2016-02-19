@@ -84,9 +84,6 @@ SPEECH_AUDIBLE_DISTANCE = 40;
 
 MISSION_TOP_LEVEL_DIRECTORY = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
 
-// GPS_TRACKING_IS_ON = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "GPS_TRACKING_ENABLED") == 1;
-// player addAction ["Disable GPS tracking","scripts\toggle-gpstracking.sqf",nil,0,false];
-
 RANDOM_PATROL_GROUP_HAS_ARRIVED = [];
 STOP_RANDOM_PATROL_GROUP = [];
 RANDOM_PATROL_GROUP_LAST_KNOWN_POS = [];
@@ -138,7 +135,7 @@ null = [] execVM "scripts\spawn-helipad-nabisco.sqf";
 
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera.sqf";
-waitUntil { 
+waitUntil {
     sleep 0.5;
     if (scriptDone _spawningComplete) exitWith {true};
     false
@@ -147,7 +144,7 @@ _spawningComplete = nil;
 
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-airbase.sqf";
-waitUntil { 
+waitUntil {
     sleep 0.5;
     if (scriptDone _spawningComplete) exitWith {true};
     false
@@ -155,7 +152,7 @@ waitUntil {
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-krya-nera-airport.sqf";
-waitUntil { 
+waitUntil {
     sleep 0.5;
     if (scriptDone _spawningComplete) exitWith {true};
     false
@@ -163,7 +160,7 @@ waitUntil {
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteams-rebel-camp.sqf";
-waitUntil { 
+waitUntil {
     sleep 0.5;
     if (scriptDone _spawningComplete) exitWith {true};
     false
@@ -171,7 +168,7 @@ waitUntil {
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam-aa-magos.sqf";
-waitUntil { 
+waitUntil {
     sleep 0.5;
     if (scriptDone _spawningComplete) exitWith {true};
     false
@@ -179,7 +176,7 @@ waitUntil {
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam-aa-amfissa.sqf";
-waitUntil { 
+waitUntil {
     sleep 0.5;
     if (scriptDone _spawningComplete) exitWith {true};
     false
@@ -187,7 +184,7 @@ waitUntil {
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-kostas-borrowed-men.sqf";
-waitUntil { 
+waitUntil {
     sleep 0.5;
     if (scriptDone _spawningComplete) exitWith {true};
     false
@@ -195,7 +192,7 @@ waitUntil {
 _spawningComplete = nil;
 
 _spawningComplete = [] execVM "scripts\spawn-sfteam.sqf";
-waitUntil { 
+waitUntil {
     sleep 0.5;
     if (scriptDone _spawningComplete) exitWith {true};
     false
@@ -225,7 +222,7 @@ shedAgios setDir 44.5;
     _lightPos = _x;
     _lightColor = [1,0.5,0.5];
     _lightBrightness = 0.15;
-    
+
     null = [_lightPos,_lightColor,_lightBrightness] execVM "scripts\create-light.sqf";
 } forEach [[7474.46,16277.7,3.0],[7465.53,16288.6,3.0]];
 
@@ -238,4 +235,3 @@ shedAgios setDir 44.5;
 SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
 
 null = [] execVM "scripts\savegames.sqf";
-
