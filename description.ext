@@ -1,12 +1,14 @@
 
 author = "Haymaker-1";
-OnloadName = "CRIMSON LEGACY";
-OnLoadMission = "<t size='0.75'>Help the Resistance gain the upper hand in their fight against CSAT.</t>"
-loadScreen = "images\mission-wait-08.paa";        // Preview picture
-overviewPicture = "images\mission-wait-08.paa";   // mission onSelect picture
-
+briefingName = "Crimson Legacy";
+onloadName = "CRIMSON LEGACY";
+onLoadMission = "<t size='0.75'>Help the Resistance gain the upper hand in their fight against CSAT.</t>"
+loadScreen = "images\mission-wait-08.jpg";
+overviewPicture = "images\mission-wait-08.jpg";
+overviewText = "<br /><t align='center'>CRIMSON LEGACY</t><br /><br />A couple of months ago, CSAT launched an offensive to gain control of the North-Western part of Altis. During the Battle for Kavala, many civilians were driven from their homes by the oppressor, and as a result, many have joined the Resistance.<br /><br />Since then, NATO has been covertly supporting the Resistance by deploying special forces teams to the region. The special forces are training the Resistance in guerrilla warfare methods, while advising them in strategic matters. An immediate problem that the rebels are facing is that they have almost run out of fuel. Because this greatly affects their fighting capabilities, it is paramount that the deep-water harbor of Kavala is liberated from any and all enemy forces, and that supply lines are re-established.<br /><br />";
 
 enableItemsDropping  = 0;
+enableDebugConsole = 1;
 
 class Header
 {
@@ -30,7 +32,7 @@ class CfgSounds
     // kxhvkroo = scripts\drive-fuel-truck-to-christos-house
     // bpxqzvmm = scripts\showoff
     // sawfkwnw = scripts\walk-to-quarry
-    
+
     // player
     // nzftunfr = scripts\assault-kavala.sqf
     // qzwpvxsn = scripts\call-in-the-boat
@@ -51,7 +53,7 @@ class CfgSounds
     // embbzaox = scripts\spawn-and-crash-wipeout.sqf
     // axdxdlzp = scripts\spawn-transformer-kavala.sqf
     // pobbanfx = scripts\walk-to-quarry.sqf
-    
+
     // kostas
     // TODO create voice samples
     // vhvrxuvu = scripts\assault-kavala
@@ -66,7 +68,7 @@ class CfgSounds
     // oqlunvdd = scripts\spawn-transformer-kavala
     // lrxfuuzi = scripts\walk-to-quarry
 
-    
+
 	sounds[] = {};
 	class fuelrateAlarm
 	{
@@ -91,7 +93,7 @@ class CfgSounds
     class ydbdmwwk4 {
         sound[] = {"sounds\conversation-with-the-co\THE_CO\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"I'll mark Nabisco on your map."};
-        duration = 1.7; 
+        duration = 1.7;
     };
     class ydbdmwwk5 {
         sound[] = {"sounds\conversation-with-the-co\THE_CO\snd5.ogg", 1.0, 1.0};
@@ -392,12 +394,12 @@ class CfgSounds
         sound[] = {"sounds\showoff\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"You break it, you buy it, son."};
         duration = 1.6;
-    };    
+    };
     class bpxqzvmm2 {
         sound[] = {"sounds\showoff\THE_CO\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Now go show off your flying skills somewhere else."};
         duration = 2.5;
-    };    
+    };
     class sawfkwnw1 {
         sound[] = {"sounds\walk-to-quarry\THE_CO\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"This is Actual. Go ahead, One."};
@@ -412,57 +414,57 @@ class CfgSounds
         sound[] = {"sounds\conversation-with-the-co\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Uh...OK. Anything you need Captain."};
         duration = 2.5;
-    };    
+    };
     class feroeowf2 {
         sound[] = {"sounds\conversation-with-the-co\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"OK, what can I do?"};
-        duration = 2.1; 
-    };    
+        duration = 2.1;
+    };
     class feroeowf3 {
         sound[] = {"sounds\conversation-with-the-co\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"No sir!"};
         duration = 0.8;
-    };    
+    };
     class qzwpvxsn1 {
         sound[] = {"sounds\call-in-the-boat\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Noah Three, this is Delta One. Do you read?"};
         duration = 2.7;
-    };        
+    };
     class qzwpvxsn2 {
         sound[] = {"sounds\call-in-the-boat\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"We are approaching the pickup point."};
         duration = 1.8;
-    };        
+    };
     class qzwpvxsn3 {
         sound[] = {"sounds\call-in-the-boat\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"We are ready for pickup at egress Alpha."};
         duration = 2.7;
-    };        
+    };
     class qzwpvxsn4 {
         sound[] = {"sounds\call-in-the-boat\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, come in, over."};
         duration = 2.2;
-    };        
+    };
     class qzwpvxsn5 {
         sound[] = {"sounds\call-in-the-boat\player\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Captain, the pilot is on the boat."};
         duration = 1.9;
-    };        
+    };
     class qzwpvxsn6 {
         sound[] = {"sounds\call-in-the-boat\player\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"Just doing my job, sir."};
         duration = 1.6;
-    };        
+    };
     class qzwpvxsn7 {
         sound[] = {"sounds\call-in-the-boat\player\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"All in a day's work, sir."};
         duration = 1.7;
-    };        
+    };
     class qzwpvxsn8 {
         sound[] = {"sounds\call-in-the-boat\player\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"What do you want me to do now?"};
         duration = 1.1;
-    };        
+    };
     class qzwpvxsn9 {
         sound[] = {"sounds\call-in-the-boat\player\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"Willco."};
@@ -482,37 +484,37 @@ class CfgSounds
         sound[] = {"sounds\assault-kavala\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Bravo, move into position!"};
         duration = 2.0;
-    };    
+    };
     class nzftunfr4 {
         sound[] = {"sounds\assault-kavala\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Charlie, move into position!"};
          duration = 1.8;
-    };    
+    };
     class nzftunfr5 {
         sound[] = {"sounds\assault-kavala\player\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta, move into position!"};
         duration = 1.8;
-    };    
+    };
     class notjrcug1 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hello, sir."};
         duration = 0.9;
-    };    
+    };
     class notjrcug2 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"OK, I'm on it."};
         duration = 1.1;
-    };    
+    };
     class notjrcug3 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"Can do, sir."};
         duration = 0.9;
-    };    
+    };
     class notjrcug4 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd4.ogg", 1.0, 1.0};
         titles[] = {0.0,"Eliminate the AA, roger that, sir."};
         duration = 2.2;
-    };    
+    };
     class notjrcug5 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd5.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hey Kostas, you there?"};
@@ -522,32 +524,32 @@ class CfgSounds
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd6.ogg", 1.0, 1.0};
         titles[] = {0.0,"We are mission complete. Any chance of some R & R? It's been a long day, you know."};
         duration = 4.6;
-    };    
+    };
     class notjrcug7 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd7.ogg", 1.0, 1.0};
         titles[] = {0.0,"I am mission complete. Any chance of some R & R? It's been a long day, you know."};
         duration = 5.4;
-    };    
+    };
     class notjrcug8 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd8.ogg", 1.0, 1.0};
         titles[] = {0.0,"This is One. What's up, Kostas?"};
         duration = 2.2;
-    };    
+    };
     class notjrcug9 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd9.ogg", 1.0, 1.0};
         titles[] = {0.0,"Does it involve blowing stuff up?"};
         duration = 1.7;
-    };    
+    };
     class notjrcug10 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd10.ogg", 1.0, 1.0};
         titles[] = {0.0,"Allright then, what's the plan?"};
         duration = 1.8;
-    };    
+    };
     class notjrcug11 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd11.ogg", 1.0, 1.0};
         titles[] = {0.0,"Amen to that, don't want to get on the wrong side of a fifty. So, what's the diversion?"};
         duration = 5.2;
-    };    
+    };
     class notjrcug12 {
         sound[] = {"sounds\clear-aa-magos-aa-amfissa-patrols-crash-site\player\snd12.ogg", 1.0, 1.0};
         titles[] = {0.0,"And blow up some more stuff. Works for me!"};
@@ -737,17 +739,17 @@ class CfgSounds
         sound[] = {"sounds\radio-conversation-about-pilot-egress\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, this is Delta One, come in please."};
         duration = 2.6;
-    };    
+    };
     class qlwajhnj2 {
         sound[] = {"sounds\radio-conversation-about-pilot-egress\player\snd2.ogg", 1.0, 1.0};
         titles[] = {0.0,"Good news, Captain! We managed to liberate the pilot! He's with me now."};
         duration = 3.6;
-    };    
+    };
     class qlwajhnj3 {
         sound[] = {"sounds\radio-conversation-about-pilot-egress\player\snd3.ogg", 1.0, 1.0};
         titles[] = {0.0,"What do you want me to do with him, sir? Is there some kind of egress plan?"};
         duration = 3.2;
-    };    
+    };
     class vmwhowzr1 {
         sound[] = {"sounds\radio-conversation-crash-site-found\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Delta Actual, come in, over."};
@@ -802,7 +804,7 @@ class CfgSounds
         sound[] = {"sounds\radio-conversation-when-returning-from-athira\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Hi there Captain, I'm approaching Krya Nera now."};
         duration = 2.7;
-    };    
+    };
     class qjgztpnn1 {
         sound[] = {"sounds\set-up-op-agios-konstantinos\player\snd1.ogg", 1.0, 1.0};
         titles[] = {0.0,"Kostas, this is Delta One, come in please."};
@@ -1435,12 +1437,12 @@ class CfgSounds
         titles[] = {0.0,"As a matter of fact, yes. CSAT have fortified the northern access roads into the city. I advise you to give that area a wide berth."};
         duration = 7.9;
     };
-    
+
 };
 
 
 class CfgDebriefing
-{  
+{
 	class Win1
 	{
 		title = "MISSION COMPLETED";
@@ -1499,7 +1501,7 @@ class CfgDebriefing
 	{
 		title = "MISSION FAILED";
 		subtitle = "You died.";
-       	description = "You were killed in the line of duty. Your enemies are dancing in the streets.";        
+       	description = "You were killed in the line of duty. Your enemies are dancing in the streets.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0.3,0.3,0.3,1};
@@ -1583,6 +1585,3 @@ class myMissionConfig {
 
 
 doneKeys[] = {"missionCompletedKey"};
-
-
-
