@@ -1,23 +1,34 @@
 
-private "_theUnit";
-private "_theRange";
+private "_spotterUnit";
+private "_spottingRange";
+private "_spotterSide";
 private "_targets";
 private "_target";
+private "_targetPos";
+private "_targetSide";
+private "_targetUnit";
+private "_unit";
 
-_theUnit = _this select 0;
-_theRange = _this select 1;
+_spotterUnit = _this select 0;
+_spottingRange = _this select 1;
 
-while {alive _theUnit AND LOOKOUT_FOR_MORTAR_TARGETS} do {
-    _targets = _theUnit nearTargets _theRange;
+_spotterSide = side _spotterUnit;
+
+while {alive _spotterUnit AND LOOKOUT_FOR_MORTAR_TARGETS} do {
+    _targets = _spotterUnit nearTargets _spottingRange;
     {
-        if (_x select 2 == WEST) then {
-            _target = _x;
-            {   
-                if (_x == _target select 4) then {
+        _target = _x;
+        _targetPos  = _target select 0;
+        _targetSide = _target select 2;
+        _targetUnit = _target select 4;
+        if (_targetSide != _spotterSide && _targetSide != CIVILIAN ) then {
+            {
+                _unit = _x;
+                if (_unit == _targetUnit) then {
                     if (_forEachIndex >= count MORTAR_TARGETS) then {
                         MORTAR_TARGETS resize (_forEachIndex + 1);
                     };
-                    MORTAR_TARGETS set [_forEachIndex,[daytime,_target select 0]];
+                    MORTAR_TARGETS set [_forEachIndex,[daytime,_targetPos]];
                 };
             } forEach (units group player);
         };
