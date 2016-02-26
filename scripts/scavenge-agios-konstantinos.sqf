@@ -1,4 +1,15 @@
 
+private "_posWeaponsCrate";
+private "_weaponsHolder";
+private "_weaponsCrate";
+private "_posMagazinesCrate";
+private "_magazinesHolder";
+private "_magazinesCrate";
+private "_posItemsCrate";
+private "_itemsHolder";
+private "_itemsCrate";
+private "_areasIveBeenTo";
+private "_inventory";
 
 
 
@@ -27,10 +38,10 @@ _itemsCrate allowDamage false;
 _areasIveBeenTo = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS",
                    "MARKER_PERIMETER_KLD_NEGADES",
                    "MARKER_OUTER_PERIMETER_PILOT"];
-                   
 
-_inventory = 
-[   
+
+_inventory =
+[
     [ "weapons"   , [] ],
     [ "magazines" , [] ],
     [ "items"     , [] ],
@@ -42,6 +53,18 @@ _inventory =
 
 
 {
+    private "_perimeter";
+    private "_bbox";
+    private "_xLeft";
+    private "_yBottom";
+    private "_xRight";
+    private "_yTop";
+    private "_xWidth";
+    private "_yHeight";
+    private "_pos";
+    private "_radius";
+    private "_men";
+    private "_stuffOnTheGround";
 
     _perimeter = [_x] call HAYMAKER_fnc_constructPerimeter;
     _bbox = [_perimeter] call HAYMAKER_fnc_calcBoundingBox;
@@ -59,36 +82,36 @@ _inventory =
     _pos = [_xLeft + 0.5 * _xWidth , _yBottom + 0.5 * _yHeight,0.0];
     _radius = nil;
 
-    if (_xWidth > _yHeight) then
-    {
+    if (_xWidth > _yHeight) then {
         _radius = sqrt(2) * (_xWidth/2);
-    }
-    else
-    {
+    } else {
         _radius = sqrt(2) * (_yHeight/2);
     };
 
     _men = nearestObjects [_pos,["Man"], _radius];
     {
         if (!alive _x) then {
-
+            private "_man";
             _man = _x;
             _inventory = [_man,true,_inventory] call HAYMAKER_fnc_showMeWhatYouGot;
-           
         };
     } forEach _men;
 
     _stuffOnTheGround = nearestObjects [_pos,["GroundWeaponHolder","WeaponHolderSimulated"], _radius];
     {
+        private "_holder";
+        private "_arr";
         _holder = _x;
-        
         _arr = weaponCargo _holder;
-        {   
+        {
+            private "_theWeaponName";
+            private "_tmpPos";
+            private "_tmpMan";
             _theWeaponName = _x;
             _tmpPos = getPos _holder;
             _tmpPos set [2, 1e5];
             _tmpMan = createVehicle["C_man_1",_tmpPos,[],0,"NONE"];
-            _tmpMan enableSimulation false; 
+            _tmpMan enableSimulation false;
             removeAllAssignedItems _tmpMan;
             removeHeadgear _tmpMan;
             _tmpMan addWeapon _theWeaponName;
@@ -96,14 +119,17 @@ _inventory =
             deleteVehicle _tmpMan;
             _holder removeWeapon _theWeaponName;
         } forEach _arr;
-        
+
         _arr = magazineCargo _holder;
         {
+            private "_theMagazineName";
+            private "_tmpPos";
+            private "_tmpMan";
             _theMagazineName = _x;
             _tmpPos = getPos _holder;
             _tmpPos set [2, 1e5];
             _tmpMan = createVehicle["C_man_1",_tmpPos,[],0,"NONE"];
-            _tmpMan enableSimulation false; 
+            _tmpMan enableSimulation false;
             removeAllAssignedItems _tmpMan;
             removeHeadgear _tmpMan;
             _tmpMan addMagazine _theMagazineName;
@@ -111,14 +137,17 @@ _inventory =
             deleteVehicle _tmpMan;
             _holder removeMagazine _theMagazineName;
         } forEach _arr;
-        
+
         _arr = itemCargo _holder;
         {
+            private "_theItemName";
+            private "_tmpPos";
+            private "_tmpMan";
             _theItemName = _x;
             _tmpPos = getPos _holder;
             _tmpPos set [2, 1e5];
             _tmpMan = createVehicle["C_man_1",_tmpPos,[],0,"NONE"];
-            _tmpMan enableSimulation false; 
+            _tmpMan enableSimulation false;
             removeAllAssignedItems _tmpMan;
             removeHeadgear _tmpMan;
             _tmpMan addItem _theItemName;
@@ -126,12 +155,12 @@ _inventory =
             deleteVehicle _tmpMan;
             _holder removeItem _theItemName;
         } forEach _arr;
-        
+
         if (typeOf(_holder)=="WeaponHolderSimulated") then
         {
             deleteVehicle _holder;
         };
-    } forEach _stuffOnTheGround;    
+    } forEach _stuffOnTheGround;
 
 } forEach _areasIveBeenTo;
 
@@ -143,25 +172,30 @@ INVENTORY = _inventory;
 {
     _weaponsHolder addWeaponCargo [_x,1];
 } forEach (_inventory select 0 select 1);
+
 {
     _magazinesHolder addMagazineCargo [_x,1];
 } forEach (_inventory select 1 select 1);
+
 {
     _itemsHolder addItemCargo [_x,1];
 } forEach (_inventory select 2 select 1);
+
 {
     _itemsHolder addItemCargo [_x,1];
 } forEach (_inventory select 3 select 1);
+
 {
     _itemsHolder addBackpackCargo [_x,1];
 } forEach (_inventory select 4 select 1);
+
 {
     _itemsHolder addItemCargo [_x,1];
 } forEach (_inventory select 5 select 1);
+
 {
     _itemsHolder addItemCargo [_x,1];
 } forEach (_inventory select 6 select 1);
-
 
 
 // remove the contents of the backpacks in the _itemsHolder
@@ -172,13 +206,11 @@ INVENTORY = _inventory;
 } forEach everyBackpack _itemsHolder;
 
 
-_weaponsHolder attachTo [_weaponsCrate,[0,0,0.65]]; 
+_weaponsHolder attachTo [_weaponsCrate,[0,0,0.65]];
 _magazinesHolder attachTo [_magazinesCrate,[0,0,0.65]];
 _itemsHolder attachTo [_itemsCrate,[0,0,0.65]];
 
-
 // repack each holder:
-
 _weaponCargo = getWeaponCargo _weaponsHolder;
 _weapons = _weaponCargo select 0;
 _numbers = _weaponCargo select 1;
@@ -206,6 +238,3 @@ clearItemCargo _itemsHolder;
     _itemsHolder addItemCargo [_x, _numbers select _forEachIndex];
 } forEach _items;
 clearWeaponCargo _itemsHolder;
-
-
-

@@ -1,5 +1,8 @@
 
 
+private "_damageValue";
+
+
 _damageValue = _this select 0;
 
 LIGHTS_AGGELOCHORI_SHOULD_BE_OFF = true;
@@ -35,9 +38,3 @@ MARID_KAVALA_2_GROUP addWaypoint [getMarkerPos "MARKER_MARID_KAVALA_2_WP_2",2];
 MARID_KAVALA_2_GROUP addWaypoint [getMarkerPos "MARKER_MARID_KAVALA_2_WP_3",3];
 [MARID_KAVALA_2_GROUP,3] setWaypointType "MOVE";
 [MARID_KAVALA_2_GROUP,3] setWaypointSpeed "LIMITED";
-
-
-
-
-
-

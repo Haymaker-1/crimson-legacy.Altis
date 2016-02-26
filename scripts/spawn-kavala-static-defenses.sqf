@@ -1,11 +1,18 @@
 
+
+private "_theTable";
+private "_actualDefenses";
+private "_nDefenses";
+private "_minDistAllowed";
+private "_spread";
+
 // posATL
 // dir
 // weapontype
 // probability of presence
 // probability of being indicated on the map
 
-_theTable = 
+_theTable =
 [
  [[3560.6,12873.7,4.31142],      216,  "O_HMG_01_high_F",0.30,0.80],
  [[3710.27,13403.6,13.2569],      42,  "O_HMG_01_high_F",0.30,0.80],
@@ -14,7 +21,7 @@ _theTable =
  [[3630.13,12827.7,3.89456],     127,  "O_HMG_01_high_F",0.30,0.80],
  [[3649.64,12836.7,18.9288],     337,  "O_HMG_01_high_F",0.30,0.80],
  [[3666.8,12837.5,17.2425],       98,  "O_HMG_01_high_F",0.30,0.80],
- [[3670.25,12815.2,17.2773],     129,  "O_HMG_01_high_F",0.30,0.80], 
+ [[3670.25,12815.2,17.2773],     129,  "O_HMG_01_high_F",0.30,0.80],
  [[3664.34,12813.1,12.7699],     129,  "O_HMG_01_high_F",0.30,0.80],
  [[3660.48,12813.1,13.0582],     221,  "O_HMG_01_high_F",0.30,0.80],
  [[3687.15,13101.7,0.377017],    280,  "O_HMG_01_high_F",0.30,0.80],
@@ -35,7 +42,7 @@ _theTable =
  [[3801.76,13399.8,8.64107],     196,  "O_HMG_01_high_F",0.30,0.80],
  [[3792.24,13400.8,12.5399],     185,  "O_HMG_01_high_F",0.30,0.80],
  [[3780.54,13413.2,12.585],      357,  "O_HMG_01_high_F",0.30,0.80],
- [[3798.99,13427.2,8.23927],      42,  "O_HMG_01_high_F",0.30,0.80], 
+ [[3798.99,13427.2,8.23927],      42,  "O_HMG_01_high_F",0.30,0.80],
  [[3761.78,13562.5,3.79287],     322,  "O_HMG_01_high_F",0.30,0.80],
  [[3820.14,13713.5,0.00138855],   63,  "O_HMG_01_high_F",0.30,0.80],
  [[3777.03,13802.6,0.00163078],  180,  "O_HMG_01_high_F",0.30,0.80],
@@ -53,6 +60,15 @@ _spread = 50;
 
 for "_i" from 0 to (_nDefenses - 1) do {
 
+    private "_thePos";
+    private "_theDir";
+    private "_theWeapon";
+    private "_probPresent";
+    private "_probKnown";
+    private "_minDist";
+    private "_conditionPresent";
+    private "_conditionKnown";
+
     _thePos = _theTable select _i select 0;
     _theDir = _theTable select _i select 1;
     _theWeapon = _theTable select _i select 2;
@@ -61,27 +77,33 @@ for "_i" from 0 to (_nDefenses - 1) do {
 
     _minDist = 1000;
     {
+        private "_dist";
         _dist = (_x select 0) distance _thePos;
         if (_dist < _minDist) then {
             _minDist = _dist;
         };
-        
+
     } forEach _actualDefenses;
-    
+
     _conditionPresent = ((random 1) < _probPresent) AND (_minDist > _minDistAllowed);
-    
+
     if (_conditionPresent) then {
+        private "_iDefenseActual";
         null = [_thePos,_theDir,_theWeapon] execVM "scripts\spawn-mounted-gun.sqf";
         _iDefenseActual = count _actualDefenses;
         _actualDefenses resize _iDefenseActual + 1;
         _actualDefenses set [_iDefenseActual,_theTable select _i];
     };
-    
+
     _conditionKnown = _conditionPresent AND ((random 1) < _probKnown);
     if (_conditionKnown) then {
-    
+
+        private "_theMarkerPos";
+        private "_markerName";
+        private "_marker";
+
         _theMarkerPos = [(_thePos select 0) - _spread/2 + (random 1)*_spread, (_thePos select 1) - _spread/2 + (random 1)*_spread, (_thePos select 2)];
-    
+
         _markerName = format ["MARKER_STATIC_DEFENSE_%1",_i];
         _marker = createMarker [_markerName, _theMarkerPos ];
         _markerName setMarkerShape "ICON";
@@ -90,7 +112,7 @@ for "_i" from 0 to (_nDefenses - 1) do {
         _markerName setMarkerDir 0;
         _markerName setMarkerColor "ColorRed";
     };
-    
+
 };
 
 

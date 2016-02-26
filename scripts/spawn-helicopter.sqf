@@ -1,26 +1,30 @@
 
+private "_nMinutes";
+private "_prob";
+private "_heloType";
+private "_usesNLitersPerSecond";
+
 _nMinutes = 6.0;
 
 _prob = [["littlebird",0.5],
          ["hellcat",0.5]];
-         
-         
-// force littlebird:         
+
+
+// force littlebird:
 _heloType = [_prob,0] call HAYMAKER_fnc_selectWeightedRandom;
 
-if (_heloType == "littlebird") then
-{
+if (_heloType == "littlebird") then {
 
     // littlebird
     thehelicopter = createVehicle ["B_Heli_Light_01_F",(getMarkerPos "MARKER_SPAWN_HELICOPTER"),[],0,"NONE"];
-    
+
     thehelicopter lockCargo [0, true];
     thehelicopter lockCargo [1, true];
-    
+
     helicopterFuelCapacity = 242; // liters ?
     helicopterFuelConsumptionRate = 0.0368; // nTanks per minute?
-    
-    
+
+
 };
 
 if (_heloType == "hellcat") then {
@@ -30,7 +34,7 @@ if (_heloType == "hellcat") then {
 
     helicopterFuelCapacity = 1000; // liters ?
     helicopterFuelConsumptionRate = 0.01; // nTanks per minute?
-    
+
 };
 thehelicopter lock 2;
 thehelicopter setDir random 360;
@@ -56,4 +60,5 @@ waitUntil{
 
 
 thehelicopter lock 0;
+
 

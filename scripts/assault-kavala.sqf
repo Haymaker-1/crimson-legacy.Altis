@@ -1,4 +1,11 @@
 
+private "_attackOnFoot";
+private "_isReady";
+private "_radius";
+private "_marker";
+private "_trig";
+
+
 _attackOnFoot = _this select 0;
 
 sleep random 10;
@@ -6,7 +13,7 @@ TASK_MEET_AT_QUARRY setTaskState "Succeeded";
 ["TaskSucceeded", ["","Move to staging area"]] call BIS_fnc_showNotification;
 
 _isReady = [player, "nzftunfr1"] execVM "scripts\unitspeak.sqf";
-waitUntil { 
+waitUntil {
     sleep 1;
     if (scriptDone _isReady) exitWith {true};
     false
@@ -15,7 +22,7 @@ waitUntil {
 sleep 7;
 
 _isReady = [kostas, "vhvrxuvu1"] execVM "scripts\unitradiospeak.sqf";
-waitUntil { 
+waitUntil {
     sleep 1;
     if (scriptDone _isReady) exitWith {true};
     false
@@ -24,7 +31,7 @@ waitUntil {
 
 if (_attackOnFoot) then {
     _isReady = [kostas, "vhvrxuvu2"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil { 
+    waitUntil {
         sleep 1;
         if (scriptDone _isReady) exitWith {true};
         false
@@ -32,7 +39,7 @@ if (_attackOnFoot) then {
 }
 else {
     _isReady = [kostas, "vhvrxuvu3"] execVM "scripts\unitradiospeak.sqf";
-    waitUntil { 
+    waitUntil {
         sleep 1;
         if (scriptDone _isReady) exitWith {true};
         false
@@ -42,14 +49,14 @@ else {
 null = [] execVM "scripts\spawn-casplane.sqf";
 
 _isReady = [kostas, "vhvrxuvu4"] execVM "scripts\unitradiospeak.sqf";
-waitUntil { 
+waitUntil {
     sleep 1;
     if (scriptDone _isReady) exitWith {true};
     false
 };
 
 _isReady = [kostas, "vhvrxuvu5"] execVM "scripts\unitradiospeak.sqf";
-waitUntil { 
+waitUntil {
     sleep 1;
     if (scriptDone _isReady) exitWith {true};
     false
@@ -114,38 +121,39 @@ _marker = createMarker ["MARKER_DELTA_SECTOR_KAVALA_TEXT", getMarkerPos "MARKER_
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["ALPHA","PRESENT",false];
-_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr2'] execVM 'scripts\unitspeak.sqf';waitUntil{ sleep 1; if (scriptDone _isReady) exitWith {true}; false};_wp = kavalaRifleSquadAlpha addWaypoint [getMarkerPos 'MARKER_ALPHA_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr2'] execVM 'scripts\unitspeak.sqf';waitUntil{ sleep 1; if (scriptDone _isReady) exitWith {true}; false};_wp = kavalaRifleSquadAlpha addWaypoint [getMarkerPos 'MARKER_ALPHA_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""];
+_trig = nil;
 
 
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["BRAVO","PRESENT",false];
-_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr3'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; if (scriptDone _isReady) exitWith {true}; false};_wp = kavalaRifleSquadBravo addWaypoint [getMarkerPos 'MARKER_BRAVO_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
-
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr3'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; if (scriptDone _isReady) exitWith {true}; false};_wp = kavalaRifleSquadBravo addWaypoint [getMarkerPos 'MARKER_BRAVO_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""];
+_trig = nil;
 
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["CHARLIE","PRESENT",false];
-_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr4'] execVM 'scripts\unitspeak.sqf';waitUntil{ sleep 1; if (scriptDone _isReady) exitWith {true}; false};_wp = kavalaRifleSquadCharlie addWaypoint [getMarkerPos 'MARKER_CHARLIE_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
-
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr4'] execVM 'scripts\unitspeak.sqf';waitUntil{ sleep 1; if (scriptDone _isReady) exitWith {true}; false};_wp = kavalaRifleSquadCharlie addWaypoint [getMarkerPos 'MARKER_CHARLIE_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""];
+_trig = nil;
 
 _trig = createTrigger["EmptyDetector",getPos player];
 _trig setTriggerArea[5,5,0,false];
 _trig setTriggerActivation["DELTA","PRESENT",false];
-_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr5'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; if (scriptDone _isReady) exitWith {true}; false};_wp = kavalaRifleSquadDelta addWaypoint [getMarkerPos 'MARKER_DELTA_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""]; 
-
+_trig setTriggerStatements["this", "_isReady = [player, 'nzftunfr5'] execVM 'scripts\unitspeak.sqf';waitUntil{sleep 1; if (scriptDone _isReady) exitWith {true}; false};_wp = kavalaRifleSquadDelta addWaypoint [getMarkerPos 'MARKER_DELTA_SECTOR_KAVALA', 0];_wp setWaypointType 'SAD';", ""];
+_trig = nil;
 
 TASK_ASSAULT_KAVALA = player createSimpleTask ["TASKID_ASSAULT_KAVALA"];
 
 if (_attackOnFoot) then {
     TASK_ASSAULT_KAVALA setSimpleTaskDescription ["Assault Kavala together with four rifle squads Alpha through Delta. Use your radio to control when each squad moves into position.","Assault Kavala","Assault Kavala"];
-} 
+}
 else {
     TASK_ASSAULT_KAVALA setSimpleTaskDescription ["Assault Kavala using the Striders together with four rifle squads Alpha through Delta. Use your radio to control when each squad moves into position.","Assault Kavala","Assault Kavala"];
 };
 TASK_ASSAULT_KAVALA setTaskState "Assigned";
 ["TaskAssigned", ["","Assault Kavala"]] call BIS_fnc_showNotification;
-player setCurrentTask TASK_ASSAULT_KAVALA; 
+player setCurrentTask TASK_ASSAULT_KAVALA;
 TASK_ASSAULT_KAVALA_HAS_BEEN_ASSIGNED = true;
 
 {
@@ -163,5 +171,3 @@ if (SHOW_CHAPTER_TITLES) then {
 sleep 10;
 TIME_LAST_SAVEGAME = time;
 saveGame;
-
-

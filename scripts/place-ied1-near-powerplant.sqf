@@ -1,3 +1,7 @@
+
+
+private "_wp";
+
 demoSpecialist disableAI "MOVE";
 demoSpecialist disableAI "ANIM";
 demoSpecialist playAction "Crouch";

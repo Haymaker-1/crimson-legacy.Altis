@@ -2,6 +2,9 @@
 
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
+    private "_nPatrols";
+    private "_headgearArray";
+
     _nPatrols = 2 + round (random 2);
 
     _headgearArray = ["H_Beret_blk",
@@ -22,50 +25,56 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
                       "H_Booniehat_dirty",
                       "H_Booniehat_dgtl"];
 
+    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do {
 
-    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do 
-    {
+        private "_perimeter";
+        private "_spawnPos";
+        private "_iRandomPatrol";
+        private "_group";
 
         _perimeter = ["MARKER_PERIMETER_KLD_NEGADES"] call HAYMAKER_fnc_constructPerimeter;
         _spawnPos = getMarkerPos "MARKER_KLD_SPAWN";
-        
+
         _iRandomPatrol = _i;
 
         _group = createGroup east;
-        
+
         "O_Soldier_TL_F" createUnit [_spawnPos,_group];
         "O_Soldier_GL_F" createUnit [_spawnPos,_group];
         "O_Soldier_AR_F" createUnit [_spawnPos,_group];
 
-        for "_j" from 0 to 3 do
-        {
+        for "_j" from 0 to 3 do {
+            private "_fighterType";
             _fighterType = [[["O_Soldier_lite_F",0.35],
                             ["O_medic_F",0.2],
                             ["O_Soldier_A_F",0.2],
                             ["O_Soldier_LAT_F",0.2],
                             ["O_Soldier_M_F",0.05]]] call HAYMAKER_fnc_selectWeightedRandom;
 
-            if (random 1.0 < 0.25) then
-            {
+            if (random 1.0 < 0.25) then {
                 _fighterType createUnit [_spawnPos,_group];
             };
         };
-        
-        
+
+
         {
+            private "_headgear";
             removeHeadGear _x;
             _headgear = _headgearArray call BIS_fnc_selectRandom;
             _x addHeadGear _headgear;
             _x removeWeapon "NVGoggles_OPFOR";
             _x removePrimaryWeaponItem "optic_ACO_grn";
-            
+
             null = [_x] execVM "scripts\opfor-sniper-support-negades.sqf";
-            
-        } forEach units _group;    
-        
+
+        } forEach units _group;
+
         null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
-        
+
         TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 1;
-        
-    };  
+
+    };
 };
+
+
+

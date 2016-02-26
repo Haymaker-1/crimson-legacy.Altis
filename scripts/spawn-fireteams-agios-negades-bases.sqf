@@ -1,6 +1,14 @@
 
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
+    private "_marker";
+    private "_headgearArray";
+    private "_opforGroupBaseNegades";
+    private "_opforGroupBaseAgios";
+    private "_groupData";
+    private "_fighterTypes";
+    private "_perimeter4";
+    private "_perimeter5";
 
     _marker = createMarker ["MARKER_OPFOR_BASE_NEGADES", [4927.61,16404.2,-0.25] ];
     _marker = createMarker ["MARKER_OPFOR_BASE_AGIOS", [4213.22,17385.7,-0.25] ];
@@ -38,28 +46,35 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
                      "O_Soldier_A_F"];
 
     {
+        private "_basePos";
+        private "_spawnPos";
+        private "_group";
+        private "_nUnits";
+
         _basePos = getMarkerPos (_x select 0);
 
         _spawnPos = _basePos;
         _spawnPos set [1,((_basePos select 1) + (random 20))];
-        
+
         _group = _x select 1;
-        
+
         _nUnits = 3 + (random 2);
         for "_iUnit" from 0 to _nUnits do {
 
+            private "_fighterType";
+            private "_soldier";
+
             _fighterType = _fighterTypes call BIS_fnc_selectRandom;
             _soldier = _fighterType createUnit [_spawnPos,_group,"",0.5,"PRIVATE"];
-            
         };
-        
+
         {
             _x removePrimaryWeaponItem "optic_ACO_grn";
             removeHeadGear _x;
             _x removeWeapon "NVGoggles_OPFOR";
             _x addHeadGear (_headgearArray call BIS_fnc_selectRandom);
         } forEach units _group;
-        
+
     } forEach _groupData;
 
 
@@ -68,8 +83,10 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
     _perimeter5 = ["MARKER_PERIMETER_FWB"] call HAYMAKER_fnc_constructPerimeter;
     [_perimeter5,_opforGroupBaseAgios,TOTAL_NUMBER_OF_RANDOM_PATROLS+1] execVM "scripts\setAsRandomPatrol.sqf";
-    
-        
+
+
     TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 2;
 
 };
+
+

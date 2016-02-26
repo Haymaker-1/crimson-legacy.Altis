@@ -1,4 +1,9 @@
 
+private "_isReady";
+private "_wp";
+private "_grp";
+
+
 POWER_PLANT_CLEARED = true;
 
 waitUntil{
@@ -17,6 +22,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "yazagpmr1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -24,6 +30,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "zdgzzloy2"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -31,6 +38,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "yazagpmr2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -38,6 +46,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "yazagpmr3"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -45,22 +54,25 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 if ('DemoCharge_Remote_Mag' in magazines player) then {
     _isReady = [player, "zdgzzloy3"] execVM "scripts\unitspeak.sqf";
     waitUntil{
-        sleep 1; 
+        sleep 1;
         if (scriptDone _isReady) exitWith {true};
         false
     };
-}
-else {
+    _isReady = nil;
+
+} else {
     _isReady = [player, "zdgzzloy4"] execVM "scripts\unitspeak.sqf";
     waitUntil{
         sleep 1;
         if (scriptDone _isReady) exitWith {true};
         false
     };
+    _isReady = nil;
 };
 
 
@@ -70,6 +82,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 null = [] execVM "scripts\spawn-negades-demo-specialist.sqf";
 
@@ -90,6 +103,7 @@ _wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_WP_DEMO_SPECIALISTS_
 demoSpecialistGroup setBehaviour "CARELESS";
 [demoSpecialistGroup,1] setWaypointStatements ["true", "null = [] execVM 'scripts\add-waypoints-demo-specialist.sqf'"];
 demoSpecialistGroup setCurrentWaypoint [demoSpecialistGroup, 1];
+_wp = nil;
 
 waitUntil{
     sleep 5;
@@ -104,6 +118,8 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
+
 
 _isReady = [kostas, "oqlunvdd1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -111,6 +127,8 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
+
 
 
 sleep 2;
@@ -131,8 +149,6 @@ _grp = createGroup WEST;
     };
 } forEach [sf3,sf2,sf1,sf0];
 
-
-
 _grp setCombatMode "GREEN";
 
 
@@ -143,19 +159,20 @@ _wp = _grp addWaypoint [getMarkerPos "MARKER_SFTEAM_ROUTE_TO_CHRISTOS", 1];
 
 _grp setBehaviour "CARELESS";
 _grp setCurrentWaypoint [_grp, 1];
+_wp = nil;
 
 _wp = _grp addWaypoint [getMarkerPos "MARKER_CHRISTOS_HOUSE", 2];
 [_grp,2] setWaypointType "MOVE";
 [_grp,2] setWaypointCompletionRadius 50;
 [_grp,2] setWaypointSpeed "FULL";
-
+_wp = nil;
 
 
 TASK_DESTROY_VEHICLES_KAVALA = player createSimpleTask ["TASKID_DESTROY_VEHICLES_KAVALA"];
 TASK_DESTROY_VEHICLES_KAVALA setSimpleTaskDescription ["Use the cover of darkness to infiltrate Kavala. Stay undetected for as long as possible by going in alone. Rig the vehicles in the <marker name='MARKER_MOTOR_POOL'>motorpool</marker> with explosives. Use your judgement to prioritize targets if there are too many vehicles to destroy them all.","Destroy vehicles","Destroy vehicles"];
 TASK_DESTROY_VEHICLES_KAVALA setTaskState "Assigned";
 ["TaskAssigned", ["","Destroy vehicles"]] call BIS_fnc_showNotification;
-player setCurrentTask TASK_DESTROY_VEHICLES_KAVALA; 
+player setCurrentTask TASK_DESTROY_VEHICLES_KAVALA;
 TASK_DESTROY_VEHICLES_KAVALA_HAS_BEEN_ASSIGNED = true;
 
 waitUntil {
@@ -165,4 +182,3 @@ waitUntil {
 };
 
 null = [1.00] execVM "scripts\lights-out-aggelochori.sqf";
-

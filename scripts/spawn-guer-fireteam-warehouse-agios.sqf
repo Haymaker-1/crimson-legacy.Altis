@@ -2,6 +2,9 @@
 
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
+    private "_nPatrols";
+    private "_headgearArray";
+
     _nPatrols = 1;
 
     _headgearArray = ["H_Beret_blk",
@@ -22,13 +25,20 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
                       "H_Booniehat_dirty",
                       "H_Booniehat_dgtl"];
 
+    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do {
 
-    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do 
-    {
+        private "_perimeter";
+        private "_spawnPos";
+        private "_iRandomPatrol";
+        private "_group";
+        private "_soldier1";
+        private "_soldier2";
+        private "_soldier3";
+        private "_soldier4";
 
         _perimeter = ["MARKER_PERIMETER_LCJ_WAREHOUSE_AGIOS"] call HAYMAKER_fnc_constructPerimeter;
         _spawnPos = getMarkerPos "MARKER_LCJ_SPAWN";
-        
+
         _iRandomPatrol = _i;
 
         _group = createGroup west;
@@ -38,34 +48,35 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
         _soldier4 = "I_G_Soldier_AR_F" createUnit [_spawnPos,_group];
 
         {
+            private "_headgear";
             removeHeadGear _x;
             _headgear = _headgearArray call BIS_fnc_selectRandom;
             _x addHeadGear _headgear;
-        } forEach units _group;    
-        
+        } forEach units _group;
+
         null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
-        
+
         TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 1;
-        
-    };  
+
+    };
 
     {
+        private "_spawnAnother";
         _spawnAnother = true;
         while {_spawnAnother} do {
+            private "_veh";
             _veh = createVehicle ["I_G_Offroad_01_F", getMarkerPos "MARKER_SHED_AGIOS_SPAWN_TRUCK",[],50,"NONE"];
             _veh setDir random 360;
             _veh setFuel (0.05 + (random 0.03));
             sleep 2.0;
             if ((damage _veh) == 0.0) then {
                 _spawnAnother = false;
-            }
-            else {
+            } else {
                 deleteVehicle _veh;
             };
-        };  
-
-        
+        };
     } forEach ["car0","car1"];
-
 };
+
+
 

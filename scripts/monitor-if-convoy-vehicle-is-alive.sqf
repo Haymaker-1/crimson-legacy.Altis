@@ -1,5 +1,10 @@
 
 
+private "_veh";
+private "_taskDescriptionParts";
+
+
+
 _veh = _this select 0;
 
 while {alive _veh} do {

@@ -1,3 +1,8 @@
+private "_veh";
+private "_cond";
+private "_wheels";
+private "_condDone";
+private "_radius";
 
 
 _veh = _this select 0;
@@ -11,20 +16,24 @@ _radius = 1950+random 100;
 
 while {_cond} do {
 
+    private "_nWheelsDamaged";
+    private "_truckIsMobile";
     // verify that truck works
-    _nWheelsDamaged = 0; 
+    _nWheelsDamaged = 0;
     {
         if (_veh getHitPointDamage _x == 1.0) then {
-            _nWheelsDamaged = _nWheelsDamaged + 1; 
+            _nWheelsDamaged = _nWheelsDamaged + 1;
         };
     } forEach _wheels;
-    
+
 
     _truckIsMobile = canMove _veh AND (_nWheelsDamaged == 0);
 
-    
+
     if (!_truckIsMobile) then {
-    
+
+        private "_vehHasStopped";
+
         _vehHasStopped = [_veh] execVM "scripts\bring-vehicle-to-a-stop.sqf";
         (assignedDriver kavalaFuelTruck) sideChat "Aw, crap!";
         sleep 3;
@@ -44,8 +53,7 @@ while {_cond} do {
     };
 
     _cond = _truckIsMobile AND !_condDone;
-    
-    sleep 1;
-    
-};
 
+    sleep 1;
+
+};

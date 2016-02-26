@@ -1,4 +1,6 @@
 
+private "_wp";
+
 demoSpecialist leaveVehicle demoSpecialistVeh;
 
 waitUntil {

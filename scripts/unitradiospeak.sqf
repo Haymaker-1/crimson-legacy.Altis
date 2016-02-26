@@ -1,4 +1,23 @@
 
+
+private "_emitter";
+private "_soundId";
+private "_addVolume";
+private "_emitterObj";
+private "_emitterPos";
+private "_relPath";
+private "_subtitle";
+private "_duration";
+private "_choice";
+private "_chatterFile";
+private "_chatterFileDuration";
+private "_acc";
+private "_isInside";
+private "_voicePitch";
+private "_voiceVolume";
+private "_decay";
+
+
 _emitter = _this select 0;
 _soundId = _this select 1;
 _addVolume = _this select 2;
@@ -15,7 +34,6 @@ _chatterFile = (getArray (ConfigFile >> "CfgSounds" >> _choice >> "sound") selec
 _chatterFileDuration = getNumber (ConfigFile >> "CfgSounds" >> _choice >> "duration");
 
 _acc = accTime;
-//_isInside = cameraView != "EXTERNAL";
 _isInside = false;
 
 _voicePitch = 1.0*_acc;
@@ -24,7 +42,6 @@ _voicePitch = 1.0*_acc;
         _voicePitch = (_x select 1)*_acc;
     };
 } forEach VOICE_PITCH;
-
 
 _voiceVolume = 1.0;
 {
@@ -37,49 +54,51 @@ if (isNil "_addVolume") then {
 };
 _voiceVolume = _voiceVolume + _addVolume;
 
-
-// player globalChat format ["volume = %1",_voiceVolume];
 _decay = 0;
 
 if (_emitter isKindOf "Man" AND alive _emitter) then {
 
+
     _emitter setRandomLip true;
-    
-    if ("ItemRadio" in assignedItems _emitter AND 
+
+    if ("ItemRadio" in assignedItems _emitter AND
         "ItemRadio" in assignedItems player) then {
 
+        private "_cond1";
+        private "_cond2";
+
         playSound3D [MISSION_TOP_LEVEL_DIRECTORY + _relPath,
-                     _emitterObj, 
-                     _isInside, 
-                     _emitterPos, 
+                     _emitterObj,
+                     _isInside,
+                     _emitterPos,
                      _voiceVolume,
                      _voicePitch,
-                     _decay]; 
+                     _decay];
 
         _cond1 = (_duration/_voicePitch) > 4.0;
         _cond2 = (random 1.0) < 0.5;
-        
+
         if (_cond1 AND _cond2) then {
-        
+
             null = [_chatterFile,_emitterObj,_isInside,_emitterPos,_voiceVolume,_voicePitch,_decay] spawn {
-                
-                _chatterFile = _this select 0; 
-                _emitterObj  = _this select 1; 
+
+                _chatterFile = _this select 0;
+                _emitterObj  = _this select 1;
                 _isInside    = _this select 2;
                 _emitterPos  = _this select 3;
                 _voiceVolume = _this select 4;
                 _voicePitch  = _this select 5;
-                _decay       = _this select 6; 
-                
+                _decay       = _this select 6;
+
                 sleep (random 2.0);
-                
-                playSound3D [_chatterFile, 
-                             _emitterObj, 
-                             _isInside, 
-                             _emitterPos, 
+
+                playSound3D [_chatterFile,
+                             _emitterObj,
+                             _isInside,
+                             _emitterPos,
                              _voiceVolume * 0.025,
                              _voicePitch,
-                             _decay]; 
+                             _decay];
              };
         };
 
@@ -87,10 +106,12 @@ if (_emitter isKindOf "Man" AND alive _emitter) then {
 
         player createDiaryRecord ["varTranscript",["Transcript","<font color='#00FFFF'>" + (groupID group _emitter) + "</font>: " + _subtitle]];
     };
-        
-    sleep (_duration/_voicePitch);
-    
+
+    sleep (_duration / _voicePitch);
+
     _emitter setRandomLip false;
-    
+
 };
 sleep 1;
+
+

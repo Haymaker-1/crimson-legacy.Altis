@@ -1,4 +1,9 @@
 
+private "_thePosition";
+private "_theColor";
+private "_theBrightness";
+private "_light";
+
 
 _thePosition = _this select 0;
 _theColor = _this select 1;

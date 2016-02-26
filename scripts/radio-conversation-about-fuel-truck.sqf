@@ -1,4 +1,13 @@
 
+
+private "_aaAlphaValue";
+private "_perimeter";
+private "_posResume";
+private "_posHelo";
+private "_dirFaceHelo";
+private "_isReady";
+
+
 _aaAlphaValue = 0.35;
 
 TASK_GO_TO_THE_AIRPORT setTaskState "Succeeded";
@@ -35,6 +44,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "rhqqdblf1"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -42,6 +52,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [THE_CO, "nqccsmpx2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -49,6 +60,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [THE_CO, "nqccsmpx3"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -56,6 +68,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [THE_CO, "nqccsmpx4"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -63,6 +76,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 "MARKER_FUEL_TRUCK" setMarkerType "mil_dot";
 
@@ -73,37 +87,38 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 
-"MARKER_OPFOR_AA_FRINI" setMarkerShape "ELLIPSE"; 
+"MARKER_OPFOR_AA_FRINI" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_FRINI" setMarkerSize [1750,1750];
-"MARKER_OPFOR_AA_FRINI" setMarkerAlpha _aaAlphaValue; 
-"MARKER_OPFOR_AA_FRINI_TEXT" setMarkerType "mil_dot"; 
+"MARKER_OPFOR_AA_FRINI" setMarkerAlpha _aaAlphaValue;
+"MARKER_OPFOR_AA_FRINI_TEXT" setMarkerType "mil_dot";
 sleep (random 2);
 "MARKER_OPFOR_AA_IFESTONIA" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_IFESTONIA" setMarkerSize [1750,1750];
-"MARKER_OPFOR_AA_IFESTONIA" setMarkerAlpha _aaAlphaValue; 
-"MARKER_OPFOR_AA_IFESTONIA_TEXT" setMarkerType "mil_dot"; 
-sleep (random 2); 
+"MARKER_OPFOR_AA_IFESTONIA" setMarkerAlpha _aaAlphaValue;
+"MARKER_OPFOR_AA_IFESTONIA_TEXT" setMarkerType "mil_dot";
+sleep (random 2);
 "MARKER_OPFOR_AA_GALATI" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_GALATI" setMarkerSize [1750,1750];
-"MARKER_OPFOR_AA_GALATI" setMarkerAlpha _aaAlphaValue; 
-"MARKER_OPFOR_AA_GALATI_TEXT" setMarkerType "mil_dot"; 
+"MARKER_OPFOR_AA_GALATI" setMarkerAlpha _aaAlphaValue;
+"MARKER_OPFOR_AA_GALATI_TEXT" setMarkerType "mil_dot";
 sleep (random 2);
 "MARKER_OPFOR_AA_PYRSOS" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_PYRSOS" setMarkerSize [1750,1750];
-"MARKER_OPFOR_AA_PYRSOS" setMarkerAlpha _aaAlphaValue; 
-"MARKER_OPFOR_AA_PYRSOS_TEXT" setMarkerType "mil_dot"; 
+"MARKER_OPFOR_AA_PYRSOS" setMarkerAlpha _aaAlphaValue;
+"MARKER_OPFOR_AA_PYRSOS_TEXT" setMarkerType "mil_dot";
 sleep (random 2);
 "MARKER_OPFOR_AA_AMFISSA" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_AMFISSA" setMarkerSize [1750,1750];
 "MARKER_OPFOR_AA_AMFISSA" setMarkerAlpha _aaAlphaValue;
-"MARKER_OPFOR_AA_AMFISSA_TEXT" setMarkerType "mil_dot";  
+"MARKER_OPFOR_AA_AMFISSA_TEXT" setMarkerType "mil_dot";
 sleep (random 2);
 "MARKER_OPFOR_AA_MAGOS" setMarkerShape "ELLIPSE";
 "MARKER_OPFOR_AA_MAGOS" setMarkerSize [1750,1750];
-"MARKER_OPFOR_AA_MAGOS" setMarkerAlpha _aaAlphaValue; 
-"MARKER_OPFOR_AA_MAGOS_TEXT" setMarkerType "mil_dot"; 
+"MARKER_OPFOR_AA_MAGOS" setMarkerAlpha _aaAlphaValue;
+"MARKER_OPFOR_AA_MAGOS_TEXT" setMarkerType "mil_dot";
 sleep (random 2);
 
 _isReady = [THE_CO, "nqccsmpx6"] execVM "scripts\unitradiospeak.sqf";
@@ -112,6 +127,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 ["MARKER_PERIMETER_AIRBASE",100,"ColorEAST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 
@@ -121,6 +137,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [THE_CO, "nqccsmpx8"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -128,6 +145,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 
 TASK_LOAD_FUEL = player createSimpleTask ["TASKID_LOAD_FUEL"];
@@ -147,4 +165,3 @@ if (SHOW_CHAPTER_TITLES) then {
 sleep 10;
 TIME_LAST_SAVEGAME = time;
 saveGame;
-

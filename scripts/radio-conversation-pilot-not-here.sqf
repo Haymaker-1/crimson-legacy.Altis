@@ -1,28 +1,35 @@
 
+private "_isReady";
+private "_speaker";
+
 TASK_FIND_CRASH_SITE setTaskState "Succeeded";
 ["TaskSucceeded", ["","Find crash site"]] call BIS_fnc_showNotification;
 
 sleep (15+random 5);
 _isReady = [player, "xmocpdll1"] execVM "scripts\unitspeak.sqf";
 waitUntil{
-    sleep 1; 
+    sleep 1;
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
+
 
 _isReady = [THE_CO, "xqxqpdkj1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
-    sleep 1; 
+    sleep 1;
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "xmocpdll2"] execVM "scripts\unitspeak.sqf";
 waitUntil{
-    sleep 1; 
+    sleep 1;
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 sleep (10+random 5);
 if (count units group player >= 3) then {
@@ -56,8 +63,8 @@ sleep (6+random 2);
 
 
 ["MARKER_PERIMETER_REBEL_CAMP",50,"ColorGUER",0.70] execVM "scripts\floodfill-perimeter.sqf";
-"MARKER_REBEL_CAMP" setMarkerType "mil_dot"; 
-"MARKER_REBEL_CAMP" setMarkerText "REBEL CAMP"; 
+"MARKER_REBEL_CAMP" setMarkerType "mil_dot";
+"MARKER_REBEL_CAMP" setMarkerText "REBEL CAMP";
 
 
 player groupChat "Allright, let's pay him a visit. Back to the helicopter!";
@@ -76,7 +83,13 @@ player setCurrentTask TASK_BACK_TO_HELICOPTER;
 
 
 waitUntil {
+
+    private "_thecrew";
+    private "_theunits";
+    private "_allAboard";
+
     sleep 1;
+
     _thecrew = crew thehelicopter;
     _theunits = units group player;
     _allAboard = true;
@@ -86,7 +99,7 @@ waitUntil {
             _allAboard = false;
         };
     } forEach _theunits;
-    
+
     if (_allAboard) exitWith {true};
     false
 };
@@ -109,17 +122,10 @@ TRIGGER_I_SMELL_FUEL = createTrigger["EmptyDetector",getMarkerPos "MARKER_REBEL_
 TRIGGER_I_SMELL_FUEL setTriggerArea[1000,1000,0,false];
 TRIGGER_I_SMELL_FUEL triggerAttachVehicle [thehelicopter];
 TRIGGER_I_SMELL_FUEL setTriggerActivation["VEHICLE","PRESENT",false];
-TRIGGER_I_SMELL_FUEL setTriggerStatements["this AND TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED AND player in crew thehelicopter AND (getPos thehelicopter select 2 > 2.0)","null = [] execVM 'scripts\conversation-smell-fuel.sqf'",""]; 
+TRIGGER_I_SMELL_FUEL setTriggerStatements["this AND TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED AND player in crew thehelicopter AND (getPos thehelicopter select 2 > 2.0)","null = [] execVM 'scripts\conversation-smell-fuel.sqf'",""];
 
 TRIGGER_LANDED_AT_REBEL_CAMP = createTrigger["EmptyDetector",getMarkerPos "MARKER_REBEL_CAMP_HELIPAD"];
 TRIGGER_LANDED_AT_REBEL_CAMP setTriggerArea[15,15,0,false];
 TRIGGER_LANDED_AT_REBEL_CAMP triggerAttachVehicle [thehelicopter];
 TRIGGER_LANDED_AT_REBEL_CAMP setTriggerActivation["VEHICLE","PRESENT",false];
-TRIGGER_LANDED_AT_REBEL_CAMP setTriggerStatements["this AND TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED AND (((getPos thehelicopter) select 2) < 0.25)","null = [] execVM 'scripts\landed-at-rebel-camp.sqf'",""]; 
-
-
-
-
-
-
-
+TRIGGER_LANDED_AT_REBEL_CAMP setTriggerStatements["this AND TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED AND (((getPos thehelicopter) select 2) < 0.25)","null = [] execVM 'scripts\landed-at-rebel-camp.sqf'",""];

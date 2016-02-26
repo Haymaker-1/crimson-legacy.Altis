@@ -1,5 +1,15 @@
 
 
+private "_isReady";
+private "_pos1";
+private "_pos2";
+private "_dist";
+private "_group";
+private "_pos";
+private "_wp";
+private "_perimeter";
+
+
 player removeAction ACTION_RADIO_FOR_BOAT;
 deleteVehicle TRIGGER_ADDACTION_CALL_BOAT;
 
@@ -37,6 +47,9 @@ else
     };
 };
 sleep 5;
+_pos1 = nil;
+_pos2 = nil;
+_dist = nil;
 
 (leader gunboatGroup) sideChat "Stand by. We are coming in now. Noah out.";
 sleep 6;
@@ -44,14 +57,17 @@ sleep 6;
 _group = gunboatGroup;
 _pos = getMarkerPos "MARKER_EGRESS_ALPHA_BOAT";
 
-_wp = _group addWaypoint [_pos,1]; 
+_wp = _group addWaypoint [_pos,1];
 [_group,1] setWaypointCompletionRadius 100;
-[_group,1] setWaypointType "MOVE"; 
+[_group,1] setWaypointType "MOVE";
 [_group,1] setWaypointSpeed "NORMAL";
 [_group,1] setWaypointBehaviour "SAFE";
 [_group,1] setWaypointCombatMode "RED";
 [_group,1] setWaypointStatements ["true","THE_GUNBOAT lockCargo [floor(random 7),false]; if (((getPos player) distance (getPos THE_GUNBOAT)) > 200) then {leader gunboatGroup sideChat 'We are in position at egress Alpha.';};"];
 
+_group = nil;
+_pos = nil;
+_wp = nil;
 
 
 waitUntil {
@@ -79,6 +95,9 @@ _wp = gunboatGroup addWaypoint [_pos,2];
 [gunboatGroup,2] setWaypointStatements ["true", "{deleteVehicle _x} forEach units gunboatGroup; deleteVehicle THE_GUNBOAT;"];
 [gunboatGroup,2] setWaypointCompletionRadius 100;
 
+_perimeter = nil;
+_pos = nil;
+_wp = nil;
 
 sleep random 10;
 
@@ -118,7 +137,7 @@ waitUntil {
 };
 
 if (random 1 < 0.5) then
-{   
+{
     _isReady = [player, "qzwpvxsn6"] execVM "scripts\unitspeak.sqf";
     waitUntil {
         sleep 1;
@@ -182,7 +201,3 @@ TASK_ESCORT_PILOT setTaskState "Succeeded";
 sleep (10+random 30);
 
 null = [] execVM "scripts\negades-retrieve-longrange-asset.sqf";
-
-
-
-

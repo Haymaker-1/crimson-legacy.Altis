@@ -1,5 +1,14 @@
 
 
+private "_pos";
+private "_approximateMapSize";
+private "_listOfObjects";
+private "_fuelStationIDs";
+private "_i";
+
+
+
+
 _pos = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 
 _approximateMapSize = 50000;
@@ -17,7 +26,4 @@ _i = 0;
 _fuelStationIDs resize _i;
 
 copyToClipboard (str (_fuelStationIDs));
-    
-    
-// paste into a file 'fuelstation-feed-objects.sqf'
-    
+// paste into file 'fuelstation-feed-objects.sqf'

@@ -1,5 +1,8 @@
 
 
+private "_data";
+
+
 // FIXME somehow the support boxes and ammo boxes are not created
 
 _data = [
@@ -55,26 +58,30 @@ _data = [
             ["Box_East_Grenades_F",[3858.5,13443.7,0.00138474],281.108],
             ["Box_East_Support_F",[3858.95,13446,0.00139999],281.108],
             ["Box_East_Ammo_F",[3858.19,13448.7,0.00188923],202.792]
-            
-            
+
+
 ];
 
 
 {
+
+    private "_type";
+    private "_pos";
+    private "_dir";
+    private "_veh";
+
     _type = _x select 0;
     _pos = _x select 1;
     _dir = _x select 2;
-    
-    
+
     _veh = _type createVehicle _pos;
-    //_veh setVariable ["BIS_enableRandomization", false];
     _veh setDir _dir;
     _veh setPos _pos;
 
     if (_type in ["Land_Cargo_Patrol_V3_F","Land_HBarrierTower_F","Land_BagBunker_Small_F"]) then {
         _veh setPosATL _pos;
     };
-    
+
     if (!(_type in ["Land_Cargo_Patrol_V3_F","Land_HBarrierTower_F","Land_BagBunker_Small_F"])) then {
         _normal = surfaceNormal _pos;
         _veh setVectorUp _normal;
@@ -83,9 +90,11 @@ _data = [
     if (_type isKindOf "Car") then {
         _veh setFuel (0.01+random 0.05);
     };
-    
+
     if (_type == "Box_East_Support_F") then {
-    
+
+        private "_weapons";
+
         _weapons = weaponCargo _veh;
         clearWeaponCargo _veh;
         {
@@ -96,5 +105,3 @@ _data = [
         } forEach _weapons;
     };
 } forEach _data;
-
-

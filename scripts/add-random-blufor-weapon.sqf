@@ -1,9 +1,11 @@
 
+private "_character";
+private "_playerWeapon";
 
 _character = _this select 0;
 
 
-_playerWeapon = [[["EBR",0.6],["F2000",0.35],["Tavor",0.05]]] call HAYMAKER_fnc_selectWeightedRandom; 
+_playerWeapon = [[["EBR",0.6],["F2000",0.35],["Tavor",0.05]]] call HAYMAKER_fnc_selectWeightedRandom;
 
 
 if (_playerWeapon == "EBR") then {

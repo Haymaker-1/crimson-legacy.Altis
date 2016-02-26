@@ -1,5 +1,11 @@
 
+
+
+
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
+
+    private "_nPatrols";
+    private "_headgearArray";
 
     _nPatrols = 1;
 
@@ -22,32 +28,36 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
                       "H_Booniehat_dgtl"];
 
 
-    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do 
-    {
+    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do {
+
+        private "_perimeter";
+        private "_spawnPos";
+        private "_iRandomPatrol";
+        private "_n";
 
         _perimeter = ["MARKER_PERIMETER_DKF_AA_MAGOS"] call HAYMAKER_fnc_constructPerimeter;
         _spawnPos = getMarkerPos "MARKER_SPAWN_DKF";
-        
+
         _iRandomPatrol = _i;
 
         GROUP_AA_MAGOS = createGroup east;
         _n = 3 + round (random 2);
-        for "_iSoldier" from 1 to _n do
-        {
+        for "_iSoldier" from 1 to _n do {
             "O_Soldier_GL_F" createUnit [_spawnPos,GROUP_AA_MAGOS];
         };
+
         {
+            private "_headgear";
             removeHeadGear _x;
             _headgear = _headgearArray call BIS_fnc_selectRandom;
             _x addHeadGear _headgear;
             _x removeWeapon "NVGoggles_OPFOR";
             _x removePrimaryWeaponItem "optic_ACO_grn";
-        } forEach units GROUP_AA_MAGOS;     
-        
+        } forEach units GROUP_AA_MAGOS;
+
         null = [_perimeter,GROUP_AA_MAGOS,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
-        
+
         TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 1;
         
-    };  
-
+    };
 };

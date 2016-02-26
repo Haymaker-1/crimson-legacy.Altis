@@ -1,10 +1,15 @@
 
+private "_wp";
+
 sleep 10;
 
 demoSpecialist assignAsDriver demoSpecialistVeh;
 
 if ("DemoCharge_Remote_Mag" in (magazineCargo demoSpecialistVeh)) then {
 
+    private "_then";
+    private "_fiveMinutes";
+    private "_cond";
 
     demoSpecialist sideChat "Hey! Don't forget your explosives. I can't wait too long here.";
     sleep 5;
@@ -14,14 +19,16 @@ if ("DemoCharge_Remote_Mag" in (magazineCargo demoSpecialistVeh)) then {
         if ("DemoCharge_Remote_Ammo" in [typeOf ((attachedObjects transformer) select 0)] OR (!alive transformer)) exitWith {true};
         false
     };
-    
+
     _then = daytime;
     _fiveMinutes = 5/60;
     _cond = nil;
     waitUntil {
+
+        private "_now";
         sleep 15;
-        _now = daytime; 
-        _cond = ((_now - _then) > _fiveMinutes) OR 
+        _now = daytime;
+        _cond = ((_now - _then) > _fiveMinutes) OR
         !("DemoCharge_Remote_Mag" in (magazineCargo demoSpecialistVeh)) OR
         ((demoSpecialist distance MARID_KAVALA_1) < 500) OR
         ((demoSpecialist distance MARID_KAVALA_2) < 500);
@@ -35,12 +42,12 @@ if ("DemoCharge_Remote_Mag" in (magazineCargo demoSpecialistVeh)) then {
     else {
         demoSpecialist sideChat "I'm outta here! Good luck, my friend!";
     };
-    
-   
+
+
 }
 else {
     demoSpecialist sideChat "I'm outta here! Good luck, my friend!";
-};    
+};
 
 _wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_NEGADES", 5];
 

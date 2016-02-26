@@ -1,5 +1,20 @@
 
 
+private "_otherGroup";
+private "_spawningComplete";
+private "_dx";
+private "_dy";
+private "_isReady";
+private "_speaker";
+private "_posSuitcase3";
+private "_dx2";
+private "_dy2";
+private "_posRadioFiddle";
+private "_wp";
+private "_dx3";
+private "_dy3";
+
+
 // spawn pilot and guards
 
 null = [] execVM "scripts\spawn-pilot.sqf";
@@ -25,7 +40,7 @@ if ((random 1.0) < 0.5) then {
 };
 
 _spawningComplete = [] execVM "scripts\spawn-fireteam3.sqf";
-waitUntil { 
+waitUntil {
     sleep 0.5;
     if (scriptDone _spawningComplete) exitWith {true};
     false
@@ -43,6 +58,9 @@ kostas disableAI "MOVE";
 kostas disableAI "ANIM";
 kostas setVectorDir [_dx,_dy,0];
 
+_dx = nil;
+_dy = nil;
+
 null = [] spawn {
     kostas playAction "Salute";
     sleep 5;
@@ -54,11 +72,12 @@ null = [] spawn {
 
 
 _isReady = [kostas, "egcnoprm1"] execVM "scripts\unitspeak.sqf";
-waitUntil { 
+waitUntil {
     sleep 1;
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 waitUntil {
     sleep 1;
@@ -79,6 +98,8 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
+
 
 // kostas hasnt heard anything because he hasnt had contact for a few days already
 _isReady = [kostas, "egcnoprm2"] execVM "scripts\unitspeak.sqf";
@@ -87,6 +108,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "egcnoprm3"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -94,6 +116,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "mbhglmap2"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -101,6 +124,8 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
+
 
 _isReady = [kostas, "egcnoprm4"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -108,6 +133,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "mbhglmap3"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -115,6 +141,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 // but we brought radios
 _speaker = nil;
@@ -131,23 +158,28 @@ sleep (4+random 2);
 
 
 _isReady = [player, "mbhglmap4"] execVM "scripts\unitspeak.sqf";
-waitUntil { 
+waitUntil {
     sleep 1;
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 // unload radios
-
 suitcase1 setPos (thehelicopter modelToWorld [-2,2.3,-1.4]);
 suitcase2 setPos (thehelicopter modelToWorld [-2,2.0,-1.4]);
 deleteVehicle suitcase3;
 _posSuitcase3 = (thehelicopter modelToWorld [-4,4,-1.4]);
 suitcase3 = createVehicle ["Land_SatellitePhone_F",_posSuitcase3,[],0,"NONE"];
 suitcase3 setPos _posSuitcase3;
+_posSuitcase3 = nil;
+
 _dx2 = ((getPos thehelicopter) select 0) - (_posSuitcase3 select 0);
 _dy2 = ((getPos thehelicopter) select 1) - (_posSuitcase3 select 1);
 suitcase3 setVectorDir [_dx2,_dy2,0];
+_dx2 = nil;
+_dy2 = nil;
+
 _posRadioFiddle = suitcase3 modelToWorld [0,-1,0];
 
 SUITCASES_LOADED = false;
@@ -161,7 +193,8 @@ waitUntil {
 
 _wp = (group kostas) addWaypoint [_posRadioFiddle,0];
 _wp setWaypointCompletionRadius 0.4;
- 
+_wp = nil;
+
 
 sleep 7;
 
@@ -169,11 +202,14 @@ _dx3 = (_posSuitcase3 select 0) - (_posRadioFiddle select 0);
 _dy3 = (_posSuitcase3 select 1) - (_posRadioFiddle select 1);
 
 kostas setPos _posRadioFiddle;
+_posRadioFiddle = nil;
 
 kostas disableAI "MOVE";
 kostas disableAI "ANIM";
 kostas setVectorDir [_dx3,_dy3,0];
 kostas playAction "SitDown";
+_dx3 = nil;
+_dy3 = nil;
 
 // kostas gets on radio
 sleep (1+random 2);
@@ -184,6 +220,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "egcnoprm6"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -191,6 +228,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 christos globalChat "...Kostas, is that you?";
 sleep (3+random 2);
@@ -201,6 +239,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 christos globalChat "Great!";
 sleep (2+random 2);
@@ -211,6 +250,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 christos globalChat "Yeah, I saw the whole thing!";
 sleep (2+random 2);
@@ -230,6 +270,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "egcnoprm10"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -237,6 +278,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 christos globalChat "Bye!";
 sleep (2+random 2);
@@ -255,6 +297,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "egcnoprm12"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -262,6 +305,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 "MARKER_CAPTURED_PILOT_LOCATION" setMarkerType "mil_dot";
 sleep (3+random 2);
@@ -272,6 +316,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "mbhglmap5"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -279,6 +324,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 
 {
@@ -286,7 +332,7 @@ waitUntil{
 } forEach (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD" nearObjects ["B_G_Offroad_01_F", 100]);
 {
     _x lock 0;
-} forEach (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD" nearObjects ["B_G_Quadbike_01_F", 100]);  
+} forEach (getMarkerPos "MARKER_REBEL_CAMP_HELIPAD" nearObjects ["B_G_Quadbike_01_F", 100]);
 
 
 TASK_FREE_PILOT = player createSimpleTask ["TASKID_FREE_PILOT"];
@@ -300,12 +346,12 @@ TRIGGER_STATUS_UPDATE = createTrigger["EmptyDetector",getMarkerPos "MARKER_REBEL
 TRIGGER_STATUS_UPDATE setTriggerArea[150,150,0,false];
 TRIGGER_STATUS_UPDATE triggerAttachVehicle [player];
 TRIGGER_STATUS_UPDATE setTriggerActivation["VEHICLE","NOT PRESENT",false];
-TRIGGER_STATUS_UPDATE setTriggerStatements["this", "null = [] execVM 'scripts\spawn-convoy.sqf';null = [] execVM 'scripts\radio-conversation-status-update.sqf'",""]; 
+TRIGGER_STATUS_UPDATE setTriggerStatements["this", "null = [] execVM 'scripts\spawn-convoy.sqf';null = [] execVM 'scripts\radio-conversation-status-update.sqf'",""];
 
 // spotter near Gravia airport notifies kostas of an enemy convoy leaving in westerly direction
 
 
-waitUntil { 
+waitUntil {
     sleep 5;
     if (CONVOY_HAS_REACHED_LAKKA) exitWith {true};
     false
@@ -325,6 +371,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "mbhglmap6"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -332,6 +379,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "egcnoprm15"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -339,6 +387,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "mbhglmap7"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -346,6 +395,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "egcnoprm16"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -353,6 +403,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "mbhglmap8"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -360,11 +411,12 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 EVERYBODY_IS_DONE_TALKING = true;
 
 
-waitUntil { 
+waitUntil {
     sleep 5;
     if (CONVOY_HAS_REACHED_KORE) exitWith {true};
     false
@@ -373,6 +425,7 @@ waitUntil {
 
 
 if (CAN_ASSIGN_DESTROY_CONVOY_VEHICLES) then {
+    private "_isReady";
 
     waitUntil {
         sleep 5;
@@ -387,6 +440,8 @@ if (CAN_ASSIGN_DESTROY_CONVOY_VEHICLES) then {
         if (scriptDone _isReady) exitWith {true};
         false
     };
+    _isReady = nil;
+
 
     _isReady = [kostas, "egcnoprm18"] execVM "scripts\unitradiospeak.sqf";
     waitUntil{
@@ -394,6 +449,7 @@ if (CAN_ASSIGN_DESTROY_CONVOY_VEHICLES) then {
         if (scriptDone _isReady) exitWith {true};
         false
     };
+    _isReady = nil;
 
     _isReady = [kostas, "egcnoprm19"] execVM "scripts\unitradiospeak.sqf";
     waitUntil{
@@ -401,6 +457,7 @@ if (CAN_ASSIGN_DESTROY_CONVOY_VEHICLES) then {
         if (scriptDone _isReady) exitWith {true};
         false
     };
+    _isReady = nil;
 
     _isReady = [player, "mbhglmap9"] execVM "scripts\unitspeak.sqf";
     waitUntil{
@@ -408,6 +465,7 @@ if (CAN_ASSIGN_DESTROY_CONVOY_VEHICLES) then {
         if (scriptDone _isReady) exitWith {true};
         false
     };
+    _isReady = nil;
 
     EVERYBODY_IS_DONE_TALKING = true;
 
@@ -419,6 +477,3 @@ if (CAN_ASSIGN_DESTROY_CONVOY_VEHICLES) then {
     TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED = true;
 
 };
-
-
-

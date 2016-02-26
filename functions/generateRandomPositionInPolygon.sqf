@@ -28,8 +28,6 @@ while {!_isInside} do
     };
 };
 
-//player globalChat format ["%1,%2",_pos select 0, _pos select 1];
-
 _pos resize 3;
 _pos set [2,0];
 

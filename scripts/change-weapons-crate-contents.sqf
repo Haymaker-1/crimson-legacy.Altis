@@ -1,4 +1,5 @@
 
+private "_crate";
 
 _crate = _this select 0;
 
@@ -15,4 +16,3 @@ _crate addMagazineCargo ["9Rnd_45ACP_Mag",round (random 6)];
 _crate addMagazineCargo ["1Rnd_HE_Grenade_shell",round (random 10)];
 _crate addMagazineCargo ["HandGrenade",round (random 10)];
 _crate addMagazineCargo ["MiniGrenade",round (random 10)];
-

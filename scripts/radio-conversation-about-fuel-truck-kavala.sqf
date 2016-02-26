@@ -1,10 +1,14 @@
 
+private "_isReady";
+
+
 _isReady = [player, "lqauupuc1"] execVM "scripts\unitspeak.sqf";
 waitUntil{
     sleep 1;
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "lqauupuc2"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -12,6 +16,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "ltmhcxwt1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -19,6 +24,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "lqauupuc3"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -26,6 +32,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "ltmhcxwt2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -33,6 +40,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 kavalaFuelTruck lock false;
 
@@ -52,6 +60,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "ltmhcxwt3"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -59,6 +68,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 
 TASK_STEAL_KAVALA_FUEL_TRUCK = player createSimpleTask ["TASKID_STEAL_KAVALA_FUEL_TRUCK"];
@@ -68,7 +78,3 @@ TASK_STEAL_KAVALA_FUEL_TRUCK setTaskState "Assigned";
 ["TaskAssigned", ["","Steal fuel truck"]] call BIS_fnc_showNotification;
 player setCurrentTask TASK_STEAL_KAVALA_FUEL_TRUCK;
 TASK_STEAL_KAVALA_FUEL_TRUCK_HAS_BEEN_ASSIGNED = true;
-
-
-
-

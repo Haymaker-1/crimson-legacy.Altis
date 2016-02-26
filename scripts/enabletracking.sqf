@@ -1,11 +1,13 @@
 
 
+private "_marker";
+
 nGPSPositions = 5000;
 GPSTRACK = [];
 GPSTRACK resize nGPSPositions;
 iGPS = 0;
 {
-markerName = format ["PLAYER_GPS_LOCATION_%1",iGPS]; 
+markerName = format ["PLAYER_GPS_LOCATION_%1",iGPS];
 _marker = createMarker [markerName,[0,0]];
 markerName setMarkerType "Empty";
 iGPS = iGPS + 1;
@@ -24,7 +26,7 @@ if (isnil("GPS_TRACKING_IS_ON")) then
     GPS_TRACKING_IS_ON = true;
 };
 
-while {true} do 
+while {true} do
 {
     if (GPS_TRACKING_IS_ON) then
     {
@@ -49,4 +51,4 @@ while {true} do
         };
     };
     sleep 1;
-};  
+};

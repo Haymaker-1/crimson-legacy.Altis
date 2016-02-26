@@ -1,5 +1,14 @@
 
 
+private "_nEast";
+private "_nEastThres";
+private "_men";
+private "_menNearMotorPool";
+private "_everybodySurrendered";
+private "_iUnitCaptured";
+private "_isReady";
+
+
 _nEast = 1e10;
 _nEastThres = 45;
 
@@ -20,7 +29,7 @@ TASK_CLEAR_STRAGGLERS_KAVALA = player createSimpleTask ["TASKID_CLEAR_STRAGGLERS
 TASK_CLEAR_STRAGGLERS_KAVALA setSimpleTaskDescription ["We are gaining the upper hand in this battle, but there are a few remaining pockets of resistance. Locate and eliminate them.","Clear stragglers","Clear stragglers"];
 TASK_CLEAR_STRAGGLERS_KAVALA setTaskState "Assigned";
 ["TaskAssigned", ["","Clear stragglers"]] call BIS_fnc_showNotification;
-player setCurrentTask TASK_CLEAR_STRAGGLERS_KAVALA; 
+player setCurrentTask TASK_CLEAR_STRAGGLERS_KAVALA;
 TASK_CLEAR_STRAGGLERS_KAVALA_HAS_BEEN_ASSIGNED = true;
 
 
@@ -36,29 +45,19 @@ while {_nEast > (_nEastThres - 10)} do {
 
 sleep 10;
 
-//_noVehiclesLeftInKavala = false;
-//_enemyVehicleTypes = ["O_APC_Tracked_02_cannon_F", "O_APC_Wheeled_02_rcws_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F", "O_MRAP_02_F"];
-//
-//while {!_noVehiclesLeftInKavala} do {
-//    _noVehiclesLeftInKavala = true;
-//    {
-//        _veh = _x;
-//        if ((side _veh == EAST) AND (alive _veh) AND (typeOf _veh in _enemyVehicleTypes)) then {
-//            _noVehiclesLeftInKavala = false;
-//        };
-//    } forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearEntities [["Car","Tank"],1250]);
-//    sleep 10;
-//};
-
 {
+    private "_veh";
     _veh = _x;
     {
+        private "_unit";
         _unit = _x;
         _unit leaveVehicle _veh;
     } forEach crew _veh;
 } forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearEntities [["Car","Tank"],1250]);
 
 {
+    private "_veh";
+    private "_unit";
     _veh = (assignedVehicle _x);
     _unit = _x;
     _unit leaveVehicle _veh;
@@ -69,6 +68,8 @@ sleep 10;
 } forEach ((getMarkerPos "MARKER_MOTOR_POOL") nearObjects ["O_HMG_01_high_F",1250]);
 
 {
+    private "_veh";
+    private "_unit";
     _veh = (assignedVehicle _x);
     _unit = _x;
     _unit leaveVehicle _veh;
@@ -94,29 +95,36 @@ _everybodySurrendered = false;
 _iUnitCaptured = 0;
 
 {
+    private "_theUnit";
     _theUnit = _x;
-    
+
     if (((side _theUnit) == EAST) AND (alive _theUnit)) then {
-        
+
+        private "_grp";
+        private "_pos";
+        private "_x";
+        private "_y";
+        private "_wp";
+
         null = [_theUnit] execVM "scripts\opfor-unit-dump-gear.sqf";
-        
+
         _grp = createGroup EAST;
         [_x] joinSilent _grp;
-        
+
         _x setCaptive true;
-        _x allowFleeing 0.0; 
+        _x allowFleeing 0.0;
         _x setUnitPos "UP";
-        
+
         {
             deleteWaypoint [_grp, _forEachIndex];
         } forEach (waypoints _grp);
-        
+
         _pos = getMarkerPos "MARKER_MOTOR_POOL";
         _x = (_pos select 0) + (_iUnitCaptured%5 - 2) * 4;
         _y = (_pos select 1) + ((floor(_iUnitCaptured/5) - 2) * 4);
         _pos set [0,_x];
         _pos set [1,_y];
-        
+
         _wp = _grp addWaypoint [_pos,0,0];
         _grp setBehaviour "CARELESS";
         _grp setFormation "FILE";
@@ -128,12 +136,12 @@ _iUnitCaptured = 0;
         _iUnitCaptured = _iUnitCaptured + 1;
 
     };
-    
-    
+
+
     if (_forEachIndex == ((count _menNearMotorPool) - 1)) then {
         _everybodySurrendered = true;
     };
-    
+
 } forEach _menNearMotorPool;
 
 waitUntil {
@@ -164,6 +172,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 sleep 10;
 
@@ -175,4 +184,3 @@ sleep 10;
 
 
 null = [] execVM "scripts\spawn-exfilhelo.sqf";
-

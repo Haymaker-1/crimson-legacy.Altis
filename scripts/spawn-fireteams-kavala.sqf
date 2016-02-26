@@ -1,6 +1,9 @@
 
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
+    private "_nPatrols";
+    private "_headgearArray";
+
     _nPatrols = 25;
 
     _headgearArray = ["H_Beret_blk",
@@ -22,13 +25,19 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
                       "H_Booniehat_dgtl"];
 
 
-    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do 
-    {
+    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do {
+
+        private "_perimeter";
+        private "_marker";
+        private "_spawnPos";
+        private "_iRandomPatrol";
+        private "_group";
+        private "_soldier";
 
         _perimeter = ["MARKER_PERIMETER_FKS_KAVALA"] call HAYMAKER_fnc_constructPerimeter;
         _marker = ["GJV_SPAWN_1","GJV_SPAWN_2","GJV_SPAWN_3","GJV_SPAWN_4","GJV_SPAWN_5","GJV_SPAWN_6","GJV_SPAWN_7","GJV_SPAWN_8"] call BIS_fnc_selectRandom;
         _spawnPos = getMarkerPos _marker;
-        
+
         _iRandomPatrol = _i;
 
         _group = createGroup east;
@@ -39,22 +48,21 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
             _soldier = "O_Soldier_LAT_F" createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"PRIVATE"];
         };
 
-        for "_j" from 0 to 3 do
-        {
+        for "_j" from 0 to 3 do {
+            private "_fighterType";
             _fighterType = [[["O_Soldier_lite_F",0.35],
                             ["O_medic_F",0.2],
                             ["O_Soldier_A_F",0.2],
                             ["O_Soldier_LAT_F",0.2],
                             ["O_Soldier_M_F",0.05]]] call HAYMAKER_fnc_selectWeightedRandom;
 
-
-            if (random 1.0 < 0.25) then
-            {
+            if (random 1.0 < 0.25) then {
                 _soldier = _fighterType createUnit [_spawnPos,_group,"null = [this,300] execVM 'scripts\look-out-for-mortar-targets.sqf';", 0.5,"PRIVATE"];
             };
         };
-        
+
         {
+            private "_headgear";
             removeHeadGear _x;
             _headgear = _headgearArray call BIS_fnc_selectRandom;
             _x addHeadGear _headgear;
@@ -62,11 +70,13 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
                 _x removeWeapon "NVGoggles_OPFOR";
             };
             _x removePrimaryWeaponItem "optic_ACO_grn";
-        } forEach units _group;     
-        
+        } forEach units _group;
+
         null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
-        
+
         TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 1;
-        
-    };  
+
+    };
 };
+
+

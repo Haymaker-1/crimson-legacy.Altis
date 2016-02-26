@@ -1,23 +1,41 @@
 
 
+
+private "_perimeter";
+private "_pos";
+private "_windingNumber";
+private "_radius";
+private "_vehiclesMotorpool";
+private "_actualScore";
+private "_perfectScore";
+private "_isReady";
+private "_trig";
+private "_theDate";
+private "_yyyy";
+private "_mm";
+private "_dd";
+private "_tod";
+private "_group";
+private "_varsuk";
+
 _perimeter = ["MARKER_PERIMETER_FKS_KAVALA"] call HAYMAKER_fnc_constructPerimeter;
 _pos = getPos kavalaFuelTruck;
 _windingNumber = [_perimeter,_pos] call HAYMAKER_fnc_calcWindingNumber;
+
 if (_windingNumber != 0) then {
     TASK_STEAL_KAVALA_FUEL_TRUCK setTaskState "Failed";
     ["TaskFailed", ["","Steal fuel truck"]] call BIS_fnc_showNotification;
-    
+
     sleep 10;
-    
+
     TASK_LEAVE_KAVALA = player createSimpleTask ["TASKID_LEAVE_KAVALA"];
     TASK_LEAVE_KAVALA setSimpleTaskDescription ["The fuel truck was immobilized. Escape Kavala on foot.","Escape Kavala","Escape Kavala"];
     TASK_LEAVE_KAVALA setTaskState "Assigned";
     ["TaskAssigned", ["","Escape Kavala"]] call BIS_fnc_showNotification;
-    player setCurrentTask TASK_LEAVE_KAVALA; 
+    player setCurrentTask TASK_LEAVE_KAVALA;
     TASK_LEAVE_KAVALA_HAS_BEEN_ASSIGNED = true;
-    
-} 
-else {
+
+} else {
     TASK_STEAL_KAVALA_FUEL_TRUCK setTaskState "Succeeded";
     ["TaskSucceeded", ["","Steal fuel truck"]] call BIS_fnc_showNotification;
 };
@@ -25,16 +43,20 @@ else {
 sleep 10;
 
 waitUntil{
-    sleep 5; 
-    _windingNumber = [_perimeter,(getPos player)] call HAYMAKER_fnc_calcWindingNumber; 
+    private "_windingNumber";
+    private "_cond1";
+    private "_cond2";
+    private "_cond3";
+    sleep 5;
+    _windingNumber = [_perimeter,(getPos player)] call HAYMAKER_fnc_calcWindingNumber;
     _cond1 = _windingNumber == 0;
     _cond2 = ((getPos player) distance (getMarkerPos "MARKER_MOTOR_POOL_REPOSITION")) > 300;
     _cond3 = ((getPos player) distance (getMarkerPos "MARKER_MOTOR_POOL")) > 150;
     if (_cond1 AND _cond2 AND _cond3) exitWith {true};
     false
 };
-    
-if (TASK_LEAVE_KAVALA_HAS_BEEN_ASSIGNED) then {    
+
+if (TASK_LEAVE_KAVALA_HAS_BEEN_ASSIGNED) then {
     TASK_LEAVE_KAVALA setTaskState "Succeeded";
     ["TaskSucceeded", ["","Escape Kavala"]] call BIS_fnc_showNotification;
 };
@@ -42,6 +64,7 @@ if (TASK_LEAVE_KAVALA_HAS_BEEN_ASSIGNED) then {
 
 _radius = 100;
 _vehiclesMotorpool = nearestObjects [(getMarkerPos "MARKER_MOTOR_POOL"),["Car","Tank"],_radius];
+_radius = nil;
 
 _actualScore = 0;
 _perfectScore = 0;
@@ -51,19 +74,31 @@ _perfectScore = 0;
 } forEach _vehiclesMotorpool;
 
 {
+    private "_veh";
+    private "_vehicleType";
+    private "_addRatingValue";
+    private "_hasAttachedExplosives";
     _veh = _x;
     _vehicleType = typeOf _veh;
     _addRatingValue = [_vehicleType] call HAYMAKER_fnc_getAddRatingValueExplosives;
     _perfectScore = _perfectScore + _addRatingValue;
-    
+
     _hasAttachedExplosives = "DemoCharge_Remote_Ammo" in [typeOf ((attachedObjects _veh) select 0)];
     if ((!alive _veh) OR _hasAttachedExplosives) then {
         _actualScore = _actualScore + _addRatingValue;
-    } 
-    else {
+    } else {
+
+        private "_excludedVehicles";
         _excludedVehicles = ["O_MRAP_02_F","O_Quadbike_01_F","O_Truck_02_transport_F","O_Truck_02_covered_F"];
+
         if (!(typeOf _veh in _excludedVehicles)) then {
-        
+
+            private "_repositionRadius";
+            private "_repositionPos";
+            private "_grp";
+            private "_dest";
+            private "_wp";
+
             _repositionRadius = 70;
             _repositionPos = [((getMarkerPos "MARKER_MOTOR_POOL_REPOSITION") select 0) - _repositionRadius/2 + random _repositionRadius,
                               ((getMarkerPos "MARKER_MOTOR_POOL_REPOSITION") select 1) - _repositionRadius/2 + random _repositionRadius,
@@ -82,6 +117,8 @@ _perfectScore = 0;
 
 } forEach _vehiclesMotorpool;
 
+
+
 {
     _x allowDamage true;
 } forEach _vehiclesMotorpool;
@@ -92,7 +129,7 @@ sleep 10;
 if (MOTOR_POOL_SCORE == 0) then {
     TASK_DESTROY_VEHICLES_KAVALA setTaskState "Failed";
     ["TaskFailed", ["","Destroy vehicles"]] call BIS_fnc_showNotification;
-} 
+}
 else {
     TASK_DESTROY_VEHICLES_KAVALA setTaskState "Succeeded";
     ["TaskSucceeded", ["","Destroy vehicles"]] call BIS_fnc_showNotification;
@@ -107,6 +144,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "lrxfuuzi1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil{
@@ -114,6 +152,7 @@ waitUntil{
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "pobbanfx2"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -121,6 +160,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "lrxfuuzi2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -128,6 +168,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "pobbanfx3"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -135,6 +176,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "lrxfuuzi3"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -142,9 +184,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
-
-_vehName1 = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "displayName");
-_vehName2 = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_gmg_F" >> "displayName");
+_isReady = nil;
 
 _isReady = [player, "pobbanfx4"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -152,6 +192,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 if (MOTOR_POOL_SCORE == 0) then {
     _isReady = [kostas, "lrxfuuzi4"] execVM "scripts\unitradiospeak.sqf";
@@ -160,14 +201,15 @@ if (MOTOR_POOL_SCORE == 0) then {
         if (scriptDone _isReady) exitWith {true};
         false
     };
-}
-else {
+    _isReady = nil;
+} else {
     _isReady = [kostas, "lrxfuuzi5"] execVM "scripts\unitradiospeak.sqf";
     waitUntil {
         sleep 1;
         if (scriptDone _isReady) exitWith {true};
         false
     };
+    _isReady = nil;
 };
 
 _isReady = [player, "pobbanfx5"] execVM "scripts\unitspeak.sqf";
@@ -176,6 +218,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "lrxfuuzi6"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -183,7 +226,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
-
+_isReady = nil;
 
 _isReady = [player, "pobbanfx6"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -191,6 +234,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 sleep 10;
 
@@ -200,6 +244,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [THE_CO, "sawfkwnw1"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -207,8 +252,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
-
-_vehTypeName = getText (configFile >> "CfgVehicles" >> "I_MRAP_03_hmg_F" >> "textPlural");
+_isReady = nil;
 
 _isReady = [player, "pobbanfx8"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -216,6 +260,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [THE_CO, "sawfkwnw2"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -223,6 +268,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "pobbanfx9"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -230,6 +276,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 sleep 10;
 
@@ -241,6 +288,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "lrxfuuzi7"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -248,6 +296,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "pobbanfx11"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -255,6 +304,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "pobbanfx12"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -262,6 +312,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "lrxfuuzi8"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -269,6 +320,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "pobbanfx13"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -276,6 +328,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "lrxfuuzi9"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -283,6 +336,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "pobbanfx14"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -290,6 +344,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "lrxfuuzi10"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -297,6 +352,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 
 TASK_MEET_AT_QUARRY = player createSimpleTask ["TASKID_MEET_AT_QUARRY"];
@@ -304,7 +360,7 @@ TASK_MEET_AT_QUARRY setSimpleTaskDescription ["Make your way to the <marker name
 TASK_MEET_AT_QUARRY setSimpleTaskDestination (getMarkerPos "MARKER_STAGING_AREA_QUARRY");
 TASK_MEET_AT_QUARRY setTaskState "Assigned";
 ["TaskAssigned", ["","Move to staging area"]] call BIS_fnc_showNotification;
-player setCurrentTask TASK_MEET_AT_QUARRY; 
+player setCurrentTask TASK_MEET_AT_QUARRY;
 
 
 
@@ -312,8 +368,8 @@ _trig = createTrigger["EmptyDetector",getMarkerPos "MARKER_STAGING_AREA_QUARRY"]
 _trig setTriggerArea[111,111,0,false];
 _trig triggerAttachVehicle [player];
 _trig setTriggerActivation["VEHICLE","PRESENT",false];
-_trig setTriggerStatements["this AND TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED","null = [true] execVM 'scripts\assault-kavala.sqf';",""]; 
-
+_trig setTriggerStatements["this AND TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED","null = [true] execVM 'scripts\assault-kavala.sqf';",""];
+_trig = nil;
 
 sleep 10;
 
@@ -332,7 +388,7 @@ _dd = _theDate select 2;
 setDate [_yyyy, _mm, _dd, 0, 1];
 
 _tod = 4.75;
-if (WEATHER_IS_CONTROLLED) then {    
+if (WEATHER_IS_CONTROLLED) then {
     ((24 + _tod)*3600) setFog [0.6,0.1,5.0];
     ((24 + _tod)*3600) setRain 0.0;
     ((24 + _tod)*3600) setOvercast 0.4;
@@ -343,37 +399,45 @@ skipTime (24 + _tod + random 0.25);
 if (WEATHER_IS_CONTROLLED) then {
     (2*3600) setFog [0.02, 0.10, 2.3];
 };
- 
+
 _radius = 50;
 {
+    private "_lightPos";
+    private "_lightColor";
+    private "_lightBrightness";
     _lightPos = [(getMarkerPos "MARKER_STAGING_AREA_QUARRY" select 0) - _radius/2 + random _radius,
                  (getMarkerPos "MARKER_STAGING_AREA_QUARRY" select 1) - _radius/2 + random _radius,
                  0.5];
     _lightColor = [0.5,0,1];
     _lightBrightness = 0.25;
-    
+
     null = [_lightPos,_lightColor,_lightBrightness] execVM "scripts\create-light.sqf";
 } forEach [1,2,3];
 
 
+
 null = [_radius,_location] spawn {
+
+    private "_radius";
+    private "_location";
+    private "_lights";
 
     _radius = _this select 0;
     _location = _this select 1;
     _lights = _location nearObjects ["#lightpoint",_radius];
-  
+
     waitUntil {
         sleep 300;
         if (daytime > 6.00) exitWith {true};
         false
-    };  
-    
+    };
+
     {
         deleteVehicle _x;
     } forEach _lights;
-    
-};
 
+};
+_radius = nil;
 
 
 {
@@ -397,17 +461,17 @@ null = [_radius,_location] spawn {
 (group player) setBehaviour "SAFE";
 
 
-{ 
+{
+    private "_barrier";
     _barrier = createVehicle ["Land_CncBarrierMedium4_F",_x select 0,[],0,"NONE"];
     _barrier setDir (_x select 1);
-
 } forEach [[[5345.48,14529.5,0.00134087],73.962],
            [[5350.45,14519.7,0.00140572],54.1223],
            [[5355.65,14510.7,0.00116539],63.372],
            [[5355.73,14529.3,0.0014286],61.4842],
            [[5357.83,14517.9,0.00138092],56.5845]];
-           
-           
+
+
 _group = createGroup EAST;
 _varsuk = createVehicle ["O_MBT_02_cannon_F",[5651.19,14638.4,0.97583],[],0,"NONE"];
 _varsuk setDir 302;
@@ -415,9 +479,10 @@ _varsuk setDir 302;
 "O_crew_F" createUnit [ getMarkerPos "MARKER_VARSUK", _group, "this moveInGunner _varsuk", 1.0, "private"];
 "O_crew_F" createUnit [ getMarkerPos "MARKER_VARSUK", _group, "this moveInDriver _varsuk", 1.0, "private"];
 
-
-
 {
+    private "_marker";
+    private "_group";
+    private "_staticAT";
     _marker = format["MARKER_AT_TEAM_%1",(_forEachIndex+1)];
     _group = createGroup EAST;
     _staticAT = createVehicle [ "O_static_AT_F", getMarkerPos _marker, [], 0 ,"NONE"];
@@ -490,6 +555,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "pobbanfx15"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -497,6 +563,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [kostas, "lrxfuuzi12"] execVM "scripts\unitradiospeak.sqf";
 waitUntil {
@@ -504,6 +571,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "pobbanfx16"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -511,6 +579,7 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 _isReady = [player, "pobbanfx17"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -518,21 +587,5 @@ waitUntil {
     if (scriptDone _isReady) exitWith {true};
     false
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+_isReady = nil;
 

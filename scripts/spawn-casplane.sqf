@@ -1,10 +1,18 @@
 
 
+private "_pos";
+private "_casPlaneGroup";
+private "_unit";
+private "_marker";
+private "_hasAmmo";
+private "_wipeoutMags";
+private "_fuelThreshold";
+
 TRIGGER_CALL_CASPLANE = createTrigger["EmptyDetector",[0,0,0]];
 TRIGGER_CALL_CASPLANE setTriggerArea[5,5,0,true];
 TRIGGER_CALL_CASPLANE setTriggerActivation["ECHO","PRESENT",true];
 TRIGGER_CALL_CASPLANE setTriggerText "Close Air Support";
-TRIGGER_CALL_CASPLANE setTriggerStatements["this", "ADD_CASPLANE_ATTACKING_WP = true;",""]; 
+TRIGGER_CALL_CASPLANE setTriggerStatements["this", "ADD_CASPLANE_ATTACKING_WP = true;",""];
 
 
 _pos = getMarkerPos "MARKER_CASPLANE_SPAWN";
@@ -40,13 +48,15 @@ _wipeoutMags = ["1000Rnd_Gatling_30mm_Plane_CAS_01_F",
                 "4Rnd_Bomb_04_F",
                 "7Rnd_Rocket_04_HE_F",
                 "7Rnd_Rocket_04_AP_F"];
-                
+
 _fuelThreshold = 0.2;
-                
+
 while {alive casplane AND _hasAmmo AND (fuel casplane > _fuelThreshold)} do {
 
     _hasAmmo = false;
     {
+        private "_magType";
+        private "_magCount";
         _magType = _x select 0;
         _magCount = _x select 1;
         if (_magType in _wipeoutMags) then {
@@ -58,42 +68,59 @@ while {alive casplane AND _hasAmmo AND (fuel casplane > _fuelThreshold)} do {
 
 
     if (ADD_CASPLANE_HOLDING_WP) then {
-    
+
+        private "_wp1";
+
         ADD_CASPLANE_HOLDING_WP = false;
-  
+
         while {count (waypoints casplane) > 0} do {
             deleteWaypoint [_casPlaneGroup,0];
         };
-        
+
         _wp1 = _casPlaneGroup addWayPoint [getMarkerPos "MARKER_CASPLANE_HOLDING_1",300];
         _wp1 setWaypointType "MOVE";
-        
+
         (assignedDriver casplane) doMove getMarkerPos "MARKER_CASPLANE_HOLDING_1";
         (assignedDriver casplane) disableAI "TARGET";
         (group (assignedDriver casplane)) setCombatMode "GREEN";
-        
+
         "MARKER_CASPLANE_ZONE" setMarkerAlpha 0;
-        
+
     };
 
+
     if (ADD_CASPLANE_ATTACKING_WP) then {
-    
-        ADD_CASPLANE_ATTACKING_WP = false;    
-    
+
+        private "_safetyZone";
+        private "_dir";
+        private "_pos";
+        private "_range";
+        private "_dx";
+        private "_dy";
+        private "_posx";
+        private "_posy";
+        private "_posBehind";
+        private "_posInFront";
+        private "_posMiddle";
+        private "_nPasses";
+        private "_wp3";
+
+        ADD_CASPLANE_ATTACKING_WP = false;
+
         null = [] spawn {sleep (1+random 10); (assignedDriver casplane) sideChat "Receiving coordinates...on my way.";};
-        
+
         CAS_START_DAYTIME = daytime;
         null = [] spawn {
             waitUntil {
                 sleep 60;
                 if (daytime - CAS_START_DAYTIME > 0.1) exitWith {true};
                 false
-            }; 
-            ADD_CASPLANE_HOLDING_WP = true;  
-            (assignedDriver casplane) disableAI "TARGET"; 
+            };
+            ADD_CASPLANE_HOLDING_WP = true;
+            (assignedDriver casplane) disableAI "TARGET";
             (group (assignedDriver casplane)) setCombatMode "GREEN";
         };
-    
+
         while {count (waypoints casplane) > 0} do {
             deleteWaypoint [_casPlaneGroup,0];
         };
@@ -109,70 +136,63 @@ while {alive casplane AND _hasAmmo AND (fuel casplane > _fuelThreshold)} do {
         _posBehind = [_posx - _dx,_posy - _dy, 300];
         _posInFront = [_posx + (_dx/5),_posy + (_dy/5), 300];
         _posMiddle = [(_posBehind select 0) + (_dx * 0.6),(_posBehind select 1) + (_dy * 0.6), 300];
-        
+
         "MARKER_CASPLANE_ZONE" setMarkerPos _posMiddle;
         "MARKER_CASPLANE_ZONE" setMarkerDir _dir;
         "MARKER_CASPLANE_ZONE" setMarkerAlpha 1;
-        
+
         _nPasses = 2 + round (random 2);
         for "_i" from 0 to (_nPasses-1) do {
 
+            private "_wp1";
+            private "_wp2";
+
             _wp1 = _casPlaneGroup addWayPoint [_posBehind,100];
             _wp1 setWaypointType "MOVE";
-            //_wp1 setWaypointBehaviour "COMBAT";
             _wp1 setWaypointCombatMode "RED";
             _wp1 setWaypointCompletionRadius 100;
             _wp1 setWaypointSpeed "NORMAL";
-            
+
             _wp2 = _casPlaneGroup addWayPoint [_posInFront,100];
             _wp2 setWaypointType "MOVE";
-            //_wp2 setWaypointBehaviour "COMBAT";
             _wp2 setWaypointCombatMode "RED";
             _wp2 setWaypointCompletionRadius 100;
             _wp2 setWaypointSpeed "NORMAL";
-            
         };
+
 
         _wp3 = _casPlaneGroup addWayPoint [_posInFront,100];
         _wp3 setWaypointType "MOVE";
-        //_wp3 setWaypointBehaviour "COMBAT";
         _wp3 setWaypointCombatMode "RED";
         _wp3 setWaypointCompletionRadius 100;
         _wp3 setWaypointStatements ["true","ADD_CASPLANE_HOLDING_WP = true; (assignedDriver casplane) sideChat 'Returning to holding pattern.'; 'MARKER_CASPLANE_ZONE' setMarkerAlpha 0; "];
-        
-
-        
     };
-    
+
     if (!ADD_CASPLANE_HOLDING_WP AND !ADD_CASPLANE_ATTACKING_WP) then {
         // currently attacking
-        
+
         (assignedDriver casplane) enableAI "TARGET";
         (group (assignedDriver casplane)) setCombatMode "RED";
-        
+
         {
+            private "_target";
+            private "_targetSide";
             _target = _x;
             _targetSide = _target select 2;
             if (_targetSide == EAST) then {
+                private "_id";
                 _id = (_target select 4);
                 if (player knowsabout _id > 3.5) then {
-
                     (group casplane) reveal _id;
-                    (assignedDriver casplane) doTarget _id; 
-                    (assignedDriver casplane) doFire _id; 
-                    
+                    (assignedDriver casplane) doTarget _id;
+                    (assignedDriver casplane) doFire _id;
                 };
             };
         } forEach (player nearTargets 1500);
-    };    
-    
+    };
 
     sleep 10;
-    
 };
-
-
-//player globalChat "DBG: move somewhere out of sight";
 
 if (alive casplane AND !_hasAmmo) then {
     (assignedDriver casplane) sideChat "Munitions black, I'm RTB. Good luck!";
@@ -186,7 +206,3 @@ deleteVehicle TRIGGER_CALL_CASPLANE;
 5 setRadioMsg "NULL";
 
 deleteVehicle "MARKER_CASPLANE_ZONE";
-
-
-
-

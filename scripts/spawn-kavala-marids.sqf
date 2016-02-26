@@ -1,5 +1,8 @@
 
 
+
+private "_headgearArray";
+
 _headgearArray = ["H_Beret_blk",
                   "H_Beret_grn",
                   "H_Beret_grn_SF",
@@ -47,13 +50,14 @@ clearMagazineCargo MARID_KAVALA_1;
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_1"),
                             MARID_KAVALA_1_GROUP,
                             "this assignAsCargoIndex [MARID_KAVALA_1,1]; this moveInCargo MARID_KAVALA_1; this removePrimaryWeaponItem 'optic_ACO_grn';"];
-                            
+
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_1"),
                             MARID_KAVALA_1_GROUP,
                             "this assignAsCargoIndex [MARID_KAVALA_1,2]; this moveInCargo MARID_KAVALA_1; this removePrimaryWeaponItem 'optic_ACO_grn';"];
-                            
+
 
 {
+    private "_headgear";
     removeHeadGear _x;
     _headgear = _headgearArray call BIS_fnc_selectRandom;
     _x addHeadGear _headgear;
@@ -91,13 +95,14 @@ clearMagazineCargo MARID_KAVALA_2;
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_2"),
                             MARID_KAVALA_2_GROUP,
                             "this assignAsCargoIndex [MARID_KAVALA_2,1]; this moveInCargo MARID_KAVALA_2; this removePrimaryWeaponItem 'optic_ACO_grn';"];
-                            
+
 "O_Soldier_F"  createUnit [(getMarkerPos "MARKER_MARID_KAVALA_2"),
                             MARID_KAVALA_2_GROUP,
                             "this assignAsCargoIndex [MARID_KAVALA_2,2]; this moveInCargo MARID_KAVALA_2; this removePrimaryWeaponItem 'optic_ACO_grn';"];
-                            
+
 
 {
+    private "_headgear";
     removeHeadGear _x;
     _headgear = _headgearArray call BIS_fnc_selectRandom;
     _x addHeadGear _headgear;

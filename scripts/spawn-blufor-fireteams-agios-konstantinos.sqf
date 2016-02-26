@@ -1,6 +1,10 @@
 
+
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
-     
+
+    private "_nPatrols";
+    private "_headgearArray";
+
     _nPatrols = 3 + round (random 2);
 
     _headgearArray = ["H_Beret_blk",
@@ -22,12 +26,20 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
                       "H_Booniehat_dgtl"];
 
 
-    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do 
-    {
+    for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do {
+
+        private "_perimeter";
+        private "_spawnPos";
+        private "_iRandomPatrol";
+        private "_group";
+        private "_soldier1";
+        private "_soldier2";
+        private "_soldier3";
+        private "_soldier4";
 
         _perimeter = ["MARKER_PERIMETER_FGF_AGIOS_KONSTANTINOS"] call HAYMAKER_fnc_constructPerimeter;
         _spawnPos = getMarkerPos "MARKER_REBEL_CAMP_SPAWN";
-        
+
         _iRandomPatrol = _i;
 
         _group = createGroup west;
@@ -37,14 +49,15 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
         _soldier4 = "I_G_Soldier_AR_F" createUnit [_spawnPos,_group];
 
         {
+            private "_headgear";
             removeHeadGear _x;
             _headgear = _headgearArray call BIS_fnc_selectRandom;
             _x addHeadGear _headgear;
-        } forEach units _group;    
-        
+        } forEach units _group;
+
         null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
-        
+
         TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 1;
-        
-    };  
+
+    };
 };

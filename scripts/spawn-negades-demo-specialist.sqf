@@ -1,10 +1,12 @@
 
 
+private "_moreBoom";
+
 demoSpecialistVeh = createVehicle ["C_Offroad_01_F", getMarkerPos "MARKER_NEGADES",[],0,"NONE"];
 demoSpecialistVeh setFuel 0.06;
 demoSpecialistVeh setDir 270;
 demoSpecialistVeh allowDamage false;
-demoSpecialistVeh setVehicleLock "LOCKED"; 
+demoSpecialistVeh setVehicleLock "LOCKED";
 //demoSpecialistVeh lockDriver true;
 demoSpecialistVeh lockCargo true;
 
@@ -21,5 +23,5 @@ demoSpecialist = units demoSpecialistGroup select 0;
 demoSpecialist assignAsDriver demoSpecialistVeh;
 demoSpecialist moveInDriver demoSpecialistVeh;
 //demoSpecialist allowDamage false;
-demoSpecialist allowFleeing 0.0; 
+demoSpecialist allowFleeing 0.0;
 (group demoSpecialist) setGroupId ["IED Specialist","GroupColor4"];

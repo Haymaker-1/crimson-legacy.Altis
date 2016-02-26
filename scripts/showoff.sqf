@@ -1,5 +1,13 @@
 
 
+private "_vector";
+private "_a";
+private "_b";
+private "_speed";
+private "_altitude";
+private "_cond";
+
+
 _vector = velocity thehelicopter;
 _a = _vector select 0;
 _b = _vector select 1;
@@ -8,24 +16,24 @@ _altitude = getPos thehelicopter select 2;
 
 _cond = (_speed > 50) AND (_altitude < 15);
 
-if (_cond) then 
-{
+if (_cond) then {
     sleep (3+random 2);
-    if (alive thehelicopter) then
-    {
+    if (alive thehelicopter) then {
+        private "_isReady";
         _isReady = [THE_CO, "bpxqzvmm1"] execVM "scripts\unitradiospeak.sqf";
         waitUntil{
-            sleep 1; 
+            sleep 1;
             if (scriptDone _isReady) exitWith {true};
             false
         };
+        _isReady = nil;
 
         _isReady = [THE_CO, "bpxqzvmm2"] execVM "scripts\unitradiospeak.sqf";
         waitUntil{
-            sleep 1; 
+            sleep 1;
             if (scriptDone _isReady) exitWith {true};
             false
         };
-        
+        _isReady = nil;
     };
 };

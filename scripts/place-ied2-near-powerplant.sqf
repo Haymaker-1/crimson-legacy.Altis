@@ -1,4 +1,6 @@
 
+private "_wp";
+
 
 demoSpecialist disableAI "MOVE";
 demoSpecialist disableAI "ANIM";
@@ -7,7 +9,7 @@ sleep 4;
 ied2 = createMine ["IEDUrbanBig_F",(getMarkerPos "MARKER_POWERPLANT_IED2"),[],0];
 demoSpecialist playAction "Up";
 demoSpecialist enableAI "ANIM";
-demoSpecialist enableAI "MOVE"; 
+demoSpecialist enableAI "MOVE";
 
 _wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_WP_DEMO_SPECIALISTS_DISEMBARK", 4];
 
@@ -18,7 +20,7 @@ _wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_WP_DEMO_SPECIALISTS_
 
 
 waitUntil {
-    sleep 1; 
+    sleep 1;
     if ((demoSpecialist distance ied2) > 35) exitWith {true};
     false
 };
