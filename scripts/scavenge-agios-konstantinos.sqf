@@ -165,8 +165,6 @@ _inventory =
 } forEach _areasIveBeenTo;
 
 
-INVENTORY = _inventory;
-
 // attach to respective crate
 
 {
