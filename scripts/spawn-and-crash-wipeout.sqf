@@ -126,8 +126,10 @@ _isReady = nil;
 
 player removeSimpleTask TASK_DELIVER_RADIOS;
 
-_trg = createTrigger["EmptyDetector",getMarkerPos "MARKER_NABISCO_HELIPAD"];
-_trg setTriggerArea[10,10,_dir,true];
+
+_dir = markerDir "MARKER_NABISCO_HELIPAD";
+_trg = createTrigger["EmptyDetector", getMarkerPos "MARKER_NABISCO_HELIPAD"];
+_trg setTriggerArea[10, 10, _dir, true];
 _trg triggerAttachVehicle [player];
 _trg setTriggerActivation["VEHICLE","PRESENT",false];
 _trg setTriggerStatements["this AND TASK_WAIT_AT_NABISCO_HAS_BEEN_ASSIGNED AND (((getPos thehelicopter) distance (getMarkerPos 'MARKER_NABISCO_HELIPAD')) < 10) AND ((getPos thehelicopter select 2) <0.05) ", "TASK_WAIT_AT_NABISCO setTaskState 'Succeeded'; ['TaskSucceeded', ['','Wait at Nabisco']] call BIS_fnc_showNotification;", ""];
