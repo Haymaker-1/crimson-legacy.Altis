@@ -1,54 +1,76 @@
 
 
-private "_marker";
 
-nGPSPositions = 5000;
-GPSTRACK = [];
-GPSTRACK resize nGPSPositions;
-iGPS = 0;
+private "_nGpsPositions";
+private "_gpsTrack";
+private "_iGps";
+private "_gpsMarkerIndex";
+private "_gpsMarkerIndexPrev";
+private "_playerHasGPS";
+private "_maxTimeSinceLastGpsFix";
+private "_maxDistSinceLastGpsFix";
+private "_minDistSinceLastGpsFix";
+
+
+_maxTimeSinceLastGpsFix = 15;
+_maxDistSinceLastGpsFix = 50;
+_minDistSinceLastGpsFix = 5;
+
+
+_nGpsPositions = 5000;
+_gpsTrack = [];
+_gpsTrack resize _nGpsPositions;
+_iGps = 0;
 {
-markerName = format ["PLAYER_GPS_LOCATION_%1",iGPS];
-_marker = createMarker [markerName,[0,0]];
-markerName setMarkerType "Empty";
-iGPS = iGPS + 1;
-} forEach GPSTRACK;
+    private "_markerName";
+    private "_marker";
+    _markerName = format ["PLAYER_GPS_LOCATION_%1", _iGps];
+    _marker = createMarker [_markerName, [0, 0]];
+    _markerName setMarkerType "Empty";
+    _iGps = _iGps + 1;
+} forEach _gpsTrack;
 
-GPS_MARKER_INDEX = 0;
-GPS_MARKER_INDEX_PREV = GPS_MARKER_INDEX;
+_gpsMarkerIndex = 0;
+_gpsMarkerIndexPrev = _gpsMarkerIndex;
 
-GPSTRACK set [GPS_MARKER_INDEX,getPos player];
-timeOfLastGPSFix = time;
-GPS_MARKER_INDEX = (GPS_MARKER_INDEX+1)%nGPSPositions;
+_gpsTrack set [_gpsMarkerIndex, getPos player];
+_timeOfLastGpsFix = time;
+_gpsMarkerIndex = (_gpsMarkerIndex + 1) % _nGpsPositions;
 
 
-if (isnil("GPS_TRACKING_IS_ON")) then
-{
-    GPS_TRACKING_IS_ON = true;
-};
+_playerHasGPS = true;
+while {alive player && _playerHasGPS} do {
 
-while {true} do
-{
-    if (GPS_TRACKING_IS_ON) then
-    {
-        currentPos = getPos player;
-        currentTime = time;
-        playerHasGPS = "ItemGPS" in assignedItems player;
-        timeSinceLastGPSFix = currentTime-timeOfLastGPSFix;
-        distSinceLastGPSFix = (GPSTRACK select (GPS_MARKER_INDEX-1+nGPSPositions)%nGPSPositions) distance (currentPos);
+    private "_currentPos";
+    private "_currentTime";
+    private "_timeSinceLastGpsFix";
+    private "_distSinceLastGpsFix";
+    private "_condTimeMax";
+    private "_condDistMin";
+    private "_condDistMax";
 
-        if (playerHasGPS AND (distSinceLastGPSFix > 5) AND ((timeSinceLastGPSFix > 15) OR (distSinceLastGPSFix > 50))) then
-        {
-            GPSTRACK set [GPS_MARKER_INDEX,currentPos];
-            markerName = format ["PLAYER_GPS_LOCATION_%1",GPS_MARKER_INDEX];
-            markerName setMarkerColor "ColorYellow";
-            markerName setMarkerType "mil_triangle";
-            markerName setMarkerPos (GPSTRACK select GPS_MARKER_INDEX);
-            markerName setMarkerSize [0.25,0.25];
-            markerName setMarkerDir ([GPSTRACK select GPS_MARKER_INDEX_PREV,GPSTRACK select GPS_MARKER_INDEX] call HAYMAKER_fnc_calcDirection);
-            GPS_MARKER_INDEX_PREV = GPS_MARKER_INDEX;
-            GPS_MARKER_INDEX = (GPS_MARKER_INDEX+1)%nGPSPositions;
-            timeOfLastGPSFix = currentTime;
-        };
+    _currentPos = getPos player;
+    _currentTime = time;
+    _playerHasGPS = "ItemGPS" in assignedItems player;
+    _timeSinceLastGpsFix = _currentTime - _timeOfLastGpsFix;
+    _distSinceLastGpsFix = (_gpsTrack select (_gpsMarkerIndex - 1 + _nGpsPositions) % _nGpsPositions) distance _currentPos;
+
+    _condTimeMax = _timeSinceLastGpsFix > _maxTimeSinceLastGpsFix;
+    _condDistMin = _distSinceLastGpsFix > _minDistSinceLastGpsFix;
+    _condDistMax = _distSinceLastGpsFix > _maxDistSinceLastGpsFix;
+
+    if (_playerHasGPS AND _condDistMin AND (_condTimeMax OR _condDistMax)) then {
+        private "_markerName";
+        _gpsTrack set [_gpsMarkerIndex, _currentPos];
+        _markerName = format ["PLAYER_GPS_LOCATION_%1", _gpsMarkerIndex];
+        _markerName setMarkerColor "ColorYellow";
+        _markerName setMarkerType "mil_triangle";
+        _markerName setMarkerPos (_gpsTrack select _gpsMarkerIndex);
+        _markerName setMarkerSize [0.25, 0.25];
+        _markerName setMarkerDir ([_gpsTrack select _gpsMarkerIndexPrev, _gpsTrack select _gpsMarkerIndex] call HAYMAKER_fnc_calcDirection);
+        _gpsMarkerIndexPrev = _gpsMarkerIndex;
+        _gpsMarkerIndex = (_gpsMarkerIndex + 1) % _nGpsPositions;
+        _timeOfLastGpsFix = _currentTime;
     };
     sleep 1;
 };
