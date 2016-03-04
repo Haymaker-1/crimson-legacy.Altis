@@ -406,15 +406,13 @@ _radius = 50;
 
 } forEach [1,2,3];
 
-null = [_radius,_location] spawn {
+null = [_radius, _lightPos] spawn {
 
     private "_radius";
     private "_location";
     private "_lights";
-
     _radius = _this select 0;
     _location = _this select 1;
-    _lights = _location nearObjects ["#lightpoint",_radius];
 
     waitUntil{
         sleep 300;
@@ -422,6 +420,7 @@ null = [_radius,_location] spawn {
         false
     };
 
+    _lights = _location nearObjects ["#lightpoint", _radius];
     {
         deleteVehicle _x;
     } forEach _lights;
