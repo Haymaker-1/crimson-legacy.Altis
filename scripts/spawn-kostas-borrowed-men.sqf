@@ -1,37 +1,34 @@
 
 
-diag_log format ["starting %1", _thisScript];
+diag_log format ["starting %1", __FILE__];
 
-kostasBorrowedMen = createGroup west;
+private "_kostasBorrowedMen";
+private "_unitTypesAndMarkers";
 
-"B_G_Soldier_lite_F" createUnit [(getMarkerPos "MARKER_SPAWN_JOKER"), kostasBorrowedMen, "joker = this;
-                    this disableAI 'MOVE';
-                    this disableAI 'ANIM';
-                    dir = [getPos this, getPos fireplace1] call HAYMAKER_fnc_calcDirection;
-                    this setPos (getMarkerPos 'MARKER_SPAWN_JOKER');
-                    this setDir dir;
-                    this playAction 'SitDown';", 0.5,"PRIVATE"];
+_kostasBorrowedMen = createGroup west;
 
-"B_G_Soldier_AR_F" createUnit [(getMarkerPos "MARKER_SPAWN_ANIMALMOTHER"), kostasBorrowedMen, "animalmother = this;
-                    this disableAI 'MOVE';
-                    this disableAI 'ANIM';
-                    dir = [getPos this, getPos fireplace1] call HAYMAKER_fnc_calcDirection;
-                    this setPos (getMarkerPos 'MARKER_SPAWN_ANIMALMOTHER');
-                    this setDir dir;
-                    this playAction 'SitDown';", 0.5, "PRIVATE"];
-
-"B_G_medic_F" createUnit [(getMarkerPos "MARKER_SPAWN_COWBOY"), kostasBorrowedMen, "this disableAI 'MOVE';
-                    cowboy = this;
-                    this disableAI 'ANIM';
-                    dir = [getPos this, getPos fireplace1] call HAYMAKER_fnc_calcDirection;
-                    this setPos (getMarkerPos 'MARKER_SPAWN_COWBOY');
-                    this setDir dir;
-                    this playAction 'SitDown';", 0.5, "PRIVATE"];
+_unitTypesAndMarkers = [
+    ["B_G_Soldier_lite_F", "MARKER_SPAWN_JOKER"],
+    ["B_G_medic_F", "MARKER_SPAWN_COWBOY"],
+    ["B_G_Soldier_AR_F", "MARKER_SPAWN_ANIMALMOTHER"]
+];
 
 {
-    allowDamage false;
-} forEach (units kostasBorrowedMen);
+    private "_unitType";
+    private "_unit";
+    private "_marker";
+
+    _unitType = _x select 0;
+    _marker = _x select 1;
+    _unit = _kostasBorrowedMen createUnit [_unitType, getMarkerPos _marker, [], 0, "NONE"];
+
+    _unit disableAI "MOVE";
+    _unit disableAI "ANIM";
+    _dir = [getPos _unit, getPos fireplace1] call HAYMAKER_fnc_calcDirection;
+    _unit setDir _dir;
+    _unit playAction "SitDown";
+    _unit allowDamage false;
+} forEach _unitTypesAndMarkers;
 
 
-
-diag_log format ["%1: done", _thisScript];
+diag_log format ["%1: done", __FILE__];
