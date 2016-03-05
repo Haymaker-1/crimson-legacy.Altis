@@ -1,4 +1,6 @@
 
+diag_log format ["starting %1", _thisScript];
+
 private "_nMinutes";
 private "_usesNLitersPerSecond";
 
@@ -40,3 +42,6 @@ thehelicopter lock 0;
 null = [] execVM "scripts\endmission-helicopter-damaged.sqf";
 null = [] execVM "scripts\endmission-helicopter-out-of-fuel.sqf";
 null = [] execVM "scripts\endmission-helicopter-rebelcamp.sqf";
+
+
+diag_log format ["%1 done.", _thisScript];
