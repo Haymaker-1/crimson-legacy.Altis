@@ -1,5 +1,5 @@
 
-diag_log format ["starting %1", _thisScript];
+diag_log format ["starting %1", __FILE__];
 
 private "_chosen";
 private "_dir";
@@ -26,4 +26,4 @@ _chemlight = createVehicle ["chemlight_yellow", _pos, [], 7.0, "CAN_COLLIDE"];
 _helipad = createVehicle ["Land_HelipadSquare_F", _pos, [], 0, "CAN_COLLIDE"];
 _helipad setDir _dir;
 
-diag_log format ["%1: done", _thisScript];
+diag_log format ["%1: done", __FILE__];
