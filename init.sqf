@@ -1,5 +1,9 @@
 
-diag_log format ["starting %1", _thisScript];
+private "_myFilename";
+
+// can't use _thisScript here somehow
+_myFilename = "init.sqf";
+diag_log format ["starting %1", _myFilename];
 
 titleText ["", "BLACK FADED", 0];
 0 fadeSound 0;
@@ -230,4 +234,4 @@ SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySe
 
 null = [] execVM "scripts\savegames.sqf";
 
-diag_log format ["%1: done", _thisScript];
+diag_log format ["%1: done", _myFilename];
