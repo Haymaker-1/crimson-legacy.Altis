@@ -1,6 +1,6 @@
 
 
-
+diag_log format ["starting %1", _thisScript];
 
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
@@ -58,6 +58,8 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
         null = [_perimeter,GROUP_AA_MAGOS,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
 
         TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 1;
-        
+
     };
 };
+
+diag_log format ["%1: done", _thisScript];

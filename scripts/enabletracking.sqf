@@ -1,6 +1,5 @@
 
-
-
+diag_log format ["starting %1", _thisScript];
 private "_nGpsPositions";
 private "_gpsTrack";
 private "_iGps";
@@ -74,3 +73,6 @@ while {alive player && _playerHasGPS} do {
     };
     sleep 1;
 };
+
+
+diag_log format ["%1: done", _thisScript];

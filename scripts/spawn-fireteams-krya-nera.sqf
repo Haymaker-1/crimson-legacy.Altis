@@ -1,4 +1,5 @@
 
+diag_log format ["starting %1", _thisScript];
 
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
@@ -37,7 +38,7 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
                 _soldier = _fighterType createUnit [_spawnPos,_group];
             };
         };
-        
+
         null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
         null = [_group] execVM "scripts\change-equipment-blufor-group-members.sqf";
 
@@ -47,4 +48,4 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
 };
 
-
+diag_log format ["%1: done", _thisScript];

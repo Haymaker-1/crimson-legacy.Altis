@@ -1,4 +1,6 @@
 
+diag_log format ["starting %1", _thisScript];
+
 
 private "_restore_health_rate";
 private "_lastDateTime";
@@ -51,3 +53,5 @@ while {alive player} do {
 
     sleep 10;
 };
+
+diag_log format ["%1: done", _thisScript];

@@ -1,5 +1,5 @@
 
-
+diag_log format ["starting %1", _thisScript];
 
 SAVEGAME_ADD_RATE = nil;
 
@@ -37,3 +37,5 @@ while {alive player} do {
     sleep 15;
 
 };
+
+diag_log format ["%1: done", _thisScript];

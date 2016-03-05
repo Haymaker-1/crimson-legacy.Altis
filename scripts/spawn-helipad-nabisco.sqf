@@ -1,4 +1,5 @@
 
+diag_log format ["starting %1", _thisScript];
 
 private "_chosen";
 private "_dir";
@@ -24,3 +25,5 @@ _marker = createMarker ["MARKER_NABISCO_HELIPAD",_pos];
 _chemlight = createVehicle ["chemlight_yellow", _pos, [], 7.0, "CAN_COLLIDE"];
 _helipad = createVehicle ["Land_HelipadSquare_F", _pos, [], 0, "CAN_COLLIDE"];
 _helipad setDir _dir;
+
+diag_log format ["%1: done", _thisScript];

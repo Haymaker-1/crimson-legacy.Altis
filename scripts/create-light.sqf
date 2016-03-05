@@ -1,4 +1,6 @@
 
+diag_log format ["starting %1", _thisScript];
+
 private "_thePosition";
 private "_theColor";
 private "_theBrightness";
@@ -28,3 +30,5 @@ _light = createVehicle ["#lightpoint", _thePosition, [], 0, "NONE"];
 _light setLightBrightness _theBrightness;
 _light setLightAmbient _theColor;
 _light setLightColor _theColor;
+
+diag_log format ["%1: done", _thisScript];
