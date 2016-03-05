@@ -35,3 +35,8 @@ waitUntil{
 
 
 thehelicopter lock 0;
+
+// add helicopter-based end conditions:
+null = [] execVM "scripts\endmission-helicopter-damaged.sqf";
+null = [] execVM "scripts\endmission-helicopter-out-of-fuel.sqf";
+null = [] execVM "scripts\endmission-helicopter-rebelcamp.sqf";
