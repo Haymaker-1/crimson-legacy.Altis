@@ -1,4 +1,3 @@
-// calculate bounding box
 
 private ["_perimeter","_n","_minx","_maxx","_miny","_maxy","_i","_thisx","_thisy","_bbox"];
 

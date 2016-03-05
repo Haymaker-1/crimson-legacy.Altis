@@ -1,5 +1,5 @@
 
-_addVolume = VOICE_ADDVOLUME_DEFAULT; //default value
+_addVolume = VOICE_ADDVOLUME_DEFAULT;
 
 _veh = assignedVehicle player;
 _view = cameraView;

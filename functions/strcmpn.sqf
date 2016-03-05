@@ -1,6 +1,4 @@
 
-// _strsArePartlyEqual = [_str1,_str2,_nCharsCompare] call HAYMAKER_fnc_strcmpn;
-
 _str1 = _this select 0;
 _str2 = _this select 1;
 _nCharsCompare = _this select 2;
