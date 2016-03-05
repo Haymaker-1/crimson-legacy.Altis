@@ -14,7 +14,7 @@ while {isnil "TASK_FREE_PILOT"} do {
         if (alive _x) then {
             _nAlive = _nAlive + 1;
         };
-    } forEach [sf0,sf1,sf2,sf3];
+    } forEach [sf0, sf1, sf2, sf3];
 
     if (_nAlive < 1) then {
 
@@ -28,7 +28,7 @@ while {isnil "TASK_FREE_PILOT"} do {
 
         if (alive player AND !ENDMISSION_REASON_THROWN) then {
             ENDMISSION_REASON_THROWN = true;
-            [_endName,_isVictory,_fadeType] spawn BIS_fnc_endMission;
+            [_endName, _isVictory, _fadeType] spawn BIS_fnc_endMission;
         };
 
     };
