@@ -1,5 +1,16 @@
-// Use the winding number method to calculate whether a point lies within 
-// a closed polygon defined by an array of points in 2-space.
+/*
+ Author: Haymaker-1
+ 
+ Description:
+ Use the winding number method to calculate whether a point lies within	a closed polygon defined by an array of points in 2-space.
+ 
+ Parameter(s):
+ _this select 0: ARRAY - list of positions together making up the perimeter
+ _this select 1: ARRAY - 3D position as returned by e.g. getPos
+ 
+ Returns:
+ NUMBER - the winding number for the input point
+*/ 
 
 private ["_perimeter","_point","_n","_windingNumber","_i","_vertx1","_verty1","_vertx2","_verty2"];
 
