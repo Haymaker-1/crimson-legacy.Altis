@@ -121,12 +121,9 @@ showMeWhatYouGot = compile loadFile "functions\showMeWhatYouGot.sqf";
 getBaseWeaponClass = compile loadFile "functions\getBaseWeaponClass.sqf";
 
 
-null = [] execVM "scripts\endmission-sfteam-decimated.sqf";
-null = [] execVM "scripts\endmission-pilot-died.sqf";
 null = [] execVM "scripts\endmission-helicopter-damaged.sqf";
 null = [] execVM "scripts\endmission-helicopter-out-of-fuel.sqf";
 null = [] execVM "scripts\endmission-helicopter-rebelcamp.sqf";
-
 null = [] execVM "scripts\spawn-helicopter.sqf";
 null = [] execVM "scripts\spawn-helipad-nabisco.sqf";
 
