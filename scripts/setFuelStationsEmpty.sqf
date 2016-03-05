@@ -1,5 +1,7 @@
 // get fuel station locations first using 'recordFuelStationLocations.sqf'
 
+diag_log format ["starting %1", _thisScript];
+
 private "_s";
 private "_pos";
 private "_locations";
@@ -12,3 +14,6 @@ call compile _s;
     _pos set [2,0];
     (_pos nearestObject "Land_fs_feed_F") setFuelCargo 0.0;
 } forEach _locations;
+
+
+diag_log format ["%1: done", _thisScript];

@@ -1,9 +1,7 @@
 
-
-
+diag_log format ["starting %1", _thisScript];
 
 while {true} do {
-
 
     {
         private "_group";
@@ -55,5 +53,7 @@ while {true} do {
     } forEach RANDOM_PATROL_GROUP_HAS_ARRIVED;
 
     sleep 60;
-    
+
 };
+
+diag_log format ["%1: done", _thisScript];

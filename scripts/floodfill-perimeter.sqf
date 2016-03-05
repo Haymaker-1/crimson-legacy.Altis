@@ -3,6 +3,9 @@
 // [_markerBasename,_resolution,_fillcolor,_markerAlpha] execVM "scripts\floodfill-perimeter.sqf"
 
 
+diag_log format ["starting %1", _thisScript];
+
+
 private "_markerBasename";
 private "_resolution";
 private "_fillcolor";
@@ -69,3 +72,6 @@ for "_ix" from 0 to (_nx - 1) do {
         };
     };
 };
+
+
+diag_log format ["%1: done", _thisScript];

@@ -1,12 +1,10 @@
 
+diag_log format ["starting %1", _thisScript];
 
 titleText ["", "BLACK FADED", 0];
 0 fadeSound 0;
 
-
-
 setDate [2035,1 + round(random 11),1 + round(random 27),18,35];
-
 
 // WEST and GUER are friends
 WEST setFriend [RESISTANCE, 1.0];
@@ -235,3 +233,5 @@ shedAgios setDir 44.5;
 SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
 
 null = [] execVM "scripts\savegames.sqf";
+
+diag_log format ["%1: done", _thisScript];

@@ -1,5 +1,7 @@
 
 
+diag_log format ["starting %1", _thisScript];
+
 private "_spawningComplete";
 private "_trig";
 
@@ -111,3 +113,6 @@ _trig = nil;
 
 player createDiarySubject ["varAbout","About"];
 player createDiaryRecord ["varAbout",["Version","<br /><br />This mission was built on: {{AUTO_INSERT_BUILD_DATETIME}}"]];
+
+
+diag_log format ["%1: done", _thisScript];
