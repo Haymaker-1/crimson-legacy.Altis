@@ -32,7 +32,7 @@ _monthStr = switch (_iMonth) do {
 };
 
 _structuredText = parseText format [ "<t align='center' size='1.5' color" +
-    "='ffffff' shadow='0'>&quot;%1&quot;</t>",  _titleText];
+    "='#ffffff' shadow='0'>&quot;%1&quot;</t>",  _titleText];
 
 _width = 0.5;
 _height = 0.1;
