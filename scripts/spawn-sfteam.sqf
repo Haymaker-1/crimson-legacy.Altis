@@ -53,10 +53,8 @@ sf1 = units _group select 1;
 sf2 = units _group select 2;
 sf3 = units _group select 3;
 
+// add end condition now that we have an sfteam
+null = [] execVM "scripts\endmission-sfteam-decimated.sqf";
 
 // destroy global var TEAM_PROB
 TEAM_PROB = nil;
-
-
-
-
