@@ -1,5 +1,4 @@
 
-diag_log format ["starting %1", __FILE__];
 
 
 private "_restore_health_rate";
@@ -54,4 +53,3 @@ while {alive player} do {
     sleep 10;
 };
 
-diag_log format ["%1: done", __FILE__];

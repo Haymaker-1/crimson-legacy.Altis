@@ -1,5 +1,4 @@
 
-diag_log format ["starting %1", __FILE__];
 
 while {true} do {
 
@@ -56,4 +55,3 @@ while {true} do {
 
 };
 
-diag_log format ["%1: done", __FILE__];

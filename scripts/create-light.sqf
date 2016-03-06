@@ -1,5 +1,4 @@
 
-diag_log format ["starting %1", __FILE__];
 
 private "_thePosition";
 private "_theColor";
@@ -31,4 +30,3 @@ _light setLightBrightness _theBrightness;
 _light setLightAmbient _theColor;
 _light setLightColor _theColor;
 
-diag_log format ["%1: done", __FILE__];

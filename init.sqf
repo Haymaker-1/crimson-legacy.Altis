@@ -1,5 +1,4 @@
 
-diag_log format ["starting %1", __FILE__];
 
 titleText ["", "BLACK FADED", 0];
 0 fadeSound 0;
@@ -232,4 +231,3 @@ SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySe
 
 null = [] execVM "scripts\savegames.sqf";
 
-diag_log format ["%1: done", __FILE__];

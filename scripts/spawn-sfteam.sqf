@@ -1,7 +1,5 @@
 
 
-diag_log format ["starting %1", __FILE__];
-
 private "_group";
 private "_nUnitsSF";
 private "_perimeter";
@@ -61,4 +59,3 @@ null = [] execVM "scripts\endmission-sfteam-decimated.sqf";
 // destroy global var TEAM_PROB
 TEAM_PROB = nil;
 
-diag_log format ["%1: done", __FILE__];

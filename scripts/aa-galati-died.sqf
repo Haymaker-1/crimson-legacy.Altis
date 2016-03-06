@@ -1,4 +1,3 @@
-diag_log format ["starting %1", __FILE__];
 
 waitUntil {
     sleep 5;
@@ -9,4 +8,3 @@ waitUntil {
 "MARKER_OPFOR_AA_GALATI" setMarkerAlpha 0;
 "MARKER_OPFOR_AA_GALATI_TEXT" setMarkerType "Empty";
 
-diag_log format ["%1: done", __FILE__];

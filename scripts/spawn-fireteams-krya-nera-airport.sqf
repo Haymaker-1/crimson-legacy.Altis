@@ -1,5 +1,4 @@
 
-diag_log format ["starting %1", __FILE__];
 
 if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
@@ -45,4 +44,3 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
     };
 };
 
-diag_log format ["%1: done", __FILE__];

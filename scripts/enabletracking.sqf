@@ -1,5 +1,4 @@
 
-diag_log format ["starting %1", __FILE__];
 private "_nGpsPositions";
 private "_gpsTrack";
 private "_iGps";
@@ -75,4 +74,3 @@ while {alive player && _playerHasGPS} do {
 };
 
 
-diag_log format ["%1: done", __FILE__];

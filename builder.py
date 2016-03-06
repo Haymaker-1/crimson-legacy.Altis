@@ -6,10 +6,12 @@ import datetime
 
 class Builder:
 
-    def __init__(self, pboname, verbose=False):
-        self.cwd = os.getcwd()
+    def __init__(self, pboname, verbose=False, debug=True):
+
         self.verbose = verbose
+        self.debug = debug
         self.pboname = pboname
+        self.cwd = os.getcwd()
         self.builddir = os.path.join(self.cwd, 'build')
         self.binpbo = os.path.join(os.getenv('programfiles(x86)'),
                                    'Bohemia Interactive',
@@ -143,6 +145,34 @@ class Builder:
         if self.verbose:
             print('Adding the build datetime...Done')
 
+    def addDebugInformation(self):
+
+        if self.debug:
+            if not os.path.isdir(self.builddir):
+                raise Exception('There should be a build dir for this.')
+            else:
+                headstr = 'diag_log format ["starting %1", __FILE__];'
+                footstr = 'diag_log format ["%1: done", __FILE__];'
+                thedir = os.path.join(self.builddir, 'scripts')
+                for file in os.listdir(thedir):
+
+                    fullfile = os.path.join(thedir, file)
+                    # make sure we don't accidentally use 'file'
+                    del file
+                    notNeeded, fileExtension = os.path.splitext(fullfile)
+
+                    if os.path.isfile(fullfile) and fileExtension == '.sqf':
+
+                        f = open(fullfile,'r')
+                        filedata = f.read()
+                        f.close()
+
+                        newdata = "\n".join([headstr, filedata, footstr])
+
+                        f = open(fullfile,'w')
+                        f.write(newdata)
+                        f.close()
+
     def binarize(self):
 
         if self.verbose:
@@ -160,7 +190,6 @@ class Builder:
         if self.verbose:
             print('Binarizing...Done')
 
-
     def build(self):
 
         if self.verbose:
@@ -175,6 +204,7 @@ class Builder:
         self.copySoundsDir()
         self.copyTopLevelFiles()
         self.addBuildDateTime()
+        self.addDebugInformation()
         self.binarize()
 
         if self.verbose:
@@ -182,5 +212,5 @@ class Builder:
 
 
 if __name__ == '__main__':
-    builder = Builder('crimson-legacii.Altis.pbo')
+    builder = Builder('crimson-legacy.Altis.pbo')
     builder.build()

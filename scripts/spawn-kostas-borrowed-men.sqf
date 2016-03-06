@@ -1,6 +1,5 @@
 
 
-diag_log format ["starting %1", __FILE__];
 
 private "_kostasBorrowedMen";
 private "_unitTypesAndMarkers";
@@ -31,4 +30,3 @@ _unitTypesAndMarkers = [
 } forEach _unitTypesAndMarkers;
 
 
-diag_log format ["%1: done", __FILE__];

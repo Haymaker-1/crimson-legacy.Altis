@@ -1,6 +1,5 @@
 // get fuel station locations first using 'recordFuelStationLocations.sqf'
 
-diag_log format ["starting %1", __FILE__];
 
 private "_s";
 private "_pos";
@@ -16,4 +15,3 @@ call compile _s;
 } forEach _locations;
 
 
-diag_log format ["%1: done", __FILE__];
