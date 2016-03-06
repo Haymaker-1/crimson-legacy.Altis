@@ -32,7 +32,6 @@ class Mission
 		"A3_Structures_F_EPA_Civ_Camping",
 		"A3_Structures_F_Items_Luggage",
 		"A3_Structures_F_Civ_Garbage",
-		"A3_Weapons_F",
 		"A3_Characters_F_Civil",
 		"a3_characters_f",
 		"a3_soft_f_bootcamp_quadbike",
@@ -77,7 +76,6 @@ class Mission
 		"A3_Structures_F_EPA_Civ_Camping",
 		"A3_Structures_F_Items_Luggage",
 		"A3_Structures_F_Civ_Garbage",
-		"A3_Weapons_F",
 		"A3_Soft_F_MRAP_03",
 		"A3_Weapons_F_Bootcamp_Ammoboxes",
 		"A3_Structures_F_Walls",
@@ -847,7 +845,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=97;
+		items=93;
 		class Item0
 		{
 			position[]={4848.3296,335.12735,21896.699};
@@ -1232,90 +1230,50 @@ class Mission
 		};
 		class Item37
 		{
-			position[]={9670.2725,3.0822048,22285.643};
-			azimut=295.383;
-			offsetY=4.0999999;
-			id=74;
-			side="EMPTY";
-			vehicle="placed_chemlight_yellow";
-			leader=1;
-			skill=0.60000002;
-		};
-		class Item38
-		{
-			position[]={5417.2354,76.638763,17916.996};
-			azimut=183.41;
-			id=75;
-			side="EMPTY";
-			vehicle="placed_chemlight_yellow";
-			skill=0.60000002;
-		};
-		class Item39
-		{
 			position[]={9712.2197,3.4558535,22306.473};
-			id=76;
+			id=74;
 			side="EMPTY";
 			vehicle="Land_Camping_Light_F";
 			skill=0.60000002;
 		};
-		class Item40
+		class Item38
 		{
 			position[]={5416.5776,76.633789,17917.508};
 			azimut=183.41;
-			id=77;
+			id=75;
 			side="EMPTY";
 			vehicle="Land_HelipadSquare_F";
 			skill=0.60000002;
 		};
-		class Item41
-		{
-			position[]={9122.1484,15.064278,21564.645};
-			azimut=295.383;
-			id=78;
-			side="EMPTY";
-			vehicle="placed_chemlight_yellow";
-			leader=1;
-			skill=0.60000002;
-		};
-		class Item42
-		{
-			position[]={9137.7021,15.125005,21576.164};
-			azimut=295.383;
-			id=79;
-			side="EMPTY";
-			vehicle="placed_chemlight_yellow";
-			leader=1;
-			skill=0.60000002;
-		};
-		class Item43
+		class Item39
 		{
 			position[]={9713.6025,2.5829406,22306.213};
 			azimut=99.520798;
 			offsetY=0.89999998;
-			id=80;
+			id=76;
 			side="EMPTY";
 			vehicle="Land_Suitcase_F";
 			leader=1;
 			skill=0.60000002;
 			text="suitcase3";
 		};
-		class Item44
+		class Item40
 		{
 			position[]={9712.7529,2.5908947,22306.223};
 			azimut=294.35599;
 			offsetY=0.89999998;
-			id=81;
+			id=77;
 			side="EMPTY";
 			vehicle="Land_Suitcase_F";
 			leader=1;
 			skill=0.60000002;
 			text="suitcase1";
 		};
-		class Item45
+		class Item41
 		{
 			position[]={5458.7388,77.394135,17949.348};
 			azimut=70.963799;
-			id=82;
+			id=78;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			leader=1;
@@ -1323,28 +1281,28 @@ class Mission
 			skill=1;
 			init="this setFuel 0.05+(random 0.01)";
 		};
-		class Item46
+		class Item42
 		{
 			position[]={3188.5024,50.507843,13148.084};
-			id=83;
+			id=79;
 			side="EMPTY";
 			vehicle="Land_HelipadSquare_F";
 			leader=1;
 			skill=0.60000002;
 		};
-		class Item47
+		class Item43
 		{
 			position[]={9708.999,2.5942845,22308.213};
-			id=84;
+			id=80;
 			side="EMPTY";
 			vehicle="Land_Portable_generator_F";
 			skill=0.60000002;
 		};
-		class Item48
+		class Item44
 		{
 			position[]={4556.208,261.50079,15433.077};
 			azimut=205.629;
-			id=85;
+			id=81;
 			side="EMPTY";
 			vehicle="O_Truck_02_covered_F";
 			lock="UNLOCKED";
@@ -1352,10 +1310,54 @@ class Mission
 			fuel=0.020106019;
 			init="this setFuel 0.22+random 0.2";
 		};
-		class Item49
+		class Item45
 		{
 			position[]={9210.2236,272.31512,19273.742};
 			azimut=335.19113;
+			id=82;
+			side="EMPTY";
+			vehicle="O_Truck_02_covered_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			fuel=0.020106019;
+		};
+		class Item46
+		{
+			position[]={9958.4854,252.26456,19345.918};
+			azimut=640.77197;
+			id=83;
+			side="EMPTY";
+			vehicle="O_Truck_02_covered_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this setFuel 0.05+random 0.2";
+		};
+		class Item47
+		{
+			position[]={14213.726,73.978653,21213.588};
+			azimut=370.11374;
+			id=84;
+			side="EMPTY";
+			vehicle="O_Truck_02_covered_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			fuel=0.020106019;
+		};
+		class Item48
+		{
+			position[]={14593.867,17.91,16649.73};
+			azimut=130.5954;
+			id=85;
+			side="EMPTY";
+			vehicle="O_Truck_02_covered_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			fuel=0.020106019;
+		};
+		class Item49
+		{
+			position[]={14604.856,17.91,16659.955};
+			azimut=-226.50865;
 			id=86;
 			side="EMPTY";
 			vehicle="O_Truck_02_covered_F";
@@ -1365,118 +1367,118 @@ class Mission
 		};
 		class Item50
 		{
-			position[]={9958.4854,252.26456,19345.918};
-			azimut=640.77197;
+			position[]={7558.4683,186.73128,17664.236};
+			azimut=205.629;
 			id=87;
 			side="EMPTY";
-			vehicle="O_Truck_02_covered_F";
+			vehicle="O_Quadbike_01_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setFuel 0.05+random 0.2";
+			init="this setFuel 0.05+random 0.2; this setDir random 360;";
 		};
 		class Item51
 		{
-			position[]={14213.726,73.978653,21213.588};
-			azimut=370.11374;
+			position[]={7552.251,186.72607,17662.9};
+			azimut=205.629;
 			id=88;
 			side="EMPTY";
-			vehicle="O_Truck_02_covered_F";
+			vehicle="O_Quadbike_01_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			fuel=0.020106019;
+			init="this setFuel 0.05+random 0.2; this setDir random 360;";
 		};
 		class Item52
 		{
-			position[]={14593.867,17.91,16649.73};
-			azimut=130.5954;
-			id=89;
-			side="EMPTY";
-			vehicle="O_Truck_02_covered_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			fuel=0.020106019;
-		};
-		class Item53
-		{
-			position[]={14604.856,17.91,16659.955};
-			azimut=-226.50865;
-			id=90;
-			side="EMPTY";
-			vehicle="O_Truck_02_covered_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			fuel=0.020106019;
-		};
-		class Item54
-		{
-			position[]={7558.4683,186.73128,17664.236};
-			azimut=205.629;
-			id=91;
-			side="EMPTY";
-			vehicle="O_Quadbike_01_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="this setFuel 0.05+random 0.2; this setDir random 360;";
-		};
-		class Item55
-		{
-			position[]={7552.251,186.72607,17662.9};
-			azimut=205.629;
-			id=92;
-			side="EMPTY";
-			vehicle="O_Quadbike_01_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="this setFuel 0.05+random 0.2; this setDir random 360;";
-		};
-		class Item56
-		{
 			position[]={7485.1523,189.13756,17578.857};
 			azimut=205.629;
-			id=93;
+			id=89;
 			side="EMPTY";
 			vehicle="CamoNet_OPFOR_big_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
 			init="null = [this] spawn {sleep 60; _net = _this select 0; _net setPos (AA_AMFISSA modelToWorld [3,-2.6,-2.4]); _net setDir (getDir AA_AMFISSA - 260); _net setVectorUp (surfaceNormal getPos _net);};";
 		};
-		class Item57
+		class Item53
 		{
 			position[]={7562.1299,186.67241,17676.064};
 			azimut=205.629;
-			id=94;
+			id=90;
 			side="EMPTY";
 			vehicle="Land_TentDome_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
 			init="this setDir random 360;";
 		};
-		class Item58
+		class Item54
 		{
 			position[]={7563.355,186.60454,17684.459};
 			azimut=205.629;
-			id=95;
+			id=91;
 			side="EMPTY";
 			vehicle="Land_TentDome_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
 			init="this setDir random 360;";
 		};
-		class Item59
+		class Item55
 		{
 			position[]={7572.1147,186.62326,17682.473};
 			azimut=205.629;
-			id=96;
+			id=92;
 			side="EMPTY";
 			vehicle="Land_TentDome_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
 			init="this setDir random 360;";
 		};
-		class Item60
+		class Item56
 		{
 			position[]={7580.647,186.62448,17695.107};
 			azimut=205.629;
+			id=93;
+			side="EMPTY";
+			vehicle="Land_TentDome_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this setDir random 360;";
+		};
+		class Item57
+		{
+			position[]={9959.0313,252.24481,19366.461};
+			azimut=218.45805;
+			id=94;
+			side="EMPTY";
+			vehicle="O_Quadbike_01_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this setFuel 0.05+random 0.2; this setDir random 360;";
+		};
+		class Item58
+		{
+			position[]={9954.9219,252.23691,19367.373};
+			azimut=218.45805;
+			id=95;
+			side="EMPTY";
+			vehicle="O_Quadbike_01_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this setFuel 0.05+random 0.2; this setDir random 360;";
+		};
+		class Item59
+		{
+			position[]={9859.2705,238.8828,19326.605};
+			azimut=218.45799;
+			id=96;
+			side="EMPTY";
+			vehicle="CamoNet_OPFOR_big_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="null = [this] spawn {sleep 60; _net = _this select 0; _net setPos (AA_GALATI modelToWorld [3,-2.6,-2.4]); _net setDir (getDir AA_GALATI - 260); _net setVectorUp (surfaceNormal getPos _net);};";
+		};
+		class Item60
+		{
+			position[]={9897.9697,246.48698,19359.996};
+			azimut=218.45805;
 			id=97;
 			side="EMPTY";
 			vehicle="Land_TentDome_F";
@@ -1486,73 +1488,73 @@ class Mission
 		};
 		class Item61
 		{
-			position[]={9959.0313,252.24481,19366.461};
+			position[]={9899.2979,246.54132,19351.395};
 			azimut=218.45805;
 			id=98;
 			side="EMPTY";
-			vehicle="O_Quadbike_01_F";
+			vehicle="Land_TentDome_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setFuel 0.05+random 0.2; this setDir random 360;";
+			init="this setDir random 360;";
 		};
 		class Item62
 		{
-			position[]={9954.9219,252.23691,19367.373};
+			position[]={9895.7715,246.76666,19356.18};
 			azimut=218.45805;
 			id=99;
+			side="EMPTY";
+			vehicle="Land_TentDome_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this setDir random 360;";
+		};
+		class Item63
+		{
+			position[]={9905.6924,246.60336,19358.082};
+			azimut=218.45805;
+			id=100;
+			side="EMPTY";
+			vehicle="Land_TentDome_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this setDir random 360;";
+		};
+		class Item64
+		{
+			position[]={12125.446,78.313789,19904.027};
+			azimut=218.45805;
+			id=101;
 			side="EMPTY";
 			vehicle="O_Quadbike_01_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
 			init="this setFuel 0.05+random 0.2; this setDir random 360;";
 		};
-		class Item63
+		class Item65
 		{
-			position[]={9859.2705,238.8828,19326.605};
+			position[]={12124.711,78.718987,19909.711};
+			azimut=218.45805;
+			id=102;
+			side="EMPTY";
+			vehicle="O_Quadbike_01_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this setFuel 0.05+random 0.2; this setDir random 360;";
+		};
+		class Item66
+		{
+			position[]={11893.303,60.872662,19841.48};
 			azimut=218.45799;
-			id=100;
+			id=103;
 			side="EMPTY";
 			vehicle="CamoNet_OPFOR_big_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="null = [this] spawn {sleep 60; _net = _this select 0; _net setPos (AA_GALATI modelToWorld [3,-2.6,-2.4]); _net setDir (getDir AA_GALATI - 260); _net setVectorUp (surfaceNormal getPos _net);};";
-		};
-		class Item64
-		{
-			position[]={9897.9697,246.48698,19359.996};
-			azimut=218.45805;
-			id=101;
-			side="EMPTY";
-			vehicle="Land_TentDome_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="this setDir random 360;";
-		};
-		class Item65
-		{
-			position[]={9899.2979,246.54132,19351.395};
-			azimut=218.45805;
-			id=102;
-			side="EMPTY";
-			vehicle="Land_TentDome_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="this setDir random 360;";
-		};
-		class Item66
-		{
-			position[]={9895.7715,246.76666,19356.18};
-			azimut=218.45805;
-			id=103;
-			side="EMPTY";
-			vehicle="Land_TentDome_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="this setDir random 360;";
+			init="null = [this] spawn {sleep 60; _net = _this select 0; _net setPos (AA_IFESTONIA_1 modelToWorld [3,-2.6,-2.4]); _net setDir (getDir AA_IFESTONIA_1 - 260); _net setVectorUp (surfaceNormal getPos _net);};";
 		};
 		class Item67
 		{
-			position[]={9905.6924,246.60336,19358.082};
+			position[]={12147.047,76.204193,19887.424};
 			azimut=218.45805;
 			id=104;
 			side="EMPTY";
@@ -1563,62 +1565,63 @@ class Mission
 		};
 		class Item68
 		{
-			position[]={12125.446,78.313789,19904.027};
+			position[]={12129.522,77.482857,19887.725};
 			azimut=218.45805;
 			id=105;
 			side="EMPTY";
-			vehicle="O_Quadbike_01_F";
+			vehicle="Land_TentDome_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setFuel 0.05+random 0.2; this setDir random 360;";
+			init="this setDir random 360;";
 		};
 		class Item69
 		{
-			position[]={12124.711,78.718987,19909.711};
+			position[]={12136.275,77.309937,19888.367};
 			azimut=218.45805;
 			id=106;
 			side="EMPTY";
-			vehicle="O_Quadbike_01_F";
+			vehicle="Land_TentDome_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setFuel 0.05+random 0.2; this setDir random 360;";
+			init="this setDir random 360;";
 		};
 		class Item70
 		{
-			position[]={11893.303,60.872662,19841.48};
-			azimut=218.45799;
+			position[]={12135.917,77.455269,19894.412};
+			azimut=218.45805;
 			id=107;
+			side="EMPTY";
+			vehicle="Land_TentDome_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this setDir random 360;";
+		};
+		class Item71
+		{
+			position[]={11899.284,61.893234,19871.74};
+			azimut=218.45799;
+			id=108;
 			side="EMPTY";
 			vehicle="CamoNet_OPFOR_big_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="null = [this] spawn {sleep 60; _net = _this select 0; _net setPos (AA_IFESTONIA_1 modelToWorld [3,-2.6,-2.4]); _net setDir (getDir AA_IFESTONIA_1 - 260); _net setVectorUp (surfaceNormal getPos _net);};";
-		};
-		class Item71
-		{
-			position[]={12147.047,76.204193,19887.424};
-			azimut=218.45805;
-			id=108;
-			side="EMPTY";
-			vehicle="Land_TentDome_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="this setDir random 360;";
+			init="null = [this] spawn {sleep 60; _net = _this select 0; _net setPos (AA_IFESTONIA_2 modelToWorld [3,-2.6,-2.4]); _net setDir (getDir AA_IFESTONIA_2 - 260); _net setVectorUp (surfaceNormal getPos _net);};";
 		};
 		class Item72
 		{
-			position[]={12129.522,77.482857,19887.725};
-			azimut=218.45805;
+			presence=0.13922194;
+			position[]={12140.926,76.512093,19889.648};
+			azimut=218.45799;
 			id=109;
 			side="EMPTY";
-			vehicle="Land_TentDome_F";
+			vehicle="O_Quadbike_01_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setDir random 360;";
+			init="this setFuel 0.05+random 0.2; this setDir random 360;";
 		};
 		class Item73
 		{
-			position[]={12136.275,77.309937,19888.367};
+			position[]={12119.551,79.213058,19912.508};
 			azimut=218.45805;
 			id=110;
 			side="EMPTY";
@@ -1629,7 +1632,7 @@ class Mission
 		};
 		class Item74
 		{
-			position[]={12135.917,77.455269,19894.412};
+			position[]={12108.186,79.169022,19914.492};
 			azimut=218.45805;
 			id=111;
 			side="EMPTY";
@@ -1640,19 +1643,18 @@ class Mission
 		};
 		class Item75
 		{
-			position[]={11899.284,61.893234,19871.74};
-			azimut=218.45799;
+			position[]={14175.385,57.092003,21388.045};
+			azimut=218.45805;
 			id=112;
 			side="EMPTY";
-			vehicle="CamoNet_OPFOR_big_F";
+			vehicle="O_Quadbike_01_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="null = [this] spawn {sleep 60; _net = _this select 0; _net setPos (AA_IFESTONIA_2 modelToWorld [3,-2.6,-2.4]); _net setDir (getDir AA_IFESTONIA_2 - 260); _net setVectorUp (surfaceNormal getPos _net);};";
+			init="this setFuel 0.05+random 0.2; this setDir random 360;";
 		};
 		class Item76
 		{
-			presence=0.13922194;
-			position[]={12140.926,76.512093,19889.648};
+			position[]={14183.9,57.179474,21388.816};
 			azimut=218.45799;
 			id=113;
 			side="EMPTY";
@@ -1663,18 +1665,18 @@ class Mission
 		};
 		class Item77
 		{
-			position[]={12119.551,79.213058,19912.508};
-			azimut=218.45805;
+			position[]={14123.089,76.397507,21268.594};
+			azimut=218.45799;
 			id=114;
 			side="EMPTY";
-			vehicle="Land_TentDome_F";
+			vehicle="CamoNet_OPFOR_big_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setDir random 360;";
+			init="null = [this] spawn {sleep 60; _net = _this select 0; _net setPos (AA_FRINI modelToWorld [3,-2.6,-2.4]); _net setDir (getDir AA_FRINI - 260); _net setVectorUp (surfaceNormal getPos _net);};";
 		};
 		class Item78
 		{
-			position[]={12108.186,79.169022,19914.492};
+			position[]={14174.257,56.647125,21393.943};
 			azimut=218.45805;
 			id=115;
 			side="EMPTY";
@@ -1685,86 +1687,42 @@ class Mission
 		};
 		class Item79
 		{
-			position[]={14175.385,57.092003,21388.045};
+			position[]={14182.091,57.416653,21384.191};
 			azimut=218.45805;
 			id=116;
 			side="EMPTY";
-			vehicle="O_Quadbike_01_F";
+			vehicle="Land_TentDome_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setFuel 0.05+random 0.2; this setDir random 360;";
+			init="this setDir random 360;";
 		};
 		class Item80
 		{
-			position[]={14183.9,57.179474,21388.816};
-			azimut=218.45799;
+			position[]={14173.309,57.433624,21381.178};
+			azimut=218.45805;
 			id=117;
 			side="EMPTY";
-			vehicle="O_Quadbike_01_F";
+			vehicle="Land_TentDome_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setFuel 0.05+random 0.2; this setDir random 360;";
+			init="this setDir random 360;";
 		};
 		class Item81
 		{
-			position[]={14123.089,76.397507,21268.594};
-			azimut=218.45799;
+			position[]={14165.183,56.6805,21389.283};
+			azimut=218.45805;
 			id=118;
 			side="EMPTY";
-			vehicle="CamoNet_OPFOR_big_F";
+			vehicle="Land_TentDome_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="null = [this] spawn {sleep 60; _net = _this select 0; _net setPos (AA_FRINI modelToWorld [3,-2.6,-2.4]); _net setDir (getDir AA_FRINI - 260); _net setVectorUp (surfaceNormal getPos _net);};";
+			init="this setDir random 360;";
 		};
 		class Item82
 		{
-			position[]={14174.257,56.647125,21393.943};
-			azimut=218.45805;
-			id=119;
-			side="EMPTY";
-			vehicle="Land_TentDome_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="this setDir random 360;";
-		};
-		class Item83
-		{
-			position[]={14182.091,57.416653,21384.191};
-			azimut=218.45805;
-			id=120;
-			side="EMPTY";
-			vehicle="Land_TentDome_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="this setDir random 360;";
-		};
-		class Item84
-		{
-			position[]={14173.309,57.433624,21381.178};
-			azimut=218.45805;
-			id=121;
-			side="EMPTY";
-			vehicle="Land_TentDome_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="this setDir random 360;";
-		};
-		class Item85
-		{
-			position[]={14165.183,56.6805,21389.283};
-			azimut=218.45805;
-			id=122;
-			side="EMPTY";
-			vehicle="Land_TentDome_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="this setDir random 360;";
-		};
-		class Item86
-		{
 			position[]={9165.1885,14.761659,21624.109};
 			azimut=-34.649101;
-			id=123;
+			id=119;
 			side="EMPTY";
 			vehicle="I_MRAP_03_gmg_F";
 			lock="LOCKED";
@@ -1773,11 +1731,11 @@ class Mission
 			text="krya_nera_strider_gmg";
 			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
-		class Item87
+		class Item83
 		{
 			position[]={9170.5938,14.736463,21627.709};
 			azimut=144.04201;
-			id=124;
+			id=120;
 			side="EMPTY";
 			vehicle="I_MRAP_03_hmg_F";
 			lock="LOCKED";
@@ -1786,11 +1744,11 @@ class Mission
 			text="krya_nera_strider_hmg";
 			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
-		class Item88
+		class Item84
 		{
 			position[]={9159.6113,14.813054,21620.348};
 			azimut=-206.224;
-			id=125;
+			id=121;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
 			lock="LOCKED";
@@ -1799,11 +1757,11 @@ class Mission
 			ammo=0;
 			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
-		class Item89
+		class Item85
 		{
 			position[]={9188.5928,14.633484,21638.182};
 			azimut=-754.60699;
-			id=126;
+			id=122;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
 			lock="LOCKED";
@@ -1812,11 +1770,11 @@ class Mission
 			ammo=0;
 			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
-		class Item90
+		class Item86
 		{
 			position[]={9178.2959,14.663706,21630.961};
 			azimut=-397.02899;
-			id=127;
+			id=123;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
 			lock="LOCKED";
@@ -1825,11 +1783,11 @@ class Mission
 			ammo=0;
 			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
-		class Item91
+		class Item87
 		{
 			position[]={9182.1104,14.607891,21635.002};
 			azimut=-34.649101;
-			id=128;
+			id=124;
 			side="EMPTY";
 			vehicle="I_MRAP_03_F";
 			lock="LOCKED";
@@ -1838,51 +1796,51 @@ class Mission
 			text="krya_nera_strider";
 			init="this allowDamage false; clearWeaponCargo this; clearMagazineCargo this; clearItemCargo this;";
 		};
-		class Item92
+		class Item88
 		{
 			position[]={5390.999,76.717934,17905.572};
 			azimut=71.369308;
-			id=129;
+			id=125;
 			side="EMPTY";
 			vehicle="Box_FIA_Wps_F";
 			skill=0.60000002;
 			ammo=0;
 			init="clearWeaponCargo this; clearItemCargo this; clearMagazineCargo this;                 this addWeaponCargo [""arifle_Mk20_plain_F"",2]; this addItemCargo [""muzzle_snds_M"",3]; this addWeaponCargo [""launch_RPG32_F"",2]; this addMagazineCargo [""RPG32_F"",7]; this addBackpackCargo [""B_HuntingBackpack"",1];this addBackpackCargo [""B_AssaultPack_khk"",1]; this addItemCargo [""optic_ACO_grn"",2]; this addMagazineCargo [""30Rnd_556x45_Stanag"",4];";
 		};
-		class Item93
+		class Item89
 		{
 			position[]={3170.0049,43.844574,13122.012};
 			azimut=-89.569466;
-			id=130;
+			id=126;
 			side="EMPTY";
 			vehicle="Land_CncBarrierMedium_F";
 			skill=0.60000002;
 		};
-		class Item94
+		class Item90
 		{
 			position[]={3170.0049,43.814995,13123.719};
 			azimut=-89.569466;
-			id=131;
+			id=127;
 			side="EMPTY";
 			vehicle="Land_CncBarrierMedium_F";
 			skill=0.60000002;
 		};
-		class Item95
+		class Item91
 		{
 			position[]={4880.2319,346.81784,21923.102};
 			azimut=45.999699;
-			id=132;
+			id=128;
 			side="EMPTY";
 			vehicle="Box_NATO_Ammo_F";
 			leader=1;
 			skill=0.60000002;
 			init="null = [this] execVM ""scripts\change-weapons-crate-contents.sqf""";
 		};
-		class Item96
+		class Item92
 		{
 			presence=0.24642594;
 			position[]={5390.6631,76.680038,17903.906};
-			id=133;
+			id=129;
 			side="EMPTY";
 			vehicle="Box_FIA_Support_F";
 			skill=0.60000002;
@@ -1891,7 +1849,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=380;
+		items=381;
 		class Item0
 		{
 			position[]={4875.251,351.21344,21945.549};
@@ -4244,6 +4202,12 @@ class Mission
 		{
 			position[]={7362.9517,53.905357,15423.911};
 			name="MARKER_TOPOLIA";
+			type="Empty";
+		};
+		class Item380
+		{
+			position[]={9122.7764,15.065566,21564.162};
+			name="MARKER_SPAWN_HELICOPTER_2";
 			type="Empty";
 		};
 	};
