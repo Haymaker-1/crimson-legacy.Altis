@@ -19,6 +19,7 @@ class Builder:
                                    'Tools',
                                    'BinPBO Personal Edition',
                                    'BinPBO.exe')
+        self.__sqfLinesCopied = 0;
 
     def prepDirectory(self):
 
@@ -169,6 +170,7 @@ class Builder:
                         f.close()
 
                         newdata = "\n".join([headstr, filedata, footstr])
+                        self.__sqfLinesCopied += newdata.count('\n');
 
                         f = open(fullfile,'w')
                         f.write(newdata)
@@ -212,6 +214,7 @@ class Builder:
         self.binarize()
 
         if self.verbose:
+            print('Number of lines SQF: ' + str(self.__sqfLinesCopied))
             print('Starting a new build...Done')
 
 
