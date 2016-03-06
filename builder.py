@@ -2,11 +2,12 @@
 import os
 import shutil
 import datetime
+import subprocess
 
 
 class Builder:
 
-    def __init__(self, pboname, verbose=False, debug=True):
+    def __init__(self, pboname, verbose=True, debug=True):
 
         self.verbose = verbose
         self.debug = debug
@@ -178,12 +179,15 @@ class Builder:
         if self.verbose:
             print('Binarizing...')
 
-        cmd = '"' + self.binpbo + '"' + ' ' + self.builddir + ' ' + self.builddir + ' ' + '-PACK -DEBUG'
-        returncode = os.system(cmd)
+        returncode = subprocess.call([self.binpbo, self.builddir, self.builddir, '-PACK', '-DEBUG'])
         if returncode == 0:
-            src = os.path.join(self.builddir, 'build.pbo')
-            dest = os.path.join(self.builddir, self.pboname)
-            shutil.move(src, dest)
+            pbofile = os.path.join(self.builddir, 'build.pbo')
+            if os.path.isfile(pbofile):
+                src = pbofile
+                dest = os.path.join(self.builddir, self.pboname)
+                shutil.move(src, dest)
+            else:
+                raise Exception("PBO file doesn't exist: " + pbofile)
         else:
             raise Exception('Something went wrong during binarization.')
 
