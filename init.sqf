@@ -213,6 +213,7 @@ null = [] execVM "scripts\aa-frini-died.sqf";
 shedAgios = createvehicle ["Land_Shed_Big_F",[4047.0,17665.4,-0.91],[],0,"NONE"];
 shedAgios setDir 44.5;
 
+// create light sources at christos'es
 {
     _lightPos = _x;
     _lightColor = [1,0.5,0.5];
@@ -221,6 +222,20 @@ shedAgios setDir 44.5;
     null = [_lightPos,_lightColor,_lightBrightness] execVM "scripts\create-light.sqf";
 } forEach [[7474.46,16277.7,3.0],[7465.53,16288.6,3.0]];
 
+
+// spawn purple lights at helipads and other POIs
+{
+	private "_lightPos";
+	private "_lightColor";
+	private "_lightBrightness";
+	_lightPos = getMarkerPos _x;
+	_lightColor = [0.5, 0.0, 1.0];
+	_lightBrightness = 0.20;
+	null = [_lightPos, _lightColor, _lightBrightness] execVM "scripts\create-light.sqf";
+} forEach ["MARKER_SPAWN_HELICOPTER",
+           "MARKER_SPAWN_HELICOPTER_2",
+		   "MARKER_NABISCO_HELIPAD",
+		   "MARKER_REBEL_CAMP_HELIPAD"];
 
 
 (getMarkerPos "MARKER_HELIPORT" nearestObject 1240642) setDamage 1;
