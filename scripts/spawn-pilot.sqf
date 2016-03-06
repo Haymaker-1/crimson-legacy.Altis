@@ -1,29 +1,27 @@
 
-private "_pilotInitCode";
 private "_pilotGroup";
+private "_pos";
 
-_pilotInitCode = {
-    private "_pos";
-    pilot = this;
-    pilot disableAI 'MOVE';
-    pilot disableAI 'ANIM';
-    _pos = getPos pilot;
-    _pos set [2,2.0];
-    pilot setPos _pos;
-    pilot setDir 205;
-    pilot playAction 'SitDown';
-    pilot setCaptive true;
-    removeBackpack pilot;
-    removeAllWeapons pilot;
-    removeHeadgear pilot;
-    {
-        pilot unassignItem _x;
-        pilot removeItem _x;
-    } forEach assignedItems pilot;
-}
 
 _pilotGroup = createGroup west;
-"B_Pilot_F" createUnit [getMarkerPos "MARKER_SPAWN_PILOT", _pilotGroup, _pilotInitCode, 0.5, "LIEUTENANT"];
+pilot = _pilotGroup createUnit ["B_Pilot_F", getMarkerPos "MARKER_SPAWN_PILOT", [], 0, "NONE"];
+
+pilot disableAI "MOVE";
+pilot disableAI "ANIM";
+_pos = getPos pilot;
+_pos set [2,2.0];
+pilot setPos _pos;
+pilot setDir 205;
+pilot playAction "SitDown";
+pilot setCaptive true;
+removeBackpack pilot;
+removeAllWeapons pilot;
+removeHeadgear pilot;
+{
+    pilot unassignItem _x;
+    pilot removeItem _x;
+} forEach assignedItems pilot;
+
 
 null = [] execVM "scripts\endmission-pilot-died.sqf";
 
