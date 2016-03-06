@@ -232,8 +232,10 @@ shedAgios setDir 44.5;
 	_lightColor = [0.5, 0.0, 1.0];
 	_lightBrightness = 0.20;
 	null = [_lightPos, _lightColor, _lightBrightness] execVM "scripts\create-light.sqf";
-} forEach ["MARKER_SPAWN_HELICOPTER",
+} forEach ["MARKER_KRYA_NERA_HELIPAD",
+           "MARKER_SPAWN_HELICOPTER",
            "MARKER_SPAWN_HELICOPTER_2",
+           "MARKER_SPAWN_STAVROS",
 		   "MARKER_NABISCO_HELIPAD",
 		   "MARKER_REBEL_CAMP_HELIPAD"];
 
@@ -245,4 +247,3 @@ shedAgios setDir 44.5;
 SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
 
 null = [] execVM "scripts\savegames.sqf";
-
