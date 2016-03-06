@@ -69,7 +69,7 @@ _perimeters = [["MARKER_PERIMETER_FJE_BASE_1"] call HAYMAKER_fnc_constructPerime
 
                 _perimeter = _perimeters select _indexMinimum;
 
-                null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
+                null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\set-as-random-patrol.sqf";
             };
         };
     };

@@ -64,7 +64,7 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
             _x removePrimaryWeaponItem "optic_ACO_grn";
         } forEach units _group;
 
-        null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
+        null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\set-as-random-patrol.sqf";
 
         TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 1;
 

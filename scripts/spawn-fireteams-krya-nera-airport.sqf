@@ -36,7 +36,7 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
             };
         };
 
-        null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
+        null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\set-as-random-patrol.sqf";
         null = [_group] execVM "scripts\change-equipment-blufor-group-members.sqf";
 
         TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 1;

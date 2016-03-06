@@ -83,13 +83,13 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
 
     _perimeter1 = ["MARKER_PERIMETER_FJE_BASE_1"] call HAYMAKER_fnc_constructPerimeter;
-    [_perimeter1,_opforGroupBaseKavala1,TOTAL_NUMBER_OF_RANDOM_PATROLS] execVM "scripts\setAsRandomPatrol.sqf";
+    [_perimeter1,_opforGroupBaseKavala1,TOTAL_NUMBER_OF_RANDOM_PATROLS] execVM "scripts\set-as-random-patrol.sqf";
 
     _perimeter2 = ["MARKER_PERIMETER_WBU_BASE_2"] call HAYMAKER_fnc_constructPerimeter;
-    [_perimeter2,_opforGroupBaseKavala2,TOTAL_NUMBER_OF_RANDOM_PATROLS+1] execVM "scripts\setAsRandomPatrol.sqf";
+    [_perimeter2,_opforGroupBaseKavala2,TOTAL_NUMBER_OF_RANDOM_PATROLS+1] execVM "scripts\set-as-random-patrol.sqf";
 
     _perimeter3 = ["MARKER_PERIMETER_GHS_BASE_3"] call HAYMAKER_fnc_constructPerimeter;
-    [_perimeter3,_opforGroupBaseKavala3,TOTAL_NUMBER_OF_RANDOM_PATROLS+2] execVM "scripts\setAsRandomPatrol.sqf";
+    [_perimeter3,_opforGroupBaseKavala3,TOTAL_NUMBER_OF_RANDOM_PATROLS+2] execVM "scripts\set-as-random-patrol.sqf";
 
     TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 3;
 

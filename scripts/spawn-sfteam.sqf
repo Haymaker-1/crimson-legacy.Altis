@@ -45,7 +45,7 @@ _group selectLeader (units _group select 0);
 
 _perimeter = ["MARKER_PERIMETER_LNN_NABISCO"] call HAYMAKER_fnc_constructPerimeter;
 _iRandomPatrol = TOTAL_NUMBER_OF_RANDOM_PATROLS;
-null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\setAsRandomPatrol.sqf";
+null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\set-as-random-patrol.sqf";
 TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 1;
 
 sf0 = units _group select 0;

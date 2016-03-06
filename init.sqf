@@ -30,7 +30,7 @@ TEAM_PROB = [
     ];
 
 
-null = [] execVM "scripts\setFuelStationsEmpty.sqf";
+null = [] execVM "scripts\set-fuel-stations-empty.sqf";
 
 ["MARKER_PERIMETER_KRYA_NERA_KMJ",25,"ColorWEST",0.70] execVM "scripts\floodfill-perimeter.sqf";
 
