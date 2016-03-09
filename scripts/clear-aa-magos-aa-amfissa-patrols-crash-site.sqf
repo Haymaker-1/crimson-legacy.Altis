@@ -9,6 +9,7 @@ private "_nLights";
 private "_isReady";
 private "_spawningComplete";
 private "_nSeconds";
+private "_skipCleaningHouse";
 
 TASK_SET_UP_OP_AGIOS_KONSTANTINOS setTaskState "Succeeded";
 ["TaskSucceeded", ["","Set up CP"]] call BIS_fnc_showNotification;
@@ -36,9 +37,9 @@ if (WEATHER_IS_CONTROLLED) then {
 };
 skipTime _skiptimeValue;
 
-SKIP_CLEANING_HOUSE = [CRASH_SITE_IS_CLEAR,AA_MAGOS_IS_CLEAR,AA_AMFISSA_IS_CLEAR] isEqualTo [true,true,true];
+_skipCleaningHouse = [CRASH_SITE_IS_CLEAR, AA_MAGOS_IS_CLEAR, AA_AMFISSA_IS_CLEAR] isEqualTo [true, true, true];
 
-if (!SKIP_CLEANING_HOUSE) then {
+if (!_skipCleaningHouse) then {
 
     private "_perimeter";
     private "_isReady";
@@ -46,10 +47,6 @@ if (!SKIP_CLEANING_HOUSE) then {
     private "_n";
     private "_needAT";
     private "_isReady";
-
-
-
-
 
     _perimeter = ["MARKER_PERIMETER_ODS_OP_AGIOS"] call HAYMAKER_fnc_constructPerimeter;
     {
@@ -759,7 +756,7 @@ _isReady = nil;
 
 
 
-if (SKIP_CLEANING_HOUSE) then {
+if (_skipCleaningHouse) then {
 
     private "_isReady";
 
