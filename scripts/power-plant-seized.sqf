@@ -86,16 +86,15 @@ waitUntil{
 };
 _isReady = nil;
 
-null = [] execVM "scripts\spawn-negades-demo-specialist.sqf";
-
+_isReady = [] execVM "scripts\spawn-negades-demo-specialist.sqf";
 waitUntil {
     sleep 1;
-    if (!isnil "demoSpecialist") exitWith {true};
+    if (scriptDone _isReady) exitWith {true};
     false
 };
+_isReady = nil;
 
 POWER_PLANT_CAN_PLACE_EXPLOSIVES = true;
-
 
 // GUER specialist moves in
 _grpDemoSpecialist = group demoSpecialist;

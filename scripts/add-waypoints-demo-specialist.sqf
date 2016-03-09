@@ -1,17 +1,22 @@
 
 private "_wp";
+private "_grp";
+private "_veh";
 
-demoSpecialist leaveVehicle demoSpecialistVeh;
+_veh = assignedVehicle demoSpecialist;
+_grp = group demoSpecialist;
+
+[demoSpecialist] orderGetIn false;
 
 waitUntil {
     sleep 1;
-    if (!(demoSpecialist in crew demoSpecialistVeh)) exitWith {true};
+    if (!(demoSpecialist in crew _veh)) exitWith {true};
     false
 };
 
-_wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_POWERPLANT_IED1", 2];
+_wp = _grp addWaypoint [getMarkerPos "MARKER_POWERPLANT_IED1", 2];
 
-[demoSpecialistGroup,2] setWaypointType "MOVE";
-[demoSpecialistGroup,2] setWaypointSpeed "NORMAL";
+[_grp,2] setWaypointType "MOVE";
+[_grp,2] setWaypointSpeed "NORMAL";
 
-[demoSpecialistGroup,2] setWaypointStatements ["true", "null = [] execVM 'scripts\place-ied1-near-powerplant.sqf'"];
+[_grp,2] setWaypointStatements ["true", "null = [] execVM 'scripts\place-ied1-near-powerplant.sqf'"];
