@@ -1,5 +1,6 @@
 
 private "_wp";
+private "_grp";
 
 sleep 10;
 
@@ -49,9 +50,9 @@ else {
     demoSpecialist sideChat "I'm outta here! Good luck, my friend!";
 };
 
-_wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_NEGADES", 5];
-
-[demoSpecialistGroup,5] setWaypointType "MOVE";
-[demoSpecialistGroup,5] setWaypointSpeed "NORMAL";
-[demoSpecialistGroup,5] setWaypointCompletionRadius 50;
-[demoSpecialistGroup,5] setWaypointStatements ["true", "deleteVehicle demoSpecialist; deleteVehicle demoSpecialistVeh"];
+_grp = group demoSpecialist;
+_wp = _grp addWaypoint [getMarkerPos "MARKER_NEGADES", 5];
+[_grp,5] setWaypointType "MOVE";
+[_grp,5] setWaypointSpeed "NORMAL";
+[_grp,5] setWaypointCompletionRadius 50;
+[_grp,5] setWaypointStatements ["true", "deleteVehicle (vehicle demoSpecialist);deleteVehicle demoSpecialist;"];

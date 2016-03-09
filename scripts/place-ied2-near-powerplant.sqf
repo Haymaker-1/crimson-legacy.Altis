@@ -1,5 +1,8 @@
 
 private "_wp";
+private "_grp";
+
+
 
 
 demoSpecialist disableAI "MOVE";
@@ -11,12 +14,11 @@ demoSpecialist playAction "Up";
 demoSpecialist enableAI "ANIM";
 demoSpecialist enableAI "MOVE";
 
-_wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_WP_DEMO_SPECIALISTS_DISEMBARK", 4];
-
-[demoSpecialistGroup,4] setWaypointType "MOVE";
-[demoSpecialistGroup,4] setWaypointSpeed "NORMAL";
-
-[demoSpecialistGroup,4] setWaypointStatements ["true", "null = [] execVM 'scripts\arm-ieds-powerplant.sqf'"];
+_grp = group demoSpecialist;
+_wp = _grp addWaypoint [getMarkerPos "MARKER_WP_DEMO_SPECIALISTS_DISEMBARK", 4];
+[_grp,4] setWaypointType "MOVE";
+[_grp,4] setWaypointSpeed "NORMAL";
+[_grp,4] setWaypointStatements ["true", "null = [] execVM 'scripts\arm-ieds-powerplant.sqf'"];
 
 
 waitUntil {

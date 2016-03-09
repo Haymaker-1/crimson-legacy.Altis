@@ -2,6 +2,8 @@
 private "_isReady";
 private "_wp";
 private "_grp";
+private "_grpDemoSpecialist";
+
 
 
 POWER_PLANT_CLEARED = true;
@@ -88,7 +90,7 @@ null = [] execVM "scripts\spawn-negades-demo-specialist.sqf";
 
 waitUntil {
     sleep 1;
-    if (!isnil "demoSpecialistGroup") exitWith {true};
+    if (!isnil "demoSpecialist") exitWith {true};
     false
 };
 
@@ -96,13 +98,14 @@ POWER_PLANT_CAN_PLACE_EXPLOSIVES = true;
 
 
 // GUER specialist moves in
-_wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_WP_DEMO_SPECIALISTS_DISEMBARK", 1];
-[demoSpecialistGroup,1] setWaypointType "MOVE";
-[demoSpecialistGroup,1] setWaypointCompletionRadius 50;
-[demoSpecialistGroup,1] setWaypointSpeed "LIMITED";
-demoSpecialistGroup setBehaviour "CARELESS";
-[demoSpecialistGroup,1] setWaypointStatements ["true", "null = [] execVM 'scripts\add-waypoints-demo-specialist.sqf'"];
-demoSpecialistGroup setCurrentWaypoint [demoSpecialistGroup, 1];
+_grpDemoSpecialist = group demoSpecialist;
+_wp = _grpDemoSpecialist addWaypoint [getMarkerPos "MARKER_WP_DEMO_SPECIALISTS_DISEMBARK", 1];
+[_grpDemoSpecialist,1] setWaypointType "MOVE";
+[_grpDemoSpecialist,1] setWaypointCompletionRadius 50;
+[_grpDemoSpecialist,1] setWaypointSpeed "LIMITED";
+_grpDemoSpecialist setBehaviour "CARELESS";
+[_grpDemoSpecialist,1] setWaypointStatements ["true", "null = [] execVM 'scripts\add-waypoints-demo-specialist.sqf'"];
+_grpDemoSpecialist setCurrentWaypoint [_grpDemoSpecialist, 1];
 _wp = nil;
 
 waitUntil{

@@ -1,6 +1,7 @@
 
 
 private "_wp";
+private "_grp";
 
 demoSpecialist disableAI "MOVE";
 demoSpecialist disableAI "ANIM";
@@ -12,14 +13,11 @@ demoSpecialist enableAI "ANIM";
 demoSpecialist enableAI "MOVE";
 
 
-
-_wp = demoSpecialistGroup addWaypoint [getMarkerPos "MARKER_POWERPLANT_IED2", 3];
-
-[demoSpecialistGroup,3] setWaypointType "MOVE";
-[demoSpecialistGroup,3] setWaypointSpeed "NORMAL";
-
-[demoSpecialistGroup,3] setWaypointStatements ["true", "null = [] execVM 'scripts\place-ied2-near-powerplant.sqf'"];
-
+_grp = group demoSpecialist;
+_wp = _grp addWaypoint [getMarkerPos "MARKER_POWERPLANT_IED2", 3];
+[_grp,3] setWaypointType "MOVE";
+[_grp,3] setWaypointSpeed "NORMAL";
+[_grp,3] setWaypointStatements ["true", "null = [] execVM 'scripts\place-ied2-near-powerplant.sqf'"];
 
 waitUntil {
     sleep 1;
