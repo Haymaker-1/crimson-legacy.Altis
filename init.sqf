@@ -98,7 +98,7 @@ RANDOM_PATROL_GROUP_LAST_KNOWN_POS resize 100;
 } forEach RANDOM_PATROL_GROUP_HAS_ARRIVED;
 
 
-BLUFOR_ARIFLE_OF_CHOICE = [[["f2000",0.67],["tavor",0.33]]] call HAYMAKER_fnc_selectWeightedRandom;
+BLUFOR_ARIFLE_OF_CHOICE = [[["f2000",0.50],["tavor",0.50]]] call HAYMAKER_fnc_selectWeightedRandom;
 
 
 null = [] execVM "scripts\monitor-if-random-patrol-units-are-moving.sqf";
