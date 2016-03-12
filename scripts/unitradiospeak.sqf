@@ -11,11 +11,11 @@ private "_duration";
 private "_choice";
 private "_chatterFile";
 private "_chatterFileDuration";
-private "_acc";
 private "_isInside";
 private "_voicePitch";
 private "_voiceVolume";
 private "_decay";
+private "_fullPath";
 
 
 _emitter = _this select 0;
@@ -29,26 +29,31 @@ _relPath = (getArray (missionConfigFile >> "CfgSounds" >> _soundId >> "sound")) 
 _subtitle = (getArray (missionConfigFile >> "CfgSounds" >> _soundId >> "titles")) select 1;
 _duration = getNumber (missionConfigFile >> "CfgSounds" >> _soundId >> "duration");
 
+_fullPath = (HAYMAKER_GLOBALS getVariable "MISSION_TOP_LEVEL_DIRECTORY") + _relPath;
+
 _choice = ["RadioAmbient2","RadioAmbient6","RadioAmbient8"] call BIS_fnc_selectRandom;
 _chatterFile = (getArray (ConfigFile >> "CfgSounds" >> _choice >> "sound") select 0) + ".wss";
 _chatterFileDuration = getNumber (ConfigFile >> "CfgSounds" >> _choice >> "duration");
 
-_acc = accTime;
 _isInside = false;
 
-_voicePitch = 1.0*_acc;
 {
     if ((_x select 0) == _emitter) then {
-        _voicePitch = (_x select 1)*_acc;
+        _voicePitch = _x select 1;
+    } else {
+        _voicePitch = 1.0;
     };
-} forEach HAYMAKER_GLOBALS getVariable "VOICE_PITCH";
+} forEach (HAYMAKER_GLOBALS getVariable "VOICE_PITCH");
 
-_voiceVolume = 1.0;
 {
     if ((_x select 0) == _emitter) then {
         _voiceVolume = _x select 1;
+    } else {
+        _voiceVolume = 1.0;
     };
-} forEach HAYMAKER_GLOBALS getVariable "VOICE_VOLUME";
+} forEach (HAYMAKER_GLOBALS getVariable "VOICE_VOLUME");
+
+
 if (isNil "_addVolume") then {
     _addVolume = [] call HAYMAKER_fnc_calcAddVolume;
 };
@@ -67,7 +72,7 @@ if (_emitter isKindOf "Man" AND alive _emitter) then {
         private "_cond1";
         private "_cond2";
 
-        playSound3D [HAYMAKER_GLOBALS getVariable "MISSION_TOP_LEVEL_DIRECTORY" + _relPath,
+        playSound3D [_fullPath,
                      _emitterObj,
                      _isInside,
                      _emitterPos,
@@ -75,7 +80,7 @@ if (_emitter isKindOf "Man" AND alive _emitter) then {
                      _voicePitch,
                      _decay];
 
-        _cond1 = (_duration/_voicePitch) > 4.0;
+        _cond1 = (_duration / _voicePitch) > 4.0;
         _cond2 = (random 1.0) < 0.5;
 
         if (_cond1 AND _cond2) then {
@@ -107,11 +112,9 @@ if (_emitter isKindOf "Man" AND alive _emitter) then {
         player createDiaryRecord ["varTranscript",["Transcript","<font color='#00FFFF'>" + (groupID group _emitter) + "</font>: " + _subtitle]];
     };
 
-    sleep (_duration / _voicePitch);
+    sleep _duration;
 
     _emitter setRandomLip false;
 
 };
 sleep 1;
-
-

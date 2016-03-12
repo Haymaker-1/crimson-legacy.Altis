@@ -9,10 +9,10 @@ private "_relPath";
 private "_subtitle";
 private "_duration";
 private "_audibleDistance";
-private "_acc";
 private "_isInside";
 private "_voicePitch";
 private "_voiceVolume";
+private "_fullPath";
 
 
 _emitter = _this select 0;
@@ -25,6 +25,9 @@ _emitterPos = eyePos _emitter;
 _relPath = (getArray (missionConfigFile >> "CfgSounds" >> _soundId >> "sound")) select 0;
 _subtitle = (getArray (missionConfigFile >> "CfgSounds" >> _soundId >> "titles")) select 1;
 _duration = getNumber (missionConfigFile >> "CfgSounds" >> _soundId >> "duration");
+
+
+_fullPath = (HAYMAKER_GLOBALS getVariable "MISSION_TOP_LEVEL_DIRECTORY") + _relPath;
 
 _audibleDistance = nil;
 if (_emitter == player) then {
@@ -39,22 +42,23 @@ else {
     _emitter doWatch player;
 };
 
-_acc = accTime;
 _isInside = false;
 
-_voicePitch = 1.0 * _acc;
 {
     if ((_x select 0) == _emitter) then {
-        _voicePitch = (_x select 1)*_acc;
+        _voicePitch = _x select 1;
+    } else {
+        _voicePitch = 1.0;
     };
-} forEach HAYMAKER_GLOBALS getVariable "VOICE_PITCH";
+} forEach (HAYMAKER_GLOBALS getVariable "VOICE_PITCH");
 
-_voiceVolume = 1.0;
 {
     if ((_x select 0) == _emitter) then {
         _voiceVolume = _x select 1;
+    } else {
+        _voiceVolume = 1.0;
     };
-} forEach HAYMAKER_GLOBALS getVariable "VOICE_VOLUME";
+} forEach (HAYMAKER_GLOBALS getVariable "VOICE_VOLUME");
 
 if (isNil "_addVolume") then {
     _addVolume = [] call HAYMAKER_fnc_calcAddVolume;
@@ -68,19 +72,19 @@ if (_emitter isKindOf "Man" AND alive _emitter) then {
 
     _emitter setRandomLip true;
 
-    playSound3D [HAYMAKER_GLOBALS getVariable "MISSION_TOP_LEVEL_DIRECTORY" + _relPath,
-                _emitterObj,
-                _isInside,
-                _emitterPos,
-                _voiceVolume,
-                _voicePitch,
-                _audibleDistance];
+    playSound3D [_fullPath,
+                 _emitterObj,
+                 _isInside,
+                 _emitterPos,
+                 _voiceVolume,
+                 _voicePitch,
+                 _audibleDistance];
 
     _emitter sideChat _subtitle;
 
     player createDiaryRecord ["varTranscript",["Transcript","<font color='#00FFFF'>" + (groupID group _emitter) + "</font>: " + _subtitle]];
 
-    sleep (_duration/_voicePitch);
+    sleep _duration;
 
     _emitter setRandomLip false;
 };
