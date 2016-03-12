@@ -30,7 +30,7 @@ TRIGGER_BREAK_IT_BUY_IT triggerAttachVehicle [thehelicopter];
 
 waitUntil{
     sleep 5;
-    if (TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED) exitWith {true};
+    if (HAYMAKER_GLOBALS getVariable "TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED") exitWith {true};
     false
 };
 

@@ -31,7 +31,7 @@ stavros setDir _dirFaceTruck;
 _trig = createTrigger["EmptyDetector",getMarkerPos "MARKER_LOAD_FUEL"];
 _trig triggerAttachVehicle [player];
 _trig setTriggerActivation["VEHICLE","PRESENT",false];
-_trig setTriggerStatements["this AND TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED AND ((fuel thehelicopter) > 0.90) AND ((getPos thehelicopter) distance (getPos THE_FUEL_TRUCK) < 20)","null = [] execVM 'scripts\got-fuel-from-stavros.sqf';",""];
+_trig setTriggerStatements["this AND HAYMAKER_GLOBALS getVariable 'TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED' AND ((fuel thehelicopter) > 0.90) AND ((getPos thehelicopter) distance (getPos THE_FUEL_TRUCK) < 20)","null = [] execVM 'scripts\got-fuel-from-stavros.sqf';",""];
 
 
 

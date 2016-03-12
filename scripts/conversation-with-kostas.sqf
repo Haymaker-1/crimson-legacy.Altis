@@ -353,7 +353,7 @@ TRIGGER_STATUS_UPDATE setTriggerStatements["this", "null = [] execVM 'scripts\sp
 
 waitUntil {
     sleep 5;
-    if (CONVOY_HAS_REACHED_LAKKA) exitWith {true};
+    if (HAYMAKER_GLOBALS getVariable "CONVOY_HAS_REACHED_LAKKA") exitWith {true};
     false
 };
 
@@ -418,7 +418,7 @@ EVERYBODY_IS_DONE_TALKING = true;
 
 waitUntil {
     sleep 5;
-    if (CONVOY_HAS_REACHED_KORE) exitWith {true};
+    if (HAYMAKER_GLOBALS getVariable "CONVOY_HAS_REACHED_KORE") exitWith {true};
     false
 };
 

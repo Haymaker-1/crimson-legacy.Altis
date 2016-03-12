@@ -12,53 +12,46 @@ _spawningComplete = [] spawn {
         false
     };
 
-    if (true) then {
+    private "_tmp";
+    private "_fighterTypeIdx";
+    private "_fighterType";
+    private "_grp";
+    private "_pos";
+    private "_teamprob";
 
-        private "_tmp";
-        private "_fighterTypeIdx";
-        private "_fighterType";
-        private "_grp";
-        private "_pos";
 
-        waitUntil {
-            sleep 0.5;
-            if (!isNil "TEAM_PROB") exitWith {true};
-            false
-        };
+    _teamprob = HAYMAKER_GLOBALS getVariable "TEAM_PROB";
+    _tmp = [_teamprob] call HAYMAKER_fnc_selectWeightedRandom;
 
-        _tmp = [TEAM_PROB] call HAYMAKER_fnc_selectWeightedRandom;
+    _fighterTypeIdx = _tmp select 0;
+    _fighterType = _tmp select 1;
+    _teamprob set [_fighterTypeIdx,[_tmp,0.00]];
 
-        _fighterTypeIdx = _tmp select 0;
-        _fighterType = _tmp select 1;
-        TEAM_PROB set [_fighterTypeIdx,[_tmp,0.00]];
+    HAYMAKER_GLOBALS setVariable ["TEAM_PROB", _teamprob];
 
-        CHARACTER_POOL_GROUP = group player;
+    CHARACTER_POOL_GROUP = group player;
 
-        selectPlayer (units CHARACTER_POOL_GROUP select _fighterTypeIdx);
+    selectPlayer (units CHARACTER_POOL_GROUP select _fighterTypeIdx);
 
-        _grp = createGroup west;
-        _grp setGroupId ["Delta One","GroupColor4"];
+    _grp = createGroup west;
+    _grp setGroupId ["Delta One","GroupColor4"];
 
-        [player] joinSilent _grp;
-        player setName profileName;
-        _grp selectLeader player;
-        player setRank "LIEUTENANT";
+    [player] joinSilent _grp;
+    player setName profileName;
+    _grp selectLeader player;
+    player setRank "LIEUTENANT";
 
-        null = [_grp] execVM "scripts\change-equipment-blufor-group-members.sqf";
+    null = [_grp] execVM "scripts\change-equipment-blufor-group-members.sqf";
 
-        _pos = getPos (units CHARACTER_POOL_GROUP select 0);
+    _pos = getPos (units CHARACTER_POOL_GROUP select 0);
 
-        {
-            removeSwitchableUnit _x;
-            deleteVehicle _x;
-        } forEach (units CHARACTER_POOL_GROUP);
+    {
+        removeSwitchableUnit _x;
+        deleteVehicle _x;
+    } forEach (units CHARACTER_POOL_GROUP);
 
-        player setPos _pos;
+    player setPos _pos;
 
-    } else {
-        null = [group player] execVM "scripts\change-equipment-blufor-group-members.sqf";
-        (group player) setGroupId ["Delta One","GroupColor4"];
-    };
 
 };
 
@@ -112,6 +105,3 @@ _trig = nil;
 
 player createDiarySubject ["varAbout","About"];
 player createDiaryRecord ["varAbout",["Version","<br /><br />This mission was built on: {{AUTO_INSERT_BUILD_DATETIME}}"]];
-
-
-

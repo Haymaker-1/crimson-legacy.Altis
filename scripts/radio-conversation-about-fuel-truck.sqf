@@ -154,7 +154,7 @@ TASK_LOAD_FUEL setSimpleTaskDestination (getMarkerPos "MARKER_LOAD_FUEL");
 player setCurrentTask TASK_LOAD_FUEL;
 TASK_LOAD_FUEL setTaskState "Assigned";
 ["TaskAssigned", ["","Refuel"]] call BIS_fnc_showNotification;
-TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED = true;
+HAYMAKER_GLOBALS setVariable ["TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED", true];
 
 
 sleep 10;

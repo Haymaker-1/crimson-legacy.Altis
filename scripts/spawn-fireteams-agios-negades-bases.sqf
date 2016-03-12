@@ -79,14 +79,11 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
 
     _perimeter4 = ["MARKER_PERIMETER_KFR"] call HAYMAKER_fnc_constructPerimeter;
-    [_perimeter4,_opforGroupBaseNegades,TOTAL_NUMBER_OF_RANDOM_PATROLS] execVM "scripts\set-as-random-patrol.sqf";
+    [_perimeter4, _opforGroupBaseNegades, HAYMAKER_GLOBALS getVariable "TOTAL_NUMBER_OF_RANDOM_PATROLS"] execVM "scripts\set-as-random-patrol.sqf";
 
     _perimeter5 = ["MARKER_PERIMETER_FWB"] call HAYMAKER_fnc_constructPerimeter;
-    [_perimeter5,_opforGroupBaseAgios,TOTAL_NUMBER_OF_RANDOM_PATROLS+1] execVM "scripts\set-as-random-patrol.sqf";
+    [_perimeter5, _opforGroupBaseAgios, HAYMAKER_GLOBALS getVariable "TOTAL_NUMBER_OF_RANDOM_PATROLS" + 1] execVM "scripts\set-as-random-patrol.sqf";
 
-
-    TOTAL_NUMBER_OF_RANDOM_PATROLS = TOTAL_NUMBER_OF_RANDOM_PATROLS + 2;
+    HAYMAKER_GLOBALS setVariable ["TOTAL_NUMBER_OF_RANDOM_PATROLS", HAYMAKER_GLOBALS getVariable "TOTAL_NUMBER_OF_RANDOM_PATROLS" + 2];
 
 };
-
-

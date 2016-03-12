@@ -115,17 +115,17 @@ TASK_MEET_KOSTAS setSimpleTaskDestination (getMarkerPos "MARKER_REBEL_CAMP_HELIP
 TASK_MEET_KOSTAS setSimpleTaskDescription ["There's no sign of the pilot near the crash site. The special forces guys know the local resistance commander, Kostas. He has a <marker name='MARKER_REBEL_CAMP'>camp</marker> northwest of the crash site. We are meeting him to see if his people have seen or heard something.","Meet Kostas","Meet Kostas"];
 TASK_MEET_KOSTAS setTaskState "Assigned";
 ["TaskAssigned", ["","Meet Kostas"]] call BIS_fnc_showNotification;
-TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED = true;
+HAYMAKER_GLOBALS setVariable ["TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED", true];
 player setCurrentTask TASK_MEET_KOSTAS;
 
 TRIGGER_I_SMELL_FUEL = createTrigger["EmptyDetector",getMarkerPos "MARKER_REBEL_CAMP_HELIPAD"];
 TRIGGER_I_SMELL_FUEL setTriggerArea[1000,1000,0,false];
 TRIGGER_I_SMELL_FUEL triggerAttachVehicle [thehelicopter];
 TRIGGER_I_SMELL_FUEL setTriggerActivation["VEHICLE","PRESENT",false];
-TRIGGER_I_SMELL_FUEL setTriggerStatements["this AND TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED AND player in crew thehelicopter AND (getPos thehelicopter select 2 > 2.0)","null = [] execVM 'scripts\conversation-smell-fuel.sqf'",""];
+TRIGGER_I_SMELL_FUEL setTriggerStatements["this AND HAYMAKER_GLOBALS getVariable 'TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED' AND player in crew thehelicopter AND (getPos thehelicopter select 2 > 2.0)","null = [] execVM 'scripts\conversation-smell-fuel.sqf'",""];
 
 TRIGGER_LANDED_AT_REBEL_CAMP = createTrigger["EmptyDetector",getMarkerPos "MARKER_REBEL_CAMP_HELIPAD"];
 TRIGGER_LANDED_AT_REBEL_CAMP setTriggerArea[15,15,0,false];
 TRIGGER_LANDED_AT_REBEL_CAMP triggerAttachVehicle [thehelicopter];
 TRIGGER_LANDED_AT_REBEL_CAMP setTriggerActivation["VEHICLE","PRESENT",false];
-TRIGGER_LANDED_AT_REBEL_CAMP setTriggerStatements["this AND TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED AND (((getPos thehelicopter) select 2) < 0.25)","null = [] execVM 'scripts\landed-at-rebel-camp.sqf'",""];
+TRIGGER_LANDED_AT_REBEL_CAMP setTriggerStatements["this AND HAYMAKER_GLOBALS getVariable 'TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED' AND (((getPos thehelicopter) select 2) < 0.25)","null = [] execVM 'scripts\landed-at-rebel-camp.sqf'",""];

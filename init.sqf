@@ -19,16 +19,25 @@ EAST setFriend [RESISTANCE, 0.0];
 
 deactivateKey "missionCompletedKey";
 
-// engineer disabled for the moment (issue #32)
-TEAM_PROB = [
-     [[0,"B_Soldier_M_F",     "marksman"],    0.20],
-     [[1,"B_soldier_repair_F","engineer"],    0.00],
-     [[2,"B_medic_F",         "medic"],       0.20],
-     [[3,"B_soldier_AR_F",    "autorifleman"],0.20],
-     [[4,"B_Soldier_F",       "rifleman"],    0.20],
-     [[5,"B_Soldier_GL_F",    "grenadier"],   0.20]
-    ];
+_spawningComplete = [] execVM "scripts\spawn-global-object.sqf";
+waitUntil {
+    sleep 0.5;
+    if (scriptDone _spawningComplete) exitWith {true};
+    false
+};
+_spawningComplete = nil;
 
+
+// engineer disabled for the moment (issue #32)
+HAYMAKER_GLOBALS setVariable ["TEAM_PROB",
+    [
+         [[0,"B_Soldier_M_F",     "marksman"],    0.20],
+         [[1,"B_soldier_repair_F","engineer"],    0.00],
+         [[2,"B_medic_F",         "medic"],       0.20],
+         [[3,"B_soldier_AR_F",    "autorifleman"],0.20],
+         [[4,"B_Soldier_F",       "rifleman"],    0.20],
+         [[5,"B_Soldier_GL_F",    "grenadier"],   0.20]
+    ], false];
 
 null = [] execVM "scripts\set-fuel-stations-empty.sqf";
 
@@ -41,51 +50,52 @@ null = [] execVM "scripts\set-fuel-stations-empty.sqf";
 (group christos) setGroupId ["Christos","GroupColor4"];
 
 
-NEED_HELO = true;
-TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED = false;
-TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED = false;
-TRIGGER_LANDED_AT_REBEL_CAMP_FIRED = false;
-CONVOY_HAS_REACHED_LAKKA = false;
-CONVOY_HAS_REACHED_KORE = false;
-TOTAL_NUMBER_OF_RANDOM_PATROLS = 0;
-AGIOS_KONSTANTINOS_IS_CLEAR = false;
-NEGADES_IS_CLEAR = false;
-PILOT_EGRESS_WAS_SUCCESSFUL = false;
-CRASH_SITE_IS_CLEAR = false;
-AA_MAGOS_IS_CLEAR = false;
-AA_AMFISSA_IS_CLEAR = false;
-AA_PYRSOS_IS_CLEAR = false;
-AA_GALATI_IS_CLEAR = false;
-AA_IFESTONIA_IS_CLEAR = false;
-AA_FRINI_IS_CLEAR = false;
-CRASH_SITE_POPULATED = false;
-ENDMISSION_REASON_THROWN = false;
-TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED = false;
-TASK_ESCORT_PILOT_HAS_BEEN_ASSIGNED = false;
-IED1_HAS_BEEN_ACTIVATED = false;
-IED2_HAS_BEEN_ACTIVATED = false;
-TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED = false;
-EVERYBODY_IS_DONE_TALKING = true;
-TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED = false;
-LOOKOUT_FOR_MORTAR_TARGETS = true;
-SPAWN_RANDOM_PATROLS_ENABLED = true;
-WEATHER_IS_CONTROLLED = false;
+HAYMAKER_GLOBALS setVariable ["NEED_HELO", true];
+HAYMAKER_GLOBALS setVariable ["TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED", false];
+HAYMAKER_GLOBALS setVariable ["TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED", false];
+HAYMAKER_GLOBALS setVariable ["TRIGGER_LANDED_AT_REBEL_CAMP_FIRED", false];
+HAYMAKER_GLOBALS setVariable ["CONVOY_HAS_REACHED_LAKKA", false];
+HAYMAKER_GLOBALS setVariable ["CONVOY_HAS_REACHED_KORE", false];
+HAYMAKER_GLOBALS setVariable ["TOTAL_NUMBER_OF_RANDOM_PATROLS", 0];
 
-VOICE_ADDVOLUME_DEFAULT = 0.0;
+// globals fixed  to here
+HAYMAKER_GLOBALS setVariable ["AGIOS_KONSTANTINOS_IS_CLEAR", false];
+HAYMAKER_GLOBALS setVariable ["NEGADES_IS_CLEAR", false];
+HAYMAKER_GLOBALS setVariable ["PILOT_EGRESS_WAS_SUCCESSFUL", false];
+HAYMAKER_GLOBALS setVariable ["CRASH_SITE_IS_CLEAR", false];
+HAYMAKER_GLOBALS setVariable ["AA_MAGOS_IS_CLEAR", false];
+HAYMAKER_GLOBALS setVariable ["AA_AMFISSA_IS_CLEAR", false];
+HAYMAKER_GLOBALS setVariable ["AA_PYRSOS_IS_CLEAR", false];
+HAYMAKER_GLOBALS setVariable ["AA_GALATI_IS_CLEAR", false];
+HAYMAKER_GLOBALS setVariable ["AA_IFESTONIA_IS_CLEAR", false];
+HAYMAKER_GLOBALS setVariable ["AA_FRINI_IS_CLEAR", false];
+HAYMAKER_GLOBALS setVariable ["CRASH_SITE_POPULATED", false];
+HAYMAKER_GLOBALS setVariable ["ENDMISSION_REASON_THROWN", false];
+HAYMAKER_GLOBALS setVariable ["TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED", false];
+HAYMAKER_GLOBALS setVariable ["TASK_ESCORT_PILOT_HAS_BEEN_ASSIGNED", false];
+HAYMAKER_GLOBALS setVariable ["IED1_HAS_BEEN_ACTIVATED", false];
+HAYMAKER_GLOBALS setVariable ["IED2_HAS_BEEN_ACTIVATED", false];
+HAYMAKER_GLOBALS setVariable ["TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED", false];
+HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", true];
+HAYMAKER_GLOBALS setVariable ["TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED", false];
+HAYMAKER_GLOBALS setVariable ["LOOKOUT_FOR_MORTAR_TARGETS", true];
+HAYMAKER_GLOBALS setVariable ["SPAWN_RANDOM_PATROLS_ENABLED", true];
+HAYMAKER_GLOBALS setVariable ["WEATHER_IS_CONTROLLED", false];
+HAYMAKER_GLOBALS setVariable ["VOICE_ADDVOLUME_DEFAULT", 0.0;
 
-VOICE_PITCH = [[THE_CO,0.92],
+HAYMAKER_GLOBALS setVariable ["VOICE_PITCH", [[THE_CO,0.92],
                [player,1.02]];
 
-VOICE_VOLUME = [[THE_CO,2.0],
+HAYMAKER_GLOBALS setVariable ["VOICE_VOLUME", [[THE_CO,2.0],
                 [player,0.9]];
 
-SPEECH_AUDIBLE_DISTANCE = 40;
+HAYMAKER_GLOBALS setVariable ["SPEECH_AUDIBLE_DISTANCE", 40;
 
-MISSION_TOP_LEVEL_DIRECTORY = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
+HAYMAKER_GLOBALS setVariable ["MISSION_TOP_LEVEL_DIRECTORY", [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
 
-RANDOM_PATROL_GROUP_HAS_ARRIVED = [];
-STOP_RANDOM_PATROL_GROUP = [];
-RANDOM_PATROL_GROUP_LAST_KNOWN_POS = [];
+HAYMAKER_GLOBALS setVariable ["RANDOM_PATROL_GROUP_HAS_ARRIVED", [];
+HAYMAKER_GLOBALS setVariable ["STOP_RANDOM_PATROL_GROUP", [];
+HAYMAKER_GLOBALS setVariable ["RANDOM_PATROL_GROUP_LAST_KNOWN_POS", [];
 
 RANDOM_PATROL_GROUP_HAS_ARRIVED resize 100;
 STOP_RANDOM_PATROL_GROUP resize 100;
@@ -98,7 +108,7 @@ RANDOM_PATROL_GROUP_LAST_KNOWN_POS resize 100;
 } forEach RANDOM_PATROL_GROUP_HAS_ARRIVED;
 
 
-BLUFOR_ARIFLE_OF_CHOICE = [[["f2000",0.50],["tavor",0.50]]] call HAYMAKER_fnc_selectWeightedRandom;
+HAYMAKER_GLOBALS setVariable ["BLUFOR_ARIFLE_OF_CHOICE", [[["f2000",0.50],["tavor",0.50]]] call HAYMAKER_fnc_selectWeightedRandom;
 
 
 null = [] execVM "scripts\monitor-if-random-patrol-units-are-moving.sqf";

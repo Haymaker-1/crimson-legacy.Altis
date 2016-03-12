@@ -4,7 +4,16 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
     private "_nPatrols";
 
-    _nPatrols = 2 + round (random 2);
+//	private "_iFrom";
+//	private "_iTo";
+//	_iFrom = HAYMAKER_GLOBALS getVariable "TOTAL_NUMBER_OF_RANDOM_PATROLS";
+//	_iTo = _iFrom + _nPatrols - 1;
+//	for "_i" from _iFrom to _iTo do {
+//	HAYMAKER_GLOBALS setVariable ["TOTAL_NUMBER_OF_RANDOM_PATROLS", _i + 1];
+
+
+	_nPatrols = 2 + round (random 2);
+
 
     for "_i" from (TOTAL_NUMBER_OF_RANDOM_PATROLS) to (TOTAL_NUMBER_OF_RANDOM_PATROLS + _nPatrols - 1) do {
 
@@ -43,4 +52,3 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
 
     };
 };
-
