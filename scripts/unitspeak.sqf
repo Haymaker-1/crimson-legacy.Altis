@@ -35,7 +35,7 @@ if (_emitter == player) then {
     _audibleDistance = 0;
 }
 else {
-    _audibleDistance = SPEECH_AUDIBLE_DISTANCE;
+    _audibleDistance = HAYMAKER_GLOBALS getVariable "SPEECH_AUDIBLE_DISTANCE";
     _emitter doWatch player;
 };
 
@@ -47,14 +47,14 @@ _voicePitch = 1.0 * _acc;
     if ((_x select 0) == _emitter) then {
         _voicePitch = (_x select 1)*_acc;
     };
-} forEach VOICE_PITCH;
+} forEach HAYMAKER_GLOBALS getVariable "VOICE_PITCH";
 
 _voiceVolume = 1.0;
 {
     if ((_x select 0) == _emitter) then {
         _voiceVolume = _x select 1;
     };
-} forEach VOICE_VOLUME;
+} forEach HAYMAKER_GLOBALS getVariable "VOICE_VOLUME";
 
 if (isNil "_addVolume") then {
     _addVolume = [] call HAYMAKER_fnc_calcAddVolume;
@@ -68,7 +68,7 @@ if (_emitter isKindOf "Man" AND alive _emitter) then {
 
     _emitter setRandomLip true;
 
-    playSound3D [MISSION_TOP_LEVEL_DIRECTORY + _relPath,
+    playSound3D [HAYMAKER_GLOBALS getVariable "MISSION_TOP_LEVEL_DIRECTORY" + _relPath,
                 _emitterObj,
                 _isInside,
                 _emitterPos,

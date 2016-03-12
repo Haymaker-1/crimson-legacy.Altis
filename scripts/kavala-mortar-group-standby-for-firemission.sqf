@@ -6,7 +6,7 @@ private "_targetAgeMax";
 
 _targetAgeMax = 5 / 60; // hours
 
-while {LOOKOUT_FOR_MORTAR_TARGETS} do {
+while {HAYMAKER_GLOBALS getVariable "LOOKOUT_FOR_MORTAR_TARGETS"} do {
 
     {
         private "_targetAge";

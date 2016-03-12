@@ -337,7 +337,7 @@ _mm = nil;
 _dd = nil;
 
 _tod = 4.0;
-if (WEATHER_IS_CONTROLLED) then {
+if (HAYMAKER_GLOBALS getVariable "WEATHER_IS_CONTROLLED") then {
     ((24 + _tod)*3600) setFog [0.6,0.1,5.0];
     ((24 + _tod)*3600) setRain 0.0;
     ((24 + _tod)*3600) setOvercast 0.4;
@@ -345,7 +345,7 @@ if (WEATHER_IS_CONTROLLED) then {
 skipTime (24 + _tod + random 0.25);
 _tod = nil;
 
-if (WEATHER_IS_CONTROLLED) then {
+if (HAYMAKER_GLOBALS getVariable "WEATHER_IS_CONTROLLED") then {
     (2*3600) setFog [0.02, 0.10, 2.3];
 };
 
@@ -628,7 +628,7 @@ null = [] spawn {
         if (daytime > 5.75) exitWith {true};
         false
     };
-    LOOKOUT_FOR_MORTAR_TARGETS = false;
+    HAYMAKER_GLOBALS setVariable ["LOOKOUT_FOR_MORTAR_TARGETS", false];
 };
 
 5 fadeSound 1;

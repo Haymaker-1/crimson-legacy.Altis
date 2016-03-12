@@ -267,7 +267,7 @@ TRIGGER_CRASH_SITE_FOUND setTriggerStatements["this","null = [] execVM 'scripts\
 
 sleep 15;
 
-if (SHOW_CHAPTER_TITLES) then {
+if (HAYMAKER_GLOBALS getVariable "SHOW_CHAPTER_TITLES") then {
     null = ["M.I.A"] execVM "scripts\show-chapter-title.sqf";
 };
 sleep 10;

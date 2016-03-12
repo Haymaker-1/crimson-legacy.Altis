@@ -1,6 +1,6 @@
 
 
-if (SPAWN_RANDOM_PATROLS_ENABLED) then {
+if (HAYMAKER_GLOBALS getVariable "SPAWN_RANDOM_PATROLS_ENABLED") then {
 
     private "_nPatrols";
 	private "_iFrom";

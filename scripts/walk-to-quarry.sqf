@@ -368,7 +368,7 @@ _trig = createTrigger["EmptyDetector",getMarkerPos "MARKER_STAGING_AREA_QUARRY"]
 _trig setTriggerArea[111,111,0,false];
 _trig triggerAttachVehicle [player];
 _trig setTriggerActivation["VEHICLE","PRESENT",false];
-_trig setTriggerStatements["this AND TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED","null = [true] execVM 'scripts\assault-kavala.sqf';",""];
+_trig setTriggerStatements["this AND HAYMAKER_GLOBALS getVariable 'TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED'","null = [true] execVM 'scripts\assault-kavala.sqf';",""];
 _trig = nil;
 
 sleep 10;
@@ -388,7 +388,7 @@ _dd = _theDate select 2;
 setDate [_yyyy, _mm, _dd, 0, 1];
 
 _tod = 4.75;
-if (WEATHER_IS_CONTROLLED) then {
+if (HAYMAKER_GLOBALS getVariable "WEATHER_IS_CONTROLLED") then {
     ((24 + _tod)*3600) setFog [0.6,0.1,5.0];
     ((24 + _tod)*3600) setRain 0.0;
     ((24 + _tod)*3600) setOvercast 0.4;
@@ -396,7 +396,7 @@ if (WEATHER_IS_CONTROLLED) then {
 
 skipTime (24 + _tod + random 0.25);
 
-if (WEATHER_IS_CONTROLLED) then {
+if (HAYMAKER_GLOBALS getVariable "WEATHER_IS_CONTROLLED") then {
     (2*3600) setFog [0.02, 0.10, 2.3];
 };
 
@@ -539,7 +539,7 @@ kavalaRifleSquadDelta = createGroup west;
 
 
 
-TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED = true;
+HAYMAKER_GLOBALS setVariable ["TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED", true];
 
 
 

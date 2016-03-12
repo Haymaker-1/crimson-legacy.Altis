@@ -359,10 +359,10 @@ waitUntil {
 
 waitUntil {
     sleep 5;
-    if (EVERYBODY_IS_DONE_TALKING) exitWith {true};
+    if (HAYMAKER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING") exitWith {true};
     false
 };
-EVERYBODY_IS_DONE_TALKING = false;
+HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", false];
 
 
 _isReady = [kostas, "egcnoprm14"] execVM "scripts\unitradiospeak.sqf";
@@ -413,7 +413,7 @@ waitUntil{
 };
 _isReady = nil;
 
-EVERYBODY_IS_DONE_TALKING = true;
+HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", true];
 
 
 waitUntil {
@@ -429,10 +429,10 @@ if (CAN_ASSIGN_DESTROY_CONVOY_VEHICLES) then {
 
     waitUntil {
         sleep 5;
-        if (EVERYBODY_IS_DONE_TALKING) exitWith {true};
+        if (HAYMAKER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING") exitWith {true};
         false
     };
-    EVERYBODY_IS_DONE_TALKING = false;
+	HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", false];
 
     _isReady = [kostas, "egcnoprm17"] execVM "scripts\unitradiospeak.sqf";
     waitUntil{
@@ -467,13 +467,13 @@ if (CAN_ASSIGN_DESTROY_CONVOY_VEHICLES) then {
     };
     _isReady = nil;
 
-    EVERYBODY_IS_DONE_TALKING = true;
+	HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", true];
 
 
     TASK_DESTROY_CONVOY_VEHICLES = player createSimpleTask ["TASKID_DESTROY_CONVOY_VEHICLES"];
     TASK_DESTROY_CONVOY_VEHICLES setSimpleTaskDescription ["A convoy of three vehicles is coming to secure the pilot. Mounting a surprise attack and destroying the convoy vehicles would help our cause. Tempting as it is, this objective is only secondary to getting the pilot back safely.","Destroy vehicles","Destroy vehicles"];
     TASK_DESTROY_CONVOY_VEHICLES setTaskState "Created";
     ["TaskCreated", ["","Destroy vehicles"]] call BIS_fnc_showNotification;
-    TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED = true;
+    HAYMAKER_GLOBALS setVariable ["TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED", true];
 
 };

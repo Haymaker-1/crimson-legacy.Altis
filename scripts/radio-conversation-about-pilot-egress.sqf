@@ -101,7 +101,7 @@ TASK_ESCORT_PILOT setSimpleTaskDescription ["Escort the pilot to <marker name='M
 player setCurrentTask TASK_ESCORT_PILOT;
 TASK_ESCORT_PILOT setTaskState "Assigned";
 ["TaskAssigned", ["","Escort pilot"]] call BIS_fnc_showNotification;
-TASK_ESCORT_PILOT_HAS_BEEN_ASSIGNED = true;
+HAYMAKER_GLOBALS setVariable ["TASK_ESCORT_PILOT_HAS_BEEN_ASSIGNED", true];
 
 
 
@@ -172,4 +172,4 @@ TRIGGER_ADDACTION_CALL_BOAT = createTrigger["EmptyDetector",getMarkerPos "MARKER
 TRIGGER_ADDACTION_CALL_BOAT setTriggerArea[1000,1000,0,false];
 TRIGGER_ADDACTION_CALL_BOAT triggerAttachVehicle [player];
 TRIGGER_ADDACTION_CALL_BOAT setTriggerActivation["VEHICLE","PRESENT",true];
-TRIGGER_ADDACTION_CALL_BOAT setTriggerStatements["this AND TASK_ESCORT_PILOT_HAS_BEEN_ASSIGNED","ACTION_RADIO_FOR_BOAT = player addAction ['Call in the boat','scripts\call-in-the-boat.sqf',nil,0,false];","player removeAction ACTION_RADIO_FOR_BOAT;"];
+TRIGGER_ADDACTION_CALL_BOAT setTriggerStatements["this AND HAYMAKER_GLOBALS getVariable 'TASK_ESCORT_PILOT_HAS_BEEN_ASSIGNED'","ACTION_RADIO_FOR_BOAT = player addAction ['Call in the boat','scripts\call-in-the-boat.sqf',nil,0,false];","player removeAction ACTION_RADIO_FOR_BOAT;"];

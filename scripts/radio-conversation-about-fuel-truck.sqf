@@ -159,7 +159,7 @@ HAYMAKER_GLOBALS setVariable ["TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED", true];
 
 sleep 10;
 
-if (SHOW_CHAPTER_TITLES) then {
+if (HAYMAKER_GLOBALS getVariable "SHOW_CHAPTER_TITLES") then {
     null = ["Flyboys"] execVM "scripts\show-chapter-title.sqf";
 };
 sleep 10;

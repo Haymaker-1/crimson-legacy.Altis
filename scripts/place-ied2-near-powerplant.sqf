@@ -28,4 +28,3 @@ waitUntil {
 };
 demoSpecialist sideChat "Be advised, there is an IED on the access road to the southeast of the power plant.";
 "MARKER_POWERPLANT_IED2" setMarkerType "mil_warning";
-IED2_HAS_BEEN_ACTIVATED = true;

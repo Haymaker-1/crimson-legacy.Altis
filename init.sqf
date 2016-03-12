@@ -1,4 +1,7 @@
 
+private "_shedAgios";
+private "_spawningComplete";
+
 
 titleText ["", "BLACK FADED", 0];
 0 fadeSound 0;
@@ -64,33 +67,24 @@ HAYMAKER_GLOBALS setVariable ["CRASH_SITE_IS_CLEAR", false];
 HAYMAKER_GLOBALS setVariable ["AA_MAGOS_IS_CLEAR", false];
 HAYMAKER_GLOBALS setVariable ["AA_AMFISSA_IS_CLEAR", false];
 HAYMAKER_GLOBALS setVariable ["ENDMISSION_REASON_THROWN", false];
-
-// globals fixed  to here
 HAYMAKER_GLOBALS setVariable ["TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED", false];
 HAYMAKER_GLOBALS setVariable ["TASK_ESCORT_PILOT_HAS_BEEN_ASSIGNED", false];
-HAYMAKER_GLOBALS setVariable ["IED1_HAS_BEEN_ACTIVATED", false];
-HAYMAKER_GLOBALS setVariable ["IED2_HAS_BEEN_ACTIVATED", false];
 HAYMAKER_GLOBALS setVariable ["TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED", false];
 HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", true];
 HAYMAKER_GLOBALS setVariable ["TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED", false];
 HAYMAKER_GLOBALS setVariable ["LOOKOUT_FOR_MORTAR_TARGETS", true];
 HAYMAKER_GLOBALS setVariable ["SPAWN_RANDOM_PATROLS_ENABLED", true];
 HAYMAKER_GLOBALS setVariable ["WEATHER_IS_CONTROLLED", false];
-HAYMAKER_GLOBALS setVariable ["VOICE_ADDVOLUME_DEFAULT", 0.0;
-
-HAYMAKER_GLOBALS setVariable ["VOICE_PITCH", [[THE_CO,0.92],
-               [player,1.02]];
-
-HAYMAKER_GLOBALS setVariable ["VOICE_VOLUME", [[THE_CO,2.0],
-                [player,0.9]];
-
+HAYMAKER_GLOBALS setVariable ["VOICE_PITCH", [[THE_CO,0.92], [player,1.02]];
+HAYMAKER_GLOBALS setVariable ["VOICE_VOLUME", [[THE_CO,2.0], [player,0.9]];
 HAYMAKER_GLOBALS setVariable ["SPEECH_AUDIBLE_DISTANCE", 40;
-
 HAYMAKER_GLOBALS setVariable ["MISSION_TOP_LEVEL_DIRECTORY", [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
+HAYMAKER_GLOBALS setVariable ["BLUFOR_ARIFLE_OF_CHOICE", [[["f2000",0.50],["tavor",0.50]]] call HAYMAKER_fnc_selectWeightedRandom;
+SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
 
-HAYMAKER_GLOBALS setVariable ["RANDOM_PATROL_GROUP_HAS_ARRIVED", [];
-HAYMAKER_GLOBALS setVariable ["STOP_RANDOM_PATROL_GROUP", [];
-HAYMAKER_GLOBALS setVariable ["RANDOM_PATROL_GROUP_LAST_KNOWN_POS", [];
+RANDOM_PATROL_GROUP_HAS_ARRIVED = [];
+STOP_RANDOM_PATROL_GROUP = [];
+RANDOM_PATROL_GROUP_LAST_KNOWN_POS = [];
 
 RANDOM_PATROL_GROUP_HAS_ARRIVED resize 100;
 STOP_RANDOM_PATROL_GROUP resize 100;
@@ -103,7 +97,6 @@ RANDOM_PATROL_GROUP_LAST_KNOWN_POS resize 100;
 } forEach RANDOM_PATROL_GROUP_HAS_ARRIVED;
 
 
-HAYMAKER_GLOBALS setVariable ["BLUFOR_ARIFLE_OF_CHOICE", [[["f2000",0.50],["tavor",0.50]]] call HAYMAKER_fnc_selectWeightedRandom;
 
 
 null = [] execVM "scripts\monitor-if-random-patrol-units-are-moving.sqf";
@@ -215,15 +208,17 @@ null = [] execVM "scripts\aa-ifestonia-1-and-2-died.sqf";
 null = [] execVM "scripts\aa-frini-died.sqf";
 
 
-shedAgios = createvehicle ["Land_Shed_Big_F",[4047.0,17665.4,-0.91],[],0,"NONE"];
-shedAgios setDir 44.5;
+_shedAgios = createvehicle ["Land_Shed_Big_F",[4047.0,17665.4,-0.91],[],0,"NONE"];
+_shedAgios setDir 44.5;
 
 // create light sources at christos'es
 {
+    private "_lightPos";
+    private "_lightColor";
+    private "_lightBrightness";
     _lightPos = _x;
     _lightColor = [1,0.5,0.5];
     _lightBrightness = 0.15;
-
     null = [_lightPos,_lightColor,_lightBrightness] execVM "scripts\create-light.sqf";
 } forEach [[7474.46,16277.7,3.0],[7465.53,16288.6,3.0]];
 
@@ -249,6 +244,5 @@ shedAgios setDir 44.5;
 (getMarkerPos "MARKER_HELIPORT" nearestObject 1240643) setDamage 1;
 
 
-SHOW_CHAPTER_TITLES = getNumber (missionConfigFile >> "myMissionConfig" >> "mySetup" >> "SHOW_CHAPTER_TITLES") == 1;
 
 null = [] execVM "scripts\savegames.sqf";

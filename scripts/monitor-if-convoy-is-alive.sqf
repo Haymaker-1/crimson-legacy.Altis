@@ -3,13 +3,7 @@ NUMBER_OF_CONVOY_VEHICLES_DESTROYED = 0;
 
 waitUntil {
     sleep 5;
-    if (!isnil("TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED")) exitWith {true};
-    false
-};
-
-waitUntil {
-    sleep 5;
-    if (TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED) exitWith {true};
+    if (HAYMAKER_GLOBALS getVariable "TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED") exitWith {true};
     false
 };
 

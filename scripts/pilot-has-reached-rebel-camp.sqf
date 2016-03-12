@@ -11,16 +11,17 @@ TASK_MOVE_PILOT_TO_REBEL_CAMP setTaskState "Succeeded";
 
 waitUntil {
     sleep 5;
-    if (EVERYBODY_IS_DONE_TALKING) exitWith {true};
+    if (HAYMAKER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING") exitWith {true};
     false
 };
-EVERYBODY_IS_DONE_TALKING = !EVERYBODY_IS_DONE_TALKING;
+
+HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", !HAYMAKER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING"];
 null = execVM "scripts\radio-conversation-about-pilot-egress.sqf";
-EVERYBODY_IS_DONE_TALKING = !EVERYBODY_IS_DONE_TALKING;
+HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", !HAYMAKER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING"];
 
 
 
-if (TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED) then {
+if (HAYMAKER_GLOBALS getVariable "TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED") then {
     private = "_pos1";
     private = "_pos2";
     _pos1 = getMarkerPos "MARKER_CAPTURED_PILOT_LOCATION";

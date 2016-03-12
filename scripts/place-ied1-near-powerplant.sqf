@@ -26,4 +26,3 @@ waitUntil {
 };
 demoSpecialist sideChat "Be advised, I just put an IED on the south side of the bridge.";
 "MARKER_POWERPLANT_IED1" setMarkerType "mil_warning";
-IED1_HAS_BEEN_ACTIVATED = true;

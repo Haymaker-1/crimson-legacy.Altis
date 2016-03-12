@@ -14,12 +14,12 @@ TASK_MEET_AT_QUARRY setSimpleTaskDestination (getMarkerPos "MARKER_STAGING_AREA_
 TASK_MEET_AT_QUARRY setTaskState "Assigned";
 ["TaskAssigned", ["","Move to staging area"]] call BIS_fnc_showNotification;
 player setCurrentTask TASK_MEET_AT_QUARRY;
-TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED = true;
+HAYMAKER_GLOBALS setVariable ["TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED", true];
 
 
 _trig = createTrigger["EmptyDetector",getMarkerPos "MARKER_STAGING_AREA_QUARRY"];
 _trig setTriggerArea[111,111,0,false];
 _trig triggerAttachVehicle [player];
 _trig setTriggerActivation["VEHICLE","PRESENT",false];
-_trig setTriggerStatements["this AND TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED","null = [false] execVM 'scripts\assault-kavala.sqf';",""];
+_trig setTriggerStatements["this AND HAYMAKER_GLOBALS getVariable 'TASK_MEET_AT_QUARRY_HAS_BEEN_ASSIGNED'","null = [false] execVM 'scripts\assault-kavala.sqf';",""];
 _trig = nil;

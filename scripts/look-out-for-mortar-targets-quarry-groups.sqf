@@ -8,7 +8,7 @@ _theRange = _this select 1;
 
 _spotterSide = side _theUnit;
 
-while {alive _theUnit AND LOOKOUT_FOR_MORTAR_TARGETS} do {
+while {alive _theUnit AND HAYMAKER_GLOBALS getVariable "LOOKOUT_FOR_MORTAR_TARGETS"} do {
     private "_targets";
     _targets = _theUnit nearTargets _theRange;
     {

@@ -1,7 +1,7 @@
 
 
 
-if (SPAWN_RANDOM_PATROLS_ENABLED) then {
+if (HAYMAKER_GLOBALS getVariable "SPAWN_RANDOM_PATROLS_ENABLED") then {
 
     private "_nPatrols";
     private "_headgearArray";
@@ -84,8 +84,8 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
     TASK_SEIZE_POWER_PLANT setTaskState "Assigned";
     ["TaskAssigned", ["","Seize power plant"]] call BIS_fnc_showNotification;
     player setCurrentTask TASK_SEIZE_POWER_PLANT;
-    TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED = true;
-
+	// FIXME don't really need TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED it seems
+    HAYMAKER_GLOBALS setVariable ["TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED", true];
 
     POWER_PLANT_CLEARED = false;
     POWER_PLANT_SEIZED = false;
@@ -94,12 +94,12 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
     TRIGGER_POWER_PLANT_CLEARED = createTrigger["EmptyDetector",getMarkerPos "MARKER_POWER_PLANT"];
     TRIGGER_POWER_PLANT_CLEARED setTriggerArea[600,600,0,false];
     TRIGGER_POWER_PLANT_CLEARED setTriggerActivation["EAST","NOT PRESENT",false];
-    TRIGGER_POWER_PLANT_CLEARED setTriggerStatements["this AND TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED","null = [] execVM 'scripts\power-plant-seized.sqf'",""];
+    TRIGGER_POWER_PLANT_CLEARED setTriggerStatements["this AND HAYMAKER_GLOBALS getVariable 'TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED'","null = [] execVM 'scripts\power-plant-seized.sqf'",""];
 
 
     TRIGGER_POWER_PLANT_SEIZED = createTrigger["EmptyDetector",[4222.93,15045,0]];
     TRIGGER_POWER_PLANT_SEIZED setTriggerArea[40,70,-85.7435,false];
     TRIGGER_POWER_PLANT_SEIZED triggerAttachVehicle [player];
     TRIGGER_POWER_PLANT_SEIZED setTriggerActivation["VEHICLE","PRESENT",true];
-    TRIGGER_POWER_PLANT_SEIZED setTriggerStatements["this AND TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED AND POWER_PLANT_CLEARED","null = [] spawn {sleep 10 + random 20;POWER_PLANT_SEIZED = true;}",""];
+    TRIGGER_POWER_PLANT_SEIZED setTriggerStatements["this AND HAYMAKER_GLOBALS getVariable 'TASK_SEIZE_POWER_PLANT_HAS_BEEN_ASSIGNED' AND POWER_PLANT_CLEARED","null = [] spawn {sleep 10 + random 20;POWER_PLANT_SEIZED = true;}",""];
 };

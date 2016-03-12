@@ -6,10 +6,10 @@ sleep (random 25);
 
 waitUntil {
     sleep 5;
-    if (EVERYBODY_IS_DONE_TALKING) exitWith {true};
+    if (HAYMKAER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING") exitWith {true};
     false
 };
-EVERYBODY_IS_DONE_TALKING = false;
+HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", false];
 
 _isReady = [player, "wfgtacli1"] execVM "scripts\unitspeak.sqf";
 waitUntil{
@@ -83,5 +83,4 @@ waitUntil{
 };
 _isReady = nil;
 
-
-EVERYBODY_IS_DONE_TALKING = true;
+HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", true];

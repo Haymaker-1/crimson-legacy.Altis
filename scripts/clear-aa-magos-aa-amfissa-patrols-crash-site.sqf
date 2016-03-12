@@ -32,7 +32,7 @@ waitUntil {
 _spawningComplete = nil;
 
 _skiptimeValue = (15-daytime+random 0.25);
-if (WEATHER_IS_CONTROLLED) then {
+if (HAYMAKER_GLOBALS getVariable "WEATHER_IS_CONTROLLED") then {
     (_skiptimeValue * 3600) setFog 0;
 };
 skipTime _skiptimeValue;
@@ -381,7 +381,7 @@ if (!_skipCleaningHouse) then {
     };
     _isReady = nil;
 
-    if (SHOW_CHAPTER_TITLES) then {
+    if (HAYMAKER_GLOBALS getVariable "SHOW_CHAPTER_TITLES") then {
         null = ["Cleaning house"] execVM "scripts\show-chapter-title.sqf";
     };
     sleep 10;
@@ -820,7 +820,7 @@ _isReady = nil;
 
 _nSeconds = (19.5 - daytime) * 3600;
 if (_nSeconds > 600) then {
-    if (WEATHER_IS_CONTROLLED) then {
+    if (HAYMAKER_GLOBALS getVariable "WEATHER_IS_CONTROLLED") then {
         _nSeconds setFog [0.5,0.05,4];
         _nSeconds setRain 0;
         _nSeconds setOvercast 0.75;
@@ -828,7 +828,7 @@ if (_nSeconds > 600) then {
 };
 _nSeconds = nil;
 
-if (SHOW_CHAPTER_TITLES) then {
+if (HAYMAKER_GLOBALS getVariable "SHOW_CHAPTER_TITLES") then {
     null = ["Nightstalker"] execVM "scripts\show-chapter-title.sqf";
 };
 sleep 10;
