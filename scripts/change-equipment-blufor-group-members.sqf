@@ -17,16 +17,14 @@ if (isnil "_iMember") then {
     _selectedUnits = [(units _group) select _iMember];
 };
 
-
-
 _arifle = nil;
 _arifleGL = nil;
-if (HAYMAKER_GLOBALS getVariable "BLUFOR_ARIFLE_OF_CHOICE" == "f2000") then {
+if ((HAYMAKER_GLOBALS getVariable "BLUFOR_ARIFLE_OF_CHOICE") == "f2000") then {
     _arifle = "arifle_Mk20_plain_F";
     _arifleGL = "arifle_Mk20_GL_plain_F";
 };
 
-if (HAYMAKER_GLOBALS getVariable "BLUFOR_ARIFLE_OF_CHOICE" == "tavor") then {
+if ((HAYMAKER_GLOBALS getVariable "BLUFOR_ARIFLE_OF_CHOICE") == "tavor") then {
     _arifle = "arifle_TRG21_F";
     _arifleGL = "arifle_TRG21_GL_F";
 };

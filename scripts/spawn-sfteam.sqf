@@ -19,15 +19,15 @@ for "_iUnitSF" from 0 to (_nUnitsSF - 1) do {
 
         private "_tmp";
         private "_fighterTypeIdx";
+		private "_teamProb";
 
-        // FIXME for some reason the call to selectWeightedRandom only works
-        // as intended when the scope of the input variable 'TEAM_PROB' is global
-        _tmp = [TEAM_PROB] call HAYMAKER_fnc_selectWeightedRandom;
+		_teamProb = HAYMAKER_GLOBALS getVariable "TEAM_PROB";
+        _tmp = [_teamProb] call HAYMAKER_fnc_selectWeightedRandom;
 
         _fighterTypeIdx = _tmp select 0;
         _fighterType = _tmp select 1;
-        TEAM_PROB set [_fighterTypeIdx,[_tmp,0.00]];
-
+        _teamProb set [_fighterTypeIdx,[_tmp,0.00]];
+		HAYMAKER_GLOBALS setVariable ["TEAM_PROB", _teamProb];
     };
     _fighterType createUnit [getMarkerPos "MARKER_NABISCO_HELIPAD", _group];
 };
