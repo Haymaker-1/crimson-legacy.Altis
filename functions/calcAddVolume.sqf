@@ -1,5 +1,5 @@
 
-_addVolume = VOICE_ADDVOLUME_DEFAULT;
+_addVolume = 0.0;
 
 _veh = assignedVehicle player;
 _view = cameraView;
@@ -19,7 +19,7 @@ if (!isNull (_veh)) then {
     _vehType = typeOf (_veh);
 
     if (player in crew _veh) then {
-    
+
         // helicopters
         if (_veh isKindOf "Helicopter") then {
             if (_vehType in _vehLittlebirds) then {
@@ -31,7 +31,7 @@ if (!isNull (_veh)) then {
                 };
             };
         };
-        
+
         // cars
         if (_veh isKindOf "Car") then {
 
@@ -65,7 +65,7 @@ if (!isNull (_veh)) then {
                 else {
                     _addVolume = 10.0;
                 };
-            };            
+            };
             if (_vehType in _vehStriders) then {
                 if (_view == "EXTERNAL") then {
                    _addVolume = 150.0;
@@ -89,5 +89,3 @@ if (!isNull (_veh)) then {
 
 // return value:
 _addVolume
-
-
