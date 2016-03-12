@@ -725,7 +725,7 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="THE_CO";
-					init="this allowDamage false; null = [(group this)] execVM ""scripts\change-equipment-blufor-group-members.sqf""";
+					init="this allowDamage false; ";
 				};
 			};
 		};
@@ -746,7 +746,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="SUITCASE_CARRIER_MAN";
-					init="this allowDamage false; null = [(group this)] execVM ""scripts\change-equipment-blufor-group-members.sqf""";
+					init="this allowDamage false; ";
 				};
 			};
 		};
