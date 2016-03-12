@@ -24,8 +24,8 @@ _isVictory = false;
 _fadeType = true;
 
 sleep 15;
-if (alive player AND !ENDMISSION_REASON_THROWN) then
+if (alive player AND !HAYMAKER_GLOBALS getVariable "ENDMISSION_REASON_THROWN") then
 {
-    ENDMISSION_REASON_THROWN = true;
+    HAYMAKER_GLOBALS setVariable ["ENDMISSION_REASON_THROWN", true];
     [_endName,_isVictory,_fadeType] spawn BIS_fnc_endMission;
 };

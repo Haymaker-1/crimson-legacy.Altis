@@ -114,7 +114,7 @@ null = [] spawn {
 
     sleep 20;
 
-    ENDMISSION_REASON_THROWN = true;
+    HAYMAKER_GLOBALS setVariable ["ENDMISSION_REASON_THROWN", true];
     _endName = "Win1";
     _isVictory = true;
     _fadeType = true;

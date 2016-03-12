@@ -37,7 +37,7 @@ if (WEATHER_IS_CONTROLLED) then {
 };
 skipTime _skiptimeValue;
 
-_skipCleaningHouse = [CRASH_SITE_IS_CLEAR, AA_MAGOS_IS_CLEAR, AA_AMFISSA_IS_CLEAR] isEqualTo [true, true, true];
+_skipCleaningHouse = [HAYMAKER_GLOBALS getVariable "CRASH_SITE_IS_CLEAR", HAYMAKER_GLOBALS getVariable "AA_MAGOS_IS_CLEAR", HAYMAKER_GLOBALS getVariable "AA_AMFISSA_IS_CLEAR"] isEqualTo [true, true, true];
 
 if (!_skipCleaningHouse) then {
 
@@ -85,7 +85,7 @@ if (!_skipCleaningHouse) then {
     _isReady = nil;
 
 
-    _siteIsClear = [CRASH_SITE_IS_CLEAR, AA_MAGOS_IS_CLEAR, AA_AMFISSA_IS_CLEAR];
+    _siteIsClear = [HAYMAKER_GLOBALS getVariable "CRASH_SITE_IS_CLEAR", HAYMAKER_GLOBALS getVariable "AA_MAGOS_IS_CLEAR", HAYMAKER_GLOBALS getVariable "AA_AMFISSA_IS_CLEAR"];
     _n = 0;
     {
         if (!_x) then {
@@ -390,7 +390,7 @@ if (!_skipCleaningHouse) then {
 
 
 
-    if (!CRASH_SITE_IS_CLEAR) then
+    if (!HAYMAKER_GLOBALS getVariable "CRASH_SITE_IS_CLEAR") then
     {
 
         TASK_CLEAR_CRASH_SITE = player createSimpleTask ["TASKID_CLEAR_CRASH_SITE"];
@@ -405,7 +405,7 @@ if (!_skipCleaningHouse) then {
 
             waitUntil {
                 sleep 5;
-                if (CRASH_SITE_IS_CLEAR) exitWith {true};
+                if (HAYMAKER_GLOBALS getVariable "CRASH_SITE_IS_CLEAR") exitWith {true};
                 false
             };
             TASK_CLEAR_CRASH_SITE setTaskState "Succeeded";
@@ -414,7 +414,7 @@ if (!_skipCleaningHouse) then {
 
     };
 
-    if (!AA_MAGOS_IS_CLEAR) then
+    if (!HAYMAKER_GLOBALS getVariable "AA_MAGOS_IS_CLEAR") then
     {
 
         TASK_CLEAR_AA_MAGOS = player createSimpleTask ["TASKID_CLEAR_AA_MAGOS"];
@@ -430,7 +430,7 @@ if (!_skipCleaningHouse) then {
 
             waitUntil {
                 sleep 5;
-                if (AA_MAGOS_IS_CLEAR) exitWith {true};
+                if (HAYMAKER_GLOBALS getVariable "AA_MAGOS_IS_CLEAR") exitWith {true};
                 false
             };
             TASK_CLEAR_AA_MAGOS setTaskState "Succeeded";
@@ -439,7 +439,7 @@ if (!_skipCleaningHouse) then {
 
     };
 
-    if (!AA_AMFISSA_IS_CLEAR) then
+    if (!HAYMAKER_GLOBALS getVariable "AA_AMFISSA_IS_CLEAR") then
     {
 
         TASK_CLEAR_AA_AMFISSA = player createSimpleTask ["TASKID_CLEAR_AA_AMFISSA"];
@@ -455,7 +455,7 @@ if (!_skipCleaningHouse) then {
 
             waitUntil {
                 sleep 5;
-                if (AA_AMFISSA_IS_CLEAR) exitWith {true};
+                if (HAYMAKER_GLOBALS getVariable "AA_AMFISSA_IS_CLEAR") exitWith {true};
                 false
             };
             TASK_CLEAR_AA_AMFISSA setTaskState "Succeeded";
@@ -467,19 +467,19 @@ if (!_skipCleaningHouse) then {
 
     waitUntil {
         sleep 5;
-        if (CRASH_SITE_IS_CLEAR) exitWith {true};
+        if (HAYMAKER_GLOBALS getVariable "CRASH_SITE_IS_CLEAR") exitWith {true};
         false
     };
 
     waitUntil {
         sleep 5;
-        if (AA_MAGOS_IS_CLEAR) exitWith {true};
+        if (HAYMAKER_GLOBALS getVariable "AA_MAGOS_IS_CLEAR") exitWith {true};
         false
     };
 
     waitUntil {
         sleep 5;
-        if (AA_AMFISSA_IS_CLEAR) exitWith {true};
+        if (HAYMAKER_GLOBALS getVariable "AA_AMFISSA_IS_CLEAR") exitWith {true};
         false
     };
 

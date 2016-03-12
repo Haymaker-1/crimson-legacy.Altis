@@ -2,13 +2,13 @@
 
 
 
-if (alive player AND !ENDMISSION_REASON_THROWN) then {
+if (alive player AND !HAYMAKER_GLOBALS getVariable "ENDMISSION_REASON_THROWN") then {
 
     private "_endName";
     private "_isVictory";
     private "_fadeType";
 
-    ENDMISSION_REASON_THROWN = true;
+    HAYMAKER_GLOBALS setVariable ["ENDMISSION_REASON_THROWN", true];
 
     _endName = "Win1";
     _isVictory = true;

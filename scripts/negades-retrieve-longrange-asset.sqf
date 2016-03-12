@@ -102,7 +102,7 @@ saveGame;
 
 waitUntil{
     sleep 5;
-    if (AGIOS_KONSTANTINOS_IS_CLEAR AND NEGADES_IS_CLEAR) exitWith {true};
+    if (HAYMAKER_GLOBALS getVariable "AGIOS_KONSTANTINOS_IS_CLEAR" AND HAYMAKER_GLOBALS getVariable "NEGADES_IS_CLEAR") exitWith {true};
     false
 };
 

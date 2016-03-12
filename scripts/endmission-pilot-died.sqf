@@ -12,15 +12,15 @@ waitUntil {
     false
 };
 
-if (alive player AND !ENDMISSION_REASON_THROWN) then {
+if (alive player AND !HAYMAKER_GLOBALS getVariable "ENDMISSION_REASON_THROWN") then {
 
-    if (!PILOT_EGRESS_WAS_SUCCESSFUL) then {
+    if (!HAYMAKER_GLOBALS getVariable "PILOT_EGRESS_WAS_SUCCESSFUL") then {
 
         private "_endName";
         private "_isVictory";
         private "_fadeType";
 
-        ENDMISSION_REASON_THROWN = true;
+        HAYMAKER_GLOBALS setVariable ["ENDMISSION_REASON_THROWN", true];
 
         _endName = "End4";
         _isVictory = false;

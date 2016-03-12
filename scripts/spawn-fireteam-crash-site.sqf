@@ -73,7 +73,4 @@ if (SPAWN_RANDOM_PATROLS_ENABLED) then {
         HAYMAKER_GLOBALS setVariable ["TOTAL_NUMBER_OF_RANDOM_PATROLS", _i + 1];
 
     };
-
-    CRASH_SITE_POPULATED = true;
-
 };

@@ -86,7 +86,7 @@ sleep 10 + random 4;
 
 null = [] execVM "scripts\translate-and-rotate-gunboat.sqf";
 
-PILOT_EGRESS_WAS_SUCCESSFUL = true;
+HAYMAKER_GLOBALS setVariable ["PILOT_EGRESS_WAS_SUCCESSFUL", true];
 
 _perimeter = ["MARKER_PERIMETER_SPAWN_GUNBOAT"] call HAYMAKER_fnc_constructPerimeter;
 _pos = [_perimeter] call HAYMAKER_fnc_generateRandomPositionInPolygon;

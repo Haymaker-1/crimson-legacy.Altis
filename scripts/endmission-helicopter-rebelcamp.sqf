@@ -13,14 +13,14 @@ waitUntil
 sleep 30;
 
 
-if (alive player AND !ENDMISSION_REASON_THROWN) then {
+if (alive player AND !HAYMAKER_GLOBALS getVariable "ENDMISSION_REASON_THROWN") then {
     if (!HAYMAKER_GLOBALS getVariable "TRIGGER_LANDED_AT_REBEL_CAMP_FIRED") then {
 
         private "_endName";
         private "_isVictory";
         private "_fadeType";
 
-        ENDMISSION_REASON_THROWN = true;
+        HAYMAKER_GLOBALS setVariable ["ENDMISSION_REASON_THROWN", true];
 
         _endName = "End5";
         _isVictory = false;
