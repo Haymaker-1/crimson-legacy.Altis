@@ -5,7 +5,7 @@ if (HAYMAKER_GLOBALS getVariable "SPAWN_RANDOM_PATROLS_ENABLED") then {
     private "_nPatrols";
     private "_headgearArray";
 	private "_iFrom";
-	private "iTo";
+	private "_iTo";
 
     _nPatrols = 2;
 	_iFrom = HAYMAKER_GLOBALS getVariable "TOTAL_NUMBER_OF_RANDOM_PATROLS";
@@ -70,4 +70,3 @@ if (HAYMAKER_GLOBALS getVariable "SPAWN_RANDOM_PATROLS_ENABLED") then {
 
     };
 };
-
