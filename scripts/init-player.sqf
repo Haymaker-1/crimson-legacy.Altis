@@ -1,68 +1,60 @@
 
 
 
-private "_spawningComplete";
 private "_trig";
-
-_spawningComplete = [] spawn {
-
-    waitUntil {
-        sleep 0.5;
-        if (!isNull player) exitWith {true};
-        false
-    };
-
-    private "_tmp";
-    private "_fighterTypeIdx";
-    private "_fighterType";
-    private "_grp";
-    private "_pos";
-    private "_teamprob";
-
-
-    _teamprob = HAYMAKER_GLOBALS getVariable "TEAM_PROB";
-    _tmp = [_teamprob] call HAYMAKER_fnc_selectWeightedRandom;
-
-    _fighterTypeIdx = _tmp select 0;
-    _fighterType = _tmp select 1;
-    _teamprob set [_fighterTypeIdx,[_tmp,0.00]];
-
-    HAYMAKER_GLOBALS setVariable ["TEAM_PROB", _teamprob];
-
-    CHARACTER_POOL_GROUP = group player;
-
-    selectPlayer (units CHARACTER_POOL_GROUP select _fighterTypeIdx);
-
-    _grp = createGroup west;
-    _grp setGroupId ["Delta One","GroupColor4"];
-
-    [player] joinSilent _grp;
-    player setName profileName;
-    _grp selectLeader player;
-    player setRank "LIEUTENANT";
-
-    null = [_grp] execVM "scripts\change-equipment-blufor-group-members.sqf";
-
-    _pos = getPos (units CHARACTER_POOL_GROUP select 0);
-
-    {
-        removeSwitchableUnit _x;
-        deleteVehicle _x;
-    } forEach (units CHARACTER_POOL_GROUP);
-
-    player setPos _pos;
-
-
-};
+private "_tmp";
+private "_fighterTypeIdx";
+private "_fighterType";
+private "_grp";
+private "_pos";
+private "_teamprob";
 
 
 waitUntil {
     sleep 0.5;
-    if (scriptDone _spawningComplete) exitWith {true};
+    if (!isNull player) exitWith {true};
     false
 };
 
 
+// you need this waituntil, otherwise TEAM_PROB is undefined
+waitUntil {
+    sleep 0.5;
+    if (!isNil {HAYMAKER_GLOBALS getVariable "TEAM_PROB"}) exitWith {true};
+    false
+};
+
+_teamprob = HAYMAKER_GLOBALS getVariable "TEAM_PROB";
+_tmp = [_teamprob] call HAYMAKER_fnc_selectWeightedRandom;
+
+_fighterTypeIdx = _tmp select 0;
+_fighterType = _tmp select 1;
+_teamprob set [_fighterTypeIdx, [_tmp, 0.00]];
+
+HAYMAKER_GLOBALS setVariable ["TEAM_PROB", _teamprob];
+
+CHARACTER_POOL_GROUP = group player;
+
+selectPlayer (units CHARACTER_POOL_GROUP select _fighterTypeIdx);
+
+_grp = createGroup west;
+_grp setGroupId ["Delta One","GroupColor4"];
+
+[player] joinSilent _grp;
+player setName profileName;
+_grp selectLeader player;
+player setRank "LIEUTENANT";
+
+null = [_grp] execVM "scripts\change-equipment-blufor-group-members.sqf";
+
+_pos = getPos (units CHARACTER_POOL_GROUP select 0);
+
+{
+    removeSwitchableUnit _x;
+    deleteVehicle _x;
+} forEach (units CHARACTER_POOL_GROUP);
+
+player setPos _pos;
 
 
 null = [] spawn {
