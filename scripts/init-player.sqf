@@ -8,6 +8,7 @@ private "_fighterType";
 private "_grp";
 private "_pos";
 private "_teamprob";
+private "_characterPoolGrp";
 
 
 waitUntil {
@@ -33,9 +34,10 @@ _teamprob set [_fighterTypeIdx, [_tmp, 0.00]];
 
 HAYMAKER_GLOBALS setVariable ["TEAM_PROB", _teamprob];
 
-CHARACTER_POOL_GROUP = group player;
+_characterPoolGrp = group player;
+_pos = getPos (units _characterPoolGrp select 0);
 
-selectPlayer (units CHARACTER_POOL_GROUP select _fighterTypeIdx);
+selectPlayer (units _characterPoolGrp select _fighterTypeIdx);
 
 _grp = createGroup west;
 _grp setGroupId ["Delta One","GroupColor4"];
@@ -47,12 +49,11 @@ player setRank "LIEUTENANT";
 
 null = [_grp] execVM "scripts\change-equipment-blufor-group-members.sqf";
 
-_pos = getPos (units CHARACTER_POOL_GROUP select 0);
 
 {
     removeSwitchableUnit _x;
     deleteVehicle _x;
-} forEach (units CHARACTER_POOL_GROUP);
+} forEach (units _characterPoolGrp);
 
 player setPos _pos;
 
