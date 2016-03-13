@@ -390,7 +390,7 @@ class Mission
 			position[]={7514.2095,137.96796,18325.75};
 			name="MARKER_SPAWN_PILOT";
 			type="Empty";
-			angle=223.94801;
+			angle=223.94795;
 			id=33;
 		};
 		class Item34
@@ -1540,7 +1540,7 @@ class Mission
 			position[]={4090.9084,66.739044,17873.512};
 			name="MARKER_RESUME_5";
 			type="Empty";
-			angle=191.48485;
+			angle=191.48479;
 			id=176;
 		};
 		class Item177
@@ -1549,7 +1549,7 @@ class Mission
 			position[]={4071.729,49.315475,17783.961};
 			name="MARKER_PERIMETER_LCJ_WAREHOUSE_AGIOS_1";
 			type="Empty";
-			angle=359.34625;
+			angle=359.34619;
 			id=177;
 		};
 		class Item178
@@ -1558,7 +1558,7 @@ class Mission
 			position[]={4199.9082,61.139751,17758.932};
 			name="MARKER_PERIMETER_LCJ_WAREHOUSE_AGIOS_2";
 			type="Empty";
-			angle=359.34625;
+			angle=359.34619;
 			id=178;
 		};
 		class Item179
@@ -1567,7 +1567,7 @@ class Mission
 			position[]={4164.1914,40.018841,17689.658};
 			name="MARKER_PERIMETER_LCJ_WAREHOUSE_AGIOS_3";
 			type="Empty";
-			angle=359.34625;
+			angle=359.34619;
 			id=179;
 		};
 		class Item180
@@ -1576,7 +1576,7 @@ class Mission
 			position[]={4107.376,46.551495,17550.361};
 			name="MARKER_PERIMETER_LCJ_WAREHOUSE_AGIOS_4";
 			type="Empty";
-			angle=359.34625;
+			angle=359.34619;
 			id=180;
 		};
 		class Item181
@@ -1585,7 +1585,7 @@ class Mission
 			position[]={3954.1716,18.177898,17612.555};
 			name="MARKER_PERIMETER_LCJ_WAREHOUSE_AGIOS_5";
 			type="Empty";
-			angle=359.34625;
+			angle=359.34619;
 			id=181;
 		};
 		class Item182
@@ -1594,7 +1594,7 @@ class Mission
 			position[]={3945.4497,35.679016,17797.232};
 			name="MARKER_PERIMETER_LCJ_WAREHOUSE_AGIOS_6";
 			type="Empty";
-			angle=359.34625;
+			angle=359.34619;
 			id=182;
 		};
 		class Item183
@@ -3356,7 +3356,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9220.0156,272.66083,19300.607};
-			angle=2.9251537;
+			angle=2.9251528;
 			class Attributes
 			{
 				name="TRIGGER_AA_PYRSOS_CLEAR";
