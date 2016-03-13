@@ -6,7 +6,7 @@ sleep (random 25);
 
 waitUntil {
     sleep 5;
-    if (HAYMKAER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING") exitWith {true};
+    if (HAYMAKER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING") exitWith {true};
     false
 };
 HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", false];
