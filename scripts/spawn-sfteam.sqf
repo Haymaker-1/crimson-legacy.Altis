@@ -26,7 +26,7 @@ for "_iUnitSF" from 0 to (_nUnitsSF - 1) do {
 
         _fighterTypeIdx = _tmp select 0;
         _fighterType = _tmp select 1;
-        _teamProb set [_fighterTypeIdx,[_tmp,0.00]];
+        _teamProb set [_fighterTypeIdx, [_tmp, 0.00]];
 		HAYMAKER_GLOBALS setVariable ["TEAM_PROB", _teamProb];
     };
     _fighterType createUnit [getMarkerPos "MARKER_NABISCO_HELIPAD", _group];
@@ -55,7 +55,3 @@ sf3 = units _group select 3;
 
 // add end condition now that we have an sfteam
 null = [] execVM "scripts\endmission-sfteam-decimated.sqf";
-
-// destroy global var TEAM_PROB
-TEAM_PROB = nil;
-
