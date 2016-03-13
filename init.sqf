@@ -93,7 +93,8 @@ HAYMAKER_GLOBALS setVariable ["TEAM_PROB",
          [[3,"B_soldier_AR_F",    "autorifleman"],0.20],
          [[4,"B_Soldier_F",       "rifleman"],    0.20],
          [[5,"B_Soldier_GL_F",    "grenadier"],   0.20]
-    ], false];
+    ]
+];
 HAYMAKER_GLOBALS setVariable ["NEED_HELO", true];
 HAYMAKER_GLOBALS setVariable ["TASK_LOAD_FUEL_HAS_BEEN_ASSIGNED", false];
 HAYMAKER_GLOBALS setVariable ["TASK_MEET_KOSTAS_HAS_BEEN_ASSIGNED", false];
