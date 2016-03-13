@@ -41,5 +41,4 @@ for "_i" from 0 to (_n - 1) do {
 
 _bbox = [[_minx, _miny], [_maxx, _maxy]];
 
-// return:
 _bbox

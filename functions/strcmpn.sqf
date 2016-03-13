@@ -48,5 +48,4 @@ if (_arr1 isEqualTo _arr2) then {
 };
 
 
-// return:
 _strsArePartlyEqual

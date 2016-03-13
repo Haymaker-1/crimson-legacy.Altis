@@ -62,5 +62,4 @@ if (_minute <= 9) then {
 
 _dateStr = _monthStr + " " + (str _day) + ", " + (str _year) + " // " + _hourStr + ":" + _minuteStr;
 
-// return value:
 _dateStr

@@ -42,7 +42,6 @@ if (!isNull (_veh)) then {
             };
         };
 
-        // cars
         if (_veh isKindOf "Car") then {
 
             if (_view == "EXTERNAL") then {
@@ -91,5 +90,4 @@ if (!isNull (_veh)) then {
 };
 
 
-// return value:
 _addVolume

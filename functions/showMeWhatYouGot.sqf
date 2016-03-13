@@ -76,8 +76,6 @@ _handgunItems = handgunItems _man;
 
 _arr = weapons _man;
 {
-    // retrieve the most basic version of the weapon by
-    // traversing the inheritance tree:
     private "_theWeaponName";
     _theWeaponName = _x;
     if (_doRemove) then {
@@ -115,7 +113,6 @@ _arr = assignedItems _man;
 
 _backpackType = backpack _man;
 if (_backpackType != "") then {
-    // clearAllItemsFromBackpack _man;
     if (_doRemove) then {
         removeBackpack _man;
     };
@@ -146,7 +143,6 @@ if (_goggles != "") then {
     _gogglesArray = _gogglesArray + [_goggles];
 };
 
-// return
 [
     [ "weapons"   , _weaponArray   ],
     [ "magazines" , _magazineArray ],

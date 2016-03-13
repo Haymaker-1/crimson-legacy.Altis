@@ -6,20 +6,16 @@ _table = _this select 0;
 _forceIndex = _this select 1;
 _returnItem = nil;
 
-diag_log format ["_table = %1", _table];
-
 if (isnil "_forceIndex") then {
 
     private "_sum";
     private "_urandom";
 
-    // sum the probabilities
     _sum = 0;
     {
         _sum = _sum + (_x select 1);
     } forEach _table;
 
-    // normalize
     {
         private "_content";
         private "_prob";
@@ -41,5 +37,4 @@ if (isnil "_forceIndex") then {
     _returnItem = _table select _forceIndex select 0;
 };
 
-// return this variable:
 _returnItem

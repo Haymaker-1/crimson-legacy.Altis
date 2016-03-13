@@ -23,7 +23,7 @@ _yTop = (_bbox select 1) select 1;
 _dx = _xRight - _xLeft;
 _dy = _yTop - _yBottom;
 
-_pos = [0,0]; // to avoid scope issues
+_pos = [0,0];
 _isInside = false;
 
 while {!_isInside} do {
@@ -38,5 +38,4 @@ while {!_isInside} do {
 _pos resize 3;
 _pos set [2,0];
 
-// return
 _pos

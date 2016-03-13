@@ -15,5 +15,4 @@ _iRandomPatrol = -1;
 } forEach RANDOM_PATROL_GROUP_HAS_ARRIVED;
 
 
-// return:
 _iRandomPatrol

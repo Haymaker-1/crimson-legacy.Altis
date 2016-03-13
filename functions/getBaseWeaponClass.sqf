@@ -20,5 +20,4 @@ while {_cont} do {
 };
 
 
-// return
 _theClassName

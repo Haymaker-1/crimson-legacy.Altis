@@ -20,5 +20,4 @@ switch (_vehicleType) do
 };
 
 
-// return:
 _addRatingValue

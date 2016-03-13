@@ -132,5 +132,4 @@ for "_iHitPoint" from 0 to count _configEntry - 1 do {
 
 _report = _configHitPoints + _knownHitPoints;
 
-// return value:
 _report
