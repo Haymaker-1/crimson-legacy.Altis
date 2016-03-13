@@ -51,7 +51,6 @@ deactivateKey "missionCompletedKey";
            "MARKER_SPAWN_HELICOPTER",
            "MARKER_SPAWN_HELICOPTER_2",
            "MARKER_LOAD_FUEL",
-		   "MARKER_NABISCO_HELIPAD",
 		   "MARKER_REBEL_CAMP_HELIPAD"];
 
 
