@@ -49,7 +49,6 @@ if (HAYMAKER_GLOBALS getVariable "SPAWN_RANDOM_PATROLS_ENABLED") then {
         for "_j" from 0 to 3 do {
 
             private "_fighterType";
-
             _fighterType = [[["O_Soldier_lite_F",0.35],
                             ["O_medic_F",0.2],
                             ["O_Soldier_A_F",0.2],
