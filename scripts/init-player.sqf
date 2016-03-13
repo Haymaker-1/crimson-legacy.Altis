@@ -56,6 +56,7 @@ null = [_grp] execVM "scripts\change-equipment-blufor-group-members.sqf";
 } forEach (units _characterPoolGrp);
 
 player setPos _pos;
+player setDir 0.0;
 
 
 null = [] spawn {
