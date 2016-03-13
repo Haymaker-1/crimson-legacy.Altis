@@ -1,5 +1,14 @@
 
-private ["_perimeter","_bbox","_xLeft","_xRight","_yBottom","_yTop","_dx","_dy","_pos","_isInside","_windingNumber"];
+private "_perimeter";
+private "_bbox";
+private "_xLeft";
+private "_xRight";
+private "_yBottom";
+private "_yTop";
+private "_dx";
+private "_dy";
+private "_pos";
+private "_isInside";
 
 
 _perimeter = _this select 0;
@@ -17,13 +26,11 @@ _dy = _yTop - _yBottom;
 _pos = [0,0]; // to avoid scope issues
 _isInside = false;
 
-
-while {!_isInside} do
-{
+while {!_isInside} do {
+    private "_windingNumber";
     _pos = [_xLeft + (random _dx),_yBottom + (random _dy)];
     _windingNumber = [_perimeter,_pos] call HAYMAKER_fnc_calcWindingNumber;
-    if (_windingNumber != 0) then 
-    {
+    if (_windingNumber != 0) then {
         _isInside = true;
     };
 };
@@ -31,7 +38,5 @@ while {!_isInside} do
 _pos resize 3;
 _pos set [2,0];
 
-// return 
+// return
 _pos
-
-

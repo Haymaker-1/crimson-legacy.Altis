@@ -1,4 +1,8 @@
 
+private "_man";
+private "_group";
+private "_iRandomPatrol";
+
 
 _man = _this select 0;
 
@@ -12,4 +16,4 @@ _iRandomPatrol = -1;
 
 
 // return:
-_iRandomPatrol 
+_iRandomPatrol

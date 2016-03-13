@@ -1,4 +1,20 @@
-
+private "_man";
+private "_doRemove";
+private "_initialValues";
+private "_weaponArray";
+private "_magazineArray";
+private "_itemArray";
+private "_headgearArray";
+private "_backpackArray";
+private "_vestArray";
+private "_gogglesArray";
+private "_primaryWeaponItems";
+private "_handgunItems";
+private "_arr";
+private "_backpackType";
+private "_vest";
+private "_headgear";
+private "_goggles";
 
 
 _man = _this select 0;
@@ -22,8 +38,7 @@ if (isnil "_initialValues") then {
     _backpackArray = [];
     _vestArray = [];
     _gogglesArray = [];
-}
-else {
+} else {
     _weaponArray = _initialValues select 0 select 1;
     _magazineArray = _initialValues select 1 select 1;
     _itemArray = _initialValues select 2 select 1;
@@ -37,7 +52,6 @@ else {
 if (isnil "_doRemove") then {
     _doRemove = true;
 };
-
 
 
 _primaryWeaponItems = primaryWeaponItems _man;
@@ -61,16 +75,17 @@ _handgunItems = handgunItems _man;
 } forEach _handgunItems;
 
 _arr = weapons _man;
-{   
-    // retrieve the most basic version of the weapon by 
+{
+    // retrieve the most basic version of the weapon by
     // traversing the inheritance tree:
+    private "_theWeaponName";
     _theWeaponName = _x;
     if (_doRemove) then {
         _man removeWeapon _theWeaponName;
     };
     _theWeaponName = [_theWeaponName] call HAYMAKER_fnc_getBaseWeaponClass;
     _weaponArray = _weaponArray + [_theWeaponName];
-            
+
 } forEach _arr;
 
 _arr = magazines _man;
@@ -96,7 +111,7 @@ _arr = assignedItems _man;
         _man removeItem _x;
     };
     _itemArray = _itemArray + [_x];
-} forEach _arr;            
+} forEach _arr;
 
 _backpackType = backpack _man;
 if (_backpackType != "") then {
@@ -106,7 +121,7 @@ if (_backpackType != "") then {
     };
     _backpackArray = _backpackArray + [_backpackType];
 };
-            
+
 _vest = vest _man;
 if (_vest != "") then {
     if (_doRemove) then {
@@ -131,8 +146,8 @@ if (_goggles != "") then {
     _gogglesArray = _gogglesArray + [_goggles];
 };
 
-// return 
-[   
+// return
+[
     [ "weapons"   , _weaponArray   ],
     [ "magazines" , _magazineArray ],
     [ "items"     , _itemArray     ],
@@ -141,5 +156,3 @@ if (_goggles != "") then {
     [ "vest"      , _vestArray     ],
     [ "goggles"   , _gogglesArray  ]
 ]
-
-

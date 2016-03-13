@@ -1,6 +1,12 @@
 
 
-private ["_arr","_n","_randNumbers","_i","_bubResult","_idx","_out"];
+private "_arr";
+private "_nResults";
+private "_n";
+private "_randNumbers";
+private "_bubResult";
+private "_idx";
+private "_out";
 
 _arr = _this select 0;
 _nResults = _this select 1;
@@ -18,13 +24,11 @@ _n = count _arr;
 
 _randNumbers = [];
 _randNumbers resize _n;
-for "_i" from 0 to (_n - 1) do
-{
+for "_i" from 0 to (_n - 1) do {
     _randNumbers set [_i,random 1.0];
 };
 
 _bubResult = [_randNumbers] call HAYMAKER_fnc_bubbleSort;
-
 
 _idx = _bubResult select 1 select 0;
 

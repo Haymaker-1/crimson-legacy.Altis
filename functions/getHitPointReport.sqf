@@ -1,4 +1,9 @@
-
+private "_veh";
+private "_knownHitPointStrings";
+private "_knownHitPoints";
+private "_configEntry";
+private "_configHitPoints";
+private "_report";
 
 _veh = _this select 0;
 
@@ -73,9 +78,12 @@ _knownHitPointStrings = [   "wheel_1_1_steering",
 
 _knownHitPoints = [];
 {
+    private "_hitPointStr";
+    private "_damage";
     _hitPointStr = _x;
     _damage = _veh getHitPointDamage _hitPointStr;
     if (!isnil "_damage") then {
+        private "_nElems";
         _nElems = count _knownHitPoints;
         _knownHitPoints resize (_nElems + 1);
         _knownHitPoints set [_nElems,[_hitPointStr,_damage]];
@@ -83,29 +91,39 @@ _knownHitPoints = [];
 } forEach _knownHitPointStrings;
 
 
-                    
+
 _configEntry = configFile >> "CfgVehicles" >> typeOf _veh >> "HitPoints";
 _configHitPoints = [];
 for "_iHitPoint" from 0 to count _configEntry - 1 do {
+
+    private "_iCharStart";
+    private "_fullStr";
+    private "_hitPointFullArray";
+    private "_iCharEnd";
+    private "_hitPoint";
+    private "_iChar";
+    private "_hitPointStr";
+    private "_damage";
+    private "_nElems";
 
     _iCharStart = count toArray (str (_configEntry));
     _fullStr = str (_configEntry select _iHitPoint);
     _hitPointFullArray = toArray _fullStr;
     _iCharEnd = count _hitPointFullArray;
-    
+
     _hitPoint = [];
     _hitPoint resize (_iCharEnd -_iCharStart - 1);
     _iChar = 0;
-    {   
+    {
         if (_forEachIndex>_iCharStart) then {
             _hitPoint set [_iChar,_x];
             _iChar = _iChar + 1;
         };
     } forEach _hitPointFullArray;
-    
+
     _hitPointStr = toString _hitPoint;
     _damage = _veh getHitPointDamage _hitPointStr;
-    
+
     _nElems = count _configHitPoints;
     _configHitPoints resize (_nElems + 1);
     _configHitPoints set [_nElems,[_hitPointStr,_damage]];
