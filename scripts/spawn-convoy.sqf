@@ -13,6 +13,7 @@ private "_iMarker";
 private "_posFinal";
 private "_posCurrent";
 private "_k";
+private "_convoyHasArrived";
 
 _headgearArray = ["H_Beret_blk",
                   "H_Beret_grn",
@@ -208,9 +209,9 @@ _iMarker = 0;
 _posFinal = getMarkerPos (_markerWaypointArray select ((count _markerWaypointArray) - 1));
 _posCurrent = [null,null];
 
-CONVOY_HAS_ARRIVED = false;
+_convoyHasArrived = false;
 _k = 0;
-while {!CONVOY_HAS_ARRIVED} do {
+while {!_convoyHasArrived} do {
 
     private "_vehicleLeader";
     private "_posReference";
@@ -231,7 +232,7 @@ while {!CONVOY_HAS_ARRIVED} do {
     for "_i" from 1 to (count _convoyMemberGroups - 1) do {
 
         {
-            deleteWaypoint [(_convoyMemberGroups select _i),_indexForEach];
+            deleteWaypoint [(_convoyMemberGroups select _i),_forEachIndex];
         } forEach waypoints (_convoyMemberGroups select _i);
 
         (_convoyMemberGroups select _i) addWaypoint [_waypointArray select _i, 0];
@@ -247,7 +248,7 @@ while {!CONVOY_HAS_ARRIVED} do {
 
     if ((_posCurrent distance _posFinal) < 100) then
     {
-        CONVOY_HAS_ARRIVED = true;
+        _convoyHasArrived = true;
     };
 
 
@@ -259,11 +260,10 @@ while {!CONVOY_HAS_ARRIVED} do {
 };
 
 {
-    deleteWaypoint [(_convoyMemberGroups select _i),_indexForEach];
+    deleteWaypoint [(_convoyMemberGroups select _i),_forEachIndex];
 } forEach waypoints (_convoyMemberGroups select _i);
 
-for "_i" from 0 to ((count _convoyMemberGroups) - 1) do
-
+for "_i" from 0 to ((count _convoyMemberGroups) - 1) do {
     (_convoyMemberGroups select _i) addWaypoint [_posFinal, 0];
     [(_convoyMemberGroups select _i),0] setWaypointCompletionRadius 25;
     [(_convoyMemberGroups select _i),0] setWaypointType "UNLOAD";
