@@ -10,8 +10,7 @@ _fuelLossRate = FUEL_LOSS_RATE_WHEN_BROKEN * 3600 / helicopterFuelCapacity;  // 
 _lastTimeArray = date;
 _lastDayTime = daytime;
 
-while {LITTLEBIRD_BROKEN} do
-{
+while {LITTLEBIRD_BROKEN} do {
     private "_currentTimeArray";
     private "_currentDayTime";
     private "_nHoursDifference";
@@ -38,4 +37,4 @@ while {LITTLEBIRD_BROKEN} do
     };
 
     sleep 0.25;
-}
+};
