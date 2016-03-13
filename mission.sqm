@@ -390,7 +390,7 @@ class Mission
 			position[]={7514.2095,137.96796,18325.75};
 			name="MARKER_SPAWN_PILOT";
 			type="Empty";
-			angle=223.94795;
+			angle=223.94794;
 			id=33;
 		};
 		class Item34
@@ -3356,7 +3356,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9220.0156,272.66083,19300.607};
-			angle=2.9251528;
+			angle=2.9251525;
 			class Attributes
 			{
 				name="TRIGGER_AA_PYRSOS_CLEAR";
