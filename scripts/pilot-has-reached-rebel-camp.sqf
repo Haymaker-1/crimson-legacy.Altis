@@ -15,9 +15,9 @@ waitUntil {
     false
 };
 
-HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", !HAYMAKER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING"];
+HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", !(HAYMAKER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING")];
 null = execVM "scripts\radio-conversation-about-pilot-egress.sqf";
-HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", !HAYMAKER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING"];
+HAYMAKER_GLOBALS setVariable ["EVERYBODY_IS_DONE_TALKING", !(HAYMAKER_GLOBALS getVariable "EVERYBODY_IS_DONE_TALKING")];
 
 
 
@@ -96,6 +96,6 @@ if (HAYMAKER_GLOBALS getVariable "TASK_DESTROY_CONVOY_VEHICLES_HAS_BEEN_ASSIGNED
 
     if (NUMBER_OF_CONVOY_VEHICLES_DESTROYED < 3) then {
         TASK_DESTROY_CONVOY_VEHICLES setTaskState "Canceled";
-        ["TaskCanceled", ["",format ["Destroy vehicles (%1 remaining)",3-NUMBER_OF_CONVOY_VEHICLES_DESTROYED]]] call BIS_fnc_showNotification;
+        ["TaskCanceled", ["",format ["Destroy vehicles (%1 remaining)", 3 - NUMBER_OF_CONVOY_VEHICLES_DESTROYED]]] call BIS_fnc_showNotification;
     };
 };
