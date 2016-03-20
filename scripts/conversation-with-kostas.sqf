@@ -67,9 +67,6 @@ null = [] spawn {
     kostas playAction "SaluteOff";
 };
 
-//kostas action ["salute",kostas];
-
-
 
 _isReady = [kostas, "egcnoprm1"] execVM "scripts\unitspeak.sqf";
 waitUntil {
@@ -151,7 +148,7 @@ _speaker = nil;
 } forEach [sf0,sf1,sf2,sf3];
 _speaker groupChat "Perhaps we could use the new radios we brought?";
 sleep (4+random 2);
-//OUTLIVED_HIS_USEFULNESS set [0,true];
+
 {
     _x allowDamage true;
 } forEach [sf0,sf1,sf2,sf3];
@@ -172,7 +169,6 @@ deleteVehicle suitcase3;
 _posSuitcase3 = (thehelicopter modelToWorld [-4,4,-1.4]);
 suitcase3 = createVehicle ["Land_SatellitePhone_F",_posSuitcase3,[],0,"NONE"];
 suitcase3 setPos _posSuitcase3;
-_posSuitcase3 = nil;
 
 _dx2 = ((getPos thehelicopter) select 0) - (_posSuitcase3 select 0);
 _dy2 = ((getPos thehelicopter) select 1) - (_posSuitcase3 select 1);
@@ -200,6 +196,7 @@ sleep 7;
 
 _dx3 = (_posSuitcase3 select 0) - (_posRadioFiddle select 0);
 _dy3 = (_posSuitcase3 select 1) - (_posRadioFiddle select 1);
+_posSuitcase3 = nil;
 
 kostas setPos _posRadioFiddle;
 _posRadioFiddle = nil;
