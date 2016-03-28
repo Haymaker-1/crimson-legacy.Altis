@@ -390,7 +390,7 @@ if (!_skipCleaningHouse) then {
 
 
 
-    if (!HAYMAKER_GLOBALS getVariable "CRASH_SITE_IS_CLEAR") then
+    if (!(HAYMAKER_GLOBALS getVariable "CRASH_SITE_IS_CLEAR")) then
     {
 
         TASK_CLEAR_CRASH_SITE = player createSimpleTask ["TASKID_CLEAR_CRASH_SITE"];
@@ -414,7 +414,7 @@ if (!_skipCleaningHouse) then {
 
     };
 
-    if (!HAYMAKER_GLOBALS getVariable "AA_MAGOS_IS_CLEAR") then
+    if (!(HAYMAKER_GLOBALS getVariable "AA_MAGOS_IS_CLEAR")) then
     {
 
         TASK_CLEAR_AA_MAGOS = player createSimpleTask ["TASKID_CLEAR_AA_MAGOS"];
@@ -439,7 +439,7 @@ if (!_skipCleaningHouse) then {
 
     };
 
-    if (!HAYMAKER_GLOBALS getVariable "AA_AMFISSA_IS_CLEAR") then
+    if (!(HAYMAKER_GLOBALS getVariable "AA_AMFISSA_IS_CLEAR")) then
     {
 
         TASK_CLEAR_AA_AMFISSA = player createSimpleTask ["TASKID_CLEAR_AA_AMFISSA"];

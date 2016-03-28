@@ -60,7 +60,7 @@ if (HAYMAKER_GLOBALS getVariable "SPAWN_RANDOM_PATROLS_ENABLED") then {
 
         null = [_perimeter,_group,_iRandomPatrol] execVM "scripts\set-as-random-patrol.sqf";
 
-        HAYMAKER_GLOBALS setVariable ["TOTAL_NUMBER_OF_RANDOM_PATROLS", HAYMAKER_GLOBALS getVariable "TOTAL_NUMBER_OF_RANDOM_PATROLS" + 1];
+        HAYMAKER_GLOBALS setVariable ["TOTAL_NUMBER_OF_RANDOM_PATROLS", (HAYMAKER_GLOBALS getVariable "TOTAL_NUMBER_OF_RANDOM_PATROLS") + 1];
 
     };
 
@@ -81,6 +81,3 @@ if (HAYMAKER_GLOBALS getVariable "SPAWN_RANDOM_PATROLS_ENABLED") then {
         };
     } forEach ["car0","car1"];
 };
-
-
-
